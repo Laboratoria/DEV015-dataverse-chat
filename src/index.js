@@ -1,16 +1,43 @@
+import { setRoutes, setRootEl, renderView, onURLChange } from "./router.js";
+import { Home } from "./views/Home.js";
+import { Panel } from "./views/Panel.js";
+import { Chat } from "./views/Chat.js"
 // En este archivo definirás tus rutas e importarás los componentes que vas a renderizar.
 
-/*
-import Example from './views/Example.js';
 
-Ejemplo de definición de rutas:
+setRoutes({
+  home: {
+    path: "/",
+    component: Home,
+  },
+  panel: {
+    path: "/panel",
+    component: Panel,
+  },
+  chat: {
+    path: "/chat",
+    component: Chat,
+  }
+});
 
-const routes = {
-    "/": Example,
-    ...
-}
-*/
+// capturar el div principal
+const rootElement = document.getElementById("root");
+setRootEl(rootElement);
 
+const navHome = document.querySelector("#home");
+navHome.addEventListener('click', onURLChange(window.location));
+
+const navPanel = document.querySelector("#panel");
+navPanel.addEventListener('click', onURLChange(window.location));
+
+const navChat = document.querySelector("#chat");
+navChat.addEventListener('click', onURLChange(window.location));
+// event listener que simula el cambio de ruta (cambios en el historial)
+// window.addEventListener("popstate", () => {
+//   renderView(window.location.pathname, {});
+// });
+
+// renderView(window.location.pathname , {});
 /*
 TODO:
 1.- Definir rutas en router.
