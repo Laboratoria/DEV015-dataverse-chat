@@ -1,4 +1,4 @@
-import { setRoutes, setRootEl, renderView, onURLChange } from "./router.js";
+import { setRoutes, setRootEl, onURLChange, navigateTo } from "./router.js";
 import { Home } from "./views/Home.js";
 import { Panel } from "./views/Panel.js";
 import { Chat } from "./views/Chat.js"
@@ -20,24 +20,40 @@ setRoutes({
   }
 });
 
+// linkEl.addEventListener('click', () => navigateTo("/about", { name: "Xochitl" }))
 // capturar el div principal
 const rootElement = document.getElementById("root");
 setRootEl(rootElement);
 
 const navHome = document.querySelector("#home");
-navHome.addEventListener('click', onURLChange(window.location));
+navHome.addEventListener('click', function(){
+  // guarda la pagina en el historial
+  onURLChange(window.location);
+  navigateTo("/", {component: Home});
+});
 
 const navPanel = document.querySelector("#panel");
-navPanel.addEventListener('click', onURLChange(window.location));
+navPanel.addEventListener('click', function(){
+  // guarda la pagina en el historial
+  onURLChange(window.location);
+  navigateTo("/panel", {component: Panel});
+});
 
 const navChat = document.querySelector("#chat");
-navChat.addEventListener('click', onURLChange(window.location));
-// event listener que simula el cambio de ruta (cambios en el historial)
-// window.addEventListener("popstate", () => {
-//   renderView(window.location.pathname, {});
-// });
+navChat.addEventListener('click', function(){
+  // guarda la pagina en el historial
+  onURLChange(window.location);
+  navigateTo("/chat", {component: Chat});
+});
 
-// renderView(window.location.pathname , {});
+
+
+// event listener que simula el cambio de ruta (cambios en el historial)
+window.addEventListener("popstate", () => {
+  onURLChange(window.location);
+  console.log("estamos en ->" + window.location.pathname);
+});
+onURLChange(window.location);
 /*
 TODO:
 1.- Definir rutas en router.
