@@ -1,59 +1,25 @@
-import { setRoutes, setRootEl, onURLChange, navigateTo } from "./router.js";
-import { Home } from "./views/Home.js";
-import { Panel } from "./views/Panel.js";
-import { Chat } from "./views/Chat.js"
 // En este archivo definirás tus rutas e importarás los componentes que vas a renderizar.
 
+import { onURLChange, setRootEl, setRoutes } from './router.js'
+import home  from './views/home.js';
+import chat  from './views/chat.js';
+import panel  from './views/panel.js';
 
-setRoutes({
-  home: {
-    path: "/",
-    component: Home,
-  },
-  panel: {
-    path: "/panel",
-    component: Panel,
-  },
-  chat: {
-    path: "/chat",
-    component: Chat,
-  }
-});
+//Ejemplo de definición de rutas:
 
-// linkEl.addEventListener('click', () => navigateTo("/about", { name: "Xochitl" }))
-// capturar el div principal
-const rootElement = document.getElementById("root");
-setRootEl(rootElement);
+const routes = {
+  "/": home,
+  "/panel": panel,
+  "/chat": chat
+}
 
-const navHome = document.querySelector("#home");
-navHome.addEventListener('click', function(){
-  // guarda la pagina en el historial
-  onURLChange(window.location);
-  navigateTo("/", {component: Home});
-});
+setRoutes(routes);
+window.addEventListener('DOMContentLoaded',  () => {
+  setRootEl(document.querySelector('#root'));
+  onURLChange(window.location)
 
-const navPanel = document.querySelector("#panel");
-navPanel.addEventListener('click', function(){
-  // guarda la pagina en el historial
-  onURLChange(window.location);
-  navigateTo("/panel", {component: Panel});
-});
+})
 
-const navChat = document.querySelector("#chat");
-navChat.addEventListener('click', function(){
-  // guarda la pagina en el historial
-  onURLChange(window.location);
-  navigateTo("/chat", {component: Chat});
-});
-
-
-
-// event listener que simula el cambio de ruta (cambios en el historial)
-window.addEventListener("popstate", () => {
-  onURLChange(window.location);
-  console.log("estamos en ->" + window.location.pathname);
-});
-onURLChange(window.location);
 /*
 TODO:
 1.- Definir rutas en router.
