@@ -21,6 +21,7 @@ const queryStringToObject = (queryString) => {
 }
 
 const renderView = (pathname, props={}) => { //props son los search params
+// const renderView = (pathname) => { //props son los search params
   // clear the root element
   rootEl.innerHTML = ""
   // find the correct view in ROUTES for the pathname
@@ -38,7 +39,7 @@ export const navigateTo = (pathname, props={}) => {
 }
 
 export const onURLChange = (location) => {
-  console.log(location, location.pathname);
+  // console.log(location, location.pathname);
   renderView(location.pathname);
   // parse the location for the pathname and search params
   // convert the search params to an object
