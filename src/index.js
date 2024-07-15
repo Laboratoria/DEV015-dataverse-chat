@@ -4,13 +4,15 @@ import { onURLChange, setRootEl, setRoutes } from './router.js'
 import home  from './views/home.js';
 import chat  from './views/chat.js';
 import panel  from './views/panel.js';
+import error  from './views/panel.js';
 
 //Ejemplo de definición de rutas:
 
 const routes = {
   "/": home,
   "/panel": panel,
-  "/chat": chat
+  "/chat": chat,
+  "/error": error
 }
 
 setRoutes(routes);
