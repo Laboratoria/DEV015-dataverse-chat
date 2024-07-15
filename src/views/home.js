@@ -1,7 +1,5 @@
-function home() {
+export function Home() {
   const contentMain = document.createElement("div");
-  contentMain.innerHTML = "<h1>estas en HOME </h1><p>Loreeem exampleeeeeeee page!</p>";
+  contentMain.innerHTML = "<h1>HOMEE</h1><p>Welcome to the home page!</p>";
   return contentMain;
 }
-  
-export default home;
