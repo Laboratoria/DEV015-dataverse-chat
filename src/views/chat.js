@@ -1,4 +1,4 @@
-import  header  from "./components/header.js"
+import  header  from "../components/header.js"
 
 function chat() {
   const contentHome = document.createElement('div');

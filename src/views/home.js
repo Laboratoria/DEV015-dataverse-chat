@@ -1,5 +1,6 @@
-import  header  from "./components/header.js"
-import  footer  from "./components/footer.js"
+import  header  from "../components/header.js"
+import nav from '../components/nav/nav.js'
+import  footer  from "../components/footer.js"
 import data  from "../data/dataset.js"
 
 function home() {
@@ -10,6 +11,12 @@ function home() {
   contentHeader.innerHTML = header
   contentHome.appendChild(contentHeader)
   
+  const contentNav = document.createElement('nav');
+  contentNav.innerHTML = nav
+  contentNav.classList.add('controls')
+  contentNav.setAttribute('id', 'nav')
+  contentHome.appendChild(contentNav)
+
   const ul = document.createElement('ul');
   contentHome.appendChild(ul)
   function crearElemento(data){

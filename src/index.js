@@ -1,10 +1,10 @@
 // En este archivo definirás tus rutas e importarás los componentes que vas a renderizar.
-
 import { onURLChange, setRootEl, setRoutes } from './router.js'
 import home  from './views/home.js';
 import chat  from './views/chat.js';
 import panel  from './views/panel.js';
 import error  from './views/panel.js';
+
 
 //Ejemplo de definición de rutas:
 
@@ -21,6 +21,8 @@ window.addEventListener('DOMContentLoaded',  () => {
   onURLChange(window.location)
 
 })
+
+
 
 /*
 TODO:

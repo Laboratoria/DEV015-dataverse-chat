@@ -1,15 +1,7 @@
-const header = `
+const nav = `
 
-    <!-- IMAGEN TITULO Y EL H1 NO SE VE -->
-    <img
-      src="https://res.cloudinary.com/db3qclbrk/image/upload/v1719354548/Spider-Man_Across_the_Spider-Verse_logo.webp_ebwb10.png"
-      alt="Spiderverse">
-    <h1>Spiderverse</h1>
-
-    <!-- BARRA NAV CONTIENE LOS BOTONES DE ORDENAR Y FILTRAR Y RESET -->
-    <nav class="controls" id="nav">
-
-      <div class="select-box">
+ 
+<div class="select-box">
         <label for="filter">Filtrar por: </label>
         <select data-testid="select-filter" name="gender age" id="filter">
           <option value="" disabled selected>Selecciona</option>
@@ -37,22 +29,14 @@ const header = `
       </div>
 
       <button data-testid="button-clear">Limpiar</button>
-    </nav>
+    
 
-    <!-- DIV CONTIENE EL BOTON DE HAMBURGESA Y EL DE LAS ESTADISTICAS-->
-    <div class="computeStats" id="boxButtoms">
-      <div class="burger-container">
-        <button id="burger">
-          <div class="bar"></div>
-          <div class="bar"></div>
-          <div class="bar"></div>
-        </button>
-      </div>
-      <button id="buttonStats">Datos Curiosos</button>
+     <button id="buttonStats">Datos Curiosos</button>
     </div>
     <div id="showStats">
     </div>
+     
 
 `;
 
-export default header;
+export default nav;
