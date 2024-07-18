@@ -4,15 +4,18 @@ let rootEl;
 
 export const setRootEl = (el) => {
   // assign rootEl
-  rootEl = el
+  rootEl = el;
+
+  return rootEl;
 }
 
 export const setRoutes = (routes) => {
   // optional Throw errors if routes isn't an object
-  
   // optional Throw errors if routes doesn't define an /error route
   // assign ROUTES
-  ROUTES = routes
+  ROUTES = routes;
+
+  return ROUTES;
 }
 
 const queryStringToObject = (queryString) => {
