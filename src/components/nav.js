@@ -1,6 +1,8 @@
-const nav = `
-
- 
+const navbar = () => {
+  const contentNav = document.createElement("nav");
+  contentNav.classList.add("controls");
+  contentNav.setAttribute("id", "nav");
+  contentNav.innerHTML = `
 <div class="select-box">
         <label for="filter">Filtrar por: </label>
         <select data-testid="select-filter" name="gender age" id="filter">
@@ -31,12 +33,12 @@ const nav = `
       <button data-testid="button-clear">Limpiar</button>
     
 
-     <button id="buttonStats">Datos Curiosos</button>
+    <button id="buttonStats">Datos Curiosos</button>
     </div>
     <div id="showStats">
     </div>
-     
-
 `;
+  return contentNav;
+};
 
-export default nav;
+export default navbar;

@@ -1,95 +1,154 @@
-import  header  from "../components/header.js"
-import nav from '../components/nav/nav.js'
-import  footer  from "../components/footer.js"
-import data  from "../data/dataset.js"
+import header from "../components/header.js";
+import navbar from "../components/nav.js";
+import footer from "../components/footer.js";
+import data from "../data/dataset.js";
+import { renderItems } from "../components/cards.js";
+import {
+  filterData,
+  sortData,
+  computeStats,
+  averageStats,
+} from "../lib/dataFunctions.js";
 
 function home() {
-  const contentHome = document.createElement('div');
+  const contentHome = document.createElement("div");
 
-  
-  const contentHeader = document.createElement('header');
-  contentHeader.innerHTML = header
-  contentHome.appendChild(contentHeader)
-  
-  const contentNav = document.createElement('nav');
-  contentNav.innerHTML = nav
-  contentNav.classList.add('controls')
-  contentNav.setAttribute('id', 'nav')
-  contentHome.appendChild(contentNav)
+  //HEADER----------------------------------------------------
+  contentHome.appendChild(header());
+  //NAV---------------------------------------------------------
+  contentHome.appendChild(navbar());
 
-  const ul = document.createElement('ul');
-  contentHome.appendChild(ul)
-  function crearElemento(data){
-    
-    const li = document.createElement('li');
-    li.setAttribute('itemtype', 'Spiderverse')
-    li.setAttribute('itemscope', '');
-    li.setAttribute('data-id', data.id)
-    li.classList.add('item-lista')
-    ul.appendChild(li);
+  // datafunctions.........................................
+  const filter = contentHome.querySelector("#filter");
+  const sort = contentHome.querySelector("#sort-order");
+  const buttonReset = contentHome.querySelector(
+    "button[data-testid='button-clear']"
+  );
+  const buttonStats = contentHome.querySelector("#buttonStats");
+  const showStats = contentHome.querySelector("#showStats");
+  const burger = contentHome.querySelector("#burger");
+  const nav = contentHome.querySelector("#nav");
+  const boxButtoms = contentHome.querySelector("#boxButtoms");
 
-    //IMAGEN--------------------------------------------------------------------
-    const personajeImagen = document.createElement('div');
-    personajeImagen.style.backgroundImage = `url(${data.imageUrl})`;
-    personajeImagen.classList.add('image')
-    personajeImagen.setAttribute('alt', data.name);
-    li.appendChild(personajeImagen);
-    
-    //TEXTO-----------------------------------------------------------------------------
-    const dl = document.createElement('dl');
-    li.appendChild(dl);
-    
-    //NAME------------------------------------------------------------------------------------
-    const dtNombre = document.createElement('dt');
-    dl.appendChild(dtNombre);
-    dtNombre.setAttribute('itemprop', 'name');
-    dtNombre.classList.add('name')
-    dtNombre.innerHTML = data.name;
-    
-    //DESCRIPCION - CORTA -------------------------------------------------------------------------
-    const dtDescripcion = document.createElement('dt');
-    dl.appendChild(dtDescripcion);
-    dtDescripcion.setAttribute('itemprop', 'shortDescription');
-    dtDescripcion.classList.add('descripcion')
-    dtDescripcion.innerHTML = data.shortDescription;
-    
-    //DIV para FACTS-----------------------------------------------------------------------------
-    const facts = document.createElement('div')
-    facts.classList.add('facts')
-    dl.appendChild(facts)
-    
-    //FACTS - GENERO---------------------------------------------------------------------------------
-    const dtGender = document.createElement('dt');
-    facts.appendChild(dtGender);
-    dtGender.setAttribute('itemprop', 'gender');
-    dtGender.innerHTML = '<span class="label">Genero: </span><span class="value">' + data.facts.gender + '</span>';
-    
-    //FACTS - ESPECIE-------------------------------------------------------------------------------------
-    const dtSpecies = document.createElement('dt');
-    dtSpecies.setAttribute('itemprop', 'species');
-    facts.appendChild(dtSpecies);
-    dtSpecies.innerHTML = '<span class="label">Especie: </span><span class="value">' + data.facts.species + '</span>';
-    
-    //FACTS - EDAD----------------------------------------------------------------------------------------------
-    const dtAge = document.createElement('dt');
-    facts.appendChild(dtAge);
-    dtAge.setAttribute('itemprop', 'age');
-    dtAge.innerHTML = '<span class="label">Edad: </span><span class="value">' + data.facts.age + '</span>';
-    
-    //FACTS - CIUDAD----------------------------------------------------------------------------------------------
-    const dtCity = document.createElement('dt');
-    facts.appendChild(dtCity);
-    dtCity.setAttribute('itemprop', 'city');
-    dtCity.innerHTML = '<span class="label"> Ciudad: </span><span class="value">' + data.facts.city + '</span>';
+  //---------FILTER------------------------------
+  let newFilterData;
+  function eventFilter(event) {
+    const filterValue = event.target.value;
+
+    if (filterValue === "M" || filterValue === "F") {
+      newFilterData = filterData(data, "gender", filterValue);
+    }
+    if (filterValue === "1" || filterValue === "2") {
+      newFilterData = filterData(data, "age", filterValue);
+    }
+    if (filterValue === "3") {
+      newFilterData = filterData(data, "age", "3").concat(
+        filterData(data, "age", "4")
+      );
+    }
+
+    sort.value = "";
+    renderCards.innerHTML = "";
+    renderCards.appendChild(renderItems(newFilterData));
   }
-  //CREA ELEMENTO POR CADA OBJETO DE LA DATA-----------------------------------------------------------------  
-  data.forEach(crearElemento);
 
-  const contentFooter = document.createElement('footer');
-  contentFooter.innerHTML = footer
-  contentHome.appendChild(contentFooter)
-  
+  //------------------SORT----------------------------------------------------------------------------------------------------
+  function eventSort(event) {
+    const sortValue = event.target.value;
+    let orderData;
+
+    if (newFilterData) {
+      orderData = sortData(newFilterData, "name", sortValue);
+    } else {
+      orderData = sortData(data, "name", sortValue);
+    }
+
+    renderCards.innerHTML = "";
+    renderCards.appendChild(renderItems(orderData));
+  }
+
+  // BOTON RESET---------------------------------------------------------------------------------------
+  function eventReset() {
+    renderCards.innerHTML = "";
+    filter.value = "";
+    sort.value = "";
+    newFilterData = "";
+
+    renderCards.appendChild(renderItems(data));
+  }
+
+  //STATS
+  function eventStats() {
+    //ESTADISTICAS DE GENERO----------------------------------------------------------------------------
+    const dataFemenino = filterData(data, "gender", "F");
+
+    const divGender = document.createElement("div");
+    divGender.classList.add("stats");
+    divGender.innerHTML =
+      "<p>El <span>" +
+      computeStats(dataFemenino, data) +
+      "%</span> son del genero Femenino</p>";
+    showStats.appendChild(divGender);
+
+    //ESTADISTICAS DE CITY----------------------------------------------------------------------------
+    const ny = filterData(data, "city", "N");
+
+    const divCity = document.createElement("div");
+    divCity.classList.add("stats");
+    divCity.innerHTML =
+      "<p>El <span>" +
+      computeStats(ny, data) +
+      "%" +
+      "</span> viven en la ciudad de Nueva York</p>";
+    showStats.appendChild(divCity);
+
+    //ESTADISTICAS DE EDAD----------------------------------------------------------------------------
+    const age = averageStats(data);
+
+    const divAge = document.createElement("div");
+    divAge.classList.add("stats");
+    divAge.innerHTML =
+      "<p>La edad promedio de los Spider Man es <span>" +
+      age +
+      "</span> años </p>";
+    showStats.appendChild(divAge);
+
+    //MUESTRA LAS ESTADISTICAS ----------------------------------------------------------------------------
+    if (showStats.style.display === "flex") {
+      showStats.style.display = "none";
+      showStats.innerHTML = "";
+    } else {
+      showStats.style.display = "flex";
+    }
+  }
+
+  //FUNCIONALIDAD DE BOTON HAMBURGUESA----------------------------------------------------------------------
+  function eventBurger() {
+    if (nav.style.display === "flex") {
+      nav.style.display = "none";
+    } else {
+      nav.style.display = "flex";
+    }
+
+    boxButtoms.parentNode.insertBefore(nav, boxButtoms.nextSibling);
+  }
+
+  burger.addEventListener("click", eventBurger);
+
+  filter.addEventListener("change", eventFilter);
+  sort.addEventListener("change", eventSort);
+  buttonReset.addEventListener("click", eventReset);
+  buttonStats.addEventListener("click", eventStats);
+
+  //CARDS-------------------------------------------------------------
+  const renderCards = document.createElement("div");
+  renderCards.appendChild(renderItems(data));
+  contentHome.appendChild(renderCards);
+
+  //FOOTER-----------------------------------------------------------------
+  contentHome.appendChild(footer());
+
   return contentHome;
 }
-  
+
 export default home;

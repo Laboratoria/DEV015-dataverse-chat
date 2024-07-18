@@ -1,4 +1,6 @@
-const header = `
+const header = () => {
+  const contentHeader = document.createElement("header");
+  contentHeader.innerHTML = `
 
     <!-- IMAGEN TITULO Y EL H1 NO SE VE -->
     <img
@@ -22,8 +24,7 @@ const header = `
         </button>
       </div>
     </div>
-    
-
 `;
-
+  return contentHeader;
+};
 export default header;
