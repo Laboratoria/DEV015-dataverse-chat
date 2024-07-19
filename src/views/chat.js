@@ -15,5 +15,5 @@ function chat() {
   return contentHome;
 
 }
-  
+
 export default chat;

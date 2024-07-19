@@ -28,14 +28,17 @@ const renderView = (pathname, props={}) => { //props son los search params
 // const renderView = (pathname) => { //props son los search params
   // clear the root element
   rootEl.innerHTML = ""
-  // find the correct view in ROUTES for the pathname
-  const viewPath = ROUTES[location.pathname]
-  const component = viewPath()
-  rootEl.append(component)
-  // in case not found render the error view
-  // render the correct view passing the value of props
-  // add the view element to the DOM root element
-} 
+  if(ROUTES[location.pathname]){
+    const viewPath = ROUTES[location.pathname]
+    const component = viewPath()
+    rootEl.append(component)
+  } else {
+    rootEl.appendChild(ROUTES["/error"]())
+
+  }
+}
+
+ 
 
 export const navigateTo = (pathname, props={}) => {
   // update window history with pushState

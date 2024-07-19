@@ -3,7 +3,9 @@ import { onURLChange, setRootEl, setRoutes } from './router.js'
 import home  from './views/home.js';
 import chat  from './views/chat.js';
 import panel  from './views/panel.js';
-import error  from './views/panel.js';
+import error  from './views/error.js';
+import apiKey  from './views/apiKey.js';
+
 
 
 //Ejemplo de definición de rutas:
@@ -12,7 +14,8 @@ const routes = {
   "/": home,
   "/panel": panel,
   "/chat": chat,
-  "/error": error
+  "/error": error,
+  "/api-key": apiKey
 }
 
 setRoutes(routes);
