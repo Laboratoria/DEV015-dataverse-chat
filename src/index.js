@@ -1,11 +1,11 @@
-import { Home } from './views/Home.js';
+import { home } from 'src/views/Home.js'; 
 import { chatGrupal } from './views/chatGrupal.js';
 // ... import other views
 import { setRootEl, setRoutes, onURLChange } from './router.js';
 
 // Define your routes and their associated views
 const routes = {
-  '/': Home,
+  '/': home,
   '/chatGrupal': chatGrupal
 };
 setRoutes(routes); // Assign the routes
