@@ -1,5 +1,7 @@
+import { navigateTo } from "../router.js";
+
 export function Home() {
-  const homeDiv = document.createElement('div');
+  const viewEl = document.createElement('div');
 
   const title = document.createElement('h1');
   title.textContent = 'Hola Mundo';
@@ -7,11 +9,11 @@ export function Home() {
   const chatButton = document.createElement('button');
   chatButton.textContent = 'Ir a Chat Grupal';
   chatButton.addEventListener('click', () => {
-    window.location.hash = '#/chatGrupal';
+    navigateTo("/chatGrupal")//como esta en laguia para cada tarjeta
   });
 
-  homeDiv.appendChild(title);
-  homeDiv.appendChild(chatButton);
+  viewEl.appendChild(title);
+  viewEl.appendChild(chatButton);
 
-  return homeDiv;
+  return viewEl;
 }
