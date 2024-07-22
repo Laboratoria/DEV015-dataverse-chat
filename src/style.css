@@ -1,0 +1,264 @@
+@font-face {
+    font-family: 'ROG Font';
+    src: url(../Typografia/ROGFonts.otf);
+}
+
+body {
+    background-image: url("../img/FONDO\ M.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+
+h1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    width: 70%;
+    color: #DFDEE0;
+    border-color: #F428F3;
+    border-style: dashed;
+    border-radius: 0.5rem;
+    font-size: 3rem;
+    font-family: 'ROG Font';
+    text-shadow:
+        -1px -1px 0 #F428F3,
+        1px -1px 0 #F428F3,
+        -1px 1px 0 #F428F3,
+        1px 1px 0 #F428F3;
+}
+
+.header-container {
+    display: flex;
+    align-items: center;
+}
+
+.header-left {
+    margin-top: 1%;
+    margin-right: 5.9%;
+    margin-left: 1.4%;
+}
+
+.menu-hamburguesa {
+    display: none;
+}
+
+.header-logo {
+    width: 11rem;
+}
+
+h3 {
+    color: #DFDEE0;
+    padding-left: 1.25rem;
+}
+
+ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.25rem;
+    justify-content: center;
+    padding: 2rem;
+}
+
+li {
+    justify-content: center;
+    border: 0.06rem;
+    border-style: dashed;
+    border-color: #F428F3;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    width: 18rem;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+li img {
+    width: 100%;
+    height: auto;
+    border-radius: 0.5rem;
+}
+
+li h3 {
+    text-align: center;
+    color: #DFDEE0;
+    font-size: 1.18rem;
+}
+
+li p {
+    color: #D1D1D3;
+    font-size: 0.87rem;
+    text-align: justify;
+}
+
+.bold-text {
+    font-size: 1.1em;
+}
+
+.contenedor {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+
+.filtros {
+    height: 300px;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.4rem;
+    font-size: 0.9rem;
+    padding: 2rem;
+    margin-top: 3rem;
+    margin-left: 1.25rem;
+    border: 0.12rem solid;
+    border-radius: 0.3rem;
+    position: relative;
+    white-space: nowrap;
+}
+
+label {
+    padding: 0.06rem;
+    color: #D1D1D3;
+}
+
+.limpiar-filtros {
+    width: 55%;
+    height: 1.5rem;
+    position: absolute;
+    /* posiciona 'absolute' el botón */
+    bottom: 0.6rem;
+    /* pone el botón a 10px del bottom */
+    left: 50%;
+    /* lo centra horizontalmente */
+    transform: translate(-50%);
+    background-color: black;
+    color: #DFDEE0;
+    border: solid #DFDEE0 0.06rem;
+    border-radius: 0.3rem;
+    cursor: pointer;
+    font-size: 0.8rem;
+}
+
+select {
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #D1D1D3;
+    border: solid #F428F3 0.06rem;
+    border-radius: 0.3rem;
+    height: 1.25rem;
+}
+
+#mejor-categoria,
+#ranking-por-año {
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #DFDEE0;
+    border-radius: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1em;
+    margin-top: 2rem;
+    margin-left: 1.25rem;
+    white-space: nowrap;
+}
+
+h2 {
+    font-size: 2.8rem;
+    color: #DFDEE0;
+    text-shadow:
+        -1px -1px 0 #F428F3,
+        1px -1px 0 #F428F3,
+        -1px 1px 0 #F428F3,
+        1px 1px 0 #F428F3;
+    margin: 0;
+    padding: 0.5rem;
+}
+
+#mejor-categoria p,
+#ranking-por-año p {
+    margin: 0;
+    padding: 0;
+}
+
+#mejor-categoria h2 {
+    font-size: 2.1rem;
+}
+
+#footer {
+    background-color: rgba(255, 255, 255, 0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+
+}
+
+#footer p {
+    font-size: 1rem;
+    color: #D1D1D3;
+}
+
+h4 {
+    font-size: 1.5rem;
+    margin: 0.1rem;
+    color: #D1D1D3;
+}
+
+/*.titulo-tarjetas{
+    display: grid;
+    justify-content: center;
+}*/
+
+
+.menu-hamburguesa {
+    cursor: pointer;
+}
+
+@media (max-width:1000px) {
+    .barra-lateral {
+        display: none;
+    }
+
+    .menu-hamburguesa {
+        display: flex;
+        border-color: #F428F3;
+        border-style: dashed;
+        border-width: 0.15rem;
+        border-radius: 0.3rem;
+        padding: 0.2rem;
+        padding-left: 1rem;
+        padding-right: 1rem;
+        margin: 0.8rem;
+    }
+
+    .header-left {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-right: 3%;
+    }
+
+    .header-logo {
+        width: 5rem;
+    }
+
+    .barra-lateral-desplegada {
+        display: block;
+    }
+    #ranking-por-año {
+        display: none;
+    }    
+    #mejor-categoria {
+        display: none;
+    }
+}
