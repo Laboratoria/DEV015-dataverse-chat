@@ -1,29 +1,86 @@
+:root {
+    /* colores */
+    --color-blue: #112858;
+    --color-red: #870e0c;
+    --color-yellow: #e6c647;
+    --color-withe: #E7E7EC;
+    --color-black: #171717;
 
-* {
-    color: #E7E7EC;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+    /* fuentes */
+    --font-family-base: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
-
-
+  
+* {
+    color: var(--color-withe);
+    font-family: var(--font-family-base);
+}
 
 header {
     width: 100%;
-    background-color: rgba(217, 217, 217, 0.6);
+    background-color: rgba(119, 109, 109, 0.3);
     margin: 0 auto;
-    padding-bottom: 0.2rem;
-
 }
 /* IMAGEN PRINCIPAL DEL TITULO --------------------------------------------------------------------------------*/
 img {
-    height: 7rem;
+    height: 3.5rem;
     width: auto;
     margin: 4%;
 }
 
-h1 {
-    display: none;
-    font-size: 3rem;
+.content-header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-top: 1rem;
 }
+/* DIV DEL BOTON HAMBURGUESA ------------------------------*/
+.burger-container {
+    width: auto;
+}
+
+/* BOTON HAMBURGUESA ------------------------------*/
+#burger {
+    margin: 1rem;
+    width: 3rem;
+    height: 3rem;
+    background-color: var(--color-withe);
+    border: none;
+    border-radius: 5px;
+    padding: 0;
+}
+
+/* DIV DE LAS BARRAS DENTRO DE LA HAMBURGUESA ------------------------------*/
+.bar {
+    border-radius: 5px;
+    margin: 5px auto;
+    background-color: var(--color-black);
+    width: 60%;
+    height: 3px;
+}
+
+/* NAV DEL header------------------- */
+.container-button-header{
+    /* display: flex; */
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(178, 175, 175, 0.5);
+}
+
+.buttonHeader{
+    background-color: transparent;
+    border: none;
+    padding: 0.5rem;
+    letter-spacing: 2px;
+    width: 10rem;
+}
+
+.buttonHeader:hover{
+    border-bottom: 5px solid var(--color-withe);
+    font-weight: bold;
+    background-color: transparent;
+}
+
 
 h2 {
     font-size: 1.5rem;
@@ -54,15 +111,14 @@ body {
 
 /* BARRA NAV  --------------------------------------------------------------------------------*/
 .controls {
-    display: none;
-    /* display: flex; */
+    display: flex;
     flex-direction: column;
     align-items: center;
     gap: 1rem;
     width: 100%;
     background-color: rgba(217, 217, 217, 0.6);
     padding-top: 1rem;
-    padding-bottom: 1rem;
+    /* padding-bottom: 1rem; */
 
 }
 
@@ -123,35 +179,11 @@ button {
     padding: 0 1rem;
 }
 
-/* DIV DEL BOTON HAMBURGUESA ------------------------------*/
-.burger-container {
-    width: auto;
-}
-
-/* BOTON HAMBURGUESA ------------------------------*/
-#burger {
-    margin: 1rem;
-    width: 3rem;
-    height: 3rem;
-    background-color: #112858;
-    border: none;
-    border-radius: 5px;
-    padding: 0;
-}
-
-/* DIV DE LAS BARRAS DENTRO DE LA HAMBURGUESA ------------------------------*/
-.bar {
-    border-radius: 5px;
-    margin: 5px auto;
-    background-color: #E7E7EC;
-    width: 60%;
-    height: 3px;
-}
 
 /* BOTON DE LAS ESTADISTICAS ------------------------------*/
 #buttonStats {
     font-size: 1.2rem;
-    margin: 1rem;
+    /* margin: 1rem; */
     background-color: #112858;
     padding: 0 1rem;
     display: inline-block;
@@ -276,9 +308,9 @@ ul {
     -webkit-transition: all 0.3s;
 }
 
-button:hover {
+/* button:hover {
     background-color: #112858;
-}
+} */
 
 #buttonStats:hover {
     background-color: #870e0c;
@@ -338,16 +370,40 @@ button {
 @media (min-width: 1024px) {
 
     /* IMAGEN PRINCIPAL DEL TITULO --------------------------------------------------------------------------------*/
-    img {
-        height: 10%;
-        width: 40%;
-        margin: 1%;
+    .header-nav{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        width: 100%;
+        background:  rgba(119, 109, 109, 0.3);
+    }
+
+    .computeStats{
+        display: none;
+    }
+    img{
+        height: 5rem;
+        padding-left: 2rem;
+    }
+
+    .container-button-header{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        width: 80%;
+        justify-content: space-around;
+        background: none;
+    }
+
+    .buttonHeader{
+        width: auto;
     }
     /* BARRA NAV  --------------------------------------------------------------------------------*/
     .controls {
         display: flex;
         justify-content: center;
         gap: 2rem;
+        padding-bottom: 1rem;
 
     }
 
