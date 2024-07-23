@@ -2,7 +2,7 @@ import { navigateTo } from "../router.js";
 
 export function home() {
   const viewEl = document.createElement('div');
-
+  console.log("hola")
   const title = document.createElement('h1');
   title.textContent = 'Hola Mundo';
 
