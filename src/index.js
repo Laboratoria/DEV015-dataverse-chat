@@ -23,9 +23,7 @@ window.addEventListener('DOMContentLoaded',  () => {
 
 })
 
-const buttonHome = document.querySelector('#buttonHome');
 
-buttonHome.addEventListener('click', navigateTo['/'])
 
 /*
 TODO:

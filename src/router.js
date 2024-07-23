@@ -28,7 +28,7 @@ const queryStringToObject = (queryString) => {
   // return the object
 }
 
-const renderView = (pathname, props={}) => { //props son los search params
+export const renderView = (pathname, props={}) => { //props son los search params
 // const renderView = (pathname) => { //props son los search params
   // clear the root element
   rootEl.innerHTML = ""
