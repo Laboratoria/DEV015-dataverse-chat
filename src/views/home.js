@@ -1,6 +1,6 @@
 import { navigateTo } from "../router.js";
 
-export function home() {
+export function Principal() {
   const viewEl = document.createElement('div');
 
   const title = document.createElement('h1');
