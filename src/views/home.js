@@ -135,5 +135,3 @@ function home() {
 
   return contentHome;
 }
-
-export default home;
