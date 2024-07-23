@@ -4,15 +4,13 @@ function panel() {
 
   const contentHome = document.createElement('div');
   
-  const contentHeader = document.createElement('header');
-  contentHeader.innerHTML = header
-  contentHome.appendChild(contentHeader)
+  contentHome.appendChild(header());
 
-  const a = document.createElement('h2')
-  a.innerHTML="ESTAS EN EL PANEL"
-  contentHome.appendChild(a)
+  const a = document.createElement('h2');
+  a.innerHTML="ESTAS EN EL PANEL";
+  contentHome.appendChild(a);
    
-  return contentHome
+  return contentHome;
 
 }
 

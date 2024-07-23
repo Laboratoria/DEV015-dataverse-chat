@@ -13,8 +13,12 @@ export const setRoutes = (routes) => {
   // optional Throw errors if routes isn't an object
   // optional Throw errors if routes doesn't define an /error route
   // assign ROUTES
-  ROUTES = routes;
-
+  
+  if(typeof routes === "object"){
+    if(routes['/error']){
+      ROUTES = routes;
+    }
+  }
   return ROUTES;
 }
 
@@ -34,15 +38,15 @@ const renderView = (pathname, props={}) => { //props son los search params
     rootEl.append(component)
   } else {
     rootEl.appendChild(ROUTES["/error"]())
-
   }
 }
 
- 
-
 export const navigateTo = (pathname, props={}) => {
   // update window history with pushState
+  const URLvisited = window.location.hostname + pathname;
+  history.pushState({},"",URLvisited);
   // render the view with the pathname and props
+  renderView(pathname, props);
 }
 
 export const onURLChange = (location) => {
