@@ -1,13 +1,18 @@
+import { navigateTo } from "../router.js";
+
 export function chatGrupal() {
-  const chatDiv = document.createElement('div');
+  const viewEl = document.createElement('div');
   const title = document.createElement('h1');
   title.textContent = 'Chat Grupal';
-  const homeButton = document.createElement('button');
-  homeButton.textContent = 'Ir a Home';
-  homeButton.addEventListener('click', () => {
-    window.location.hash = '#/';
+  const Button = document.createElement('button');
+  
+  Button.textContent = 'Ir a Home';
+  Button.addEventListener('click', () => {
+    navigateTo("/principal")//como esta en laguia para cada tarjeta
+
   });
-  chatDiv.appendChild(title);
-  chatDiv.appendChild(homeButton);
-  return chatDiv;
+  viewEl.appendChild(title);
+  viewEl.appendChild(Button);
+  return viewEl;
 }
+

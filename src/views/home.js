@@ -6,14 +6,14 @@ export function Principal() {
   const title = document.createElement('h1');
   title.textContent = 'Hola Mundo';
 
-  const chatButton = document.createElement('button');
-  chatButton.textContent = 'Ir a Chat Grupal';
-  chatButton.addEventListener('click', () => {
+  const Button = document.createElement('button');
+  Button.textContent = 'Ir a Chat Grupal';
+  Button.addEventListener('click', () => {
     navigateTo("/chatGrupal")//como esta en laguia para cada tarjeta
   });
 
   viewEl.appendChild(title);
-  viewEl.appendChild(chatButton);
+  viewEl.appendChild(Button);
 
   return viewEl;
 }

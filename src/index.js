@@ -6,6 +6,7 @@ import { setRootEl, setRoutes, onURLChange } from './router.js';
 // Define your routes and their associated views
 const routes = {
   '/': Principal,
+  '/Principal': Principal,
   '/chatGrupal': chatGrupal
 };
 setRoutes(routes); // Assign the routes
