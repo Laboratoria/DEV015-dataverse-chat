@@ -6,14 +6,15 @@ import { setRootEl, setRoutes, onURLChange } from './router.js';
 // Define your routes and their associated views
 const routes = {
   '/': Principal,
-  '/chatGrupal': chatGrupal
+  '/chatGrupal': chatGrupal,
+  
 };
 setRoutes(routes); // Assign the routes
 
 
 // Set the root element where views will be rendered
 
-window.addEventListener('DOMContentLoaded', () => { //POR QUE EN LA GUIA ESTA WINDOW 
+window.addEventListener('DOMContentLoaded', () => { 
   const rootElement = document.getElementById("root");
   //const header ???
   //constfooter ??
