@@ -133,6 +133,7 @@ function home() {
   //FOOTER-----------------------------------------------------------------
   contentHome.appendChild(footer());
 
+
   return contentHome;
 }
-export default home()
+export default home

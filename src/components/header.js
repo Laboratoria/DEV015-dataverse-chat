@@ -1,3 +1,4 @@
+import { navigateTo } from "../router.js";
 
 const header = () => {
   const contentHeader = document.createElement("header");
@@ -22,7 +23,7 @@ const header = () => {
   
     <div class='container-button-header' id='container-buttons'>
       <button class="buttonHeader" id="buttonHome"> HOME</button>
-      <button class="buttonHeader" id="buttonChat"> SPIDER CHAT</button>
+      <button class="buttonHeader" id="buttonChatGrupal"> SPIDER CHAT</button>
       <button class="buttonHeader" id="buttonApiKey"> API KEY</button>
     </div>
   
@@ -35,7 +36,9 @@ const header = () => {
   const headerNav = contentHeader.querySelector("#container-buttons");
   const boxButtoms = contentHeader.querySelector("#boxButtoms");
   const burger = contentHeader.querySelector("#burger");
-
+  const buttonHome = contentHeader.querySelector("#buttonHome")
+  const buttonChatGrupal = contentHeader.querySelector("#buttonChatGrupal")
+  const buttonApiKey = contentHeader.querySelector("#buttonApiKey")
 
   function eventBurger() {
     if (headerNav.style.display === "flex") {
@@ -50,6 +53,15 @@ const header = () => {
 
   burger.addEventListener("click", eventBurger);
 
+  buttonHome.addEventListener("click", () => {
+    navigateTo("/")
+  })
+  buttonChatGrupal.addEventListener("click", () => {
+    navigateTo("/panel")
+  })
+  buttonApiKey.addEventListener("click", () => {
+    navigateTo("/api-key") 
+  }) 
   return contentHeader;
 };
 export default header;
