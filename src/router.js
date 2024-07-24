@@ -26,8 +26,6 @@ const renderView = (pathName, props = {}) => {//FUNCIONA EN ROUTES LALMA A LA FU
   // {template = ROUTES ["/error"]
   //}
     
-
-
   const viewFunc = ROUTES[pathName];   // find the correct view in ROUTES for the pathname
 
   if (!viewFunc) {
@@ -40,7 +38,7 @@ const renderView = (pathName, props = {}) => {//FUNCIONA EN ROUTES LALMA A LA FU
 
 };
 
-export const navigateTo = (pathname, props = {}) => {//NAVEGA A UN ARYTA DENTRO DEL SPA
+export const navigateTo = (pathname, props = {}) => {//NAVEGA A UN RUTA DENTRO DEL SPA
   window.history.pushState({}, pathname, window.location.origin + pathname);  //ACTUALIZA EL URL
 
   renderView(pathname, props);  // render the view with the pathname and props
