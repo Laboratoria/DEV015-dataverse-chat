@@ -47,8 +47,11 @@ export const navigateTo = (pathname, props = {}) => {
   // Esta función se utiliza para navegar mediante programación a una nueva ruta dentro del SPA (por ejemplo, hacer clic en botones o enlaces dentro de la aplicación). Actualiza la URL usando window.history.pushState y luego llama a renderView él pathname y los prop usdados para mostrar la vista correspondiente.
   // update window history with WINDOW.HISTORY.pushState
   
-  // capturar la vista actual en el historial
-  window.history.pushState({}, '', pathname);
+  const url = `${window.location.origin}${pathname}${props ? `?${new URLSearchParams(props)}` : "" }` 
+  window.history.pushState({}, '', url );
+  if (window.history && window.history.pushState) {
+    renderView(pathname, props)
+  }
   
   // render the view passing props
   renderView(pathname, props);
