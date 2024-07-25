@@ -1,18 +1,21 @@
-import { setRootEl, setRoutes, renderView } from "../src/router";
+import { setRootEl, setRoutes, renderView, navigateTo } from "../src/router";
 
 describe('router', () =>{
 
+  //SET ROOTEL------------------------------------------
   describe('setRootEl', () =>{
 
-    it('asigna y devuelve el elemento root del html', ()=>{
+    it('Assign and return the HTML root element', ()=>{
       const elementDom = document.createElement('div')
       const element = setRootEl(elementDom);
       expect(element).toEqual(elementDom);
     } ) 
   })
 
+  // RENDER VIEW-------------------------------
+
   describe('renderView', () =>{
-    it('renderiza la vista de error cuando la URL no existe', ()=>{
+    it('renders error view when URL does not exist', ()=>{
         
       const routes = {
         "/chat": () => document.createElement('div'),
@@ -22,10 +25,44 @@ describe('router', () =>{
       const elementDom = document.createElement('div');
       setRootEl(elementDom);
       renderView('/fjdehn');
-
+      
       expect(elementDom.querySelector('p')).toBeTruthy()
-
-
     })
   })
 } )
+
+// NAVIGATE TO------------------------------------
+
+describe('navigateTo', () => {
+  it('render the correct view based on location and pathname', ()=>{
+    const routes = {
+      "/api-kei": () => document.createElement('a'),
+      "/panel": () => document.createElement('p'),      
+    }
+    setRoutes(routes);
+    const elementDom = document.createElement('div');
+    setRootEl(elementDom);
+    navigateTo('/panel');
+  
+    expect(elementDom.querySelector('p')).toBeTruthy()
+  })
+})
+
+describe('navigateTo', () => {
+  it('prueba con props', ()=>{
+    const routes = {
+      "/api-kei": () => document.createElement('a'),
+      "/chat": () => document.createElement('p'),      
+    }
+    setRoutes(routes);
+    const elementDom = document.createElement('div');
+    setRootEl(elementDom);
+    const props = 'peter_parker_002';
+    navigateTo('/chat', props);
+  
+    expect(elementDom.querySelector('p')).toBeTruthy()
+  })
+})
+
+//ON URL CHANGE--------------------------------------------
+

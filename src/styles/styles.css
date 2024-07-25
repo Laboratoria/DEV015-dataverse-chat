@@ -1,15 +1,5 @@
-:root {
-    /* colores */
-    --color-blue: #112858;
-    --color-red: #870e0c;
-    --color-yellow: #e6c647;
-    --color-withe: #E7E7EC;
-    --color-black: #171717;
+@import url('globales.css');
 
-    /* fuentes */
-    --font-family-base: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-}
-  
 * {
     color: var(--color-withe);
     font-family: var(--font-family-base);
@@ -518,4 +508,4 @@ button {
     .footer{
         font-size: 1rem;
     }
-}
+} 
