@@ -9,7 +9,7 @@ export function chatGrupal(props) {//
   const Button = document.createElement('button');
   Button.textContent = 'Ir a Home';
   Button.addEventListener('click', () => {
-    navigateTo("/principal")//NO LOGRO QUE REGRESAR A LA PRINCIPAL
+    navigateTo("/principal") //Ver como REGRESAR A PRINCIPAL
 
   });
   /*const link = document.createElement('a');

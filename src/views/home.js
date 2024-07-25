@@ -9,7 +9,7 @@ export function Principal() {
   const Button = document.createElement('button');
   Button.textContent = 'Ir a Chat Grupal';
   Button.addEventListener('click', () => {
-    navigateTo("/chatGrupal")//como esta en laguia para cada tarjeta
+    navigateTo("/chatGrupal")//como esta en la guía para cada tarjeta
   });
 
   viewEl.appendChild(title);
