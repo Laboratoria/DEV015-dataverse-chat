@@ -11,8 +11,7 @@ export const renderItems = (data) => {
     li.setAttribute("data-id", data.id);
     li.addEventListener("click", () =>{
       const cardsId = data.id
-      console.log(cardsId)
-      navigateTo("/chat")
+      navigateTo("/chat", cardsId)
       return cardsId
     })
     li.classList.add("item-lista");
