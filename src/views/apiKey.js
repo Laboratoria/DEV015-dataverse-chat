@@ -3,11 +3,7 @@ import header from "../components/header.js";
 function apiKey() {
 
   const contentHome = document.createElement('div');
-    
-  const contentHeader = document.createElement('header');
-  contentHeader.innerHTML = header
-  contentHome.appendChild(contentHeader)  
-
+  contentHome.appendChild(header());
 
   const description = `
 
@@ -18,9 +14,8 @@ function apiKey() {
   
   `
   const contentdescription = document.createElement('div');
-  contentdescription.innerHTML = description
-  contentHome.appendChild(contentdescription)
-  
+  contentdescription.innerHTML = description;
+  contentHome.appendChild(contentdescription);
   
   return contentHome
   

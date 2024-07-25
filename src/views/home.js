@@ -26,10 +26,7 @@ function home() {
   );
   const buttonStats = contentHome.querySelector("#buttonStats");
   const showStats = contentHome.querySelector("#showStats");
-  const burger = contentHome.querySelector("#burger");
-  const nav = contentHome.querySelector("#nav");
-  const boxButtoms = contentHome.querySelector("#boxButtoms");
-
+  
   //---------FILTER------------------------------
   let newFilterData;
   function eventFilter(event) {
@@ -122,18 +119,6 @@ function home() {
     }
   }
 
-  //FUNCIONALIDAD DE BOTON HAMBURGUESA----------------------------------------------------------------------
-  function eventBurger() {
-    if (nav.style.display === "flex") {
-      nav.style.display = "none";
-    } else {
-      nav.style.display = "flex";
-    }
-
-    boxButtoms.parentNode.insertBefore(nav, boxButtoms.nextSibling);
-  }
-
-  burger.addEventListener("click", eventBurger);
 
   filter.addEventListener("change", eventFilter);
   sort.addEventListener("change", eventSort);
@@ -148,7 +133,7 @@ function home() {
   //FOOTER-----------------------------------------------------------------
   contentHome.appendChild(footer());
 
+
   return contentHome;
 }
-
-export default home;
+export default home

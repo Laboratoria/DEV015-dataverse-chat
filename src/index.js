@@ -6,8 +6,6 @@ import panel  from './views/panel.js';
 import error  from './views/error.js';
 import apiKey  from './views/apiKey.js';
 
-
-
 //Ejemplo de definición de rutas:
 
 const routes = {
@@ -22,9 +20,11 @@ setRoutes(routes);
 window.addEventListener('DOMContentLoaded',  () => {
   setRootEl(document.querySelector('#root'));
   onURLChange(window.location)
-
 })
 
+window.addEventListener('popstate', () => {
+  onURLChange(window.location);
+});
 
 
 /*

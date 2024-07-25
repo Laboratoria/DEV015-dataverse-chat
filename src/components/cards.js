@@ -1,3 +1,5 @@
+import { navigateTo } from "../router.js";
+
 export const renderItems = (data) => {
 
   const ul = document.createElement("ul");
@@ -7,6 +9,11 @@ export const renderItems = (data) => {
     li.setAttribute("itemtype", "Spiderverse");
     li.setAttribute("itemscope", "");
     li.setAttribute("data-id", data.id);
+    li.addEventListener("click", () =>{
+      const cardsId = data.id
+      navigateTo("/chat", cardsId)
+      return cardsId
+    })
     li.classList.add("item-lista");
     ul.appendChild(li);
 
@@ -78,6 +85,8 @@ export const renderItems = (data) => {
   }
   //CREA ELEMENTO POR CADA OBJETO DE LA DATA-----------------------------------------------------------------
   data.forEach(crearElemento);
+
+
 
   return ul;
 };

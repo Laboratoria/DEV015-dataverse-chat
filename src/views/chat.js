@@ -1,14 +1,16 @@
 import  header  from "../components/header.js"
+import data from "../data/dataset.js"
 
-function chat() {
+function chat(props) {
   const contentHome = document.createElement('div');
   
-  const contentHeader = document.createElement('header');
-  contentHeader.innerHTML = header
-  contentHome.appendChild(contentHeader)
+  const character = data.props
+  console.log(props)
+
+  contentHome.appendChild(header());
   
   const a = document.createElement('h2')
-  a.innerHTML="ESTAS EN EL CHAT"
+  a.innerHTML= 'CHAT'
   contentHome.appendChild(a)
    
   
