@@ -11,6 +11,7 @@ import {
 } from "../lib/dataFunctions.js";
 
 function home() {
+  document.title=`Dataverse Chat`;
   const contentHome = document.createElement("div");
 
   //HEADER----------------------------------------------------

@@ -1,6 +1,7 @@
 import header from "../components/header.js";
 
 function error() {
+  document.title=`Dataverse Chat - Error`;
 
   const contentHome = document.createElement('div');
     

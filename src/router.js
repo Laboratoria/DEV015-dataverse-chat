@@ -13,7 +13,6 @@ export const setRoutes = (routes) => {
   // optional Throw errors if routes isn't an object
   // optional Throw errors if routes doesn't define an /error route
   // assign ROUTES
-  
   if(typeof routes === "object"){
     if(routes['/error']){
       ROUTES = routes;
@@ -36,7 +35,8 @@ export const renderView = (pathname, props={}) => { //props son los search param
 
   if(!viewPath){
     navigateTo("/error");
-    throw new Error("Invalid viewPath");
+    // throw new Error("Invalid viewPath");
+    return;
   }
   const component = viewPath(props) 
   rootEl.append(component);

@@ -1,7 +1,7 @@
 import  header  from "../components/header.js"
 
 function panel() {
-
+  document.title=`Dataverse Chat - Panel`;
   const contentHome = document.createElement('div');
   
   contentHome.appendChild(header());
