@@ -1,35 +1,61 @@
+
 // import { filterData, ordenarABC} from '../dataFunctions.js';
 import { renderItems } from '../components/componentsCards.js';
 import { createSelectElements } from '../components/componentsSelect.js';
+import { createHeader } from '../components/componentsHeader.js';
+
 
 import data from '../data/dataset.js';
+/*
+export const Home = () => {
+  const container = document.createElement('div');
+  container.id = 'home';
+
+  const header = createHeader();
+  console.log('Header element:', header); // Añadido para verificar el header
+  container.appendChild(header);
+
+  const datadetarjetas = renderItems(data);
+  console.log('Data de tarjetas:', datadetarjetas); // Añadido para verificar las tarjetas
+  container.appendChild(datadetarjetas);
+
+  console.log('Home component:', container); // Añadido para verificar el contenedor
+  return container;
+};*/
+
 
 
 
 export const Home = () => {
   const container = document.createElement('div');
-  container.className = 'container-home';
-  // const tituloPrincipal = createHeader();
 
+  container.className = 'container-home';
   const datadetarjetas = renderItems(data);
   const selectElements = createSelectElements();
 
-  // container.appendChild(tituloPrincipal);
   container.appendChild(selectElements);
+
+  const tituloPrincipal = createHeader();
+  container.appendChild(tituloPrincipal);
+
   container.appendChild(datadetarjetas);
   return container;
 }
 
 
-// const tarjetadedata = document.querySelector('#root');
-// const datadetarjetas = renderItems(data);
+
+/*
+const tarjetadedata = document.querySelector('#root');
+const datadetarjetas = renderItems(data);
 
 // tarjetadedata.appendChild(datadetarjetas);
 
-// const selectCategoria = document.querySelector('#filtro-categoria');
-// const selectAño = document.querySelector('#filtro-año');
-// const selectRanking = document.querySelector('#filtro-ranking');
-// const selectOrdenar = document.querySelector('#ordenar');
+
+const selectCategoria = document.querySelector('#filtro-categoria');
+const selectAño = document.querySelector('#filtro-año');
+const selectRanking = document.querySelector('#filtro-ranking');
+const selectOrdenar = document.querySelector('#ordenar');
+
 
 // let appliedFilters = {
 //   category: 'seleccionar',
@@ -168,7 +194,10 @@ export const Home = () => {
 //   const menuHamburguesa = document.getElementById('menu-hamburguesa');
 //   const barraLateral = document.getElementById('barra-lateral');
 
-//   menuHamburguesa.addEventListener('click', function () {
-//     barraLateral.classList.toggle('barra-lateral-desplegada');
-//   });
-// })
+
+  menuHamburguesa.addEventListener('click', function () {
+    barraLateral.classList.toggle('barra-lateral-desplegada');
+  });
+})
+*/
+

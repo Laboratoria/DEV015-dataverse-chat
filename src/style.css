@@ -47,13 +47,17 @@ h1 {
     display: none;
 }
 
-.header-logo {
+.imageHeader {
     width: 11rem;
 }
 
 h3 {
     color: #DFDEE0;
     padding-left: 1.25rem;
+}
+
+.chatIcon {
+    size: 2rem;
 }
 
 ul {
@@ -63,6 +67,11 @@ ul {
     gap: 1.25rem;
     justify-content: center;
     padding: 2rem;
+}
+
+ul :hover {
+    background-color: rgba(45, 2, 85, 0.7);
+    cursor: pointer;
 }
 
 li {
@@ -79,6 +88,7 @@ li {
     align-items: center;
     background-color: rgba(0, 0, 0, 0.7);
 }
+
 
 li img {
     width: 100%;
@@ -223,9 +233,11 @@ h4 {
     cursor: pointer;
 }
 
+
 .container-home { 
     display: flex;
 }
+
 /* 
 @media (max-width:1000px) {
     .barra-lateral {
@@ -266,3 +278,4 @@ h4 {
         display: none;
     }
 } */
+

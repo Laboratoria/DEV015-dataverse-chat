@@ -31,7 +31,6 @@ Llamar elemento route
 
 import { Home } from './views/Home.js'
 
-
 document.addEventListener('DOMContentLoaded', function() {
   const rootElement = document.getElementById('root');
   rootElement.appendChild(Home());
