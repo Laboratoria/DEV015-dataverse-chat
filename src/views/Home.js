@@ -1,4 +1,4 @@
-import { filterData, ordenarABC} from '../dataFunctions.js';
+// import { filterData, ordenarABC} from '../dataFunctions.js';
 import { renderItems } from '../components/componentsCards.js';
 import { createSelectElements } from '../components/componentsSelect.js';
 

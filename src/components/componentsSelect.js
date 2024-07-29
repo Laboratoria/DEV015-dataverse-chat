@@ -1,7 +1,6 @@
-// componentsSelect.js
 export function createSelectElements() {
-  // const container = document.createElement('div');
-  // container.classList.add('contenedor');
+  const container = document.createElement('div');
+  container.classList.add('contenedor');
 
   const sidebar = document.createElement('div');
   sidebar.classList.add('barra-lateral');
@@ -79,32 +78,33 @@ export function createSelectElements() {
   filtros.appendChild(buttonLimpiar);
 
   sidebar.appendChild(filtros);
-  console.log('Se carga select');
+ 
+
+
+
+  // Crear y añadir el ranking por año
+  const rankingPorAño = document.createElement('div');
+  rankingPorAño.id = 'ranking-por-año';
+  rankingPorAño.innerHTML = `
+      <p>Ranking Promedio</p>
+      <p><b>2016</b></p>
+      <h2 id="rankingPromedio2016"></h2>
+  `;
+  sidebar.appendChild(rankingPorAño);
+
+  // Crear y añadir el mejor categoría
+  const mejorCategoria = document.createElement('div');
+  mejorCategoria.id = 'mejor-categoria';
+  mejorCategoria.innerHTML = `
+      <p>Mejor Rankeado</p>
+      <p><b>Categoria</b></p>
+      <h2 id="mejorRanking"></h2>
+  `;
+  sidebar.appendChild(mejorCategoria);
+
+  container.appendChild(sidebar);
+
   return sidebar;
 
-
-  // // Crear y añadir el ranking por año
-  // const rankingPorAño = document.createElement('div');
-  // rankingPorAño.id = 'ranking-por-año';
-  // rankingPorAño.innerHTML = `
-  //     <p>Ranking Promedio</p>
-  //     <p><b>2016</b></p>
-  //     <h2 id="rankingPromedio2016"></h2>
-  // `;
-  // sidebar.appendChild(rankingPorAño);
-
-  // // Crear y añadir el mejor categoría
-  // const mejorCategoria = document.createElement('div');
-  // mejorCategoria.id = 'mejor-categoria';
-  // mejorCategoria.innerHTML = `
-  //     <p>Mejor Rankeado</p>
-  //     <p><b>Categoria</b></p>
-  //     <h2 id="mejorRanking"></h2>
-  // `;
-  // sidebar.appendChild(mejorCategoria);
-
-  // container.appendChild(sidebar);
-
-  // Añadir el contenedor principal al rootElement
 
 }
