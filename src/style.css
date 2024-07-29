@@ -232,7 +232,13 @@ h4 {
 .menu-hamburguesa {
     cursor: pointer;
 }
-/*
+
+
+.container-home { 
+    display: flex;
+}
+
+/* 
 @media (max-width:1000px) {
     .barra-lateral {
         display: none;
@@ -271,4 +277,5 @@ h4 {
     #mejor-categoria {
         display: none;
     }
-}*/
+} */
+

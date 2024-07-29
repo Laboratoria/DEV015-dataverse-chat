@@ -1,6 +1,9 @@
-//import { filterData, ordenarABC} from '../dataFunctions.js';
+
+// import { filterData, ordenarABC} from '../dataFunctions.js';
 import { renderItems } from '../components/componentsCards.js';
+import { createSelectElements } from '../components/componentsSelect.js';
 import { createHeader } from '../components/componentsHeader.js';
+
 
 import data from '../data/dataset.js';
 /*
@@ -21,21 +24,31 @@ export const Home = () => {
 };*/
 
 
+
+
 export const Home = () => {
   const container = document.createElement('div');
 
-  const tituloPrincipal = createHeader();
+  container.className = 'container-home';
   const datadetarjetas = renderItems(data);
+  const selectElements = createSelectElements();
+
+  container.appendChild(selectElements);
+
+  const tituloPrincipal = createHeader();
   container.appendChild(tituloPrincipal);
+
   container.appendChild(datadetarjetas);
   return container;
 }
+
+
 
 /*
 const tarjetadedata = document.querySelector('#root');
 const datadetarjetas = renderItems(data);
 
-tarjetadedata.appendChild(datadetarjetas);
+// tarjetadedata.appendChild(datadetarjetas);
 
 
 const selectCategoria = document.querySelector('#filtro-categoria');
@@ -43,145 +56,148 @@ const selectAño = document.querySelector('#filtro-año');
 const selectRanking = document.querySelector('#filtro-ranking');
 const selectOrdenar = document.querySelector('#ordenar');
 
-let appliedFilters = {
-  category: 'seleccionar',
-  yearOfCreation: 'seleccionar',
-  ranking: 'seleccionar',
-  orden: 'seleccionar',
-};
 
-const applyFilters = () => {
-  let filteredData = data;
+// let appliedFilters = {
+//   category: 'seleccionar',
+//   yearOfCreation: 'seleccionar',
+//   ranking: 'seleccionar',
+//   orden: 'seleccionar',
+// };
 
-  if (appliedFilters.category !== 'seleccionar') {
-    filteredData = filterData(filteredData, 'facts.category', appliedFilters.category);
-  }
+// const applyFilters = () => {
+//   let filteredData = data;
 
-
-  if (appliedFilters.yearOfCreation !== 'seleccionar') {
-    filteredData = filterData(filteredData, 'facts.yearOfCreation', appliedFilters.yearOfCreation);
-  }
-
-  if (appliedFilters.ranking !== 'seleccionar') {
-    filteredData = filterData(filteredData, 'facts.ranking', appliedFilters.ranking);
-  }
-
-  if (appliedFilters.orden !== 'seleccionar') {
-    filteredData = ordenarABC(filteredData, appliedFilters.orden);
-  }
-  tarjetadedata.innerHTML = '';
-
-  if (filteredData.length === 0) {
-    const noResultsMessage = document.createElement('h3');
-    noResultsMessage.textContent = 'No se encontraron coincidencias';
-    tarjetadedata.appendChild(noResultsMessage);
-
-  } else {
-    const filteredItems = renderItems(filteredData);
-    tarjetadedata.appendChild(filteredItems);
-  }
-};
-
-applyFilters();
-
-selectCategoria.addEventListener('change', (event) => {
-  appliedFilters.category = event.target.value;
-  applyFilters();
-});
-
-selectAño.addEventListener('change', (event) => {
-  appliedFilters.yearOfCreation = event.target.value;
-  applyFilters();
-});
-
-selectRanking.addEventListener('change', (event) => {
-  appliedFilters.ranking = event.target.value;
-  applyFilters();
-});
-
-selectOrdenar.addEventListener('change', (event) => {
-  appliedFilters.orden = event.target.value;
-  applyFilters();
-});
+//   if (appliedFilters.category !== 'seleccionar') {
+//     filteredData = filterData(filteredData, 'facts.category', appliedFilters.category);
+//   }
 
 
-const botonLimpiar = document.querySelector('.limpiar-filtros');
-function limpiarFiltros() {
-  selectCategoria.selectedIndex = 'Seleccionar';
-  selectAño.selectedIndex = 'Seleccionar';
-  selectRanking.selectedIndex = 'Seleccionar';
-  selectOrdenar.selectedIndex = 'Seleccionar';
+//   if (appliedFilters.yearOfCreation !== 'seleccionar') {
+//     filteredData = filterData(filteredData, 'facts.yearOfCreation', appliedFilters.yearOfCreation);
+//   }
 
-  appliedFilters = {
-    category: 'seleccionar',
-    yearOfCreation: 'seleccionar',
-    ranking: 'seleccionar',
-    orden: 'seleccionar',
-  };
-  tarjetadedata.innerHTML = '';
+//   if (appliedFilters.ranking !== 'seleccionar') {
+//     filteredData = filterData(filteredData, 'facts.ranking', appliedFilters.ranking);
+//   }
 
-  tarjetadedata.appendChild(datadetarjetas);
-}
+//   if (appliedFilters.orden !== 'seleccionar') {
+//     filteredData = ordenarABC(filteredData, appliedFilters.orden);
+//   }
+//   tarjetadedata.innerHTML = '';
 
-botonLimpiar.addEventListener("click", limpiarFiltros);
+//   if (filteredData.length === 0) {
+//     const noResultsMessage = document.createElement('h3');
+//     noResultsMessage.textContent = 'No se encontraron coincidencias';
+//     tarjetadedata.appendChild(noResultsMessage);
+
+//   } else {
+//     const filteredItems = renderItems(filteredData);
+//     tarjetadedata.appendChild(filteredItems);
+//   }
+// };
+
+// applyFilters();
+
+// selectCategoria.addEventListener('change', (event) => {
+//   appliedFilters.category = event.target.value;
+//   applyFilters();
+// });
+
+// selectAño.addEventListener('change', (event) => {
+//   appliedFilters.yearOfCreation = event.target.value;
+//   applyFilters();
+// });
+
+// selectRanking.addEventListener('change', (event) => {
+//   appliedFilters.ranking = event.target.value;
+//   applyFilters();
+// });
+
+// selectOrdenar.addEventListener('change', (event) => {
+//   appliedFilters.orden = event.target.value;
+//   applyFilters();
+// });
 
 
+// const botonLimpiar = document.querySelector('.limpiar-filtros');
+// function limpiarFiltros() {
+//   selectCategoria.selectedIndex = 'Seleccionar';
+//   selectAño.selectedIndex = 'Seleccionar';
+//   selectRanking.selectedIndex = 'Seleccionar';
+//   selectOrdenar.selectedIndex = 'Seleccionar';
 
-const calcularRankingPromedio = (data, year) => {
+//   appliedFilters = {
+//     category: 'seleccionar',
+//     yearOfCreation: 'seleccionar',
+//     ranking: 'seleccionar',
+//     orden: 'seleccionar',
+//   };
+//   tarjetadedata.innerHTML = '';
 
-  const juegosDelAño = data.filter(item => item.facts.yearOfCreation === year);
-  const sumaDeRankings = juegosDelAño.reduce((sum, item) => sum + parseFloat(item.facts.ranking), 0);
-  const rankingPromedio = sumaDeRankings / juegosDelAño.length;
-  return rankingPromedio;
-};
+//   tarjetadedata.appendChild(datadetarjetas);
+// }
 
-const rankingPromedio2016 = calcularRankingPromedio(data, "2016");
-const rankingAv2016 = document.getElementById('rankingPromedio2016');
-rankingAv2016.textContent = `${rankingPromedio2016.toFixed(1)}`;
+// botonLimpiar.addEventListener("click", limpiarFiltros);
 
 
 
-//género mejor rankeado 
+// const calcularRankingPromedio = (data, year) => {
 
-function generoMejorRankeado(data) {
-  const resultado = data.reduce((acc, juego) => {
-    const categoria = juego.facts.category;
-    const ranking = parseFloat(juego.facts.ranking);
+//   const juegosDelAño = data.filter(item => item.facts.yearOfCreation === year);
+//   const sumaDeRankings = juegosDelAño.reduce((sum, item) => sum + parseFloat(item.facts.ranking), 0);
+//   const rankingPromedio = sumaDeRankings / juegosDelAño.length;
+//   return rankingPromedio;
+// };
 
-    if (!acc[categoria]) {
-      acc[categoria] = { totalRanking: 0, count: 0 };
-    }
+// const rankingPromedio2016 = calcularRankingPromedio(data, "2016");
+// const rankingAv2016 = document.getElementById('rankingPromedio2016');
+// rankingAv2016.textContent = `${rankingPromedio2016.toFixed(1)}`;
 
-    acc[categoria].totalRanking += ranking;
-    acc[categoria].count += 1;
 
-    return acc;
-  }, {});
 
-  let mejorCategoria = null;
-  let mejorPromedio = 0;
+// //género mejor rankeado 
 
-  for (const categoria in resultado) {
-    const promedio = resultado[categoria].totalRanking / resultado[categoria].count;
-    if (promedio > mejorPromedio) {
-      mejorPromedio = promedio;
-      mejorCategoria = categoria;
-    }
-  }
+// function generoMejorRankeado(data) {
+//   const resultado = data.reduce((acc, juego) => {
+//     const categoria = juego.facts.category;
+//     const ranking = parseFloat(juego.facts.ranking);
 
-  return mejorCategoria;
-}
+//     if (!acc[categoria]) {
+//       acc[categoria] = { totalRanking: 0, count: 0 };
+//     }
 
-const mejorRanking = generoMejorRankeado(data);
-const mejorGenero = document.getElementById('mejorRanking');
-mejorGenero.textContent = `${(mejorRanking)}`;
+//     acc[categoria].totalRanking += ranking;
+//     acc[categoria].count += 1;
 
-document.addEventListener('DOMContentLoaded', function () {
-  const menuHamburguesa = document.getElementById('menu-hamburguesa');
-  const barraLateral = document.getElementById('barra-lateral');
+//     return acc;
+//   }, {});
+
+//   let mejorCategoria = null;
+//   let mejorPromedio = 0;
+
+//   for (const categoria in resultado) {
+//     const promedio = resultado[categoria].totalRanking / resultado[categoria].count;
+//     if (promedio > mejorPromedio) {
+//       mejorPromedio = promedio;
+//       mejorCategoria = categoria;
+//     }
+//   }
+
+//   return mejorCategoria;
+// }
+
+// const mejorRanking = generoMejorRankeado(data);
+// const mejorGenero = document.getElementById('mejorRanking');
+// mejorGenero.textContent = `${(mejorRanking)}`;
+
+// document.addEventListener('DOMContentLoaded', function () {
+//   const menuHamburguesa = document.getElementById('menu-hamburguesa');
+//   const barraLateral = document.getElementById('barra-lateral');
+
 
   menuHamburguesa.addEventListener('click', function () {
     barraLateral.classList.toggle('barra-lateral-desplegada');
   });
 })
 */
+

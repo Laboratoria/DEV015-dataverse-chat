@@ -30,12 +30,13 @@ Llamar elemento route
 
 
 import { Home } from './views/Home.js'
-// import { createHeader } from './components/componentsHeader.js';
 
-// document.addEventListener('DOMContentLoaded', function(){
-//   createHeader();
-// });
+document.addEventListener('DOMContentLoaded', function() {
+  const rootElement = document.getElementById('root');
+  rootElement.appendChild(Home());
 
-const rootElement = document.getElementById('root');
-rootElement.appendChild(Home()); 
+});
+
+
+
 
