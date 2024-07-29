@@ -8,6 +8,6 @@ export function Home() {
 // About.js
 export function About() {
     const viewEl = document.createElement('div');
-    viewEl.textContent = 'hola bb';
+    viewEl.textContent = 'hola b b';
     return viewEl;
-}
+} 
