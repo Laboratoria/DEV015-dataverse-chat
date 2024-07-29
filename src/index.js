@@ -37,5 +37,5 @@ import { Home } from './views/Home.js'
 // });
 
 const rootElement = document.getElementById('root');
-rootElement.appendChild(Home); 
+rootElement.appendChild(Home()); 
 

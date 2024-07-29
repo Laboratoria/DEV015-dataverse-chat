@@ -1,17 +1,42 @@
-import { filterData, ordenarABC} from '../dataFunctions.js';
+//import { filterData, ordenarABC} from '../dataFunctions.js';
 import { renderItems } from '../components/componentsCards.js';
+import { createHeader } from '../components/componentsHeader.js';
 
 import data from '../data/dataset.js';
+/*
+export const Home = () => {
+  const container = document.createElement('div');
+  container.id = 'home';
+
+  const header = createHeader();
+  console.log('Header element:', header); // Añadido para verificar el header
+  container.appendChild(header);
+
+  const datadetarjetas = renderItems(data);
+  console.log('Data de tarjetas:', datadetarjetas); // Añadido para verificar las tarjetas
+  container.appendChild(datadetarjetas);
+
+  console.log('Home component:', container); // Añadido para verificar el contenedor
+  return container;
+};*/
+
 
 export const Home = () => {
+  const container = document.createElement('div');
+
+  const tituloPrincipal = createHeader();
   const datadetarjetas = renderItems(data);
+  container.appendChild(tituloPrincipal);
+  container.appendChild(datadetarjetas);
+  return container;
 }
 
-
+/*
 const tarjetadedata = document.querySelector('#root');
 const datadetarjetas = renderItems(data);
 
 tarjetadedata.appendChild(datadetarjetas);
+
 
 const selectCategoria = document.querySelector('#filtro-categoria');
 const selectAño = document.querySelector('#filtro-año');
@@ -159,3 +184,4 @@ document.addEventListener('DOMContentLoaded', function () {
     barraLateral.classList.toggle('barra-lateral-desplegada');
   });
 })
+*/

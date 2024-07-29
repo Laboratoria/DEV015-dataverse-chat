@@ -6,6 +6,10 @@ export const renderItems = (data) => {
     const li = document.createElement('li');
     // li.setAttribute("itemtype",)
 
+    const chatIcon = document.createElement('div');
+    chatIcon.className = 'chatIcon';
+    chatIcon.innerHTML = '&#x1F4AC;';
+
     const nameElement = document.createElement('h3');
     nameElement.textContent = item.name;
 
@@ -27,6 +31,7 @@ export const renderItems = (data) => {
     const rankingElement = document.createElement('p');
     rankingElement.innerHTML = `<strong class="bold-text">Calificación:</strong> ${item.facts.ranking}`;
 
+    li.appendChild(chatIcon);
     li.appendChild(nameElement);
     li.appendChild(shortDescriptionElement);
     li.appendChild(imageUrlElement);
