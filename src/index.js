@@ -1,19 +1,24 @@
-// En este archivo definirás tus rutas e importarás los componentes que vas a renderizar.
+import { setRoutes, setRootEl, navigateTo } from './router.js';
+import { Home } from './Home.js';
+import { About } from './About.js';
 
-/*
-import Example from './views/Example.js';
+// Configurar las rutas
+setRoutes({
+    '/': Home,
+    '/about': About,
+});
 
-Ejemplo de definición de rutas:
+// Configurar el elemento raíz
+const rootElement = document.getElementById('root');
+setRootEl(rootElement);
 
-const routes = {
-    "/": Example,
-    ...
-}
-*/
+// Navegar a la ruta inicial
+navigateTo(window.location.pathname);
 
-/*
-TODO:
-1.- Definir rutas en router.
-2.- Pasar "root element" a router.
-3.- Invocar el router para renderizar la vista correcta.
-*/
+// Configurar navegación de ejemplo (esto normalmente estaría en tu lógica de navegación)
+document.body.addEventListener('click', (e) => {
+    if (e.target.matches('[data-link]')) {
+        e.preventDefault();
+        navigateTo(e.target.getAttribute('href'));
+    }
+});
