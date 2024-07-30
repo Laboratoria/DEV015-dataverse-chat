@@ -1,13 +1,11 @@
-// Home.js
-export function Home() {
-    const viewEl = document.createElement('div');
-    viewEl.textContent = 'Bienvenido';
-    return viewEl;
-}
+import { navigateTo } from "../router";
 
-// About.js
-export function About() {
+export function Home(props) {
     const viewEl = document.createElement('div');
-    viewEl.textContent = 'hola b b';
+    viewEl.textContent = 'Welcome to the home page!';
     return viewEl;
-} 
+    
+     linkEl.addEventListener('click', () => navigateTo("/about", { name: "Xochitl" }));
+  // return el
+  }
+  
