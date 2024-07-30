@@ -80,9 +80,6 @@ export function createSelectElements() {
   sidebar.appendChild(filtros);
  
 
-
-
-  // Crear y añadir el ranking por año
   const rankingPorAño = document.createElement('div');
   rankingPorAño.id = 'ranking-por-año';
   rankingPorAño.innerHTML = `
@@ -92,7 +89,6 @@ export function createSelectElements() {
   `;
   sidebar.appendChild(rankingPorAño);
 
-  // Crear y añadir el mejor categoría
   const mejorCategoria = document.createElement('div');
   mejorCategoria.id = 'mejor-categoria';
   mejorCategoria.innerHTML = `
@@ -105,6 +101,5 @@ export function createSelectElements() {
   container.appendChild(sidebar);
 
   return sidebar;
-
 
 }
