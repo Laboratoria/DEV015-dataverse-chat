@@ -1,24 +1,49 @@
-import { setRoutes, setRootEl, navigateTo } from './router.js';
-import { Home } from './Home.js';
-import { About } from './About.js';
+import Home from './home.js';
+import { setRootEl, setRoutes, onURLChange, navigateTo } from './router.js';
 
-// Configurar las rutas
-setRoutes({
+//CONFIGURAR EL ROUTER
+
+// Define las rutas
+const routes = {
     '/': Home,
-    '/about': About,
-});
+    // ...
+  };
+  
+  // Asigna rutas
+  setRoutes(routes);
+  
+  // Configura el elemento raíz
+  window.addEventListener("DOMContentLoaded", () => {
+  const rootElement = document.getElementById('root');
+  setRootEl(rootElement);
 
-// Configurar el elemento raíz
-const rootElement = document.getElementById('root');
-setRootEl(rootElement);
+  // Invocar onURLChange para manejar la carga inicial de la página
+  onURLChange(window.location); 
 
-// Navegar a la ruta inicial
-navigateTo(window.location.pathname);
+  });
 
-// Configurar navegación de ejemplo (esto normalmente estaría en tu lógica de navegación)
-document.body.addEventListener('click', (e) => {
-    if (e.target.matches('[data-link]')) {
-        e.preventDefault();
-        navigateTo(e.target.getAttribute('href'));
-    }
-});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  // Añade manejadores a los enlaces para cambiar la URL y renderizar la vista correspondiente sin recargar la página
+   /*document.querySelectorAll('a[data-link]').forEach(link => {
+    link.addEventListener('click', (event) => {
+      event.preventDefault();
+      const pathname = link.getAttribute('href');
+      window.history.pushState({}, pathname, window.location.origin + pathname);
+      onURLChange(window.location);
+    });
+  });*/
