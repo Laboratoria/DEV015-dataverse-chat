@@ -84,7 +84,7 @@ export function createSelectElements() {
 
   // Crear y añadir el ranking por año
   const rankingPorAño = document.createElement('div');
-  rankingPorAño.id = 'ranking-por-año';
+  rankingPorAño.id = 'rankingPorAño';
   rankingPorAño.innerHTML = `
       <p>Ranking Promedio</p>
       <p><b>2016</b></p>
@@ -94,7 +94,7 @@ export function createSelectElements() {
 
   // Crear y añadir el mejor categoría
   const mejorCategoria = document.createElement('div');
-  mejorCategoria.id = 'mejor-categoria';
+  mejorCategoria.id = 'mejorCategoria';
   mejorCategoria.innerHTML = `
       <p>Mejor Rankeado</p>
       <p><b>Categoria</b></p>
