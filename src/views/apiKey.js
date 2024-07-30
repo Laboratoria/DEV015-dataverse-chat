@@ -9,7 +9,7 @@ function apiKey() {
 
   <h2>Api Key Admin</h2>
   <h3>Desde aquí puedes administrar la API Key a utilizar </h3>
-  <input id="apiKey" placeholder="Escribe la api key aquí"></input>
+  <input id="apiKey-input" placeholder="Escribe la api key aquí"></input>
   <button>Delete</button>
   
   `
