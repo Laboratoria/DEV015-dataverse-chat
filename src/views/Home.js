@@ -33,6 +33,9 @@ export const Home = () => {
   container.appendChild(containerFooter);  
 
   return container;
+
+  
+
 }
 
 

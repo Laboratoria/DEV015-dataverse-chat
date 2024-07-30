@@ -1,3 +1,5 @@
+
+
 export function createFooter() {
   const footer = document.createElement('Footer');
   footer.className = 'footer';
