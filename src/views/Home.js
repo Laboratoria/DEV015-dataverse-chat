@@ -3,42 +3,35 @@
 import { renderItems } from '../components/componentsCards.js';
 import { createSelectElements } from '../components/componentsSelect.js';
 import { createHeader } from '../components/componentsHeader.js';
-
-
+import { createFooter } from '../components/componentsFooter.js';
 import data from '../data/dataset.js';
-/*
+
 export const Home = () => {
   const container = document.createElement('div');
-  container.id = 'home';
+  container.className = 'containerHome';
+  const containerHeader = document.createElement('div');
+  containerHeader.className = 'containerHeaderHome'
+  const containerBody = document.createElement('div');
+  containerBody.className = 'containerBodyHome'
+  const containerFooter = document.createElement('div');
+  containerFooter.className = 'containerFooterHome'
 
   const header = createHeader();
-  console.log('Header element:', header); // Añadido para verificar el header
-  container.appendChild(header);
 
-  const datadetarjetas = renderItems(data);
-  console.log('Data de tarjetas:', datadetarjetas); // Añadido para verificar las tarjetas
-  container.appendChild(datadetarjetas);
-
-  console.log('Home component:', container); // Añadido para verificar el contenedor
-  return container;
-};*/
-
-
-
-
-export const Home = () => {
-  const container = document.createElement('div');
-
-  container.className = 'container-home';
-  const datadetarjetas = renderItems(data);
   const selectElements = createSelectElements();
+  const datadetarjetas = renderItems(data);
 
-  container.appendChild(selectElements);
+  const footer = createFooter();
 
-  const tituloPrincipal = createHeader();
-  container.appendChild(tituloPrincipal);
+  containerHeader.appendChild(header);
+  containerBody.appendChild(selectElements);
+  containerBody.appendChild(datadetarjetas);
+  containerFooter.appendChild(footer);  
 
-  container.appendChild(datadetarjetas);
+  container.appendChild(containerHeader);
+  container.appendChild(containerBody);
+  container.appendChild(containerFooter);  
+
   return container;
 }
 
