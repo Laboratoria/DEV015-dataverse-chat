@@ -23,13 +23,13 @@ export const renderItems = (data) => {
     descriptionElement.textContent = item.description;*/
 
     const categoryElement = document.createElement('p');
-    categoryElement.innerHTML = `<strong class="bold-text">Categoría:</strong> ${item.facts.category}`;
+    categoryElement.innerHTML = `<strong class="boldText">Categoría:</strong> ${item.facts.category}`;
 
     const yearOfCreationElement = document.createElement('p');
-    yearOfCreationElement.innerHTML = `<strong class="bold-text">Año de Creación:</strong> ${item.facts.yearOfCreation}`;
+    yearOfCreationElement.innerHTML = `<strong class="boldText">Año de Creación:</strong> ${item.facts.yearOfCreation}`;
 
     const rankingElement = document.createElement('p');
-    rankingElement.innerHTML = `<strong class="bold-text">Calificación:</strong> ${item.facts.ranking}`;
+    rankingElement.innerHTML = `<strong class="boldText">Calificación:</strong> ${item.facts.ranking}`;
 
     li.appendChild(chatIcon);
     li.appendChild(nameElement);

@@ -3,22 +3,35 @@
 import { renderItems } from '../components/componentsCards.js';
 import { createSelectElements } from '../components/componentsSelect.js';
 import { createHeader } from '../components/componentsHeader.js';
-
-
+import { createFooter } from '../components/componentsFooter.js';
 import data from '../data/dataset.js';
 
 export const Home = () => {
-
   const container = document.createElement('div');
+  container.className = 'containerHome';
+  const containerHeader = document.createElement('div');
+  containerHeader.className = 'containerHeaderHome'
+  const containerBody = document.createElement('div');
+  containerBody.className = 'containerBodyHome'
+  const containerFooter = document.createElement('div');
+  containerFooter.className = 'containerFooterHome'
 
-  container.className = 'container-home';
-  const datadetarjetas = renderItems(data);
+  const header = createHeader();
+
   const selectElements = createSelectElements();
-  const tituloPrincipal = createHeader();
+  const datadetarjetas = renderItems(data);
 
-  container.appendChild(selectElements);
-  container.appendChild(tituloPrincipal);
-  container.appendChild(datadetarjetas);
+  const footer = createFooter();
+
+  containerHeader.appendChild(header);
+  containerBody.appendChild(selectElements);
+  containerBody.appendChild(datadetarjetas);
+  containerFooter.appendChild(footer);  
+
+  container.appendChild(containerHeader);
+  container.appendChild(containerBody);
+  container.appendChild(containerFooter);  
+
   return container;
 
   
