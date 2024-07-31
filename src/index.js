@@ -1,28 +1,40 @@
+import { setRootEl, setRoutes, onURLChange } from './router.js';
 import Home from './home.js';
-import { setRootEl, setRoutes, onURLChange, navigateTo } from './router.js';
+import about from './about.js';
+import ErrorView from './errorView.js';
+
 
 //CONFIGURAR EL ROUTER
 
-// Define las rutas
-const routes = {
-    '/': Home,
-    // ...
+// Define rutas
+export const routes = {
+    '/home': Home,
+    '/about': about,
+    "/error": ErrorView, 
   };
   
   // Asigna rutas
   setRoutes(routes);
   
-  // Configura el elemento raíz
-  window.addEventListener("DOMContentLoaded", () => {
-  const rootElement = document.getElementById('root');
-  setRootEl(rootElement);
-
-  // Invocar onURLChange para manejar la carga inicial de la página
-  onURLChange(window.location); 
-
+  // Configurar el elemento raíz
+window.addEventListener("DOMContentLoaded", () => {
+  setRootEl(document.getElementById('root'));
+  
+  // Manejar la carga inicial de la URL
+  onURLChange({
+    pathname: window.location.pathname,
+    search: window.location.search
   });
+});
 
-
+// Manejar la navegación del historial
+window.addEventListener('popstate', () => {
+  const location = {
+    pathname: window.location.pathname,
+    search: window.location.search
+  };
+  onURLChange(location);
+});
 
 
 
