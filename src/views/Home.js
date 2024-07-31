@@ -135,57 +135,10 @@ const selectOrdenar = document.querySelector('#ordenar');
 
 // botonLimpiar.addEventListener("click", limpiarFiltros);
 
+*/
 
 
-// const calcularRankingPromedio = (data, year) => {
-
-//   const juegosDelAño = data.filter(item => item.facts.yearOfCreation === year);
-//   const sumaDeRankings = juegosDelAño.reduce((sum, item) => sum + parseFloat(item.facts.ranking), 0);
-//   const rankingPromedio = sumaDeRankings / juegosDelAño.length;
-//   return rankingPromedio;
-// };
-
-// const rankingPromedio2016 = calcularRankingPromedio(data, "2016");
-// const rankingAv2016 = document.getElementById('rankingPromedio2016');
-// rankingAv2016.textContent = `${rankingPromedio2016.toFixed(1)}`;
-
-
-
-// //género mejor rankeado 
-
-// function generoMejorRankeado(data) {
-//   const resultado = data.reduce((acc, juego) => {
-//     const categoria = juego.facts.category;
-//     const ranking = parseFloat(juego.facts.ranking);
-
-//     if (!acc[categoria]) {
-//       acc[categoria] = { totalRanking: 0, count: 0 };
-//     }
-
-//     acc[categoria].totalRanking += ranking;
-//     acc[categoria].count += 1;
-
-//     return acc;
-//   }, {});
-
-//   let mejorCategoria = null;
-//   let mejorPromedio = 0;
-
-//   for (const categoria in resultado) {
-//     const promedio = resultado[categoria].totalRanking / resultado[categoria].count;
-//     if (promedio > mejorPromedio) {
-//       mejorPromedio = promedio;
-//       mejorCategoria = categoria;
-//     }
-//   }
-
-//   return mejorCategoria;
-// }
-
-// const mejorRanking = generoMejorRankeado(data);
-// const mejorGenero = document.getElementById('mejorRanking');
-// mejorGenero.textContent = `${(mejorRanking)}`;
-
+/*
 // document.addEventListener('DOMContentLoaded', function () {
 //   const menuHamburguesa = document.getElementById('menu-hamburguesa');
 //   const barraLateral = document.getElementById('barra-lateral');

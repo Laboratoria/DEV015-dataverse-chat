@@ -1,3 +1,7 @@
+import { calcularRankingPromedio } from "../dataFunctions.js";
+import { generoMejorRankeado } from "../dataFunctions.js";
+import data from '../data/dataset.js';
+
 export function createSelectElements() {
   const container = document.createElement('div');
   container.classList.add('contenedor');
@@ -81,21 +85,26 @@ export function createSelectElements() {
  
 
   const rankingPorAño = document.createElement('div');
+  const rankingPromedio2016 = calcularRankingPromedio(data, "2016");
   rankingPorAño.id = 'rankingPorAño';
   rankingPorAño.innerHTML = `
       <p>Ranking Promedio</p>
       <p><b>2016</b></p>
-      <h2 id="rankingPromedio2016"></h2>
+      <h2 id="rankingPromedio2016">${rankingPromedio2016.toFixed(1)}</h2>      
   `;
   sidebar.appendChild(rankingPorAño);
 
+
   const mejorCategoria = document.createElement('div');
+  const mejorRanking = generoMejorRankeado(data);
   mejorCategoria.id = 'mejorCategoria';
   mejorCategoria.innerHTML = `
       <p>Mejor Rankeado</p>
       <p><b>Categoria</b></p>
-      <h2 id="mejorRanking"></h2>
+      <h2 id="mejorRanking">${mejorRanking}</h2>      
   `;
+
+
   sidebar.appendChild(mejorCategoria);
 
   container.appendChild(sidebar);
