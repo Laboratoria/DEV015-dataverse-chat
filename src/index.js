@@ -23,7 +23,14 @@ const routes = {
 
   });
 
-
+// Manejar la navegación del historial
+window.addEventListener('popstate', () => {
+  const location = {
+    pathname: window.location.pathname,
+    search: window.location.search
+  };
+  onURLChange(location);
+});
 
 
 

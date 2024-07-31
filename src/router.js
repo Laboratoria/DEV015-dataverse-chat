@@ -7,7 +7,7 @@ let rootEl;
 
 // funcion con el elemento raiz donde se mostraran las vistas
 export function setRootEl(element) {
-    rootEl = element;
+  rootEl = element;// Asignar rootEl
 }
 
 // Funciones
