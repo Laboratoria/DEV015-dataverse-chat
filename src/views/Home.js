@@ -40,17 +40,17 @@ export const Home = () => {
 
 
 
-/*
-const tarjetadedata = document.querySelector('#root');
-const datadetarjetas = renderItems(data);
+
+// const tarjetadedata = document.querySelector('#root');
+// const datadetarjetas = renderItems(data);
 
 // tarjetadedata.appendChild(datadetarjetas);
 
 
-const selectCategoria = document.querySelector('#filtro-categoria');
-const selectAño = document.querySelector('#filtro-año');
-const selectRanking = document.querySelector('#filtro-ranking');
-const selectOrdenar = document.querySelector('#ordenar');
+// const selectCategoria = document.querySelector('#filtro-categoria');
+// const selectAño = document.querySelector('#filtro-año');
+// const selectRanking = document.querySelector('#filtro-ranking');
+// const selectOrdenar = document.querySelector('#ordenar');
 
 
 // let appliedFilters = {
@@ -60,7 +60,7 @@ const selectOrdenar = document.querySelector('#ordenar');
 //   orden: 'seleccionar',
 // };
 
-// const applyFilters = () => {
+// export const applyFilters = () => {
 //   let filteredData = data;
 
 //   if (appliedFilters.category !== 'seleccionar') {
@@ -151,7 +151,7 @@ const selectOrdenar = document.querySelector('#ordenar');
 
 
 
-// //género mejor rankeado 
+// // género mejor rankeado 
 
 // function generoMejorRankeado(data) {
 //   const resultado = data.reduce((acc, juego) => {
@@ -191,9 +191,9 @@ const selectOrdenar = document.querySelector('#ordenar');
 //   const barraLateral = document.getElementById('barra-lateral');
 
 
-  menuHamburguesa.addEventListener('click', function () {
-    barraLateral.classList.toggle('barra-lateral-desplegada');
-  });
-})
-*/
+//   menuHamburguesa.addEventListener('click', function () {
+//     barraLateral.classList.toggle('barra-lateral-desplegada');
+//   });
+// })
+
 
