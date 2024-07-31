@@ -1,4 +1,5 @@
-import Home from './home.js';
+import Home from './views/home.js';
+import Cards from './views/cards.js'
 import { setRootEl, setRoutes, onURLChange, navigateTo } from './router.js';
 
 //CONFIGURAR EL ROUTER
@@ -6,7 +7,7 @@ import { setRootEl, setRoutes, onURLChange, navigateTo } from './router.js';
 // Define las rutas
 const routes = {
     '/': Home,
-    // ...
+    '/cards': Cards,
   };
   
   // Asigna rutas
@@ -14,11 +15,11 @@ const routes = {
   
   // Configura el elemento raíz
   window.addEventListener("DOMContentLoaded", () => {
-  const rootElement = document.getElementById('root');
-  setRootEl(rootElement);
+    const rootElement = document.getElementById('root');
+    setRootEl(rootElement);
 
-  // Invocar onURLChange para manejar la carga inicial de la página
-  onURLChange(window.location); 
+    // Invocar onURLChange para manejar la carga inicial de la página
+    onURLChange(window.location); 
 
   });
 
