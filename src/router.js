@@ -10,69 +10,56 @@ export function setRootEl(element) {
   rootEl = element;// Asignar rootEl
 }
 
-export const setRoutes = (routes) => {
-  // Validar si routes es un objeto
-  if (typeof routes !== 'object' || routes === null) {
-    throw new Error('Routes debe ser un objeto.');
-  }
-  // Validar si routes tiene una ruta '/error'
-  if (!('/error' in routes)) {
-    throw new Error('El objeto routes debe definir una ruta "/error".');
-  }
-  // Asignar ROUTES 
-  ROUTES = routes;
-};
-
-const queryStringToObject = (queryString) => {
-  // Convierte un query a urlsearchparam, facilita la manipulación.
-  const params = new URLSearchParams(queryString);
-
-  // Convertir URLSearchParams a un objeto
-  const obj = {};
-  params.forEach((value, key) => {
-    obj[key] = value;
-  });
-
-  // Retornar el objeto
-  return obj;
-};
-
-const renderView = (pathname, props = {}) => {
-  // Limpiar el elemento raíz
-  if (rootEl) {
-    rootEl.innerHTML = '';
-  }
-
-  // Encontrar la vista correcta en ROUTES para el pathname
-  const view = ROUTES[pathname] || ROUTES['/error'];
-
-  // Verificar si la vista es una función y renderizarla
-  if (typeof view === 'function') {
-    // Renderiza
-    const viewElement = view(props);
-    rootEl.appendChild(viewElement);
+// Funciones
+export function setRoutes(routes) {
+    if (typeof routes !== 'object' || routes === null) {
+        throw new Error('El argumento routes debe ser un objeto');
     }
+    ROUTES = routes;
+}
+
+/* export function queryStringToObject(queryString) {
+    return queryString
+        ? JSON.parse('{"' + decodeURI(queryString.substring(1).replace(/&/g, "\",\"").replace(/=/g, "\":\"")) + '"}')
+        : {};
+} */
+
+export function queryStringToObject(queryString) {
+    if (queryString) {
+        const resultado = JSON.parse('{"' + decodeURI(queryString.substring(1).replace(/&/g, "\",\"").replace(/=/g, "\":\"")) + '"}');
+        return resultado;
+    } else {
+        return {};
+    }
+}
+
+// Renderizar la vista correspondiente a una ruta
+export function renderView(pathname, props = {}) {
+    if (rootEl) {
+        // Borra el contenido existente
+        rootEl.innerHTML = '';
+        const viewFunction = ROUTES[pathname];
+        if (viewFunction) {
+            const viewElement = viewFunction(props);
+            // rootEl.innerHTML = viewElement;
+            rootEl.appendChild(viewElement);
+        } else {
+            rootEl.innerHTML = '<h1>404 - Página no encontrada</h1>';
+        }
+    } else {
+        console.error('Elemento raíz no está definido. Usa setRootEl para definirlo.');
+    }
+}
+
+export function navigateTo(pathname, props = {}) {
+    // Actualizar el historial del navegador con pushState
+    window.history.pushState({}, '', pathname);
+    // Renderizar la vista con el pathname y props
+    renderView(pathname, props);
 };
 
-export const navigateTo = (pathname, props = {}) => {
-  // Actualizar el historial del navegador con pushState
-  window.history.pushState({}, '', pathname);
+export function onURLChange(location) {
+    const pathname = location.pathname;
+    renderView(pathname);
+}
 
-  // Renderizar la vista con el pathname y props
-  renderView(pathname, props);
-};
-
-export const onURLChange = (location) => {
-  // Parsear la location para obtener pathname y search params
-  const { pathname, search } = location;
-
-  // Convertir los search params en un objeto
-  const params = new URLSearchParams(search);
-  const queryObject = {};
-  params.forEach((value, key) => {
-    queryObject[key] = value;
-  });
-
-  // Renderizar la vista con el pathname y el objeto de parámetros
-  renderView(pathname, queryObject);
-};
