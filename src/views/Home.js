@@ -151,7 +151,7 @@ export const Home = () => {
 
 
 
-// // género mejor rankeado 
+// //género mejor rankeado 
 
 // function generoMejorRankeado(data) {
 //   const resultado = data.reduce((acc, juego) => {
