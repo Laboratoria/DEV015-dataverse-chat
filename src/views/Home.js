@@ -1,5 +1,3 @@
-
-// import { filterData, ordenarABC} from '../dataFunctions.js';
 import { renderItems } from '../components/componentsCards.js';
 import { createSelectElements } from '../components/componentsSelect.js';
 import { createHeader } from '../components/componentsHeader.js';
@@ -17,10 +15,8 @@ export const Home = () => {
   containerFooter.className = 'containerFooterHome'
 
   const header = createHeader();
-
   const selectElements = createSelectElements();
   const datadetarjetas = renderItems(data);
-
   const footer = createFooter();
 
   containerHeader.appendChild(header);
@@ -31,13 +27,12 @@ export const Home = () => {
   container.appendChild(containerHeader);
   container.appendChild(containerBody);
   container.appendChild(containerFooter);  
+  
 
   return container;
 
-  
 
 }
-
 
 
 
@@ -116,6 +111,7 @@ export const Home = () => {
 
 
 // const botonLimpiar = document.querySelector('.limpiar-filtros');
+
 // function limpiarFiltros() {
 //   selectCategoria.selectedIndex = 'Seleccionar';
 //   selectAño.selectedIndex = 'Seleccionar';
