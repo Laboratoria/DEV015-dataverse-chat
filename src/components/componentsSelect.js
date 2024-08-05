@@ -35,6 +35,7 @@ export function createSelectElements() {
   // Crear y añadir el filtro de categoría
   const labelCategoria = document.createElement('label');
   labelCategoria.textContent = 'Categoría:';
+  labelCategoria.setAttribute = ('for', 'filtro-categoria');
   const selectCategoria = document.createElement('select');
   selectCategoria.id = 'filtro-categoria';
   selectCategoria.name = 'select';
@@ -51,8 +52,10 @@ export function createSelectElements() {
   // Crear y añadir el filtro de año
   const labelAño = document.createElement('label');
   labelAño.textContent = 'Año:';
+  labelAño.setAttribute = ('for', 'filtro-año');
   const selectAño = document.createElement('select');
   selectAño.id = 'filtro-año';
+  selectCategoria.name = 'select';
   const años = ['Seleccionar', '2010', '2011', '2012', '2013', '2015', '2016', '2017', '2018', '2019', '2020'];
   años.forEach(año => {
     const option = document.createElement('option');
@@ -66,8 +69,10 @@ export function createSelectElements() {
   // Crear y añadir el filtro de ranking
   const labelRanking = document.createElement('label');
   labelRanking.textContent = 'Ranking:';
+  labelAño.setAttribute = ('for', 'filtro-ranking');
   const selectRanking = document.createElement('select');
   selectRanking.id = 'filtro-ranking';
+  selectCategoria.name = 'select';
   const rankings = ['Seleccionar', '5.0', '4.5', '4.0', '3.5'];
   rankings.forEach(ranking => {
     const option = document.createElement('option');
@@ -83,6 +88,7 @@ export function createSelectElements() {
   labelOrden.textContent = 'Orden alfabético:';
   const selectOrden = document.createElement('select');
   selectOrden.id = 'ordenar';
+  selectCategoria.name = 'select';
   const ordenes = ['Seleccionar', 'Ascendente', 'Descendente'];
   ordenes.forEach(orden => {
     const option = document.createElement('option');
@@ -98,6 +104,7 @@ export function createSelectElements() {
   buttonLimpiar.classList.add('limpiar-filtros');
   buttonLimpiar.innerHTML = '<b>Limpiar</b>';
   buttonLimpiar.addEventListener("click", limpiarFiltros);
+
 
   filtros.appendChild(buttonLimpiar);
 

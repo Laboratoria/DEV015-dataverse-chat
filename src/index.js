@@ -1,31 +1,26 @@
-/* En este archivo definirás tus rutas e importarás los componentes que vas a renderizar.
-import Home from './views/Home.js';
-importar todas las views que creamos
-Ejemplo de definición de rutas:
-TODO:
-1.- Definir rutas en router.
-2.- Pasar "root element" a router.
-3.- Invocar el router para renderizar la vista correcta.
-Llamar elemento route 
-*/
-// window.addEventListener("DOMContentLoaded", () => {
-//   // set root element
-//   // invoke onURLChange 
-// });
-// // Handle URL changes
-// window.addEventListener('popstate', ({objetivo}) => {
-//   onURLChange(/* location */);
-// });
+import { setRootEl, setRoutes, onURLChange, navigateTo } from './router.js';
+import { Home } from './views/Home.js';
+import { ChatIndividual } from './views/ChatIndividual.js';
+// import { chatGrupal } from './views/chatGrupal.js';
+import { ErrorView } from './views/Error.js';
 
+document.addEventListener('DOMContentLoaded', () => {
+  const root = document.getElementById('root');
+  setRootEl(root);
 
-import { Home } from './views/Home.js'
+  setRoutes({
+    '/': Home,
+    '/chat-individual': ChatIndividual,
+    // '/chat-grupal': chatGrupal,
+    '/error': ErrorView,
+  });
 
-document.addEventListener('DOMContentLoaded', function() {
-  const rootElement = document.getElementById('root');
-  rootElement.appendChild(Home());
+  onURLChange();
 
+  const chatIcon = document.getElementById('chatIcon'); //para ir a vista de chatIndividual 
+  if(chatIcon.addEventListener('click', () => {
+    navigateTo('/chat-individual');
+  }));
 });
 
-
-
-
+window.addEventListener('popstate', onURLChange);
