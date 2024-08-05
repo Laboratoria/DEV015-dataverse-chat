@@ -1,6 +1,25 @@
 import { calcularRankingPromedio } from "../dataFunctions.js";
 import { generoMejorRankeado } from "../dataFunctions.js";
+//import { filterData, ordenarABC} from "../dataFunctions.js";
 import data from '../data/dataset.js';
+import { renderItems } from './componentsCards.js';
+
+const containerBody = document.querySelector('.containerBodyHome');
+
+export function limpiarFiltros() {
+  const selectElements = document.querySelectorAll('select');
+  selectElements.forEach(select => {
+    select.selectedIndex = 0;
+  });
+   
+  containerBody.innerHTML = '';
+  const selectElementsContainer = createSelectElements();
+  const dataItems = renderItems(data);
+  containerBody.appendChild(selectElementsContainer);
+  containerBody.appendChild(dataItems);
+}
+
+
 
 export function createSelectElements() {
   const container = document.createElement('div');
@@ -78,6 +97,7 @@ export function createSelectElements() {
   const buttonLimpiar = document.createElement('button');
   buttonLimpiar.classList.add('limpiar-filtros');
   buttonLimpiar.innerHTML = '<b>Limpiar</b>';
+  buttonLimpiar.addEventListener("click", limpiarFiltros);
 
   filtros.appendChild(buttonLimpiar);
 
@@ -112,3 +132,71 @@ export function createSelectElements() {
   return sidebar;
 
 }
+
+/*
+const selectCategoria = document.querySelector('#filtro-categoria');
+const selectAño = document.querySelector('#filtro-año');
+const selectRanking = document.querySelector('#filtro-ranking');
+const selectOrdenar = document.querySelector('#ordenar');
+
+
+let appliedFilters = {
+  category: 'seleccionar',
+  yearOfCreation: 'seleccionar',
+  ranking: 'seleccionar',
+  orden: 'seleccionar',
+};
+
+const applyFilters = () => {
+  let filteredData = data;
+
+  if (appliedFilters.category !== 'seleccionar') {
+    filteredData = filterData(filteredData, 'facts.category', appliedFilters.category);
+  }
+
+
+  if (appliedFilters.yearOfCreation !== 'seleccionar') {
+    filteredData = filterData(filteredData, 'facts.yearOfCreation', appliedFilters.yearOfCreation);
+  }
+
+  if (appliedFilters.ranking !== 'seleccionar') {
+    filteredData = filterData(filteredData, 'facts.ranking', appliedFilters.ranking);
+  }
+
+  if (appliedFilters.orden !== 'seleccionar') {
+    filteredData = ordenarABC(filteredData, appliedFilters.orden);
+  }
+  containerBody.innerHTML = '';
+
+  if (filteredData.length === 0) {
+    const noResultsMessage = document.createElement('h3');
+    noResultsMessage.textContent = 'No se encontraron coincidencias';
+    containerBody.appendChild(noResultsMessage);
+
+  } else {
+    const filteredItems = renderItems(filteredData);
+    containerBody.appendChild(filteredItems);
+  }
+};
+
+applyFilters();
+
+selectCategoria.addEventListener('change', (event) => {
+  appliedFilters.category = event.target.value;
+  applyFilters();
+});
+
+selectAño.addEventListener('change', (event) => {
+  appliedFilters.yearOfCreation = event.target.value;
+  applyFilters();
+});
+
+selectRanking.addEventListener('change', (event) => {
+  appliedFilters.ranking = event.target.value;
+  applyFilters();
+});
+
+selectOrdenar.addEventListener('change', (event) => {
+  appliedFilters.orden = event.target.value;
+  applyFilters();
+});*/

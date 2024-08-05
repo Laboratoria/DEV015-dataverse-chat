@@ -1,5 +1,8 @@
 
-let ROUTES = {};
+let ROUTES = {
+  home:"home"
+  
+};
 let rootEl;
 
 export const setRootEl = (el) => {
