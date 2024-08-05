@@ -1,4 +1,3 @@
-
 export const filterData = (data, filterBy, value) => {
   console.log('Filtrando datos por:', filterBy, value);
 
@@ -66,3 +65,4 @@ export function generoMejorRankeado(data) {
 
   return mejorCategoria;
 }
+
