@@ -1,11 +1,29 @@
- import { navigateTo } from "../router";
+import { navigateTo } from '../router.js';
 
 export default function Home(props) {
-    const viewEl = document.createElement('div');
-    viewEl.textContent = 'Welcome to the home page!';
-    return viewEl;
-    
-      linkEl.addEventListener('click', () => navigateTo("/cards", { name: "Xochitl" }));
-   return viewEl
-  }
+  const viewEl = document.createElement('div');
+  viewEl.textContent = `¡Bienvenido a la página de inicio, ${props.name}!`;
+  console.log(props.id);
+
+  // Crea un enlace para navegar a la página "About"
+  const linkEl = document.createElement('a');
+  linkEl.href = '#'; // Previene la acción predeterminada del enlace
+  linkEl.textContent = 'Go to About Page';
+
+  // Agrega un manejador de eventos al enlace
+  linkEl.addEventListener('click', (event) => {
+    event.preventDefault(); // Previene el comportamiento por defecto del enlace
+    navigateTo("/", { name: "Xochitl", id: "100" }); // Navega a la página "cards" con propiedades
+    navigateTo('/some-undefined-route');
+
+  });
+
+  // Añade el enlace al elemento de vista
+  viewEl.appendChild(linkEl);
+
+  // Devuelve el elemento de vista
+  return viewEl;
+};
+ 
+
   

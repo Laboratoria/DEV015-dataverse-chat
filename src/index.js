@@ -1,6 +1,7 @@
 import Home from './views/home.js';
-import Cards from './views/cards.js'
-import { setRootEl, setRoutes, onURLChange, navigateTo } from './router.js';
+import Cards from './views/cards.js';
+import ErrorView from './views/errorView.js';
+import { setRootEl, setRoutes, onURLChange, initRouter } from './router.js';
 
 //CONFIGURAR EL ROUTER
 
@@ -8,50 +9,26 @@ import { setRootEl, setRoutes, onURLChange, navigateTo } from './router.js';
 const routes = {
     '/': Home,
     '/cards': Cards,
+    '/errorView': ErrorView,
   };
-  
+
   // Asigna rutas
   setRoutes(routes);
   
   // Configura el elemento raíz
-  window.addEventListener("DOMContentLoaded", () => {
-    const rootElement = document.getElementById('root');
-    setRootEl(rootElement);
-
-    // Invocar onURLChange para manejar la carga inicial de la página
-    onURLChange(window.location); 
-
-  });
-
-// Manejar la navegación del historial
-window.addEventListener('popstate', () => {
-  const location = {
-    pathname: window.location.pathname,
-    search: window.location.search
-  };
-  onURLChange(location);
-});
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  // Añade manejadores a los enlaces para cambiar la URL y renderizar la vista correspondiente sin recargar la página
-   /*document.querySelectorAll('a[data-link]').forEach(link => {
-    link.addEventListener('click', (event) => {
-      event.preventDefault();
-      const pathname = link.getAttribute('href');
-      window.history.pushState({}, pathname, window.location.origin + pathname);
+  window.addEventListener('DOMContentLoaded', () => {
+    const rootElement = document.getElementById('root'); //
+    if (rootElement) {
+      setRootEl(rootElement);
       onURLChange(window.location);
-    });
-  });*/
+    } else {
+      console.error('Root element not found');
+    }
+  });
+   // Inicia el router
+    initRouter();
+
+// Maneja la navegacion de ir ahacia delante o atrás
+window.addEventListener('popstate', () => {
+  onURLChange(window.location);
+});
