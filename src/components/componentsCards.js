@@ -8,7 +8,6 @@ export const renderItems = (data) => {
 
     const chatIcon = document.createElement('div');
     chatIcon.className = 'chatIcon';
-    chatIcon.id = 'chatIcon';
     chatIcon.innerHTML = '&#x1F4AC;';
 
     const nameElement = document.createElement('h3');

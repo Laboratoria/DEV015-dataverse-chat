@@ -2,12 +2,21 @@ import { createHeader } from '../components/componentsHeader.js';
 import { createFooter } from '../components/componentsFooter.js';
 export function ChatIndividual() {
   const container = document.createElement('div');
+  container.className = 'containerCI';
+
   const containerHeader = document.createElement('div');
-  containerHeader.className = 'containerHeaderHome';
+  containerHeader.className = 'containerHeaderCI';
+
   const containerBody = document.createElement('div');
-  containerBody.innerHTML = 'Bienvenida a la página del chat individual.';
+  containerBody.className = 'containerBodyCI';
+  const containerChatIndividual = document.createElement('div');
+  containerChatIndividual.className = 'containerChatIndividual';
+  containerChatIndividual.innerHTML = 'Bienvenida a la ventana de Chat Individual.';
+
   const containerFooter = document.createElement('div');
-  containerFooter.className = 'containerFooterHome';
+  containerFooter.className = 'containerFooterCI';
+
+  containerBody.appendChild(containerChatIndividual);
 
   const header = createHeader();
   const footer = createFooter();
