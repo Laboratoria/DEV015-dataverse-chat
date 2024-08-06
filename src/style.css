@@ -43,6 +43,19 @@ h1 {
 .imageHeader {
     width: 10%;
     height: 10%;
+    cursor: pointer;
+}
+
+.imageHeader:hover {
+    animation: vibrate 0.3s;
+}
+
+@keyframes vibrate {
+    0% { transform: rotate(0); }
+    25% { transform: rotate(1.5deg); }
+    50% { transform: rotate(-1.5deg); }
+    75% { transform: rotate(1.5deg); }
+    100% { transform: rotate(0); }
 }
 
 .containerBodyHome { 
@@ -94,6 +107,12 @@ li p {
     color: #D1D1D3;
     font-size: 0.87rem;
     text-align: justify;
+}
+
+.chatIcon {
+    height: 4rem;
+    width: 4rem;
+
 }
 
 .boldText {

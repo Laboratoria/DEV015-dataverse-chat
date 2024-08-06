@@ -1,23 +1,8 @@
-import { calcularRankingPromedio } from "../dataFunctions.js";
-import { generoMejorRankeado } from "../dataFunctions.js";
-//import { filterData, ordenarABC} from "../dataFunctions.js";
+import { filterData, ordenarABC, generoMejorRankeado, calcularRankingPromedio} from "../lib/dataFunctions.js";
 import data from '../data/dataset.js';
 import { renderItems } from './componentsCards.js';
 
-const containerBody = document.querySelector('.containerBodyHome');
-
-export function limpiarFiltros() {
-  const selectElements = document.querySelectorAll('select');
-  selectElements.forEach(select => {
-    select.selectedIndex = 0;
-  });
-   
-  containerBody.innerHTML = '';
-  const selectElementsContainer = createSelectElements();
-  const dataItems = renderItems(data);
-  containerBody.appendChild(selectElementsContainer);
-  containerBody.appendChild(dataItems);
-}
+const containerBody = document.querySelector('#containerHome');
 
 
 
@@ -32,6 +17,7 @@ export function createSelectElements() {
   const filtros = document.createElement('div');
   filtros.classList.add('filtros');
 
+
   // Crear y añadir el filtro de categoría
   const labelCategoria = document.createElement('label');
   labelCategoria.textContent = 'Categoría:';
@@ -44,6 +30,10 @@ export function createSelectElements() {
     const option = document.createElement('option');
     option.textContent = categoria;
     selectCategoria.appendChild(option);
+  });
+  selectCategoria.addEventListener('change', (event) => {
+    filterData.category = event.target.value;
+
   });
 
   filtros.appendChild(labelCategoria);
@@ -62,6 +52,10 @@ export function createSelectElements() {
     option.textContent = año;
     selectAño.appendChild(option);
   });
+  selectAño.addEventListener('change', (event) => {
+    filterData.yearOfCreation = event.target.value;
+  });
+  
 
   filtros.appendChild(labelAño);
   filtros.appendChild(selectAño);
@@ -79,6 +73,14 @@ export function createSelectElements() {
     option.textContent = ranking;
     selectRanking.appendChild(option);
   });
+  selectRanking.addEventListener('change', (event) => {
+    const selectedValue = event.target.value;
+    const filteredDataRanking = filterData(data, 'facts.ranking', selectedValue);
+    const filteredItemsRanking = renderItems(filteredDataRanking);
+  
+    containerBody.innerHTML = '';
+    containerBody.appendChild(filteredItemsRanking);
+  });
 
   filtros.appendChild(labelRanking);
   filtros.appendChild(selectRanking);
@@ -95,6 +97,9 @@ export function createSelectElements() {
     option.textContent = orden;
     selectOrden.appendChild(option);
   });
+  selectOrden.addEventListener('change', (event) => {
+    ordenarABC.orden = event.target.value;
+  });
 
   filtros.appendChild(labelOrden);
   filtros.appendChild(selectOrden);
@@ -105,11 +110,8 @@ export function createSelectElements() {
   buttonLimpiar.innerHTML = '<b>Limpiar</b>';
   buttonLimpiar.addEventListener("click", limpiarFiltros);
 
-
   filtros.appendChild(buttonLimpiar);
-
-  sidebar.appendChild(filtros);
- 
+  sidebar.appendChild(filtros); 
 
   const rankingPorAño = document.createElement('div');
   const rankingPromedio2016 = calcularRankingPromedio(data, "2016");
@@ -121,7 +123,6 @@ export function createSelectElements() {
   `;
   sidebar.appendChild(rankingPorAño);
 
-
   const mejorCategoria = document.createElement('div');
   const mejorRanking = generoMejorRankeado(data);
   mejorCategoria.id = 'mejorCategoria';
@@ -131,29 +132,33 @@ export function createSelectElements() {
       <h2 id="mejorRanking">${mejorRanking}</h2>      
   `;
 
-
   sidebar.appendChild(mejorCategoria);
-
   container.appendChild(sidebar);
 
   return sidebar;
-
 }
 
+function limpiarFiltros() {
+  const selectElements = document.querySelectorAll('select');
+  selectElements.forEach(select => {
+    select.selectedIndex = 0;
+  });
+   
+  containerBody.innerHTML = '';
+  const selectElementsContainer = createSelectElements();
+  const dataItems = renderItems(data);
+  containerBody.appendChild(selectElementsContainer);
+  containerBody.appendChild(dataItems);
+}
+
+
 /*
-const selectCategoria = document.querySelector('#filtro-categoria');
-const selectAño = document.querySelector('#filtro-año');
-const selectRanking = document.querySelector('#filtro-ranking');
-const selectOrdenar = document.querySelector('#ordenar');
-
-
-let appliedFilters = {
+const appliedFilters = {
   category: 'seleccionar',
   yearOfCreation: 'seleccionar',
   ranking: 'seleccionar',
   orden: 'seleccionar',
 };
-
 const applyFilters = () => {
   let filteredData = data;
 
@@ -173,7 +178,11 @@ const applyFilters = () => {
   if (appliedFilters.orden !== 'seleccionar') {
     filteredData = ordenarABC(filteredData, appliedFilters.orden);
   }
-  containerBody.innerHTML = '';
+  containerBody.innerHTML ='';
+  const selectElementsContainer = createSelectElements();
+  const dataItems = renderItems(data);
+  containerBody.appendChild(selectElementsContainer);
+  containerBody.appendChild(dataItems);
 
   if (filteredData.length === 0) {
     const noResultsMessage = document.createElement('h3');
@@ -186,24 +195,4 @@ const applyFilters = () => {
   }
 };
 
-applyFilters();
-
-selectCategoria.addEventListener('change', (event) => {
-  appliedFilters.category = event.target.value;
-  applyFilters();
-});
-
-selectAño.addEventListener('change', (event) => {
-  appliedFilters.yearOfCreation = event.target.value;
-  applyFilters();
-});
-
-selectRanking.addEventListener('change', (event) => {
-  appliedFilters.ranking = event.target.value;
-  applyFilters();
-});
-
-selectOrdenar.addEventListener('change', (event) => {
-  appliedFilters.orden = event.target.value;
-  applyFilters();
-});*/
+applyFilters();*/
