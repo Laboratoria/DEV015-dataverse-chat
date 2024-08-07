@@ -1,3 +1,5 @@
-h1{
-    color: aquamarine;
+header{
+    color: rgb(151, 213, 192);
+    display:flex;
+    text-align: center;
 }
