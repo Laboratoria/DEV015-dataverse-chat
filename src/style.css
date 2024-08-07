@@ -221,6 +221,25 @@ select {
     color: #D1D1D3;
 }
 
+.containerBodyCI{
+    display: flex;
+    justify-content: center;
+}
+.containerChatIndividual {
+    justify-content: center;
+    border: 0.06rem;
+    border-style: dashed;
+    border-color: #F428F3;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    width: 38rem;
+    height: 18rem;
+    padding: 1.5rem;
+    margin: 1.5rem;
+    display: flex;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #D1D1D3;
+}
 
 /* 
 @media (max-width:1000px) {
