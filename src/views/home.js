@@ -1,21 +1,26 @@
 import { navigateTo } from '../router.js';
+//import { data } from '../dataset.js';
+//import { filterData, sortData } from '../dataFunctions.js';
 
 export default function Home(props) {
   const viewEl = document.createElement('div');
-  viewEl.textContent = `¡Bienvenido a la página de inicio, ${props.name}!`;
+  viewEl.innerHTML = `
+    <h1>DataVerse</h1>
+    <div id="data-view"></div>
+  `;
   console.log(props.id);
 
-  // Crea un enlace para navegar a la página "About"
+  // Crea un enlace para navegar a la página "Cards"
   const linkEl = document.createElement('a');
   linkEl.href = '#'; // Previene la acción predeterminada del enlace
-  linkEl.textContent = 'Go to About Page';
+  linkEl.textContent = 'Go to Cards Page';
 
   // Agrega un manejador de eventos al enlace
   linkEl.addEventListener('click', (event) => {
     event.preventDefault(); // Previene el comportamiento por defecto del enlace
     navigateTo("/", { name: "Xochitl", id: "100" }); // Navega a la página "cards" con propiedades
-    navigateTo('/some-undefined-route');
-
+    navigateTo('/cards');
+    
   });
 
   // Añade el enlace al elemento de vista
