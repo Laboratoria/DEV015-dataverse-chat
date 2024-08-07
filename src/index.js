@@ -1,6 +1,6 @@
-import Home from './home/Home.js';
-import Detail from './Detail.js';
-import Error from './Error.js';
+import Home from './views/home/Home.js';
+import Detail from './views/Detail.js';
+import Error from './views/Error.js';
 
 // Importa otras vistas según sea necesario
 import { setRootEl, setRoutes, onURLChange } from './router.js';
