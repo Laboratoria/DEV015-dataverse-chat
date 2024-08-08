@@ -1,7 +1,7 @@
 import { expect } from '@playwright/test';
-import { filterData, sortData, computeStats } from '../src/dataFunctions.js';
-import { data as fakeData } from './data.js';
-import { data as fakeDataOrder } from './dataOrdenada.js';
+import { filterData, sortData, computeStats } from '../lib/dataFunction.js';
+import { data as fakeData } from '../test/data.js';
+import { data as fakeDataOrder } from '../test/dataOrdenada.js';
 
 //console.log(fakeData);
 
@@ -32,21 +32,21 @@ describe('pruebas para funcion "sortData"', () => {
     const sortOrder = "asc";
     const copiaData = [...fakeDataOrder];
     const dataOrdenada = sortData(copiaData, 'name', sortOrder);
-    expect(dataOrdenada[0].name).toBe('C Usagi Tsukino');    
+    expect(dataOrdenada[0].name).toBe('C Usagi Tsukino');
     expect(dataOrdenada[1].name).toBe('C Usagi Tsukino');
   });
   it('retorna data ordenada de forma descendente `sortData`', () => {
     const sortOrder = "desc";
     const copiaData = [...fakeData];
     const dataOrdenada = sortData(copiaData, 'name', sortOrder);
-    expect(dataOrdenada[0].name).toBe('Yaten Kou');    
+    expect(dataOrdenada[0].name).toBe('Yaten Kou');
     expect(dataOrdenada[23].name).toBe('Ami Mizuno');
   });
   it('retorna posicion 0 data ordenada de forma descendente `sortData`', () => {
     const sortOrder = "desc";
     const copiaData = [...fakeDataOrder];
     const dataOrdenada = sortData(copiaData, 'name', sortOrder);
-    expect(dataOrdenada[0].name).toBe('C Usagi Tsukino');    
+    expect(dataOrdenada[0].name).toBe('C Usagi Tsukino');
     expect(dataOrdenada[1].name).toBe('C Usagi Tsukino');
   });
 });
