@@ -1,11 +1,15 @@
+import { navigateTo } from '../../router.js';
+
 export const renderCard = (card) => {  //creando la constante para importarla en view.js
   
     const ul = document.createElement("ul"); //creando el ul
     ul.classList.add("card"); //agregando la clase card
     ul.setAttribute("itemscope", ""); // Indicando que es un contenedor de datos
     ul.setAttribute("itemtype", "https://schema.org/Person"); // Especificando el tipo de datos 
-    
-    ul.setAttribute("data-id",card['id']);
+
+    ul.addEventListener('click',function(){
+      navigateTo('/detail',{id: card['id']});
+    });
     
     // revisamos si tiene fecha de la muerte. porque no todos tienen este dato
     const yearOfDeath = card['facts']['yearOfDeath'] ? card['facts']['yearOfDeath'] : '-';
