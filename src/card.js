@@ -4,10 +4,13 @@ export const renderCard = (card) => {  //creando la constante para importarla en
     ul.classList.add("card"); //agregando la clase card
     ul.setAttribute("itemscope", ""); // Indicando que es un contenedor de datos
     ul.setAttribute("itemtype", "https://schema.org/Person"); // Especificando el tipo de datos 
+    
+    ul.setAttribute("data-id",card['id']);
+    
     // revisamos si tiene fecha de la muerte. porque no todos tienen este dato
     const yearOfDeath = card['facts']['yearOfDeath'] ? card['facts']['yearOfDeath'] : '-';
     const datos = `
-      <li itemprop="image" class="item"><a href="/detail?id=${card['id']}"><img src="${card['imageUrl']}" alt="Imagen de ${card['name']}" /></a></li>
+      <li itemprop="image" class="item"><img src="${card['imageUrl']}" alt="Imagen de ${card['name']}" /></li>
       <li itemprop="name" class="item">Nombre: ${card['name']}</li>
       <li itemprop="description" class="item">Descripción: ${card['shortDescription']}</li>
       <li itemprop="birthDate" class="item">Año de Nacimiento: ${card['facts']['yearOfBirth']}</li>

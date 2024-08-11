@@ -18,11 +18,11 @@ describe('filterData', () => {
 // Test de sortData
 describe('sortData', () => {
   it('debería ordenar los datos por nombre de manera ascendente', () => {
-    const sortedData = sortData(data, 'name', 'asc');
+    const sortedData = sortData(data,'asc');
     expect(sortedData[0].name < sortedData[1].name).toBe(true);
   });
   it('debería ordenar los datos por nombre de manera descendente', () => {
-    const sortedData = sortData(data, 'name', 'desc');
+    const sortedData = sortData(data,'desc');
     expect(sortedData[0].name > sortedData[1].name).toBe(true);
   });
 });

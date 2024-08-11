@@ -1,7 +1,18 @@
 import data from './data/dataset.js'; //importa data
+import { navigateTo } from './router.js';
 
-export function renderCategories(selectBox) {
+export function renderCategories(params) {
   
+  const selectBox = document.createElement('select');
+  selectBox.setAttribute('name','mainField');
+  selectBox.setAttribute('id','mainField');
+  selectBox.setAttribute('data-testid','select-filter');
+
+  selectBox.addEventListener('change',function(event){
+    const selectBoxOrder = document.querySelector('select#orderDir');
+    navigateTo('/',{category:event.target.value,order:selectBoxOrder.value});
+  });
+
   const uniqueCategories = [];// array que contendra categorias unicas
 
   // filtrar categorias unicas
@@ -26,7 +37,13 @@ export function renderCategories(selectBox) {
     const option = document.createElement("option");
     option.value = uniqueCat;
     option.text = uniqueCat;
+
+    if(params.category===uniqueCat){
+      option.setAttribute('selected',true);
+    }
+
     selectBox.add(option);
   }
 
+  return selectBox;
 }

@@ -13,7 +13,7 @@ export const filterData = (data, filterBy='mainField', value='') => {
   }
   
   // ORDENAR DATOS
-  export const sortData = (data, sortBy='name', sortOrder='asc') => {
+  export const sortData = (data,sortOrder='asc') => {
   
     // ordenar por nombre
     
