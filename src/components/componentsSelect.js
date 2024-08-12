@@ -1,18 +1,32 @@
 import { filterData, ordenarABC, generoMejorRankeado, calcularRankingPromedio} from "../lib/dataFunctions.js";
 import data from '../data/dataset.js';
 import { renderItems } from './componentsCards.js';
+import { navigateTo } from "../router.js";
 
-const containerBody = document.querySelector('#containerHome');
+//const containerBody = document.getElementById('containerBodyHome');
+//console.log(containerBody)
 
 
+export function createSelectElements(mainContainer) {
+  console.log (mainContainer)  
 
-export function createSelectElements() {
+  const containerBody = mainContainer.querySelector('#containesBodyHome')
+
   const container = document.createElement('div');
   container.classList.add('contenedor');
 
   const sidebar = document.createElement('div');
   sidebar.classList.add('barra-lateral');
   sidebar.id = 'barra-lateral';
+
+  const apiBox = document.createElement('div');
+  apiBox.id = 'apiBox';
+  apiBox.innerHTML = `<h3>API KEY</h3>`;
+  apiBox.addEventListener('click', () => {
+    navigateTo('/api');
+  });
+
+  sidebar.appendChild(apiBox);
 
   const filtros = document.createElement('div');
   filtros.classList.add('filtros');
@@ -138,19 +152,21 @@ export function createSelectElements() {
   return sidebar;
 }
 
+const containerBody = document.querySelector('#containerBodyHome')
+
 function limpiarFiltros() {
   const selectElements = document.querySelectorAll('select');
   selectElements.forEach(select => {
     select.selectedIndex = 0;
   });
-   
+ 
   containerBody.innerHTML = '';
   const selectElementsContainer = createSelectElements();
   const dataItems = renderItems(data);
   containerBody.appendChild(selectElementsContainer);
   containerBody.appendChild(dataItems);
+  
 }
-
 
 /*
 const appliedFilters = {
@@ -160,6 +176,7 @@ const appliedFilters = {
   orden: 'seleccionar',
 };
 const applyFilters = () => {
+
   let filteredData = data;
 
   if (appliedFilters.category !== 'seleccionar') {
@@ -193,6 +210,7 @@ const applyFilters = () => {
     const filteredItems = renderItems(filteredData);
     containerBody.appendChild(filteredItems);
   }
-};
+}
 
-applyFilters();*/
+applyFilters();
+*/

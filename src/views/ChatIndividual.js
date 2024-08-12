@@ -1,5 +1,6 @@
 import { createHeader } from '../components/componentsHeader.js';
 import { createFooter } from '../components/componentsFooter.js';
+
 export function ChatIndividual() {
   const container = document.createElement('div');
   container.className = 'containerCI';

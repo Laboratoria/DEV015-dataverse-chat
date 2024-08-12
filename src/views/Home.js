@@ -16,7 +16,7 @@ export const Home = () => {
   containerFooter.className = 'containerFooterHome'
 
   const header = createHeader();
-  const selectElements = createSelectElements();
+  const selectElements = createSelectElements(container);
   const datadetarjetas = renderItems(data);
   datadetarjetas.classname = 'datadetarjetas'
   const footer = createFooter();
@@ -30,9 +30,11 @@ export const Home = () => {
   container.appendChild(containerBody);
   container.appendChild(containerFooter);  
   
-
+  
   return container;
 }
+
+
 
 // const tarjetadedata = document.querySelector('#root');
 // const datadetarjetas = renderItems(data);
