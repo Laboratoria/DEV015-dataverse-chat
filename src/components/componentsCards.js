@@ -16,8 +16,7 @@ export const renderItems = (data) => {
     chatIcon.setAttribute("src", '../img/Chat Icon Blanco.png');
     chatIcon.className = 'chatIcon';
     chatIcon.id = 'chatIcon';
-    //chatIcon.innerHTML = '&#x1F4AC;';
-
+    chatIcon.innerHTML = '&#x1F4AC;';
 
     const nameElement = document.createElement('h3');
     nameElement.textContent = item.name;
