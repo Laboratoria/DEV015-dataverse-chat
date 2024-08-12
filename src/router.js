@@ -59,7 +59,7 @@ export const onURLChange = (location) => {
 };
 
 export const objectToQueryString = (props)=>{
-  if( props ){
+  if( Object.keys(props).length !== 0 ){
     let str = '?';
     for(const i in props){
       str += i+'='+props[i]+'&';

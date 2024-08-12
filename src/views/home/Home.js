@@ -60,16 +60,7 @@ const Home = (params) => {
   cleanButton.textContent = 'Limpiar';
 
   cleanButton.addEventListener('click',function(){
-    const selectBoxCategory = document.querySelector('select#mainField');
-    const selectBoxOrder    = document.querySelector('select#orderDir');
-
-    selectBoxCategory.value = ''; //actualiza los cambios
-    selectBoxOrder.value = 'asc';
-
-    const change_event = new Event('change');// nuevo evento que se ejecuta
-  
-    selectBoxCategory.dispatchEvent(change_event);// gatilla los cambios forzando al nuevo evento
-    selectBoxOrder.dispatchEvent(change_event);
+    navigateTo('/');
   });
 
   filterControls.appendChild(cleanButton);
