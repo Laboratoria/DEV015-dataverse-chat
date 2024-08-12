@@ -1,0 +1,335 @@
+@font-face {
+    font-family: 'ROG Font';
+    src: url(../Typografia/ROGFonts.otf);
+}
+
+body {
+    background-image: url("../img/FONDO\ M.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+
+h1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    width: 70%;
+    color: #DFDEE0;
+    border-color: #F428F3;
+    border-style: dashed;
+    border-radius: 0.5rem;
+    font-size: 3rem;
+    font-family: 'ROG Font';
+    text-shadow:
+        -1px -1px 0 #F428F3,
+        1px -1px 0 #F428F3,
+        -1px 1px 0 #F428F3,
+        1px 1px 0 #F428F3;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    gap: 8%;
+    margin-left: 2%;
+}
+
+.imageHeader {
+    width: 10%;
+    height: 10%;
+    cursor: pointer;
+}
+
+.imageHeader:hover {
+    animation: vibrate 0.3s;
+}
+
+@keyframes vibrate {
+    0% { transform: rotate(0); }
+    25% { transform: rotate(1.5deg); }
+    50% { transform: rotate(-1.5deg); }
+    75% { transform: rotate(1.5deg); }
+    100% { transform: rotate(0); }
+}
+
+.containerBodyHome { 
+    display: flex;
+}
+
+ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.25rem;
+    justify-content: center;
+    padding: 2rem;
+}
+
+ul :hover {
+    background-color: rgba(45, 2, 85, 0.7);
+    cursor: pointer;
+}
+
+li {
+    justify-content: center;
+    border: 0.06rem;
+    border-style: dashed;
+    border-color: #F428F3;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    width: 18rem;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+li img {
+    width: 100%;
+    height: auto;
+    border-radius: 0.5rem;
+}
+
+li h3 {
+    text-align: center;
+    color: #DFDEE0;
+    font-size: 1.18rem;
+}
+
+li p {
+    color: #D1D1D3;
+    font-size: 0.87rem;
+    text-align: justify;
+}
+
+.chatIcon {
+    height: 4rem;
+    width: 4rem;
+
+}
+
+.boldText {
+    font-size: 1.1em;
+}
+
+.contenedor {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.filtros {
+    height: 300px;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.4rem;
+    font-size: 0.9rem;
+    padding: 2rem;
+    margin-top: 3rem;
+    margin-left: 1.25rem;
+    border: 0.12rem solid;
+    border-radius: 0.3rem;
+    position: relative;
+    white-space: nowrap;
+}
+
+label {
+    padding: 0.06rem;
+    color: #D1D1D3;
+}
+
+select {
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #D1D1D3;
+    border: solid #F428F3 0.06rem;
+    border-radius: 0.3rem;
+    height: 1.25rem;
+}
+
+.limpiar-filtros {
+    width: 55%;
+    height: 1.5rem;
+    position: absolute;
+    bottom: 0.6rem;
+    left: 50%;
+    transform: translate(-50%);
+    background-color: black;
+    color: #DFDEE0;
+    border: solid #DFDEE0 0.06rem;
+    border-radius: 0.3rem;
+    cursor: pointer;
+    font-size: 0.8rem;
+}
+
+
+#mejorCategoria,
+#rankingPorAño {
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #DFDEE0;
+    border-radius: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1em;
+    margin-top: 2rem;
+    margin-left: 1.25rem;
+    white-space: nowrap;
+}
+
+#mejorCategoria p,
+#rankingPorAño p {
+    margin: 0;
+    padding: 0;
+}
+
+#mejorCategoria h2,
+#rankingPorAño h2 {
+    font-size: 2.8rem;
+    color: #DFDEE0;
+    text-shadow:
+        -1px -1px 0 #F428F3,
+        1px -1px 0 #F428F3,
+        -1px 1px 0 #F428F3,
+        1px 1px 0 #F428F3;
+    margin: 0;
+    padding: 0.5rem;
+}
+
+#mejorCategoria h2 {
+    font-size: 2.1rem;
+}
+
+.footer {
+    background-color: rgba(255, 255, 255, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 3rem;
+}
+
+.footer p {
+    font-size: 1rem;
+    color: #D1D1D3;
+}
+
+.containerBodyCI{
+    display: flex;
+    justify-content: center;
+}
+
+.containerChatIndividual {
+    justify-content: center;
+    border: 0.06rem;
+    border-style: dashed;
+    border-color: #F428F3;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    width: 38rem;
+    height: 18rem;
+    padding: 1.5rem;
+    margin: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #D1D1D3;
+}
+
+
+
+.chatHeader {
+    display: flex;
+    justify-content: center;
+    border-bottom: 1px solid #444;
+    padding-bottom: 10px;
+}
+
+.chatBody {
+    flex-grow: 1;
+    margin: 20px 0;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+
+.chatFooter {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-top: 1px solid #444;
+    padding-top: 10px;
+}
+
+.chatFooter input {
+    width: 30rem;
+    flex-grow: 1;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #444;
+    background-color: #333;
+    color: white;
+}
+
+.chatFooter button {
+    padding: 10px 20px;
+    background-color: #333;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    color: white;
+}
+/* 
+@media (max-width:1000px) {
+    .barra-lateral {
+        display: none;
+    }
+
+    .menu-hamburguesa {
+        cursor: pointer;
+        display: flex;
+        border-color: #F428F3;
+        border-style: dashed;
+        border-width: 0.15rem;
+        border-radius: 0.3rem;
+        padding: 0.2rem;
+        padding-left: 1rem;
+        padding-right: 1rem;
+        margin: 0.8rem;
+    }
+
+    .header-left {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-right: 3%;
+    }
+
+    .header-logo {
+        width: 5rem;
+    }
+
+    .barra-lateral-desplegada {
+        display: block;
+    }
+    #ranking-por-año {
+        display: none;
+    }    
+    #mejor-categoria {
+        display: none;
+    }
+} */
+
