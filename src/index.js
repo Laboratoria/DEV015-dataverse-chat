@@ -1,4 +1,4 @@
-import { setRootEl, setRoutes, onURLChange,} from './router.js';
+import { setRootEl, setRoutes, onURLChange } from './router.js';
 import { Home } from './views/Home.js';
 import { ChatIndividual } from './views/ChatIndividual.js';
 // import { chatGrupal } from './views/chatGrupal.js';
@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   onURLChange();
-
+  
 });
 
 window.addEventListener('popstate', onURLChange);
