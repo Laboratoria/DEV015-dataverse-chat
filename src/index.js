@@ -3,6 +3,7 @@ import { Home } from './views/Home.js';
 import { ChatIndividual } from './views/ChatIndividual.js';
 // import { chatGrupal } from './views/chatGrupal.js';
 import { ErrorView } from './views/Error.js';
+import { api } from './views/Api.js';
 
 document.addEventListener('DOMContentLoaded', () => {
   const root = document.getElementById('root');
@@ -13,6 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
     '/chat-individual': ChatIndividual,
     // '/chat-grupal': chatGrupal,
     '/error': ErrorView,
+    '/api' : api,
   });
 
   onURLChange();
