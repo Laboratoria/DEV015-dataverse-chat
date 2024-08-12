@@ -11,7 +11,26 @@ export function ChatIndividual() {
   containerBody.className = 'containerBodyCI';
   const containerChatIndividual = document.createElement('div');
   containerChatIndividual.className = 'containerChatIndividual';
-  containerChatIndividual.innerHTML = 'Bienvenida a la ventana de Chat Individual.';
+
+  const chatContainer = document.createElement('div');
+  chatContainer.className = 'chatContainer';
+  const chatHeader = document.createElement('div');
+  chatHeader.className = 'chatHeader';
+  chatHeader.innerHTML = 'Chat';
+  const chatBody = document.createElement('div');
+  chatBody.className = 'chatBody';
+
+  const chatFooter = document.createElement('div');
+  chatFooter.className = 'chatFooter';
+  chatFooter.innerHTML = `
+    <input type="text" placeholder="Tu Mensaje" />
+    <button class="sendMessage">Enviar</button>
+  `;
+
+  containerChatIndividual.appendChild(chatHeader);
+  containerChatIndividual.appendChild(chatBody);
+  containerChatIndividual.appendChild(chatFooter);
+    
 
   const containerFooter = document.createElement('div');
   containerFooter.className = 'containerFooterCI';
