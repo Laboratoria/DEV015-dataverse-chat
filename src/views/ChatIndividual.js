@@ -11,6 +11,7 @@ export function ChatIndividual() {
   containerBody.className = 'containerBodyCI';
   const containerChatIndividual = document.createElement('div');
   containerChatIndividual.className = 'containerChatIndividual';
+
   const chatContainer = document.createElement('div');
   chatContainer.className = 'chatContainer';
   const chatHeader = document.createElement('div');
