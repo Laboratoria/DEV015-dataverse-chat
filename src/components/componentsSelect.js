@@ -1,6 +1,10 @@
-import { calcularRankingPromedio } from "../dataFunctions.js";
-import { generoMejorRankeado } from "../dataFunctions.js";
+import { filterData, ordenarABC, generoMejorRankeado, calcularRankingPromedio} from "../lib/dataFunctions.js";
 import data from '../data/dataset.js';
+import { renderItems } from './componentsCards.js';
+
+const containerBody = document.querySelector('#containerHome');
+
+
 
 export function createSelectElements() {
   const container = document.createElement('div');
@@ -12,6 +16,7 @@ export function createSelectElements() {
 
   const filtros = document.createElement('div');
   filtros.classList.add('filtros');
+
 
   // Crear y añadir el filtro de categoría
   const labelCategoria = document.createElement('label');
@@ -25,6 +30,10 @@ export function createSelectElements() {
     const option = document.createElement('option');
     option.textContent = categoria;
     selectCategoria.appendChild(option);
+  });
+  selectCategoria.addEventListener('change', (event) => {
+    filterData.category = event.target.value;
+
   });
 
   filtros.appendChild(labelCategoria);
@@ -43,6 +52,10 @@ export function createSelectElements() {
     option.textContent = año;
     selectAño.appendChild(option);
   });
+  selectAño.addEventListener('change', (event) => {
+    filterData.yearOfCreation = event.target.value;
+  });
+  
 
   filtros.appendChild(labelAño);
   filtros.appendChild(selectAño);
@@ -60,6 +73,14 @@ export function createSelectElements() {
     option.textContent = ranking;
     selectRanking.appendChild(option);
   });
+  selectRanking.addEventListener('change', (event) => {
+    const selectedValue = event.target.value;
+    const filteredDataRanking = filterData(data, 'facts.ranking', selectedValue);
+    const filteredItemsRanking = renderItems(filteredDataRanking);
+  
+    containerBody.innerHTML = '';
+    containerBody.appendChild(filteredItemsRanking);
+  });
 
   filtros.appendChild(labelRanking);
   filtros.appendChild(selectRanking);
@@ -76,6 +97,9 @@ export function createSelectElements() {
     option.textContent = orden;
     selectOrden.appendChild(option);
   });
+  selectOrden.addEventListener('change', (event) => {
+    ordenarABC.orden = event.target.value;
+  });
 
   filtros.appendChild(labelOrden);
   filtros.appendChild(selectOrden);
@@ -84,12 +108,10 @@ export function createSelectElements() {
   const buttonLimpiar = document.createElement('button');
   buttonLimpiar.classList.add('limpiar-filtros');
   buttonLimpiar.innerHTML = '<b>Limpiar</b>';
-
+  buttonLimpiar.addEventListener("click", limpiarFiltros);
 
   filtros.appendChild(buttonLimpiar);
-
-  sidebar.appendChild(filtros);
- 
+  sidebar.appendChild(filtros); 
 
   const rankingPorAño = document.createElement('div');
   const rankingPromedio2016 = calcularRankingPromedio(data, "2016");
@@ -101,7 +123,6 @@ export function createSelectElements() {
   `;
   sidebar.appendChild(rankingPorAño);
 
-
   const mejorCategoria = document.createElement('div');
   const mejorRanking = generoMejorRankeado(data);
   mejorCategoria.id = 'mejorCategoria';
@@ -111,11 +132,67 @@ export function createSelectElements() {
       <h2 id="mejorRanking">${mejorRanking}</h2>      
   `;
 
-
   sidebar.appendChild(mejorCategoria);
-
   container.appendChild(sidebar);
 
   return sidebar;
-
 }
+
+function limpiarFiltros() {
+  const selectElements = document.querySelectorAll('select');
+  selectElements.forEach(select => {
+    select.selectedIndex = 0;
+  });
+   
+  containerBody.innerHTML = '';
+  const selectElementsContainer = createSelectElements();
+  const dataItems = renderItems(data);
+  containerBody.appendChild(selectElementsContainer);
+  containerBody.appendChild(dataItems);
+}
+
+
+/*
+const appliedFilters = {
+  category: 'seleccionar',
+  yearOfCreation: 'seleccionar',
+  ranking: 'seleccionar',
+  orden: 'seleccionar',
+};
+const applyFilters = () => {
+  let filteredData = data;
+
+  if (appliedFilters.category !== 'seleccionar') {
+    filteredData = filterData(filteredData, 'facts.category', appliedFilters.category);
+  }
+
+
+  if (appliedFilters.yearOfCreation !== 'seleccionar') {
+    filteredData = filterData(filteredData, 'facts.yearOfCreation', appliedFilters.yearOfCreation);
+  }
+
+  if (appliedFilters.ranking !== 'seleccionar') {
+    filteredData = filterData(filteredData, 'facts.ranking', appliedFilters.ranking);
+  }
+
+  if (appliedFilters.orden !== 'seleccionar') {
+    filteredData = ordenarABC(filteredData, appliedFilters.orden);
+  }
+  containerBody.innerHTML ='';
+  const selectElementsContainer = createSelectElements();
+  const dataItems = renderItems(data);
+  containerBody.appendChild(selectElementsContainer);
+  containerBody.appendChild(dataItems);
+
+  if (filteredData.length === 0) {
+    const noResultsMessage = document.createElement('h3');
+    noResultsMessage.textContent = 'No se encontraron coincidencias';
+    containerBody.appendChild(noResultsMessage);
+
+  } else {
+    const filteredItems = renderItems(filteredData);
+    containerBody.appendChild(filteredItems);
+  }
+};
+
+applyFilters();*/

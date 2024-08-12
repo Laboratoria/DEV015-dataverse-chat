@@ -1,12 +1,19 @@
+import { navigateTo } from "../router.js";
+
 export const renderItems = (data) => {
 
 
   const ul = document.createElement("ul");
+  ul.id = 'card';
+  ul.addEventListener('click', () => {
+    navigateTo('/chat-individual');
+  });
   data.forEach(item => {
     const li = document.createElement('li');
     // li.setAttribute("itemtype",)
 
-    const chatIcon = document.createElement('div');
+    const chatIcon = document.createElement('img');
+    chatIcon.setAttribute("src", '../img/Chat Icon Blanco.png');
     chatIcon.className = 'chatIcon';
     chatIcon.innerHTML = '&#x1F4AC;';
 

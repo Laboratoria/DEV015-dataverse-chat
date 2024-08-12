@@ -11,12 +11,14 @@ export const Home = () => {
   containerHeader.className = 'containerHeaderHome'
   const containerBody = document.createElement('div');
   containerBody.className = 'containerBodyHome'
+  containerBody.id = 'containerBodyHome'
   const containerFooter = document.createElement('div');
   containerFooter.className = 'containerFooterHome'
 
   const header = createHeader();
   const selectElements = createSelectElements();
   const datadetarjetas = renderItems(data);
+  datadetarjetas.classname = 'datadetarjetas'
   const footer = createFooter();
 
   containerHeader.appendChild(header);
@@ -30,11 +32,7 @@ export const Home = () => {
   
 
   return container;
-
-
 }
-
-
 
 // const tarjetadedata = document.querySelector('#root');
 // const datadetarjetas = renderItems(data);
@@ -191,5 +189,3 @@ export const Home = () => {
 //     barraLateral.classList.toggle('barra-lateral-desplegada');
 //   });
 // })
-
-
