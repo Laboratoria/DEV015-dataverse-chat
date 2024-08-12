@@ -1,73 +1,14 @@
 <!DOCTYPE html>
 <html>
-
+<html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dataverse</title>
   <link rel="stylesheet" href="style.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap"
-    rel="stylesheet">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-    rel="stylesheet">
-     <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Aclonica&display=swap" rel="stylesheet"> 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Henny+Penny&display=swap" rel="stylesheet">
 </head>
 <body>
-  <header>
-    <h1>Dreamland</h1>
-  </header>
-  <main>
-    <h2>¡Bienvenidos fans de Disney y Pixar! Explora nuestro mágico contenido y descubre las novedades de este fantástico mundo</h2>
-
-    <div class="selectores">
-      <label for="epoca"><span class="tituloSelectores"><b> Selecciona por épocas</b></span></label>
-      <select id="epoca" data-testid="select-filter" name="epocas">
-      <option value="0">Seleccionar</option>
-      <option value="1990">1990</option>
-      <option value="2000">2000</option>
-      <option value="2010">2010</option>
-      <option value="2020">2020</option>
-    </select>
-
-      <label for="nombre"><span class="tituloSelectores"><b>Ordena por nombre</b></span></label>
-      <select id="nombre" data-testid="select-sort" name="name">
-        <option value="orden">Ordenar</option>
-        <option value="Asc">A - Z</option>
-        <option value="Desc">Z - A</option>
-      </select>
-    
-      <button id="borrar" data-testid="button-clear">Limpiar Filtros</button>
-    </div>
-    <div id="datosestadisticos">
-     <button id="datosestadisticosDisney" class="botonDatos">¿Sabías qué?</button>
-     <div class="contenido-oculto">
-      <ul class="datosdisney">
-        <li id="duracion">El promedio de duración es:</li>
-        <li id="nota">El promedio de clasificación es:</li>
-      </ul> 
-      </div>
-    </div>
-    <div id="root"></div>
-    
-
-  </main>
-  <footer>
-    <p><b>Creado por Camila Carreño y Daniela Martínez</b></p>
-    <b><p>Proyecto Dataverse para Laboratoria. <em>La información de esta página está proporcionado por Disney y Pixar, quienes tiene derechos exclusivos del contenido.</em></p></b>
-  </footer>
-  <script src="main.js" type="module"></script>
+ <div id="root"></div>
+ <script src="main.js" type="module"></script>
 </body>
-
-
 </html>
