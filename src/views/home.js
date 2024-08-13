@@ -7,13 +7,4 @@ export const Home = () => {
 
 
 
-
- //funcion para crear tarjetas
- const renderItems = (data) => {
-    const ulElement = document.createElement('ul');
-    data.forEach(pelicula => 
-
-    ulElement.appenChild(Card("ulPelis"))
-    );
-    return ulElement;
- };
+ export default Home;
