@@ -20,16 +20,17 @@
   header {
     margin-bottom: 20px;
     text-align: center; /* Centra el contenido del header */
-    background-image: linear-gradient(rgba(163, 146, 165, 0.35), rgba(144, 109, 137, 0.244)),url("oig2_720.jpg");
+    background-image: linear-gradient(rgba(43, 3, 47, 0.35), rgba(144, 109, 137, 0.244)),url("imagen2.jpg");
 
   }
-  
+      
   body header h1 {
     margin: 30px; /* Espacio superior */
     font-size: 3em; /* Tamaño de fuente */
-    color:#36492A
+    color:#8c637c
    
   }
+
   
   #root, #root>div, #cards_root {
     display: flex;
