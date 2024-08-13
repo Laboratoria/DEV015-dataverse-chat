@@ -5,8 +5,7 @@ const Detail = (params) => {
 
     const view = document.createElement('div');
     view.innerHTML = `
-      <h1>Vista detallada de X mujer:${cardData['name']}</h1>
-      <p>Texto</p>
+      <h1>Vista detallada de :${cardData['name']}</h1>
       <a href="/">Link a Home</a>
     `;
     return view;
