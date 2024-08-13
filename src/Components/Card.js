@@ -1,9 +1,10 @@
-
+export const cards =()=> {  
 const liElement = document.createElement("li");
       liElement.classList.add("tarjeta");
       liElement.setAttribute("itemtype", "peliculasDisney");
       liElement.setAttribute("itemscope", "true");
       liElement.setAttribute("data-id", pelicula.id)
+      
       liElement.innerHTML = `
       <div itemscope itemtype="peliculasDisneyPixar">
         <div class="tituloPeli"><h3 itemprop="name"> ${pelicula.name} </h3> </div>

@@ -20,7 +20,6 @@ const queryStringToObject = (queryString) => {
   // return the object
   const params = new URLSearchParams(queryString);
   const results = {};
-
   for (const [key, value] of mySearchParams) {
     results[key] = value;
 } 
