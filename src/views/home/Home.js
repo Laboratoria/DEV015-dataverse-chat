@@ -1,11 +1,12 @@
 import data from '../../data/dataset.js'; //importa data
-import { renderItems } from '../../view.js'; //importa view
-import { filterData,sortData } from '../../lib/dataFunctions.js';
+import { renderItems, renderStats } from '../../view.js'; //importa view
+import { filterData,sortData,computeStats } from '../../lib/dataFunctions.js';
 import { renderCategories } from '../../categories.js'; //importa categories
 import { navigateTo } from '../../router.js';
 
 // aqui van las tarjetas
 const Home = (params) => {
+
   const categorySelect = renderCategories(params);
 
   const controls = document.createElement('div');
@@ -77,6 +78,14 @@ const Home = (params) => {
     }
 
     const view = document.createElement('div');
+
+    const link = document.createElement('link');
+    // Set the necessary attributes
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = './views/home/style.css'; // Replace with the path to your CSS file
+    view.appendChild(link);
+
     view.appendChild(controls);
 
     const cardsRoot = document.createElement('div');
@@ -87,6 +96,9 @@ const Home = (params) => {
     }
 
     view.appendChild(cardsRoot);
+
+    const facts = document.querySelector("#curious_fact");
+    facts.textContent = renderStats(computeStats(data));
 
     return view;
   };
