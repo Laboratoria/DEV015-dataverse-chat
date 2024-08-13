@@ -5,6 +5,9 @@ import Error from './views/Error.js';
 // Importa otras vistas según sea necesario
 import { setRootEl, setRoutes, onURLChange } from './router.js';
 
+import data from './data/dataset.js'; //importa data
+import { renderStats } from './view.js'; //importa view
+import { computeStats } from './lib/dataFunctions.js';
 
 // Define las rutas y las vistas asociadas
 const routes = {
@@ -22,10 +25,14 @@ window.addEventListener("DOMContentLoaded", () => {
   // Supongamos que tu elemento raíz en el HTML es un div con id 'root'
   const rootElement = document.getElementById('root');
   setRootEl(rootElement);
+
   // Maneja la carga de la página inicial
   onURLChange(window.location);
 
-
   // Escucha los cambios de URL (navegación)
   window.onpopstate = () => onURLChange(window.location);
+
+  const facts = document.querySelector("#curious_fact");
+  facts.textContent = renderStats(computeStats(data));
+
 });

@@ -44,7 +44,8 @@ const renderView = (pathname, props = {}) => {
 
 export const navigateTo = (pathname, props = {}) => {
   // Update window history with pushState
-  window.history.pushState({}, pathname, window.location.origin + pathname);
+  console.log(props);
+  window.history.pushState({}, pathname, window.location.origin + pathname+objectToQueryString(props));
   // Render the view with the pathname and props
   renderView(pathname, props);
 };
@@ -56,6 +57,24 @@ export const onURLChange = (location) => {
   // Render the view with the pathname and query object
   renderView(pathname, queryObject);
 };
+
+export const objectToQueryString = (props)=>{
+  if( Object.keys(props).length !== 0 ){
+    let str = '?';
+    for(const i in props){
+      str += i+'='+props[i]+'&';
+    }
+
+    if (str.endsWith("&")) {
+      str = str.slice(0, -1);
+    }
+
+    return str;
+  }
+  else{
+    return '';
+  }
+}
 
 // Set up the popstate event listener for back/forward navigation
 window.onpopstate = () => {
