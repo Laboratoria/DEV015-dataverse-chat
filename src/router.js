@@ -44,7 +44,6 @@ const renderView = (pathname, props = {}) => {
 
 export const navigateTo = (pathname, props = {}) => {
   // Update window history with pushState
-  console.log(props);
   window.history.pushState({}, pathname, window.location.origin + pathname+objectToQueryString(props));
   // Render the view with the pathname and props
   renderView(pathname, props);

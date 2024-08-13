@@ -37,6 +37,9 @@
     gap: 10px;
     justify-content: center;
   }
+  #root>.detail-card {
+    justify-content: left;
+  }
   .card {
      margin: 10px;
      border: 2px solid #ddd; /* Borde de la tarjeta */
@@ -47,12 +50,14 @@
      text-align: left;
      flex: 1 0 calc(25% - 40px); /* Cada tarjeta ocupará un 40% del ancho del contenedor, menos el espacio del gap */
      box-sizing: border-box;
-     max-width: calc(25% - 40px); /* Limitar el ancho máximo de cada tarjeta */
+     max-width: calc(20% - 60px); /* Limitar el ancho máximo de cada tarjeta */
      display: flex;
      flex-wrap: wrap;
      list-style-type: none; /* Elimina los puntos de la lista */
      padding: 0; /* Elimina el padding */
      font-size: 1.1em;
+     justify-content: space-between;
+     overflow: hidden;
   }
    
   .card li.item {
@@ -69,8 +74,10 @@
   }
 
   .card li.item img {
+    margin-top: -15px;
+    margin-left: -10px;
     height: 200px;
-    width: 250px;
+    width: 290px;
     object-fit: cover;
   }
   select{
@@ -134,3 +141,7 @@
         max-width: calc(100% - 40px);
     }}
  
+.detail-card {
+  justify-content: center;
+  
+}
