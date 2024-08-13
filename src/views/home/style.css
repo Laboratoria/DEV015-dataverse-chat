@@ -1,36 +1,3 @@
-* {
-    padding: 0px; 
-    margin: 0px; 
-    box-sizing: border-box;
-    
-  } 
-  
-  body {
-    font-family: Arial, sans-serif; /* Define la fuente */
-    background-color: #f2eee1; /* Color de fondo suave */
-    padding: 20px; 
-    border: 0px;
-    margin: 0px;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    
-  }
-  
-  header {
-    margin-bottom: 20px;
-    text-align: center; /* Centra el contenido del header */
-    background-image: linear-gradient(rgba(43, 3, 47, 0.35), rgba(144, 109, 137, 0.244)),url("imagen2.jpg");
-
-  }
-      
-  body header h1 {
-    margin: 30px; /* Espacio superior */
-    font-size: 3em; /* Tamaño de fuente */
-    color:#8c637c
-   
-  }
-
   
   #root, #root>div, #cards_root {
     display: flex;
@@ -101,34 +68,6 @@
     font-size: 15px
   }
                  
-  footer {
-    max-width: 100%;
-    background-color: #937294;
-    padding: 20px;
-    bottom: 0%;
-    text-align: center;
-    color: rgb(11, 8, 10);
-    text-shadow: 2px 2px 5px rgb(237, 215, 215);
-    font-size: 2em
-  }
-  #curious_fact{
-    max-width: 100%;
-    background-image: linear-gradient(rgba(163, 146, 165, 0.35), rgba(144, 109, 137, 0.244)),url("oig2_720.jpg");
-    padding: 10px;
-    bottom: 0%;
-    text-align: center;
-    margin: 10px;
-    color: rgb(3, 2, 3);
-    text-shadow: 2px 2px 5px rgb(246, 242, 242);
-    font-size: 2em;
-  }
-  h3{
-    color: rgb(3, 2, 3);
-    text-shadow: 2px 2px 5px rgb(246, 242, 242);
-  }
-  #curious_fact div{
-    margin: 30px;
-  }
   @media (max-width: 900px) {
     .card {
         flex: 1 1 calc(50% - 40px); /* 50% del ancho menos el espacio del gap */
