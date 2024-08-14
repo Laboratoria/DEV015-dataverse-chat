@@ -1,5 +1,4 @@
-/* eslint-disable indent */
-/* eslint-disable no-unused-vars */
+
 
 export const computeStats = (data) => {
     const sumaTotalDuracion = data.reduce((acumulador, pelicula) => acumulador + Number(pelicula.facts.tiempoDuracion.split(" ")[0]), 0);
