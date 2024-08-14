@@ -62,3 +62,15 @@ footer {
   #curious_fact div{
     margin: 30px;
   }
+
+  .hidden{
+    display: none;
+  }
+
+  .apikey{
+    font-size: 12px;
+    color: #000;
+    position: absolute;
+    top: 30px;
+    right: 30px;
+  }

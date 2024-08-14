@@ -11,10 +11,6 @@ const Home = (params) => {
 
   const controls = document.createElement('div');
 
-  const title = document.createElement('h1');
-  title.textContent='MUJERES QUE INSPIRAN';
-  controls.appendChild(title);
-
   const filterControls = document.createElement('div');
   filterControls.classList.add('filter-controls');
 
