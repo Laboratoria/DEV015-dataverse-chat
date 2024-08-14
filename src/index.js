@@ -13,6 +13,7 @@ setRoutes(routes);
 
 // Set the root element where views will be rendered
 window.addEventListener("DOMContentLoaded", () => {
-  setRootEl(/* root element */);
-  
+  const rootEl = document.getElementById("root");
+  setRootEl(rootEl);
+  onURLChange(window.location);
 });

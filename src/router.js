@@ -18,12 +18,8 @@ const queryStringToObject = (queryString) => {
   // convert query string to URLSearchParams
   // convert URLSearchParams to an object
   // return the object
-  const params = new URLSearchParams(queryString);
-  const results = {};
-  for (const [key, value] of mySearchParams) {
-    results[key] = value;
-} 
-  return results;
+  const params = Object.fromEntries(new URLSearchParams(queryString));
+  return params;
 }
 
 const renderView = (pathname, props={}) => {
@@ -60,8 +56,8 @@ export const onURLChange = (location) => {
   // parse the location for the pathname and search params
   // convert the search params to an object
   // render the view with the pathname and object
-  const pathname = location.pathname
-  const searchParams = location.search
-  const searchParamsObject = queryStringToObject(searchParams)
-  renderView(pathname,searchParamsObject)
+  const pathname = location.pathname;
+  const searchParams = location.search;
+  const searchParamsObject = queryStringToObject(searchParams);
+  renderView(pathname,searchParamsObject);
 }
