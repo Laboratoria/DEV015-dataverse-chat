@@ -1,0 +1,242 @@
+@import url('https://fonts.googleapis.com/css2?family=Niconne&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+  
+html {
+  font-size: 16px; /* Establece la base para rem */
+  background-color: #D9E3E8;
+}
+
+/*fondo de toda la pagina*/
+main {
+  background-image: url(imagenes/fondo_abejas.png);
+}
+
+/*logo y texto*/
+header {
+  text-align: center; /*centra el texto dentro del encabezado*/
+  border: 1px solid #cccccc0c; /*borde sutil dentro del encabezado*/
+  margin: auto; /*centrar horizontalmente en su contenedor*/
+  padding: 0.5rem; /* espacio interno alrededor del contenido */
+  font-family: 'Niconne', cursive;
+  font-size: 5vw; /*relativo al tamaño del viewport*/
+  background-image: url('imagenes/fondo_canva.png'); /*imagen de fondo del encabezado*/ 
+}
+
+/*el filtro y el ordenar juntos*/
+select {
+  border-radius: 0.3125rem; /* bordes redondeados */
+}
+
+/*titulo dentro del header*/
+h1 {
+  text-align: center; /*centrar el texto*/
+  border: 1px solid #cccccc0c; /*borde sutil alrededor del titulo*/
+  margin-top: 0; /* elimina el margen superior */
+  padding-bottom: 1rem; /* espacio interno de la parte inferior del titulo */
+  font-family: 'Niconne', cursive;
+  font-size: 4rem;/*tamaño de funte fijo en rem*/
+  color: rgb(58, 7, 105);
+  text-shadow: 0.625rem 0.625rem 0.625rem rgb(76, 56, 78); /* sombra del texto */
+}
+
+/*subtitulo*/
+h2 {
+  text-align: center; /*centrar el texto*/
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2rem; /*tamaño de funte fijo en rem*/
+  font-weight: 300; /*grosor de la fuente*/
+  margin-top: -2rem; /* mueve hacia arriba en rem */
+  color: #3a0769;
+}
+
+/*filtrado, ordenado y despejar*/
+#filter-form {
+  text-align: center; /*centrar el texto*/
+  font-family: 'Niconne', cursive;
+  font-size: 1.5rem; /*tamaño fuente fijo rem*/
+  color: rgb(58, 7, 105);
+  max-width: 64rem; /* ancho maximo del formulario para rem */
+  margin: 0 auto; /* centra el formulario horizontalmente */
+}
+
+#family-filter, #alfabetico {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1rem; /*tamaño fuente fijo rem*/
+}
+
+button {
+  margin-top: 0.625rem; /* espacio superior del boton */
+  background-color: rgba(204, 129, 223, 0.623); /* Color lila semi-transparente */
+  color: rgb(58, 7, 105); /* Color del texto */
+  font-family: 'Niconne', cursive;
+  border: none; /* Sin borde */
+  border-radius: 0.625rem; /* bordes redondeados justado para rem */
+  cursor: pointer; /* cursor al pasar por encima */
+  font-size: 1.50rem; /* Tamaño de la fuente */
+  text-align: center; /* Alineación del texto centrado*/
+  width: 12.5rem; /* ancho fijo del boton ajustado para rem */
+  padding: 0.3125rem 0.3125rem; /* espacio interno ajustado para rem */
+  margin-left: auto; /*centrado de la derecha*/
+  margin-right: auto; /*centrado de la izquierda*/
+}
+
+label {
+  margin-bottom: 0.625rem; /* espacio inferior */
+  font-size: 1.25rem; /* Ajustado para rem */
+}
+
+/*contenedor de las tarjetas*/
+.flex-container {
+  display: flex; /*usa el modedlo de caja flexible*/
+  justify-content: center; /* Centra el contenido horizontalmente */
+}
+
+/*disposicion de las tarjetas*/
+#character-list {
+  display: flex; /*usa el modelo de caja flexible*/
+  flex-wrap: wrap; /* se ajustan a una nueva línea si no caben en una sola fila */
+  justify-content: center; /* Centra las tarjetas horizontalmente */
+  padding: 0; /*sin relleno*/
+  margin: 0; /*sin margen*/
+  list-style: none; /* elimina los puntos de lista por defecto */
+}
+
+/* Estilo para las tarjetas */
+.personajes {
+  font-family: 'Montserrat', sans-serif;
+  width: 12.5rem; /* ancho fijo de la tarjeta */
+  height: auto; /* ajustar altura automáticamente */
+  border: 1px solid #ccc; /*borde alrededor de la tarjeta*/
+  padding: 0.625rem; /* espacio interno de la tarjeta ajustado para rem */
+  box-shadow: 0.125rem 0.125rem 0.5rem rgba(0, 0, 0, 0.1); /*sombra de la tarjeta*/
+  border-radius: 0.3125rem; /* borde redondeado */
+  background-color: #8a4c99c5;
+  transition: transform 0.3s; /*transicion para el efecto escala*/
+  color: #fcf7f7;
+  margin: 0.625rem; /* Ajustado para rem */
+  display: flex; /*usa el modelo de caja flexible*/
+  flex-direction: column; /*alinea los elementos hijos verticalmente*/
+  justify-content: space-between; /* Espacio entre los elementos para asegurar una distribución uniforme */
+}
+
+/* nombres dentro de la tarjeta */
+h3 {
+  font-family: 'Niconne', cursive;
+  font-size: 2.5rem;/* tamaño de fuente fijo en rem */
+  text-align: center; /*alineacion centrada del texto*/
+  padding: 0.3125rem; /* espacio interno alrededor del texto */
+  font-weight: lighter; /* grosor de fuente más ligero */
+  color: rgb(255, 255, 255);
+  text-shadow: 0.125rem 0.125rem 0.25rem rgb(60, 9, 70); /* línea exterior al texto */
+  margin: 0.3125rem; /*espacio exterior alrededor del texto*/
+}
+
+/*descripción de la tarjeta*/
+p {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;/* grosor de fuente normal */
+  font-size: 1.05rem; /* tamaño de fuente fijo en rem */
+  color: rgb(240, 240, 243);
+  text-shadow: 0.125rem 0.125rem 0.25rem rgb(60, 9, 70); /* línea exterior al texto */
+  margin: 0.125rem; /* espacio exterior alrededor del texto */
+  padding: 0.125rem; /* espacio interno alrededor del texto */
+}
+
+/*efectos especiales :p*/
+.personajes:hover { /*hace que las tarjetas se levanten*/
+  transform: scale(1.05);/* aumenta el tamaño de la tarjeta en un 5% */
+} 
+
+
+/* Estilo para las imágenes */
+.personajes img {
+  width: 100%;/*ancho completo del contenedor*/
+  height: auto;/*altura ajustada automáticamente para mantener la proporción*/
+  object-fit: cover;/*ajusta la imagen para cubrir el área del contenedor sin distorsionar */
+  border-radius: 0.3125rem; /*bordes redondeados de la imagen*/
+  margin-bottom: 0.625rem; /* espacio inferior de la imagen */
+}
+
+/*pie de pagina*/
+footer {
+  background-color: #D9E3E8; /*color de fondo del pie de pagina*/
+}
+
+.piepagina {
+  font-size: 1.25rem; /* tamaño de fuente fijo en rem */
+  text-align: center;/* centra el texto en el pie de página */
+  color: rgba(40, 3, 41, 0.795);
+  font-family: 'Montserrat', sans-serif;
+  border: 1px solid #f7f7f704;
+  margin-top: 0; /* elimina el margen superior */
+  padding: 0.125rem; /* espacio interno alrededor del contenido */
+}
+
+#calcularEstadisticas {
+  border-radius: 5px; /* ajustado para rem */
+  font-family: 'Montserrat', sans-serif;
+  text-align:center; /* centra el texto dentro del botón */
+  font-size: 1rem;/* tamaño de fuente fijo en rem */
+  font-weight: bold;/* grosor de fuente en negrita */
+  display: block;/* muestra el botón como un bloque */
+  margin: 0 auto;/* centra el botón horizontalmente */
+  width: 200px; /* ancho específico para el botón */
+  padding: 10px 20px; /* espacio interno alrededor del texto del botón */
+  line-height: 1.2; /* eltura de línea para centrar el texto verticalmente */
+  background-color: rgba(204, 129, 223, 0.623); /* color de fondo */
+  color: rgb(58, 7, 105); /* color del texto */
+  border: none; /* sin borde */
+  cursor: pointer; /* cursor al pasar por encima */
+  box-sizing: border-box; /* incluye padding y borde en el tamaño total del botón */
+}
+
+/*continuar el cuadro de resultados de estadisticas*/
+#resultado-estadisticas {
+  display: none; /* ocultar por defecto */
+  margin-top: 1.25rem; /* espacio superior del contenedor */
+  padding: 0.9375rem; /* espacio interno del contenedor */
+  border: 1px solid #ddd; /*borde alrededor del contenedor*/
+  border-radius: 0.3125rem; /* borde redondeado */
+  background-color: rgba(138, 76, 153, 0.774);
+  justify-content: space-between; /* Espacio automático entre los elementos */
+  align-items: center; /* alinea verticalmente en el centro si el contenedor tiene altura */
+  overflow-x: auto; /* agregar una barra de desplazamiento horizontal si es necesario */
+}
+
+/* Estilo para los párrafos dentro del contenedor */
+#resultado-estadisticas p {
+  /*adapta el tamaño de la letra segun el tamaño de la pantalla*/
+  font-size: 5vw;/*tamaño de fuente relativo al ancho del viewport*/
+  margin: 0; /* elimina el margen para evitar espacio adicional */
+  color: #f5f0f0;
+  font-family: 'Niconne', cursive;
+  white-space: nowrap; /*evitar el ajuste de línea dentro de los párrafos*/
+}
+
+/* Media queries */
+@media (max-width: 768px) {
+  header {
+    font-size: 2.5rem; /* Tamaño de fuente reducido en pantallas pequeñas */
+  }
+
+  h1 {
+    font-size: 3.75rem; /* Tamaño de fuente reducido en pantallas pequeñas */
+  }
+
+  h2 {
+    font-size: 1.25rem; /* Tamaño de fuente reducido en pantallas pequeñas */
+  }
+
+  #filter-form {
+    font-size: 1.25rem; /* Tamaño de fuente reducido en pantallas pequeñas */
+    max-width: 100%;/*Ancho máximo del formulario de filtro se ajusta al 100% del contenedor*/
+    padding: 0.625rem; /* Espacio interno ajustado en pantallas pequeñas */
+  }
+
+  button {
+    width: 6.25rem; /*Ancho reducido del botón en pantallas pequeñas*/
+    font-size: 1rem;
+             
+}
+
+ }
