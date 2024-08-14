@@ -6,7 +6,7 @@ export default function Home(props) {
    <h1>Bienvenido a Mi SPA</h1>
    <p>Esta es la página de inicio.</p>
   `;
-  console.log(props.id);
+  //console.log(props.id);
 
   // Crea un enlace para navegar a la página "Cards"
   const linkEl = document.createElement('a');

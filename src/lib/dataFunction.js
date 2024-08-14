@@ -1,8 +1,11 @@
 // Crear funcion filterData
 export const filterData = (data, filterBy, value) => {
-  return data.filter(item =>
-    item.extraInfo[filterBy].toLowerCase() === value.toLowerCase());
-}
+  return data.filter(item => 
+    item.extraInfo[filterBy] && 
+    item.extraInfo[filterBy].toLowerCase() === value.toLowerCase()
+  );
+};
+
 
 // Crear funcion sortData
 export const sortData = (data, sortBy, sortOrder) => {

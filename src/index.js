@@ -1,5 +1,5 @@
 import Home from './views/home.js';
-import Character from './views/character.js';
+import Character from './views/characterOld.js';
 import ErrorView from './views/errorView.js';
 import { setRootEl, setRoutes, onURLChange, initRouter } from './router.js';
 
