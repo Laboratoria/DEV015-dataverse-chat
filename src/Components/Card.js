@@ -23,6 +23,6 @@ const liElement = document.createElement("li");
       </div>
       `;
       ul.appendChild(li);
-    });
+    };
     return liElement;
-  };
+;
