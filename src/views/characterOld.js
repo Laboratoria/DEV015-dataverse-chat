@@ -1,21 +1,21 @@
-import card from './components/Card.js';
 import data from '../Data/dataset.js';
+import Card from '../components/card.js';
 import { filterData, sortData, computeStats } from '../lib/dataFunction.js';
 
-export default function Characters() {
+export default function Character() {
     const viewEl = document.createElement('div');
     const listEl = document.createElement('ul');
     listEl.classList.add('card-container');
 
     data.forEach(item => {
-        const cardEl = card(item);
+        const cardEl = Card(item);
         listEl.appendChild(cardEl);
     });
 
     viewEl.appendChild(listEl);
     return viewEl;
 }
-
+const characters = data;
 // Ejemplo: Filtrar personajes por tipo de guardian
 const filteredCharacters = filterData(characters, 'tipo', 'Guardian');
 console.log('Personajes filtrados:', filteredCharacters);
