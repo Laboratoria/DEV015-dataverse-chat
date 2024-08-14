@@ -1,15 +1,12 @@
-// En este archivo definirás tus rutas e importarás los componentes que vas a renderizar.
+// En este archivo definirás tus rutas e importarás los componentes que vas a renderizar??.
 
-/*
-import Example from './views/Example.js';
+import {Home,About}  from './views/Home.js';
+/*import (setRootEl) from './views/router.js';*/
 
-Ejemplo de definición de rutas:
-
-const routes = {
-    "/": Example,
-    ...
+ const routers = {
+    "/": Home,
+    "/about": About
 }
-*/
 
 /*
 TODO:
