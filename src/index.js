@@ -1,5 +1,5 @@
 import Home from './views/home.js';
-import Cards from './views/cards.js';
+import Character from './views/character.js';
 import ErrorView from './views/errorView.js';
 import { setRootEl, setRoutes, onURLChange, initRouter } from './router.js';
 
@@ -8,7 +8,7 @@ import { setRootEl, setRoutes, onURLChange, initRouter } from './router.js';
 // Define las rutas
 const routes = {
     '/': Home,
-    '/cards': Cards,
+    '/character': Character,
     '/errorView': ErrorView,
   };
 

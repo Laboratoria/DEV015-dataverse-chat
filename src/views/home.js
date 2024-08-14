@@ -1,12 +1,10 @@
 import { navigateTo } from '../router.js';
-//import { data } from '../dataset.js';
-//import { filterData, sortData } from '../dataFunctions.js';
 
 export default function Home(props) {
   const viewEl = document.createElement('div');
   viewEl.innerHTML = `
-    <h1>DataVerse</h1>
-    <div id="data-view"></div>
+   <h1>Bienvenido a Mi SPA</h1>
+   <p>Esta es la página de inicio.</p>
   `;
   console.log(props.id);
 
@@ -19,8 +17,8 @@ export default function Home(props) {
   linkEl.addEventListener('click', (event) => {
     event.preventDefault(); // Previene el comportamiento por defecto del enlace
     navigateTo("/", { name: "Xochitl", id: "100" }); // Navega a la página "cards" con propiedades
-    navigateTo('/cards');
-    
+    navigateTo('/character');
+
   });
 
   // Añade el enlace al elemento de vista
@@ -29,6 +27,6 @@ export default function Home(props) {
   // Devuelve el elemento de vista
   return viewEl;
 };
- 
 
-  
+
+
