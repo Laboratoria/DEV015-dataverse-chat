@@ -1,58 +1,23 @@
+let rootEl;
 
-let ROUTES = {};
-let rootEl = null;
-
-// Función para establecer el elemento raíz donde se renderizan las vistas
-export const setRootEl = (el) => {
+export function setRootEl(el) {
   rootEl = el;
 }
 
-// Función para establecer las rutas
-export const setRoutes = (routes) => {
-  if (typeof routes !== 'object') {
-    throw new Error('Las rutas deben ser un objeto');
-  }
-  if (!routes['/error']) {
-    throw new Error('Las rutas deben definir una ruta /error');
-  }
-  ROUTES = routes;
-};
-
-// Función para convertir los parámetros de búsqueda en un objeto
-const queryStringToObject = (queryString) => {
-  const params = new URLSearchParams(queryString);
-  const obj = {};
-  for (const [key, value] of params.entries()) {
-    obj[key] = value;
-  }
-  return obj;
+export function setRoutes(routes) {
+  window.routes = routes;
 }
 
-// Función para renderizar la vista basada en la ruta
-const renderView = (pathname, props = {}) => {
-  if (rootEl) {
-    rootEl.innerHTML = ''; // Limpiar el elemento raíz
-    // Obtener la vista correspondiente o la vista de error
-    const View = ROUTES[pathname] || ROUTES['/error'];
-    // Renderizar la vista pasando los props
-    const viewEl = View(props); 
-    rootEl.appendChild(viewEl); // Agregar la vista al DOM
-  }
+export function onURLChange(location) {
+  const path = location.pathname;
+  const route = window.routes[path] || window.routes['/error'];
+  const view = route();
+  
+  rootEl.innerHTML = ''; // Limpia el contenedor antes de agregar la nueva vista
+  rootEl.appendChild(view);
 }
 
-// Función para navegar a una nueva ruta
-export const navigateTo = (pathname, props = {}) => {
-  // Actualizar el historial
-  window.history.pushState({}, '', pathname); 
-  // Renderizar la vista correspondiente
-  renderView(pathname, props); 
-}
-
-// Función para manejar cambios en la URL
-export const onURLChange = (location) => {
-  const pathname = location.pathname;
-  // Convertir los parámetros de búsqueda en objeto
-  const searchParams = queryStringToObject(location.search); 
-  // Renderizar la vista basada en la ruta y los parámetros de búsqueda
-  renderView(pathname, searchParams); 
+export function navigateTo(path) {
+  window.history.pushState({}, path, window.location.origin + path);
+  onURLChange(window.location);
 }
