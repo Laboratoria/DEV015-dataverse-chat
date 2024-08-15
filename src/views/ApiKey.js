@@ -10,3 +10,4 @@ export function ApiKey() {
   `;
   return viewEl;
 }
+export default ApiKey;

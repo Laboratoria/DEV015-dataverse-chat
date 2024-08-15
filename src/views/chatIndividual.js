@@ -1,4 +1,4 @@
-export function ChatIndividual() {
+export function chatIndividual() {
   const viewEl = document.createElement('div');
   viewEl.innerHTML = `
     <h2>Chat Individual</h2>
@@ -9,4 +9,4 @@ export function ChatIndividual() {
   `;
   return viewEl;
 }
-
+export default chatIndividual;

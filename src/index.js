@@ -1,26 +1,26 @@
-import { Home } from './src/views/Home';
-import { ApiKey } from './src/views/ApiKey';
-import { ChatIndividual } from './src/views/ChatIndividual';
-import { ErrorPage } from './src/views/ErrorPage';
-import { setRootEl, setRoutes, onURLChange } from './src/router.js';
+import home from './views/home.js';
+import ApiKey from './views/ApiKey.js';
+import chatIndividual from './views/chatIndividual.js';
+import PageError from './views/PageError.js';
+import { setRootEl, setRoutes, onURLChange } from './router.js';
 
-document.getElementById('root').textContent = 'Prueba de contenido';
+const prueba = document.getElementById('root');
 
 const routes = {
-  '/': Home,
-  '/apikey': ApiKey,
-  '/chat': ChatIndividual,
-  '/error': ErrorPage
+  "/": home,
+  "/ApiKey": ApiKey,
+  "/chatIndividual": chatIndividual,
+  "/PageError": PageError,
 };
 
 setRoutes(routes);
 
 window.addEventListener("DOMContentLoaded", () => {
-  setRootEl(document.getElementById('root'));
+  setRootEl(prueba);
   onURLChange(window.location);
 });
 
-window.addEventListener('popstate', () => {
+window.addEventListener("popstate", () => {
   onURLChange(window.location);
 });
 

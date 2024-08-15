@@ -1,4 +1,4 @@
-export function Home() {
+export function home() {
   const viewEl = document.createElement('div');
   viewEl.innerHTML = `
     <h1>Bienvenido al Dataverse Chat</h1>
@@ -6,3 +6,4 @@ export function Home() {
   `;
   return viewEl;
 }
+export default home;
