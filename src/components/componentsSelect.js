@@ -1,17 +1,8 @@
-import { filterData, ordenarABC, generoMejorRankeado, calcularRankingPromedio} from "../lib/dataFunctions.js";
-import data from '../data/dataset.js';
-import { renderItems } from './componentsCards.js';
+import { generoMejorRankeado, calcularRankingPromedio } from "../lib/dataFunctions.js";
 import { navigateTo } from "../router.js";
+import data from '../data/dataset.js';
 
-//const containerBody = document.getElementById('containerBodyHome');
-//console.log(containerBody)
-
-
-export function createSelectElements(mainContainer) {
-  // console.log (mainContainer)  
-
-  const containerBody = mainContainer.querySelector('#containesBodyHome')
-
+export function createSelectElements(applyFiltersCallback) {
   const container = document.createElement('div');
   container.classList.add('contenedor');
 
@@ -31,101 +22,45 @@ export function createSelectElements(mainContainer) {
   const filtros = document.createElement('div');
   filtros.classList.add('filtros');
 
+  const createSelect = (labelText, id, options) => {
+    const label = document.createElement('label');
+    label.textContent = labelText;
+    label.setAttribute('for', id);
 
-  // Crear y añadir el filtro de categoría
-  const labelCategoria = document.createElement('label');
-  labelCategoria.textContent = 'Categoría:';
-  labelCategoria.setAttribute = ('for', 'filtro-categoria');
-  const selectCategoria = document.createElement('select');
-  selectCategoria.id = 'filtro-categoria';
-  selectCategoria.name = 'select';
-  const categorias = ['Seleccionar', 'Acción', 'Aventura', 'Rol (RPG)', 'Estrategia'];
-  categorias.forEach(categoria => {
-    const option = document.createElement('option');
-    option.textContent = categoria;
-    selectCategoria.appendChild(option);
-  });
-  selectCategoria.addEventListener('change', (event) => {
-    filterData.category = event.target.value;
+    const select = document.createElement('select');
+    select.id = id;
+    select.name = 'select';
 
-  });
+    options.forEach(optionValue => {
+      const option = document.createElement('option');
+      option.textContent = optionValue;
+      option.value = optionValue;
+      select.appendChild(option);
+    });
 
-  filtros.appendChild(labelCategoria);
-  filtros.appendChild(selectCategoria);
+    select.addEventListener('change', () => {
+      applyFiltersCallback();
+    });
 
-  // Crear y añadir el filtro de año
-  const labelAño = document.createElement('label');
-  labelAño.textContent = 'Año:';
-  labelAño.setAttribute = ('for', 'filtro-año');
-  const selectAño = document.createElement('select');
-  selectAño.id = 'filtro-año';
-  selectCategoria.name = 'select';
-  const años = ['Seleccionar', '2010', '2011', '2012', '2013', '2015', '2016', '2017', '2018', '2019', '2020'];
-  años.forEach(año => {
-    const option = document.createElement('option');
-    option.textContent = año;
-    selectAño.appendChild(option);
-  });
-  selectAño.addEventListener('change', (event) => {
-    filterData.yearOfCreation = event.target.value;
-  });
-  
+    filtros.appendChild(label);
+    filtros.appendChild(select);
+  };
 
-  filtros.appendChild(labelAño);
-  filtros.appendChild(selectAño);
+  createSelect('Categoría:', 'filtro-categoria', ['Seleccionar', 'Acción', 'Aventura', 'Rol (RPG)', 'Estrategia']);
+  createSelect('Año:', 'filtro-año', ['Seleccionar', '2010', '2011', '2012', '2013', '2015', '2016', '2017', '2018', '2019', '2020']);
+  createSelect('Ranking:', 'filtro-ranking', ['Seleccionar', '5.0', '4.5', '4.0', '3.5']);
+  createSelect('Orden alfabético:', 'ordenar', ['Seleccionar', 'Ascendente', 'Descendente']);
 
-  // Crear y añadir el filtro de ranking
-  const labelRanking = document.createElement('label');
-  labelRanking.textContent = 'Ranking:';
-  labelAño.setAttribute = ('for', 'filtro-ranking');
-  const selectRanking = document.createElement('select');
-  selectRanking.id = 'filtro-ranking';
-  selectCategoria.name = 'select';
-  const rankings = ['Seleccionar', '5.0', '4.5', '4.0', '3.5'];
-  rankings.forEach(ranking => {
-    const option = document.createElement('option');
-    option.textContent = ranking;
-    selectRanking.appendChild(option);
-  });
-  selectRanking.addEventListener('change', (event) => {
-    const selectedValue = event.target.value;
-    const filteredDataRanking = filterData(data, 'facts.ranking', selectedValue);
-    const filteredItemsRanking = renderItems(filteredDataRanking);
-  
-    containerBody.innerHTML = '';
-    containerBody.appendChild(filteredItemsRanking);
-  });
-
-  filtros.appendChild(labelRanking);
-  filtros.appendChild(selectRanking);
-
-  // Crear y añadir el filtro de orden alfabético
-  const labelOrden = document.createElement('label');
-  labelOrden.textContent = 'Orden alfabético:';
-  const selectOrden = document.createElement('select');
-  selectOrden.id = 'ordenar';
-  selectCategoria.name = 'select';
-  const ordenes = ['Seleccionar', 'Ascendente', 'Descendente'];
-  ordenes.forEach(orden => {
-    const option = document.createElement('option');
-    option.textContent = orden;
-    selectOrden.appendChild(option);
-  });
-  selectOrden.addEventListener('change', (event) => {
-    ordenarABC.orden = event.target.value;
-  });
-
-  filtros.appendChild(labelOrden);
-  filtros.appendChild(selectOrden);
-
-  // Crear y añadir el botón de limpiar filtros
   const buttonLimpiar = document.createElement('button');
   buttonLimpiar.classList.add('limpiar-filtros');
   buttonLimpiar.innerHTML = '<b>Limpiar</b>';
-  buttonLimpiar.addEventListener("click", limpiarFiltros);
+  buttonLimpiar.addEventListener('click', () => {
+    filtros.querySelectorAll('select').forEach(select => select.value = 'Seleccionar');
+    applyFiltersCallback();
+  });
 
   filtros.appendChild(buttonLimpiar);
-  sidebar.appendChild(filtros); 
+  sidebar.appendChild(filtros);
 
   const rankingPorAño = document.createElement('div');
   const rankingPromedio2016 = calcularRankingPromedio(data, "2016");
@@ -151,66 +86,3 @@ export function createSelectElements(mainContainer) {
 
   return sidebar;
 }
-
-const containerBody = document.querySelector('#containerBodyHome')
-
-function limpiarFiltros() {
-  const selectElements = document.querySelectorAll('select');
-  selectElements.forEach(select => {
-    select.selectedIndex = 0;
-  });
- 
-  containerBody.innerHTML = '';
-  const selectElementsContainer = createSelectElements();
-  const dataItems = renderItems(data);
-  containerBody.appendChild(selectElementsContainer);
-  containerBody.appendChild(dataItems);
-  
-}
-
-/*
-const appliedFilters = {
-  category: 'seleccionar',
-  yearOfCreation: 'seleccionar',
-  ranking: 'seleccionar',
-  orden: 'seleccionar',
-};
-const applyFilters = () => {
-
-  let filteredData = data;
-
-  if (appliedFilters.category !== 'seleccionar') {
-    filteredData = filterData(filteredData, 'facts.category', appliedFilters.category);
-  }
-
-
-  if (appliedFilters.yearOfCreation !== 'seleccionar') {
-    filteredData = filterData(filteredData, 'facts.yearOfCreation', appliedFilters.yearOfCreation);
-  }
-
-  if (appliedFilters.ranking !== 'seleccionar') {
-    filteredData = filterData(filteredData, 'facts.ranking', appliedFilters.ranking);
-  }
-
-  if (appliedFilters.orden !== 'seleccionar') {
-    filteredData = ordenarABC(filteredData, appliedFilters.orden);
-  }
-  containerBody.innerHTML ='';
-  const selectElementsContainer = createSelectElements();
-  const dataItems = renderItems(data);
-  containerBody.appendChild(selectElementsContainer);
-  containerBody.appendChild(dataItems);
-
-  if (filteredData.length === 0) {
-    const noResultsMessage = document.createElement('h3');
-    noResultsMessage.textContent = 'No se encontraron coincidencias';
-    containerBody.appendChild(noResultsMessage);
-
-  } else {
-    const filteredItems = renderItems(filteredData);
-    containerBody.appendChild(filteredItems);
-  }
-}
-
-applyFilters();
-*/
