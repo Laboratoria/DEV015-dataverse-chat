@@ -1,6 +1,7 @@
 import { navigateTo } from "../router.js";
 
-export const Card = (itemn) => {
+export const card = (item) => {
+  const liElement = document.createElement('li');
     liElement.classList.add("cardli");
     liElement.setAttribute("itemscope","");
     liElement.setAttribute("itemtype", "");
