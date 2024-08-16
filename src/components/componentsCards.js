@@ -1,5 +1,4 @@
 import { navigateTo } from "../router.js";
-
 export const renderItems = (data) => {
 
 
@@ -55,6 +54,3 @@ export const renderItems = (data) => {
 
   return ul;
 };
-
-
-
