@@ -1,7 +1,15 @@
 import { createHeader } from '../components/componentsHeader.js';
 import { createFooter } from '../components/componentsFooter.js';
+// import { queryStringToObject } from '../router.js';
+// import { renderItems } from '../components/componentsCards.js';
 
-export function ChatIndividual() {
+import data from '../data/dataset.js';
+
+export function ChatIndividual(props) {
+  console.log("ChatIndividual props:", props);
+  console.log("Props ID:", props.id);
+  console.log("Dataset IDs:", data.map(item => item.id));
+
   const container = document.createElement('div');
   container.className = 'containerCI';
 
@@ -10,6 +18,75 @@ export function ChatIndividual() {
 
   const containerBody = document.createElement('div');
   containerBody.className = 'containerBodyCI';
+
+  const barraLateral = document.createElement('div');
+  barraLateral.className = 'barraLateral';
+
+  const buscar = document.createElement('label');
+  buscar.textContent = 'Buscar juego:';
+  buscar.className = 'buscarLabel';
+
+  const selectCategoria = document.createElement('select');
+  selectCategoria.id = 'selectBuscarJuego';
+  selectCategoria.name = 'selectBuscarJuego';
+  const optionDefault = document.createElement('option');
+  optionDefault.textContent = 'Selecciona un juego';
+  optionDefault.setAttribute("disabled", "disabled");
+  optionDefault.setAttribute("selected", "");
+  selectCategoria.appendChild(optionDefault);
+
+  data.forEach(game => {
+    const option = document.createElement('option');
+    option.value = game.id;
+    option.textContent = game.name;
+    selectCategoria.appendChild(option);
+  });
+
+  barraLateral.appendChild(buscar);
+  barraLateral.appendChild(selectCategoria);
+
+  containerBody.appendChild(barraLateral);
+
+
+  const gameId = props.data;
+  console.log("Props ID:", gameId);
+
+  const game = data.find(item => item.id === gameId);
+  console.log("Found game:", game);
+
+  if(game) {
+    
+    const gameCard = document.createElement('div');
+    gameCard.className = 'gameCard';
+
+    const nameElement = document.createElement('h3');
+    nameElement.textContent = game.name;
+
+    const imageUrlElement = document.createElement('img');
+    imageUrlElement.setAttribute("src", game.imageUrl);
+
+    // const categoryElement = document.createElement('p');
+    // categoryElement.innerHTML = `<strong class="boldText">Categoría:</strong>${game.facts.category}`;
+
+    // const yearOfCreationElement = document.createElement('p');
+    // yearOfCreationElement.innerHTML = `<strong class="boldText">Año de creación:</strong>${game.facts.yearOfCreation}`;
+
+    // const rankingElement = document.createElement('p');
+    // rankingElement.innerHTML = `<strong class="boldText">Calificación:</strong>${game.facts.ranking}`;
+
+    const longDescriptionElement = document.createElement('p');
+    longDescriptionElement.innerHTML = `${game.description}`;
+
+    gameCard.appendChild(nameElement);
+    gameCard.appendChild(imageUrlElement);
+    // gameCard.appendChild(categoryElement);
+    // gameCard.appendChild(yearOfCreationElement);
+    // gameCard.appendChild(rankingElement);
+    gameCard.appendChild(longDescriptionElement);
+
+    containerBody.appendChild(gameCard);
+  }
+
   const containerChatIndividual = document.createElement('div');
   containerChatIndividual.className = 'containerChatIndividual';
 
@@ -38,6 +115,7 @@ export function ChatIndividual() {
 
   containerBody.appendChild(containerChatIndividual);
 
+
   const header = createHeader();
   const footer = createFooter();
 
@@ -49,6 +127,7 @@ export function ChatIndividual() {
   container.appendChild(containerHeader);
   container.appendChild(containerBody);
   container.appendChild(containerFooter); 
+
 
 
 

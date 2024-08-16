@@ -8,7 +8,7 @@ import { navigateTo } from "../router.js";
 
 
 export function createSelectElements(mainContainer) {
-  console.log (mainContainer)  
+  // console.log (mainContainer)  
 
   const containerBody = mainContainer.querySelector('#containesBodyHome')
 

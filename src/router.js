@@ -21,14 +21,9 @@ export const setRoutes = (routes) => {
   // assign ROUTES
 }; 
 
-const queryStringToObject = (queryString) => {
+export const queryStringToObject = (queryString) => {
   const params = new URLSearchParams(queryString);
-  const result = {};
-
-  for (const [key, value] of params.entries()) {
-    result[key] = value;
-  }
-
+  const result = Object.fromEntries(params.entries())
   return result;
   // convert query string to URLSearchParams
   // convert URLSearchParams to an object
@@ -52,6 +47,7 @@ const renderView = (pathname, props={}) => {
 };
 
 export const navigateTo = (pathname, props={}) => {
+  console.log("Navigating to:", pathname, "with props:", props);
   window.history.pushState({}, pathname, window.location.origin + pathname);
   renderView(pathname, props);
   // update window history with pushState
