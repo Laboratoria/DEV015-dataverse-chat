@@ -4,11 +4,12 @@ export const renderItems = (data) => {
 
   const ul = document.createElement("ul");
   ul.id = 'card';
-  ul.addEventListener('click', () => {
-    navigateTo('/chat-individual');
-  });
+  //ul.addEventListener('click', () => {
+  //navigateTo('/chat-individual');
+  //});
   data.forEach(item => {
     const li = document.createElement('li');
+    li.setAttribute('data-id', item.id);    //asignar id para cada videojuego
     // li.setAttribute("itemtype",)
 
     const chatIcon = document.createElement('img');
@@ -17,6 +18,12 @@ export const renderItems = (data) => {
 
     chatIcon.id = 'chatIcon';
     
+    chatIcon.addEventListener('click', (event) => {
+      event.stopPropagation();
+      const gameId = li.getAttribute('data-id');
+      console.log("Game ID on click", gameId);
+      navigateTo("/chat-individual",{ data: gameId });
+    });
 
     const nameElement = document.createElement('h3');
     nameElement.textContent = item.name;
