@@ -10,49 +10,53 @@
   
   body {
     font-family: Arial, sans-serif; /* Define la fuente */
-    background-color: #f2eee1; /* Color de fondo suave */
+    background-color: rgb(252, 252, 252); /* Color de fondo suave */
     padding: 20px; 
     border: 0px;
     margin: 0px;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    
   }
-  
-  header {
-    margin-bottom: 20px;
+    
+    header {
+    max-width: 100%;
     text-align: center; /* Centra el contenido del header */
-    background-image: linear-gradient(rgba(43, 3, 47, 0.35), rgba(144, 109, 137, 0.244)),url("imagen2.jpg");
+    background-image: linear-gradient(rgba(118, 105, 112, 0.35), rgba(71, 67, 67, 0.244)),url("/imagenes/imagen2.png");
+    margin: 10px;
+    padding: 20px;
+
+    
 
   }
       
   body header h1 {
     margin: 30px; /* Espacio superior */
     font-size: 3em; /* Tamaño de fuente */
-    color:#8c637c
+    color:#ffffff
    
   }
 
 footer {
     max-width: 100%;
-    background-color: #937294;
     padding: 20px;
     bottom: 0%;
     text-align: center;
-    color: rgb(11, 8, 10);
-    text-shadow: 2px 2px 5px rgb(237, 215, 215);
-    font-size: 2em
+    color: rgb(255, 255, 255);
+    text-shadow: 2px 2px 5px rgb(2, 1, 1);
+    font-size: 2em;
+    background-image: linear-gradient(rgba(149, 85, 142, 0.244),rgba(34, 54, 55, 0.35)),url("/imagenes/imagen2.png");
+
   }
   #curious_fact{
     max-width: 100%;
-    background-image: linear-gradient(rgba(163, 146, 165, 0.35), rgba(144, 109, 137, 0.244)),url("oig2_720.jpg");
-    padding: 10px;
+    padding: 20px;
     bottom: 0%;
     text-align: center;
+    background-image: linear-gradient(rgba(237, 211, 211, 0.538),rgb(202, 187, 203)),url("/imagenes/imagen4.png");
     margin: 10px;
-    color: rgb(3, 2, 3);
-    text-shadow: 2px 2px 5px rgb(246, 242, 242);
+    color: rgb(255, 255, 255);
+    text-shadow: 2px 2px 5px rgb(3, 3, 3);
     font-size: 2em;
   }
   h3{

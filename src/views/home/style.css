@@ -1,3 +1,36 @@
+* {
+    padding: 0px; 
+    margin: 0px; 
+    box-sizing: border-box;
+    
+  } 
+  
+  body {
+    font-family: Arial, sans-serif; /* Define la fuente */
+    background-color: #f2eee1; /* Color de fondo suave */
+    padding: 20px; 
+    border: 0px;
+    margin: 0px;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    
+  }
+  
+  header {
+    margin-bottom: 20px;
+    text-align: center; /* Centra el contenido del header */
+    background-image: linear-gradient(rgba(43, 3, 47, 0.35), rgba(144, 109, 137, 0.244)),url("imagen2.jpg");
+
+  }
+      
+  body header h1 {
+    margin: 30px; /* Espacio superior */
+    font-size: 3em; /* Tamaño de fuente */
+    color:#8c637c
+   
+  }
+
   
   #root, #root>div, #cards_root {
     display: flex;
@@ -13,7 +46,7 @@
      border: 2px solid #ddd; /* Borde de la tarjeta */
      border-radius: 30px 30px 30px 30px; /* Bordes redondeados */
      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra */
-     background:rgba(233, 220, 233, 0.769); /* Color de fondo de las tarjetas */
+     background:rgba(233, 197, 228, 0.769); /* Color de fondo de las tarjetas */
      padding: 20px;
      text-align: left;
      flex: 1 0 calc(25% - 40px); /* Cada tarjeta ocupará un 40% del ancho del contenedor, menos el espacio del gap */
@@ -31,7 +64,7 @@
   .card li.item {
         margin-bottom: 10px; /* Espaciado inferior entre ítems */
         display: flex;
-        color: rgb(95, 104, 109);
+        color: rgb(55, 71, 80);
         padding-left: 10px;
   }
 
@@ -49,25 +82,56 @@
     object-fit: cover;
   }
   select{
-    background-color: #e8d8eb;
-    color: rgb(14, 12, 14);
+    background-color: rgba(233, 197, 228, 0.769);
+    color: rgb(55, 71, 80);
     text-shadow: 2px 2px 5px rgb(225, 208, 208);
-    font-size: 1.1em
+    font-size: 1.1em;
+    margin: 50px;
 
   } 
   label{
-    color: rgb(7, 6, 7);
+    color: rgb(55, 71, 80);
     text-shadow: 2px 2px 5px rgb(234, 220, 220);
     font-size: 1.3em
   }
   button{
-    background-color: #e8d8eb;
+    background-color: #beaec5;
     text-shadow: #4c2f53;
-    color: rgb(14, 12, 14);
+    color: rgb(55, 71, 80);
     text-shadow: 2px 2px 5px rgb(250, 236, 236);
-    font-size: 15px
+    font-size: 15px;
+    margin: 50px;
   }
+
                  
+  footer {
+    max-width: 100%;
+    background-color: #937294;
+    padding: 20px;
+    bottom: 0%;
+    text-align: center;
+    color: rgb(11, 8, 10);
+    text-shadow: 2px 2px 5px rgb(237, 215, 215);
+    font-size: 2em
+  }
+  #curious_fact{
+    max-width: 100%;
+    background-image: linear-gradient(rgba(163, 146, 165, 0.35), rgba(144, 109, 137, 0.244)),url("/imagenes/imagen2.png");
+    padding: 10px;
+    bottom: 0%;
+    text-align: center;
+    margin: 10px;
+    color: rgb(3, 2, 3);
+    text-shadow: 2px 2px 5px rgb(246, 242, 242);
+    font-size: 2em;
+  }
+  h3{
+    color: rgb(3, 2, 3);
+    text-shadow: 2px 2px 5px rgb(246, 242, 242);
+  }
+  #curious_fact div{
+    margin: 30px;
+  }
   @media (max-width: 900px) {
     .card {
         flex: 1 1 calc(50% - 40px); /* 50% del ancho menos el espacio del gap */
