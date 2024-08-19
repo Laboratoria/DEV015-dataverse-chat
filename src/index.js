@@ -5,7 +5,7 @@ import { setRootEl, setRoutes, onURLChange } from './router.js';
 // Define your routes and their associated views
 const routes = {
   '/': Home,
-  // ...
+  
 };
 
 // Assign the routes
