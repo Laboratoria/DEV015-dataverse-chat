@@ -11,6 +11,7 @@ export const Home = () => {
     
   const Card = (data) => {
     const ulElement = document.createElement('ul');
+    
     data.forEach(item => {
       const li = document.createElement('li')
       li.innerHTML = item.id 

@@ -8,17 +8,16 @@
     font-style: normal;
     font-size: 140px;
     text-align: center;
-    color: #ffd034;
-    text-shadow: 4px 4px 0 #fcf0c6;
+    color: #ffffff;
     margin-top: 75px;
     margin-bottom: 75px;
   }
   
   body {
-    background-image: url("https://wallpapers-clan.com/wp-content/uploads/2022/09/disney-castle-blue-wallpaper-2-scaled.jpg");
-    image-rendering: center;
+    background: rgb(0,78,203);
+    background: linear-gradient(180deg, rgba(0,78,203,1) 0%, rgba(0,78,203,1) 50%, rgba(166,224,247,1) 100%);
     font-family: "Montserrat Alternates", sans-serif;
-    color: #ffd034;
+   
   }
   
   h2 {
