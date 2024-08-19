@@ -1,20 +1,26 @@
-import { data } from '../data/dataset.js';
+import  data  from '../data/dataset.js';
 import { filterData } from '../lib/dataFunctions.js';
-import { card } from '../Components/card.js';
+import { card } from '../Components/Card.js';
 
 export const Home = () => {
     const el = document.createElement("h1");
     el.innerHTML = "Dreamland";
 
-  const card = (data) => {
+  const div = document.createElement('div');
+  div.appendChild(el)
+    
+  const Card = (data) => {
     const ulElement = document.createElement('ul');
-    data.forEach(item =>
-      ulElement.appendChild(createCard(item))
-    );
+    data.forEach(item => {
+      const li = document.createElement('li')
+      li.innerHTML = item.id 
+      ulElement.appendChild(li)}
+  
+  );
   return ulElement;
   };
-    
-   return el;
+   div.appendChild(Card(data)) 
+   return div;
  }
 
 
