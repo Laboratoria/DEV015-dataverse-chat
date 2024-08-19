@@ -1,3 +1,5 @@
+import dataset from "../data/dataset";
+
 export const filterData = (data, filterBy, value) => {
   return data.filter(character => 
     character.facts[filterBy].toLowerCase() === value.toLowerCase()
@@ -50,3 +52,17 @@ export const computeStats = (data) => {
     //contador con el que inicializan los contadores
   });
 };
+
+export function filterAndSortCharacters(family, order, data) {// Función combinada para filtrar y ordenar personajes
+  let filteredCharacters = family ? filterData(data, 'familia', family) : data; // Filtra los personajes por familia, o devuelve todos los personajes si no hay filtro
+  if (order) { // Verifica si 'order' tiene un valor válido
+    filteredCharacters = sortData(filteredCharacters, 'name', order); // Ordena los personajes filtrados por nombre en el orden especificado
+  }
+  return filteredCharacters;  // Devuelve el arreglo final después de aplicar cualquier filtro y ordenación
+}
+  
+
+export function getCharacters() {
+  // Devuelve el estado actual del arreglo de personajes
+  return dataset
+}

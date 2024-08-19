@@ -3,6 +3,8 @@ import data from '../src/data/dataset.js'; //importamos el dataset
 import { filterData } from '../src/lib/dataFunction.js';
 import { sortData } from '../src/lib/dataFunction.js';
 import { computeStats } from '../src/lib/dataFunction.js';
+import { filterAndSortCharacters } from '../src/lib/dataFunction.js';
+import { getCharacters } from '../src/lib/dataFunction.js';
 
 describe('filterData', () => {
   it('returns characters from the Bridgerton family', () => {
@@ -46,5 +48,22 @@ describe('computeStats', () => {
       amantes: 2,    
     };
     expect(result).toEqual(expected);
+  });
+});
+
+describe('filterAndSortCharacters', () => {
+  test('should filter characters by family and sort them by name in ascending order', () => {
+    const result = filterAndSortCharacters('Bridgerton', 'asc', data);
+    const expected = data
+      .filter(char => char.facts.familia === 'Bridgerton')
+      .sort((a, b) => a.name.localeCompare(b.name));
+  
+    expect(result).toEqual(expected);
+  });
+});
+describe('getCharacters', () => {
+  test('should return the entire dataset', () => {
+    const result = getCharacters();
+    expect(result).toEqual(data); // Compara si el resultado es igual al dataset original
   });
 });
