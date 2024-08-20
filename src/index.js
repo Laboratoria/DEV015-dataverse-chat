@@ -5,7 +5,6 @@ import PageError from './views/PageError.js';
 import { setRootEl, setRoutes, onURLChange } from './router.js';
 
 const prueba = document.getElementById('root');
-
 const routes = {
   "/": home,
   "/ApiKey": ApiKey,
