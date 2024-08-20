@@ -2,7 +2,7 @@ import { navigateTo } from "../router.js";
 
 export const card = (item) => {
   const liElement = document.createElement('li');
-    liElement.classList.add("cardli");
+    liElement.classList.add("tarjeta");
     liElement.setAttribute("itemscope","");
     liElement.setAttribute("itemtype", "");
     liElement.setAttribute("data-id", item.id);
@@ -25,9 +25,9 @@ export const card = (item) => {
     </div>
     `;
     
-    liElement.addEventListener('click', () => {
+   /*( liElement.addEventListener('click', () => {
         navigateTo('/chatIndividual', {id: item.id});
-    });
+    });)*/
     return liElement;
 };
 
