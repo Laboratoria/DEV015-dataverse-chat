@@ -16,12 +16,12 @@
   body {
     background: rgb(0,78,203);
     background: linear-gradient(180deg, rgba(0,78,203,1) 0%, rgba(0,78,203,1) 50%, rgba(166,224,247,1) 100%);
-    font-family: "Montserrat Alternates", sans-serif;
+    font-family: "InspireTWDC", sans-serif;
    
   }
   
   h2 {
-    font-family: "Montserrat Alternates", sans-serif;
+    font-family: "InspireTWDC", sans-serif;
     font-weight: bold;
     font-style: normal;
     font-size: 20px;
@@ -32,7 +32,7 @@
   }
   
   h3 {
-    font-family: "Montserrat Alternates", sans-serif;
+    font-family: "InspireTWDC", sans-serif;
     text-align: center;
     font-weight: bold;
     font-size: 25px;
@@ -148,7 +148,7 @@
   }
   
   select {
-    font-family: "Montserrat Alternates", sans-serif;
+    font-family: "InspireTWDC", sans-serif;
     font-size: 100%;
     color: black;
     background-color: #fcf0c6;
@@ -165,7 +165,7 @@
     font-size: 100%;
     color: black;
     background-color: #fcf0c6;
-    font-family: "Montserrat Alternates", sans-serif;
+    font-family: "InspireTWDC", sans-serif;
     padding: 10px;
     border-color: #ffd034;
     border-width: 3px;
@@ -175,7 +175,7 @@
   }
   
   button {
-    font-family: "Montserrat Alternates", sans-serif;
+    font-family: "InspireTWDC", sans-serif;
     font-weight: bold;
     font-size: 100%;
     background-color: #fcf0c6;
@@ -224,7 +224,7 @@
   }
   
   .tarjeta {
-    font-family: "Comic Neue", cursiva;
+    font-family: "InspireTWDC", cursiva;
     display: flex;
     flex-direction: column;
     background-color: rgba(255, 255, 255, 0.9);
