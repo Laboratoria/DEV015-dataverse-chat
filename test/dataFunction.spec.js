@@ -7,13 +7,13 @@ import { filterAndSortCharacters } from '../src/lib/dataFunction.js';
 import { getCharacters } from '../src/lib/dataFunction.js';
 
 describe('filterData', () => {
-  it('returns characters from the Bridgerton family', () => {
+  it('Devuelve personajes que pertenecen a la Familia Bridgerton', () => {
     const result = filterData(data, 'familia', 'Bridgerton'); // Filtra la familia "Bridgerton": Utiliza filterData para obtener todos los personajes que pertenecen a la familia "Bridgerton".
     const expectedCharacters = data.filter(character => character.facts.familia === 'Bridgerton'); // Esto filtra el dataset original para obtener el array de personajes que coinciden con la familia "Bridgerton" y compara con el resultado de filterData
     expect(result).toEqual(expectedCharacters); // Compara ambos resultados
   });
 
-  it('returns an empty array if no characters match the family', () => { //Filtra la familia "Featherington": Similar a la primera prueba, pero busca personajes de la familia "Featherington".
+  it('Devuelve un arreglo vacío si ningún personaje coincide con la familia', () => { //Filtra la familia "Featherington": Similar a la primera prueba, pero busca personajes de la familia "Featherington".
     const result = filterData(data, 'familia', 'Featherington'); 
     const expectedCharacters = data.filter(character => character.facts.familia === 'Featherington'); //Si ningún personaje coincide con la familia, se espera que la función retorne un array vacío.
 
@@ -29,17 +29,17 @@ const getExpectedSortedData = (data, order) => {
 };
 
 describe('sortData', () => {
-  test('should sort data by name in ascending order', () => {
+  test('Ordena alfabéticamente de la a - z', () => {
     expect(sortData(data, 'name', 'asc')).toEqual(getExpectedSortedData(data, 'asc'));
   });
 
-  test('should sort data by name in descending order', () => {
+  test('Ordena alfabéticamente de la z - a', () => {
     expect(sortData(data, 'name', 'des')).toEqual(getExpectedSortedData(data, 'des'));
   });
 });
 
 describe('computeStats', () => {
-  test('should compute correct statistics for sentiment status', () => {
+  test('Muestra las estadisticas de acuerdo a su situación sentimental', () => {
     const result = computeStats(data);
     const expected = {
       casados: 13,   
@@ -52,7 +52,7 @@ describe('computeStats', () => {
 });
 
 describe('filterAndSortCharacters', () => {
-  test('should filter characters by family and sort them by name in ascending order', () => {
+  test('Ordena la familia filtrada alfabeticamente de la a - z', () => {
     const result = filterAndSortCharacters('Bridgerton', 'asc', data);
     const expected = data
       .filter(char => char.facts.familia === 'Bridgerton')
@@ -62,7 +62,7 @@ describe('filterAndSortCharacters', () => {
   });
 });
 describe('getCharacters', () => {
-  test('should return the entire dataset', () => {
+  test('Trae todos los personajes de la serie', () => {
     const result = getCharacters();
     expect(result).toEqual(data); // Compara si el resultado es igual al dataset original
   });
