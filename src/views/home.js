@@ -8,19 +8,18 @@ export const Home = () => {
 
   const div = document.createElement('div');
   div.appendChild(el)
-    
-  const Card = (data) => {
-    const ulElement = document.createElement('ul');
-    
+  const ulElement = document.createElement('ul');
+  const showCard = (data) => {
     data.forEach(item => {
-      const li = document.createElement('li')
-      li.innerHTML = item.id 
-      ulElement.appendChild(li)}
+
+      //const li = document.createElement('li')
+      //li.innerHTML = item.id 
+      ulElement.appendChild(card)}
   
   );
   return ulElement;
   };
-   div.appendChild(Card(data)) 
+   div.appendChild(showCard(data(item))) 
    return div;
  }
 
