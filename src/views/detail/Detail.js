@@ -1,10 +1,13 @@
 import data from '/data/dataset.js'; //importa data
 import { renderCard } from '/card.js';
+import { renderChat } from '/views/chat/Chat.js';
+
 const ExtractDataDetailById = (id) => {
   return data.filter((el)=>{ return el.id == id; })[0] || [];
 };
 
 
+ 
 const Detail = (params) => {
 
     const cardData = ExtractDataDetailById(params['id']);
@@ -27,52 +30,12 @@ const Detail = (params) => {
       `;
     } else {
       view.classList.add('detail-card');
-      
+
       view.append(renderCard(cardData, true));
-      const right = document.createElement('div');
-      right.classList.add('chat');
-      right.innerHTML=`<h2>Chatea Conmigo:</h2>`;
-      const messagesDiv = document.createElement('div');
-      messagesDiv.classList.add('messages');
+      view.append(renderChat(cardData));
+     
 
-      for(let i=0; i<10; i++){
-        const p = document.createElement('p');
-        p.innerHTML="Lorem ipsum dolor sit amet";
-        messagesDiv.appendChild(p);
-      }
-
-      const writeDiv = document.createElement('div');
-      writeDiv.classList.add('write');
-
-      const div1 = document.createElement('div');
-      const textarea = document.createElement('textarea');
-      textarea.setAttribute('name','message');
-      textarea.setAttribute('rows',6);
-      div1.appendChild(textarea);
-
-      const div2 = document.createElement('div');
-      const button = document.createElement('button');
-      button.setAttribute('type','button');
-      button.setAttribute('id','send');
-      button.textContent='ENVIAR';
-
-      button.addEventListener('click',function(){
-        const messageBox = document.querySelector('textarea[name="message"]');
-        alert(messageBox.value);
-      });
-
-      div2.appendChild(button);
-
-      writeDiv.appendChild(div1);
-      writeDiv.appendChild(div2);
-
-      right.appendChild(messagesDiv);
-      right.appendChild(writeDiv);
-
-      view.append(right);
     }
-
-    
     return view;
   };
   

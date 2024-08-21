@@ -1,20 +1,17 @@
 import Home from './views/home/Home.js';
 import Detail from './views/detail/Detail.js';
 import Error from './views/Error.js';
+import Conference from './views/conference/Conference.js';
 
 // Importa otras vistas según sea necesario
 import { setRootEl, setRoutes, onURLChange } from './router.js';
-
-import data from './data/dataset.js'; //importa data
-import { renderStats } from './view.js'; //importa view
-import { computeStats } from './lib/dataFunctions.js';
-
 
 // Define las rutas y las vistas asociadas
 const routes = {
   '/': Home,
   '/detail': Detail,
   '/error': Error,
+  '/conference': Conference,
   // Agrega más rutas y vistas aquí
 };
 

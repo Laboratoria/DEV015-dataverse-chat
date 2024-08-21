@@ -1,17 +1,14 @@
-import data from '../../data/dataset.js'; //importa data
-import { renderItems } from '../../view.js'; //importa view
-import { filterData,sortData } from '../../lib/dataFunctions.js';
-import { renderCategories } from '../../categories.js'; //importa categories
-import { navigateTo } from '../../router.js';
+import data from '/data/dataset.js'; //importa data
+import { renderItems } from '/view.js'; //importa view
+import { filterData,sortData } from '/lib/dataFunctions.js';
+import { renderCategories } from '/categories.js'; //importa categories
+import { navigateTo } from '/router.js';
 
 // aqui van las tarjetas
 const Home = (params) => {
   const categorySelect = renderCategories(params);
 
   const controls = document.createElement('div');
-
- 
-
   const filterControls = document.createElement('div');
   filterControls.classList.add('filter-controls');
 
@@ -44,6 +41,7 @@ const Home = (params) => {
 
     orderSelect.add(option);
   }
+  
 
   orderSelect.addEventListener('change',function(event){
     const selectBoxCategory = document.querySelector('select#mainField');

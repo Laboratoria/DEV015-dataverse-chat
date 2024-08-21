@@ -9,6 +9,7 @@
     "pretest": "npm run eslint && npm run htmlhint",
     "test": "jest --verbose --coverage test/",
     "open-coverage-report": "opener ./coverage/lcov-report/index.html",
+    "build-config": "node src/generate-config.js",
     "start": "serve src/ -s"
   },
   "devDependencies": {
@@ -37,6 +38,8 @@
     "commit": "1843c213affffa12aa456fa8842b6d28f97de2d3"
   },
   "dependencies": {
-    "axios": "^1.7.4"
+    "axios": "^1.7.4",
+    "dotenv": "^16.4.5",
+    "openai": "^4.56.0"
   }
 }

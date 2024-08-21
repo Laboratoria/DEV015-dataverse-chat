@@ -22,7 +22,7 @@
     header {
     max-width: 100%;
     text-align: center; /* Centra el contenido del header */
-    background-image: linear-gradient(rgba(118, 105, 112, 0.35), rgba(71, 67, 67, 0.244)),url("/imagenes/imagen2.png");
+    background-image: linear-gradient(rgba(56, 169, 148, 0.184), rgba(87, 172, 182, 0.794));
     margin: 10px;
     padding: 20px;
 
@@ -33,8 +33,8 @@
   body header h1 {
     margin: 30px; /* Espacio superior */
     font-size: 3em; /* Tamaño de fuente */
-    color:#ffffff
-   
+    color: rgb(7, 14, 64);
+    text-shadow: 2px 2px 5px rgb(68, 75, 87);
   }
 
 footer {
@@ -42,22 +42,21 @@ footer {
     padding: 20px;
     bottom: 0%;
     text-align: center;
-    color: rgb(255, 255, 255);
-    text-shadow: 2px 2px 5px rgb(2, 1, 1);
+    color: rgb(7, 14, 64);
     font-size: 2em;
-    background-image: linear-gradient(rgba(149, 85, 142, 0.244),rgba(34, 54, 55, 0.35)),url("/imagenes/imagen2.png");
+    background-image:linear-gradient(rgba(56, 169, 148, 0.304), rgba(87, 172, 182, 0.794));
 
   }
   #curious_fact{
     max-width: 100%;
-    padding: 20px;
+    padding: 10px;
     bottom: 0%;
     text-align: center;
-    background-image: linear-gradient(rgba(237, 211, 211, 0.538),rgb(202, 187, 203)),url("/imagenes/imagen4.png");
+    background-image: linear-gradient(rgba(147, 179, 188, 0.883), rgba(75, 119, 124, 0.96));
     margin: 10px;
-    color: rgb(255, 255, 255);
-    text-shadow: 2px 2px 5px rgb(3, 3, 3);
-    font-size: 2em;
+    color: rgb(4, 17, 31);
+    text-shadow: 2px 2px 5px rgb(255, 248, 248);
+    font-size: 2,5em;
   }
   h3{
     color: rgb(3, 2, 3);
