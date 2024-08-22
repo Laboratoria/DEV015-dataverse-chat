@@ -1,6 +1,4 @@
-//Crea un nuevo elemento div,le asigna texto como su contenido
-// y devuelve ese div para que se pueda utilizar en otras partes
-export function ApiKey() {
+function ApiKey() {
   const viewEl = document.createElement('div');
   viewEl.innerHTML = `
     <h2>Configuración de API Key</h2>
