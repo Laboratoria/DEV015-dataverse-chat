@@ -25,9 +25,9 @@ export const card = (item) => {
     </div>
     `;
     
-   /*( liElement.addEventListener('click', () => {
-        navigateTo('/chatIndividual', {id: item.id});
-    });)*/
+  ( liElement.addEventListener('click', () => {
+        navigateTo('/pelicula', {id: item.id});
+    }));
     return liElement;
 };
 
