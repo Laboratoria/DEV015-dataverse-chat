@@ -2,16 +2,15 @@ import { navigateTo } from '../router.js';
 
 export default function Home(props) {
   const viewEl = document.createElement('div');
+  
   viewEl.innerHTML = `
-   <h1>Bienvenido a Mi SPA</h1>
-   <p>Esta es la página de inicio.</p>
+   <p>¡Bienvenidos a "Mundo Sailor"! 🌙✨ Sumérgete en el fascinante universo de Sailor Moon, la emblemática serie creada por Naoko Takeuchi. Aquí encontrarás información sobre las valientes Sailor Scouts, quienes luchan por el amor y la justicia. Explora nuestras secciones para conocer a tus personajes favoritos y disfruta de la magia y el poder de la luna. ¡Descubre todo lo que el mundo de Sailor Moon tiene para ofrecerte!</p>
   `;
-  //console.log(props.id);
 
   // Crea un enlace para navegar a la página "Cards"
   const linkEl = document.createElement('a');
   linkEl.href = '#'; // Previene la acción predeterminada del enlace
-  linkEl.textContent = 'Go to Cards Page';
+  linkEl.textContent = 'Ir a mundo Sailor';
 
   // Agrega un manejador de eventos al enlace
   linkEl.addEventListener('click', (event) => {

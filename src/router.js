@@ -8,7 +8,7 @@ export function setRoutes(newRoutes) {
 export function setRootEl(el) {
     rootEl = el;
 }
-
+  
 export function navigateTo(url, state = {}) {
     history.pushState(state, '', url);
     onURLChange(window.location);
