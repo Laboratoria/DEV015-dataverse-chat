@@ -22,7 +22,7 @@ export const renderItems = (data) => {
       event.stopPropagation();
       const gameId = li.getAttribute('data-id');
       console.log("Game ID on click", gameId);
-      navigateTo("/chat-individual",{ data: gameId });
+      navigateTo("/chat-individual",{ data: gameId});
     });
 
     const nameElement = document.createElement('h3');
