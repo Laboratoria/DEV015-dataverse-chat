@@ -1,8 +1,13 @@
-export function renderHeader(element) {
+const renderHeader =  () => { 
+
   const headerEl = document.createElement('header');
   headerEl.innerHTML = `
-    <h1>My Application Header</h1>
-    <!-- Aquí va el contenido de tu header -->
+    <header>
+    <img src="src/imagenes/lady_whistledown-sin fondo.png">
+    <h1>Los Bridgerton</h1>
+    <h2>¡Descubre sus más escandalosos secretos!</h2>
+    </header>
   `;
-  element.appendChild(headerEl); // Añade el header al contenedor
+  return headerEl
 }
+export default renderHeader;

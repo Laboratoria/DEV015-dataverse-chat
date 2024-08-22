@@ -1,4 +1,4 @@
-export function ApiKey() {
+function ApiKey() {
   const viewEl = document.createElement('div');
   viewEl.innerHTML = `
     <h2>Configuración de API Key</h2>

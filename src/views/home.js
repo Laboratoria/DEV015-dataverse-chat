@@ -1,18 +1,24 @@
 //import { getCharacters } from '../src/lib/dataFunction.js';
+import renderHeader  from "../components/Renderheader.js"
+function home() {
 
-export default function home() {
+  const divHome = document.createElement('div');  
+  divHome.appendChild (renderHeader());
   
   const viewEl = document.createElement('div');
+  divHome.appendChild (viewEl);
+
+
   viewEl.innerHTML = `
-    <section>
-            <form id="filter-form">
-                <label for="family-filter" id="famFilter">Filtrar por:</label>
-                <select id="family-filter" data-testid="select-filter" name="familyFilter">
-                    <option value=""> </option>
-                    <option value="bridgerton">Bridgerton</option>
-                    <option value="featherington">Featherington</option>
-                    <option value="basset">Basset</option>
-                    <option value="danbury">Danbury</option>
+<section>
+<form id="filter-form">
+<label for="family-filter" id="famFilter">Filtrar por:</label>
+<select id="family-filter" data-testid="select-filter" name="familyFilter">
+<option value=""> </option>
+<option value="bridgerton">Bridgerton</option>
+<option value="featherington">Featherington</option>
+<option value="basset">Basset</option>
+<option value="danbury">Danbury</option>
                     <option value="real">Realeza</option>
                     <option value="No Tiene">No tiene</option>
                     <option value="mondrich">Mondrich</option>
@@ -31,5 +37,6 @@ export default function home() {
            
         </section>
   `;
-  return viewEl;
+  return divHome;
 }
+export default home 
