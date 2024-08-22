@@ -4,11 +4,9 @@ import { createFooter } from '../components/componentsFooter.js';
 // import { renderItems } from '../components/componentsCards.js';
 
 import data from '../data/dataset.js';
+// import { communicateWithOpenAI } from '../lib/openAIApi.js';
 
 export function ChatIndividual(props) {
-  console.log("ChatIndividual props:", props);
-  console.log("Props ID:", props.id);
-  console.log("Dataset IDs:", data.map(item => item.id));
 
   const container = document.createElement('div');
   container.className = 'containerCI';
@@ -47,12 +45,10 @@ export function ChatIndividual(props) {
 
   containerBody.appendChild(barraLateral);
 
-
   const gameId = props.data;
-  console.log("Props ID:", gameId);
 
   const game = data.find(item => item.id === gameId);
-  console.log("Found game:", game);
+
 
   if(game) {
     
@@ -101,9 +97,20 @@ export function ChatIndividual(props) {
   const chatFooter = document.createElement('div');
   chatFooter.className = 'chatFooter';
   chatFooter.innerHTML = `
-    <input type="text" placeholder="Tu Mensaje" />
-    <button class="sendMessage">Enviar</button>
+    <input id="input-message" type="text" placeholder="Tu Mensaje" />
+    <button id="send-button" class="sendMessage">Enviar</button>
   `;
+
+  chatFooter.querySelector('#send-button').addEventListener('click', () => {
+    const inputMessage = chatFooter.querySelector('#input-message').value.trim();
+    if (inputMessage !== '') {
+      const messageElement = document.createElement('div');
+      messageElement.className = 'user-message';
+      messageElement.textContent = inputMessage;
+      chatBody.appendChild(messageElement);
+      chatFooter.querySelector('#input-message').value = ''; // Limpiar el input
+    }
+  });
 
   containerChatIndividual.appendChild(chatHeader);
   containerChatIndividual.appendChild(chatBody);
@@ -133,4 +140,5 @@ export function ChatIndividual(props) {
 
   return container;
 }
+
 

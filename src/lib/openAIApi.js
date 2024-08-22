@@ -26,3 +26,5 @@ export const communicateWithOpenAI = async (messages) => {
   const data = await response.json();
   return data.choices[0].message.content; // Devuelve la respuesta de OpenAI
 };
+
+
