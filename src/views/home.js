@@ -1,10 +1,9 @@
 //import { getCharacters } from '../src/lib/dataFunction.js';
 
-export function home() {
+export default function home() {
+  
   const viewEl = document.createElement('div');
   viewEl.innerHTML = `
-    <h1>Bienvenido al Dataverse Chat</h1>
-    <p>Explora y conéctate con otros personajes.</p>
     <section>
             <form id="filter-form">
                 <label for="family-filter" id="famFilter">Filtrar por:</label>
@@ -34,12 +33,3 @@ export function home() {
   `;
   return viewEl;
 }
-
-//export function personajesRenderizados() {
-// const viewEl = document.querySelector('#character-list');
-// viewEl.innerHTML = `
-//     <h1>Bienvenido al Dataverse Chat</h1>
-//     <p>Explora y conéctate con otros personajes.</p>
-//   `;
-//}
-export default home;

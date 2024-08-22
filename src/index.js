@@ -1,11 +1,13 @@
+import { renderHeader } from './components/Renderheader.js';
 import home from './views/home.js';
 import ApiKey from './views/ApiKey.js';
 import chatIndividual from './views/chatIndividual.js';
 import PageError from './views/PageError.js';
 import { setRootEl, setRoutes, onURLChange } from './router.js';
 
-const prueba = document.getElementById('root');
-const routes = {
+renderHeader(); //llama a la función que renderiza el header
+const prueba = document.getElementById('root'); //obtengo el elemento root
+const routes = { //configuramos las rutas
   "/": home,
   "/ApiKey": ApiKey,
   "/chatIndividual": chatIndividual,
@@ -14,12 +16,12 @@ const routes = {
 
 setRoutes(routes);
 
-window.addEventListener("DOMContentLoaded", () => {
+window.addEventListener("DOMContentLoaded", () => { //Inicializamos el SPA
   setRootEl(prueba);
   onURLChange(window.location);
 });
 
-window.addEventListener("popstate", () => {
+window.addEventListener("popstate", () => { // Manejo del historial
   onURLChange(window.location);
 });
 
