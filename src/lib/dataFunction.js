@@ -5,8 +5,6 @@ export const filterData = (data, filterBy, value) => {
     item.extraInfo[filterBy].toLowerCase() === value.toLowerCase()
   );
 };
-
-
 // Crear funcion sortData
 export const sortData = (data, sortBy, sortOrder) => {
   if (sortOrder === "asc") {

@@ -1,20 +1,24 @@
-export default function Card(data) {
-    //const ul = document.createElement('ul');
+export default function Card(item) {
     const li = document.createElement('li');
-    li.classList.add('Card');
+    li.classList.add('card-list');
     li.innerHTML = `
     <div>
+          <h2 itemprop="nombre">${item.name} (${item.shortDescription})</h2>
+
         <div class="div-item">
-            <img itemprop="image" src="${data.imageUrl}" alt="${data.name}">
+            <img itemprop="image" src="${item.imageUrl}" alt="${item.name}">     
+
+           <div class="item-facts">
+              <p class="sign"><strong>Signo Zodiacal:</strong> <span itemprop="zodiacSign">${item.facts.signoZodiacal}</span></p>
+              <p class="date"><strong>Fecha de nacimiento:</strong> <span itemprop="birthDate">${item.facts.fechaDeNacimiento}</span></p>
+            </div>
         </div>
-        <h2 itemprop="nombre">${data.name} (${data.shortDescription})</h2>
-    </div>
-    <div class="item-facts">
-        <p class="facts"><strong>Cumpleaños:</strong> <span itemprop="birthDate">${data.facts.fechaDeNacimiento}</span></p>
-        <p class="facts"><strong>Signo Zodiacal:</strong> <span itemprop="zodiacSign">${data.facts.signoZodiacal}</span></p>
-        <p class="facts"><strong>Tipo de Guardiana:</strong> <span itemprop="guardianType">${data.facts.tipoDeGuardiana}</span></p>
+        <div class="description">
+         <p class="type"><strong>Tipo de Guardiana:</strong> <span itemprop="guardianType">${item.facts.tipoDeGuardiana}</span></p>
+         <h3 itemprop="nombre">${item.name} (${item.description})</h3>
+        </div>
     </div>
 `;
-
     return li;
 }
+
