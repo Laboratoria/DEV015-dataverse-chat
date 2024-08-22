@@ -1,13 +1,12 @@
-import Home from './views/home.js';
-import {Films} from './views/pelicula.js';
+import Home from './views/home.js'
+import {Films} from '.view/pelicula.js'
+// ... import other views
 import { setRootEl, setRoutes, onURLChange } from './router.js';
-
 
 // Define your routes and their associated views
 const routes = {
   '/': Home,
- '/pelicula': Films,
-
+  '/pelicula': Films,
   
 };
 
@@ -19,7 +18,4 @@ window.addEventListener("DOMContentLoaded", () => {
   const rootEl = document.getElementById("root");
   setRootEl(rootEl);
   onURLChange(window.location);
-
-
-
 });
