@@ -10,7 +10,7 @@ export function setRoutes(routes) {
 
 export function onURLChange(location) {
   const path = location.pathname;
-  const route = window.routes[path] || window.routes['/error'];
+  const route = window.routes[path] || window.routes['/PageError'];
   const view = route();
   
   rootEl.innerHTML = ''; // Limpia el contenedor antes de agregar la nueva vista

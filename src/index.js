@@ -5,8 +5,12 @@ import chatIndividual from './views/chatIndividual.js';
 import PageError from './views/PageError.js';
 import { setRootEl, setRoutes, onURLChange } from './router.js';
 
-renderHeader(); //llama a la función que renderiza el header
+// Renderiza el header en su propio contenedor
+const headerElement = document.getElementById('header');
+renderHeader(headerElement); // Asegúrate de que renderHeader añada el contenido a headerElement
+
 const prueba = document.getElementById('root'); //obtengo el elemento root
+
 const routes = { //configuramos las rutas
   "/": home,
   "/ApiKey": ApiKey,
