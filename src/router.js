@@ -25,7 +25,7 @@ const queryStringToObject = (queryString) => {
 const renderView = (pathname, props={}) => {
   rootEl.innnerHTML = '';
   // clear the root element
-  const vistaPathname = ROUTES [location.pathname]
+  const vistaPathname = ROUTES[pathname] || ROUTES["/page-error"]; // Manejar rutas no definidas
   // find the correct view in ROUTES for the pathname
   // in case not found render the error view
   // render the correct view passing the value of props
