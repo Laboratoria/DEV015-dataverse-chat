@@ -35,3 +35,5 @@ export const communicateWithOpenAI = async (messages) => {
   }
 };
 
+
+

@@ -1,4 +1,3 @@
-
 let ROUTES = {};
 let rootEl;
 
@@ -39,25 +38,23 @@ const renderView = (pathname, props={}) => {
 
   const view = ROUTES[pathname] || ROUTES['/error'];
   rootEl.appendChild(view(props));
-  // clear the root element
-  // find the correct view in ROUTES for the pathname
-  // in case not found render the error view
-  // render the correct view passing the value of props
-  // add the view element to the DOM root element
+
 };
 
 export const navigateTo = (pathname, props={}) => {
-  console.log("Navigating to:", pathname, "with props:", props);
-  window.history.pushState({}, pathname, window.location.origin + pathname);
-  renderView(pathname, props);
+  const propsUrl = new URLSearchParams(props);
+  const URL =  `${pathname}?${propsUrl.toString()}`;
   // update window history with pushState
+  window.history.pushState({}, '', URL); 
   // render the view with the pathname and props
+  renderView(pathname, props);
 };
 
 export const onURLChange = () => {
   const { pathname, search } = window.location;
   const props = queryStringToObject(search);
   renderView(pathname, props);
+
 };
 // parse the location for the pathname and search params
 // convert the search params to an object
