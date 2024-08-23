@@ -2,22 +2,14 @@ import { generoMejorRankeado, calcularRankingPromedio } from "../lib/dataFunctio
 import { navigateTo } from "../router.js";
 import data from '../data/dataset.js';
 
-
-
-
-export function createSelectElements(mainContainer) {
-  // console.log (mainContainer)  
-
-  const containerBody = mainContainer.querySelector('#containesBodyHome')
-
 export function createSelectElements(applyFiltersCallback) {
 
   const container = document.createElement('div');
   container.classList.add('contenedor');
 
   const sidebar = document.createElement('div');
-  sidebar.classList.add('barra-lateral');
-  sidebar.id = 'barra-lateral';
+  sidebar.classList.add('sidebar');
+  sidebar.id = 'sidebar';
 
   const apiBox = document.createElement('div');
   apiBox.id = 'apiBox';
