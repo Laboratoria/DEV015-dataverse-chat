@@ -9,8 +9,8 @@ export function createSelectElements(applyFiltersCallback) {
   container.classList.add('contenedor');
 
   const sidebar = document.createElement('div');
-  sidebar.classList.add('barra-lateral');
-  sidebar.id = 'barra-lateral';
+  sidebar.classList.add('sidebar');
+  sidebar.id = 'sidebar';
 
   const apiBox = document.createElement('div');
   apiBox.id = 'apiBox';

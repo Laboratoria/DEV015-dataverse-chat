@@ -21,11 +21,11 @@ export const Home = () => {
 
   const header = createHeader();
 
-  // Crear contenedor para las tarjetas
-  const tarjetasContainer = document.createElement('div');
-  tarjetasContainer.id = 'tarjetasContainer';
+  
+  const cardsContainer = document.createElement('div');
+  cardsContainer.className = 'cardsContainer';
 
-  // Callback para aplicar los filtros
+
   const applyFilters = () => {
     const category = document.getElementById('filtro-categoria').value;
     const year = document.getElementById('filtro-año').value;
@@ -50,20 +50,20 @@ export const Home = () => {
       filteredData = ordenarABC(filteredData, order);
     }
 
-    // Actualizar solo las tarjetas
-    tarjetasContainer.innerHTML = ''; // Limpiar las tarjetas anteriores
+ 
+    cardsContainer.innerHTML = ''; 
     const filteredItems = renderItems(filteredData);
-    tarjetasContainer.appendChild(filteredItems);
+    cardsContainer.appendChild(filteredItems);
   };
 
-  // Crear elementos de selección de filtros con el callback
+ 
   const selectElements = createSelectElements(applyFilters);
   const datadetarjetas = renderItems(data);
 
-  // Añadir selectElements y tarjetas al containerBody
+ 
   containerBody.appendChild(selectElements);
-  tarjetasContainer.appendChild(datadetarjetas);
-  containerBody.appendChild(tarjetasContainer);
+  cardsContainer.appendChild(datadetarjetas);
+  containerBody.appendChild(cardsContainer);
 
   const footer = createFooter();
 

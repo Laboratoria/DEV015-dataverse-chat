@@ -17,8 +17,13 @@ export function ChatIndividual(props) {
   const containerBody = document.createElement('div');
   containerBody.className = 'containerBodyCI';
 
-  const barraLateral = document.createElement('div');
-  barraLateral.className = 'barraLateral';
+  const containerCIOnly = document.createElement('div');
+  containerCIOnly.className = 'containerCIOnly'
+
+
+
+  const barraLateralCI = document.createElement('div');
+  barraLateralCI.className = 'barraLateralCI';
 
   const buscar = document.createElement('label');
   buscar.textContent = 'Buscar juego:';
@@ -40,48 +45,80 @@ export function ChatIndividual(props) {
     selectCategoria.appendChild(option);
   });
 
-  barraLateral.appendChild(buscar);
-  barraLateral.appendChild(selectCategoria);
+  barraLateralCI.appendChild(buscar);
+  barraLateralCI.appendChild(selectCategoria);
 
-  containerBody.appendChild(barraLateral);
+  containerBody.appendChild(barraLateralCI);
+
+
 
   const gameId = props.data;
 
   const game = data.find(item => item.id === gameId);
 
 
-  if(game) {
-    
+  if (game) {
+
     const gameCard = document.createElement('div');
     gameCard.className = 'gameCard';
-
-    const nameElement = document.createElement('h3');
-    nameElement.textContent = game.name;
 
     const imageUrlElement = document.createElement('img');
     imageUrlElement.setAttribute("src", game.imageUrl);
 
-    // const categoryElement = document.createElement('p');
-    // categoryElement.innerHTML = `<strong class="boldText">Categoría:</strong>${game.facts.category}`;
-
-    // const yearOfCreationElement = document.createElement('p');
-    // yearOfCreationElement.innerHTML = `<strong class="boldText">Año de creación:</strong>${game.facts.yearOfCreation}`;
-
-    // const rankingElement = document.createElement('p');
-    // rankingElement.innerHTML = `<strong class="boldText">Calificación:</strong>${game.facts.ranking}`;
-
     const longDescriptionElement = document.createElement('p');
     longDescriptionElement.innerHTML = `${game.description}`;
+    longDescriptionElement.className = 'longDescriptionElement';
 
-    gameCard.appendChild(nameElement);
+    const buttonMore = document.createElement('button');
+    buttonMore.textContent = 'ver más';
+    buttonMore.className = 'buttonMore';
+
+    // Añadir funcionalidad al botón para expandir/contraer el texto
+    buttonMore.addEventListener('click', function () {
+      if (longDescriptionElement.classList.contains('expanded')) {
+        longDescriptionElement.classList.remove('expanded');
+        buttonMore.textContent = 'ver más';
+      } else {
+        longDescriptionElement.classList.add('expanded');
+        buttonMore.textContent = 'ver menos';
+      }
+    });
+
     gameCard.appendChild(imageUrlElement);
-    // gameCard.appendChild(categoryElement);
-    // gameCard.appendChild(yearOfCreationElement);
-    // gameCard.appendChild(rankingElement);
     gameCard.appendChild(longDescriptionElement);
+    gameCard.appendChild(buttonMore);
 
-    containerBody.appendChild(gameCard);
+    containerCIOnly.appendChild(gameCard);
+
+
+    const containerChatIndividual = document.createElement('div');
+    containerChatIndividual.className = 'containerChatIndividual';
+
+    const chatContainer = document.createElement('div');
+    chatContainer.className = 'chatContainer';
+    const chatHeader = document.createElement('div');
+    chatHeader.className = 'chatHeader';
+    const nameElement = document.createElement('p');
+    nameElement.textContent = game.name;
+    chatHeader.appendChild(nameElement);
+    const chatBody = document.createElement('div');
+    chatBody.className = 'chatBody';
+
+    const chatFooter = document.createElement('div');
+    chatFooter.className = 'chatFooter';
+    chatFooter.innerHTML = `
+      <input type="text" placeholder="Tu Mensaje" />
+      <button class="sendMessage">Enviar</button>
+    `;
+
+    containerChatIndividual.appendChild(chatHeader);
+    containerChatIndividual.appendChild(chatBody);
+    containerChatIndividual.appendChild(chatFooter);
+
+    containerCIOnly.appendChild(containerChatIndividual);
+    containerBody.appendChild(containerCIOnly)
   }
+
 
   const containerChatIndividual = document.createElement('div');
   containerChatIndividual.className = 'containerChatIndividual';
@@ -120,23 +157,15 @@ export function ChatIndividual(props) {
   const containerFooter = document.createElement('div');
   containerFooter.className = 'containerFooterCI';
 
-  containerBody.appendChild(containerChatIndividual);
-
-
   const header = createHeader();
   const footer = createFooter();
-
 
   containerHeader.appendChild(header);
   containerFooter.appendChild(footer);
 
-
   container.appendChild(containerHeader);
   container.appendChild(containerBody);
-  container.appendChild(containerFooter); 
-
-
-
+  container.appendChild(containerFooter);
 
   return container;
 }
