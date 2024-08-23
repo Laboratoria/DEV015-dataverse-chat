@@ -20,7 +20,7 @@ export const Home = () => {
   };
 
 
-  div.appendChild(showCard(data));
+  div.appendChild(showCard(data)); 
   return div;
 };
 
