@@ -3,6 +3,28 @@
     src: url(../Typografia/ROGFonts.otf);
 }
 
+@keyframes vibrate {
+    0% {
+        transform: rotate(0);
+    }
+
+    25% {
+        transform: rotate(1.5deg);
+    }
+
+    50% {
+        transform: rotate(-1.5deg);
+    }
+
+    75% {
+        transform: rotate(1.5deg);
+    }
+
+    100% {
+        transform: rotate(0);
+    }
+}
+
 body {
     background-image: url("../img/FONDO\ M.jpg");
     background-size: cover;
@@ -12,37 +34,38 @@ body {
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
-
 h1 {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 2rem;
-    width: 70%;
+    padding: 1.5rem;
+    width: 55%;
     color: #DFDEE0;
-    border-color: #F428F3;
+    border-color: #F328F4;
     border-style: dashed;
+    border-width: 0.1rem;
     border-radius: 0.5rem;
     font-size: 3rem;
+    letter-spacing: 0.2rem;
     font-family: 'ROG Font';
     text-shadow:
-        -1px -1px 0 #F428F3,
-        1px -1px 0 #F428F3,
-        -1px 1px 0 #F428F3,
-        1px 1px 0 #F428F3;
+        -1px -1px 0 #F328F4,
+        1px -1px 0 #F328F4,
+        -1px 1px 0 #F328F4,
+        1px 1px 0 #F328F4;
 }
 
 .header {
     display: flex;
     align-items: center;
     justify-content: left;
-    gap: 8%;
-    margin-left: 2%;
+    gap: 15%;
+    padding-left: 3.5rem;
 }
 
 .imageHeader {
-    width: 10%;
-    height: 10%;
+    width: 9rem;
+    height: auto;
     cursor: pointer;
 }
 
@@ -50,16 +73,13 @@ h1 {
     animation: vibrate 0.3s;
 }
 
-@keyframes vibrate {
-    0% { transform: rotate(0); }
-    25% { transform: rotate(1.5deg); }
-    50% { transform: rotate(-1.5deg); }
-    75% { transform: rotate(1.5deg); }
-    100% { transform: rotate(0); }
+.containerBodyHome {
+    display: flex;
+    padding-top: 1rem;
 }
 
-.containerBodyHome { 
-    display: flex;
+.cardsContainer {
+    padding: 2rem;
 }
 
 ul {
@@ -68,7 +88,8 @@ ul {
     flex-wrap: wrap;
     gap: 1.25rem;
     justify-content: center;
-    padding: 2rem;
+    margin: 0rem;
+
 }
 
 ul :hover {
@@ -112,7 +133,10 @@ li p {
 .chatIcon {
     height: 3rem;
     width: 3rem;
+}
 
+.chatIcon:hover {
+    animation: vibrate 0.3s;
 }
 
 .boldText {
@@ -125,17 +149,20 @@ li p {
     width: 100%;
 }
 
+.sidebar {
+    padding: 2rem;
+}
+
 .filtros {
-    height: 300px;
+    height: 25rem;
     background-color: rgba(0, 0, 0, 0.8);
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     gap: 0.4rem;
-    font-size: 0.9rem;
+    font-size: 1rem;
     padding: 2rem;
     margin-top: 3rem;
-    margin-left: 1.25rem;
     border: 0.12rem solid;
     border-radius: 0.3rem;
     position: relative;
@@ -145,6 +172,7 @@ li p {
 label {
     padding: 0.06rem;
     color: #D1D1D3;
+    font-weight: bold;
 }
 
 select {
@@ -152,12 +180,14 @@ select {
     color: #D1D1D3;
     border: solid #F428F3 0.06rem;
     border-radius: 0.3rem;
-    height: 1.25rem;
+    height: 1.5rem;
+    font-size: 1rem;
+    width: 100%;
+    margin-bottom: 0.2rem;
 }
 
 .limpiar-filtros {
     width: 55%;
-    height: 1.5rem;
     position: absolute;
     bottom: 0.6rem;
     left: 50%;
@@ -167,7 +197,9 @@ select {
     border: solid #DFDEE0 0.06rem;
     border-radius: 0.3rem;
     cursor: pointer;
-    font-size: 0.8rem;
+    font-size: 1rem;
+    padding: 0.3rem;
+    margin-bottom: 1rem;
 }
 
 
@@ -181,8 +213,6 @@ select {
     flex-direction: column;
     align-items: center;
     padding: 1em;
-    margin-top: 2rem;
-    margin-left: 1.25rem;
     white-space: nowrap;
 }
 
@@ -191,9 +221,9 @@ select {
     border: solid #F428F3 0.06rem;
     border-radius: 0.3rem;
     padding: 0.3rem;
-    padding-left: 1rem;
     padding-right: 1rem;
 }
+
 #apiBox :hover {
     background-color: #515151;
     cursor: pointer;
@@ -235,37 +265,6 @@ select {
     color: #D1D1D3;
 }
 
-.containerBodyCI{
-    display: flex;
-    justify-content:space-around;
-    align-items: center;
-    padding: 3rem;
-}
-
-.containerChatIndividual {
-    justify-content: center;
-    border: 0.06rem;
-    border-style: dashed;
-    border-color: #F428F3;
-    border-radius: 0.5rem;
-    overflow: hidden;
-    width: 38rem;
-    height: 28rem;
-    padding: 1.5rem;
-    margin: 1.5rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    gap: 20px;
-    padding: 20px;
-    background-color: rgba(0, 0, 0, 0.7);
-    color: #D1D1D3;
-    margin-top: -6rem;
-    margin-left: 1rem;
-}
-
-
-
 .apiContainer {
     display: flex;
     flex-direction: column;
@@ -277,6 +276,7 @@ select {
     margin-right: auto;
 
 }
+
 .apiTitulo {
     color: #DFDEE0;
     font-size: 2rem;
@@ -294,6 +294,7 @@ select {
     padding-bottom: 0.3rem;
     margin-bottom: 0.5rem;
 }
+
 .apiTextArea {
     width: 23rem;
     height: 2.2rem;
@@ -309,6 +310,7 @@ select {
     text-align: center;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
+
 #apiButton {
     width: 10rem;
     height: 2rem;
@@ -322,34 +324,55 @@ select {
     font-size: 0.9rem;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
+
 #apiButton :hover {
     background-color: #515151;
 }
 
+.containerBodyCI {
+    display: flex;
+    align-items: flex-start;
+    padding: 2rem;
+}
 
-.barraLateral {
-    height: 200px;
+.barraLateralCI {
     width: 150px;
     background-color: rgba(0, 0, 0, 0.8);
     display: flex;
     flex-direction: column;
-    align-items:initial;
     gap: 0.4rem;
-    font-size: 0.9rem;
     padding: 2rem;
-    margin-top: -13rem;
     border: 0.12rem solid;
     border-radius: 0.3rem;
-    position: relative;
-    white-space: nowrap;
-    margin-left: -3rem;
+    margin-right: 7rem;
+}
+
+.containerChatIndividual {
+    border: 0.06rem;
+    border-style: dashed;
+    border-color: #F428F3;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    width: 38rem;
+    height: 28rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    gap: 20px;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #D1D1D3;
+}
+
+.containerCIOnly {
+    display: flex;
+    gap: 1rem;
 }
 
 .chatHeader {
     display: flex;
     justify-content: center;
     border-bottom: 1px solid #444;
-    padding-bottom: 10px;
 }
 
 .chatBody {
@@ -396,8 +419,8 @@ select {
     border-color: #F428F3;
     border-radius: 0.5rem;
     overflow: hidden;
-    width: 18rem;
-    padding: 1.5rem;
+    width: 15rem;
+    padding: 2.5rem;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -410,18 +433,44 @@ select {
     border-radius: 0.5rem;
 }
 
-.gameCard p {
+.longDescriptionElement {
     color: #D1D1D3;
-    font-size: 0.87rem;
+    font-size: 0.85rem;
     text-align: left;
+    overflow: hidden;
+    max-height: 6.85rem;
+    /* Cambia esto para ajustar la altura del texto visible */
+    transition: max-height 0.3s ease;
 }
-    
-.gameCard h3 {
-        text-align: center;
-        color: #DFDEE0;
-        font-size: 1.18rem;
+
+.longDescriptionElement.expanded {
+    max-height: none;
+    /* Elimina la restricción de altura cuando se expande */
 }
-    
+
+.gameCard button {
+    color: white;
+    margin: 0rem;
+    border-radius: 0.2rem;
+    border: solid;
+    border-width: 0.05rem;
+    border-color: #D1D1D3;
+    background-color: rgba(0, 0, 0, 0.0);
+}
+
+.gameCard button:hover {
+    color: black;
+    margin: 0rem;
+    border-radius: 0.2rem;
+    border: solid;
+    border-width: 0.05rem;
+    border-color: #D1D1D3;
+    background-color: #D1D1D3;
+    cursor: pointer;
+}
+
+
+
 /* 
 @media (max-width:1000px) {
     .barra-lateral {
@@ -463,4 +512,3 @@ select {
         display: none;
     }
 } */
-
