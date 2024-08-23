@@ -8,9 +8,9 @@ TODO:
 */
 
 // Definir rutas en router
+
+import home from "./views/Home";
+
 const routes = {
-  "/": Home,
+  "/": home,
 };
-
-const container = document.getElementById("root");
-
