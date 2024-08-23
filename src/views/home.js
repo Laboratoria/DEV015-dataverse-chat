@@ -1,42 +1,29 @@
 //import { getCharacters } from '../src/lib/dataFunction.js';
+import ordenado from "../components/ordenado.js";
+import filtrado from "../components/filtrado.js";
+import boton from "../components/boton.js";
 import renderHeader  from "../components/Renderheader.js"
+
 function home() {
 
   const divHome = document.createElement('div');  
   divHome.appendChild (renderHeader());
-  
-  const viewEl = document.createElement('div');
-  divHome.appendChild (viewEl);
 
+  const viewElHome = document.createElement('div');
+  divHome.appendChild (viewElHome);
 
-  viewEl.innerHTML = `
-<section>
-<form id="filter-form">
-<label for="family-filter" id="famFilter">Filtrar por:</label>
-<select id="family-filter" data-testid="select-filter" name="familyFilter">
-<option value=""> </option>
-<option value="bridgerton">Bridgerton</option>
-<option value="featherington">Featherington</option>
-<option value="basset">Basset</option>
-<option value="danbury">Danbury</option>
-                    <option value="real">Realeza</option>
-                    <option value="No Tiene">No tiene</option>
-                    <option value="mondrich">Mondrich</option>
-                    <option value="crane">Crane</option>
-                    <option value="cowper">Cowper</option>
-                    <option value="granville">Granville</option>
-                </select>
-                <label for="alfabetico" id="alfabe">Ordenar por:</label>
-                  <select id="alfabetico" data-testid="select-sort" name="alfabetico">
-                    <option value=""> </option>
-                    <option value="asc">Ordenar A-Z</option>
-                    <option value="des">Ordenar Z-A</option>
-                  </select>   
-                <button type="button" data-testid="button-clear">Despejar</button>
-            </form>
-           
-        </section>
-  `;
+  const divOrdenado = document.createElement('div');  
+  divOrdenado.appendChild (ordenado());
+  divHome.appendChild(divOrdenado);
+
+  const divFiltrado = document.createElement('div');
+  divFiltrado.appendChild(filtrado());
+  divHome.appendChild(divFiltrado);
+
+  const divBoton = document.createElement('div');
+  divBoton.appendChild(boton());
+  divHome.appendChild(divBoton);
+
   return divHome;
 }
 export default home 
