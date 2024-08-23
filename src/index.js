@@ -2,7 +2,7 @@ import Home from './views/home.js';
 import Character from './views/characterOld.js';
 import ErrorView from './views/errorView.js';
 import viewApi from './views/viewApi.js';
-import Chat from './views/Chat.js';
+import renderChat from './views/chat.js';
 import { setRootEl, setRoutes, onURLChange, initRouter } from './router.js';
 
 
@@ -14,7 +14,7 @@ const routes = {
     '/character': Character,
     '/errorView': ErrorView,
     '/viewApi': viewApi,
-    '/chat': Chat,
+    '/chat': renderChat,
   };
 
   // Asigna rutas

@@ -15,9 +15,7 @@ export default function Home(props) {
   // Agrega un manejador de eventos al enlace
   linkEl.addEventListener('click', (event) => {
     event.preventDefault(); // Previene el comportamiento por defecto del enlace
-    navigateTo("/", { name: "Xochitl", id: "100" }); // Navega a la página "cards" con propiedades
-    navigateTo('/character');
-
+    navigateTo("/character", { name: "cards", id: "100" }); // Navega a la página "character" con propiedades
   });
 
   // Añade el enlace al elemento de vista

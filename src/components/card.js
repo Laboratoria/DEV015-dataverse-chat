@@ -1,4 +1,4 @@
-export default function Card(item) {
+export default function renderCard(item) {
     const li = document.createElement('li');
     li.classList.add('card-list');
     li.innerHTML = `
@@ -19,6 +19,7 @@ export default function Card(item) {
         </div>
     </div>
 `;
+
     return li;
 }
 
