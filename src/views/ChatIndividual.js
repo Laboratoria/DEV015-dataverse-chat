@@ -7,7 +7,6 @@ import data from '../data/dataset.js';
 // import { communicateWithOpenAI } from '../lib/openAIApi.js';
 
 export function ChatIndividual(props) {
-
   const container = document.createElement('div');
   container.className = 'containerCI';
 
@@ -19,8 +18,6 @@ export function ChatIndividual(props) {
 
   const containerCIOnly = document.createElement('div');
   containerCIOnly.className = 'containerCIOnly'
-
-
 
   const barraLateralCI = document.createElement('div');
   barraLateralCI.className = 'barraLateralCI';
@@ -47,18 +44,12 @@ export function ChatIndividual(props) {
 
   barraLateralCI.appendChild(buscar);
   barraLateralCI.appendChild(selectCategoria);
-
   containerBody.appendChild(barraLateralCI);
 
-
-
   const gameId = props.data;
-
   const game = data.find(item => item.id === gameId);
 
-
   if (game) {
-
     const gameCard = document.createElement('div');
     gameCard.className = 'gameCard';
 
@@ -89,54 +80,29 @@ export function ChatIndividual(props) {
     gameCard.appendChild(buttonMore);
 
     containerCIOnly.appendChild(gameCard);
-
-
-    const containerChatIndividual = document.createElement('div');
-    containerChatIndividual.className = 'containerChatIndividual';
-
-    const chatContainer = document.createElement('div');
-    chatContainer.className = 'chatContainer';
-    const chatHeader = document.createElement('div');
-    chatHeader.className = 'chatHeader';
-    const nameElement = document.createElement('p');
-    nameElement.textContent = game.name;
-    chatHeader.appendChild(nameElement);
-    const chatBody = document.createElement('div');
-    chatBody.className = 'chatBody';
-
-    const chatFooter = document.createElement('div');
-    chatFooter.className = 'chatFooter';
-    chatFooter.innerHTML = `
-      <input type="text" placeholder="Tu Mensaje" />
-      <button class="sendMessage">Enviar</button>
-    `;
-
-    containerChatIndividual.appendChild(chatHeader);
-    containerChatIndividual.appendChild(chatBody);
-    containerChatIndividual.appendChild(chatFooter);
-
-    containerCIOnly.appendChild(containerChatIndividual);
-    containerBody.appendChild(containerCIOnly)
   }
-
 
   const containerChatIndividual = document.createElement('div');
   containerChatIndividual.className = 'containerChatIndividual';
 
   const chatContainer = document.createElement('div');
   chatContainer.className = 'chatContainer';
+
   const chatHeader = document.createElement('div');
   chatHeader.className = 'chatHeader';
-  chatHeader.innerHTML = 'Chat';
+  const nameElement = document.createElement('p');
+  nameElement.textContent = game.name;
+  chatHeader.appendChild(nameElement);
+
   const chatBody = document.createElement('div');
   chatBody.className = 'chatBody';
 
   const chatFooter = document.createElement('div');
   chatFooter.className = 'chatFooter';
   chatFooter.innerHTML = `
-    <input id="input-message" type="text" placeholder="Tu Mensaje" />
-    <button id="send-button" class="sendMessage">Enviar</button>
-  `;
+      <input id="input-message" type="text" placeholder="Tu Mensaje" />
+      <button id="send-button" class="sendMessage">Enviar</button>
+    `;
 
   chatFooter.querySelector('#send-button').addEventListener('click', () => {
     const inputMessage = chatFooter.querySelector('#input-message').value.trim();
@@ -152,22 +118,25 @@ export function ChatIndividual(props) {
   containerChatIndividual.appendChild(chatHeader);
   containerChatIndividual.appendChild(chatBody);
   containerChatIndividual.appendChild(chatFooter);
-    
+
+  containerCIOnly.appendChild(containerChatIndividual);
+  containerBody.appendChild(containerCIOnly);
 
   const containerFooter = document.createElement('div');
   containerFooter.className = 'containerFooterCI';
 
   const header = createHeader();
   const footer = createFooter();
-
+  
   containerHeader.appendChild(header);
   containerFooter.appendChild(footer);
-
+  
   container.appendChild(containerHeader);
   container.appendChild(containerBody);
   container.appendChild(containerFooter);
-
+  
   return container;
-}
 
+  
+}
 
