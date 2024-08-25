@@ -1,0 +1,329 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    box-sizing: border-box;
+    background-image: url('../images/banner.jpg'); 
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+  }
+
+nav {
+    display: flex;
+    justify-content: flex-end; 
+    align-items: center;
+    background-color: rgba(254, 106, 208, 0.5);;
+    padding: 0.9em;
+    box-shadow: 0 2em 5em rgba(228, 236, 107, 0.1);
+  }
+  
+nav a {
+    color: #fff; 
+    font-family: "Handjet", sans-serif;
+    font-weight: 800; 
+    font-size: 1.3em;
+    letter-spacing: 0.08em;
+    font-weight: 600;
+    text-decoration: none;
+    margin: 0 1em; 
+    transition: color 0.3s ease; 
+  }
+  
+  nav a:hover {
+    color: #f6baf8; 
+  }
+  
+.home-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; 
+    padding: 0 1em; 
+    overflow: hidden; 
+    box-sizing: border-box;
+    position: relative;
+    margin-top: 7em;
+  }
+
+.home-welcome {
+    background-color: rgba(247, 245, 246, 0.);
+    font-family: 'Fresca', sans-serif; 
+    font-size: 1.2em;
+    color: #f0ecf3;
+    text-align: center;
+    white-space: pre-line; 
+    padding: 1em; 
+    display: inline-block; 
+    border-radius: 0.5em; 
+    max-width: 50%; 
+    margin-right: 18em;
+}
+
+.logo-sailor {
+   width: 27%;
+   margin-right: 18em;
+}
+
+.img-banner {
+    max-width: 20%;
+    position: absolute; 
+    top: 0; 
+    right: 0; 
+    height: auto;
+    z-index: 2; 
+    margin-right: 12em;
+    margin-top: 0;
+}
+
+.button-link {
+    background-color: #FE6AD0;
+    width: 10%;
+    padding: 0.45em;
+    border-radius: 0.4em;
+    margin-top: 0;
+    font-size: 1.1em;
+    font-family: "handjet";
+    font-weight: 600;
+    color: #fbfcf9; 
+    text-decoration: none; 
+    cursor: pointer;
+    border: none;
+    margin-right: 18em;
+    margin-top: 0.1em; 
+  }
+  
+.button-link:hover {
+    text-decoration: underline; 
+    color: #2627B3;
+  }
+
+
+
+
+
+
+
+
+
+
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(3, 30%);
+    gap: 20px;
+    margin-top: 10em;
+}
+
+.card-list {
+    background-color: #E19EFF;
+    border: 4px solid #f5f5f0;
+    border-radius: 1.2em;
+    list-style: none;
+    box-sizing: border-box;
+    box-shadow: 0 4px 8px rgba(245, 23, 245, 0.1);
+    transition: background-color 1s, box-shadow 1s;
+}
+
+.card-list:hover {
+    background-color: #d4e259; 
+}
+
+.card-container h2 {
+    font-family: "handjet", sans-serif;
+    font-size: 1.3em;
+    background-color: #FE6AD0;
+    color: #F3E0FF;
+    width: 14em;
+    margin-top: 0;
+    padding: 0.4em;
+    border-radius: 0.8em;
+}
+
+.div-item {
+    display: flex;
+    align-items: center;
+}
+
+img[itemprop="image"] {
+    height: 12em;
+    width: 7em;
+    border-radius: 0.86em;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    object-fit: cover;
+    /* Ajuste del objeto */
+    display: block;
+    /* Hacer que la imagen sea un bloque */
+    margin-left: 0.7em;
+    border: 2px solid white;
+}
+
+.item-facts {
+    display: flex;
+    flex-direction: column;
+    margin-left: 0.7em;
+    
+}
+
+.sign {
+    background-color: #FE6AD0;
+    font-family: "Handjet";
+    font-size: 1.2em;
+    color: #FFFFFC;
+    text-align: center;
+    padding: 0.4em;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 0.3em;
+    margin: 0;
+    width: 80%;
+}
+
+.date {
+    background-color: #F3E0FF;
+    font-family: "Handjet";
+    font-size: 1.2em;
+    color: #9043E4;
+    text-align: center;
+    padding: 0.4em;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 0.3em;
+    margin: 0;
+    width: 80%;
+}
+
+.type {
+    color: #9043E4; 
+    font-family: "handjet", sans-serif;
+    font-size: 1.3em;
+    background-color: #FFD8FE;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    width: 9em;
+    margin-top: 1em;
+    padding: 0.4em;
+    border-radius: 0.2em;
+    margin-left: 2.2em;
+}
+
+h3 {
+    font-family: "Handjet";
+    font-size: 0.5em;
+    color: #FFEFFF;
+    padding: 0.9em;
+    padding-top: 0.1em;
+}
+
+
+.chat-title {
+    font-family: "handjet";
+    font-size: 2em;
+    color: #F3E0FF; 
+    text-align: center;
+    border-radius: 0.25em;
+    margin: 0; 
+    font-weight: bold;
+    padding: 0.7em;
+}
+
+#chat-view {
+    max-width: 90%;
+    display: flex;
+    flex-direction: column;
+    background-color: #FE6AD0; 
+    border-radius: 1em;
+    margin-top: 5em;
+}
+
+.message-area {
+    width: 120%; /* Cambiado de 80% a 90% */
+    height: 90%; /* Cambiado de 80% a 90% */
+    padding: 1em;
+    background-color: #f0e5f7;
+    border-radius: 0.8em; 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+    margin: 3em; 
+  }
+  .input-container {
+    display: flex;
+    align-items: center; 
+    margin-top: 10px;
+}
+
+.message-input {
+    flex: 1;
+    padding: 1em;
+    margin: 1em;
+    border-radius: 1.45em;
+    background-color: #FFFFFC;
+    width: 80%;
+    border: none;
+}
+
+.button-send {
+    background-color: #80037b;
+    color: rgb(240, 238, 248);
+    font-family: "handjet";
+    font-size: 1.2em;
+    width: 8%;
+    border: none;
+    border-radius: 0.8em;
+    cursor: pointer;
+    padding: 0.5em;
+    margin-left: 0.8em;
+}
+
+.button-send:hover {
+    background-color: #d4e259;
+}
+
+
+#apiKeyInput {
+    background-color: #FF55F9;
+  }
+
+#saveApiKeyButton {
+    background-color: #FF55F9;
+}
+
+
+
+
+
+
+
+
+
+
+
+@media (min-width: 768px) {
+    .card-container {
+        display: grid;
+        grid-template-columns: repeat(4, 30%);
+        gap: 20px;
+        width: 75%;
+    }
+    
+    .card-list {
+        width: 100%; 
+    }
+
+    
+    .card-container h2 {
+    font-size: 1.2em;
+    width: 15.5em;
+  
+    }
+
+    .img[itemprop="image"] {
+        height: 18em;
+        width: 17em;
+    }
+    
+    .type {
+        font-size: 1.2em;
+        width: 70%;
+    }
+
+    h3 {
+        font-size: 1em;
+    }
+}
+

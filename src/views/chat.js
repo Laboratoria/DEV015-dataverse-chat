@@ -5,7 +5,8 @@ export default function renderChat({ id }) {
  
    // Agrega un título al chat
    const title = document.createElement('h1');
-   title.textContent = `Chat with character ID: ${id}`;
+   title.textContent = `Chat Sailor Moon: ${id}`;
+   title.classList.add('chat-title'); 
    container.appendChild(title);
  
    // Crea un área para mostrar los mensajes
@@ -14,6 +15,9 @@ export default function renderChat({ id }) {
    messageArea.classList.add('message-area')
    container.appendChild(messageArea);
  
+   const inputContainer = document.createElement('div');
+   inputContainer.classList.add('input-container'); 
+
    // Crea un formulario para enviar mensajes
    const form = document.createElement('form');
    form.id = 'chat-form';
@@ -26,6 +30,7 @@ export default function renderChat({ id }) {
  
    const button = document.createElement('button');
    button.type = 'submit';
+   button.classList.add('button-send')
    button.textContent = 'Enviar';
    form.appendChild(button);
  
