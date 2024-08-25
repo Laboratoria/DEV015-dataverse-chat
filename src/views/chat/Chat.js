@@ -1,5 +1,6 @@
-import CONFIG from '/config.js';
 import * as OpenAI from 'https://esm.run/openai';
+import { getApiKey } from '/lib/apiKey.js';
+
 
 function getContext(names, allCharacters){
   if (!allCharacters){
@@ -11,7 +12,7 @@ function getContext(names, allCharacters){
 
 async function callOpenAIApi(context, text) {
   const openai = new OpenAI.OpenAI({
-    apiKey: CONFIG.OPENAI_API_KEY,
+    apiKey: getApiKey(),
     dangerouslyAllowBrowser: true}
   );
   const chatCompletion = await openai.chat.completions.create({
@@ -20,68 +21,63 @@ async function callOpenAIApi(context, text) {
       { role: 'user', content: text }],
     model: 'gpt-4o',
   });
-  // console.log(chatCompletion);
-  alert(chatCompletion.choices[0].message.content)
+  const getChatBox = document.getElementsByClassName('messages')[0];
+  const respond = document.createElement('li');
+  respond.classList.add('her');
+  respond.appendChild(document.createTextNode(chatCompletion.choices[0].message.content));
+  getChatBox.appendChild(respond);
 };
 
 
 export const renderChat = (data, allCharacters=false) => {
+  getApiKey();
   const view = document.createElement('div');
-  const right = document.createElement('div');
-  right.classList.add('chat');
-  if (allCharacters){
-    right.innerHTML=`<h2>Chatea con nosotras:</h2><br><br>`;
-  } else {
-    right.innerHTML=`<h2>Chatea Conmigo:</h2><br><br>`;
-  }
-  const messagesDiv = document.createElement('div');
-  messagesDiv.classList.add('messages');
+  view.classList.add('chat-container');  // Add container class
 
-  for(let i=0; i<10; i++){
-    const p = document.createElement('p');
-    p.innerHTML="";
-    messagesDiv.appendChild(p);
-  }
+  const right = document.createElement('div');
+  right.classList.add('chat-box');  // Changed class name to chat-box
+
+  const title = document.createElement('h2');
+  title.textContent = allCharacters ? "Chatea con nosotras:" : "Chatea Conmigo:";
+  right.appendChild(title);
+
+  const chatBox = document.createElement('ul');
+  chatBox.classList.add('messages');
+  right.appendChild(chatBox);
 
   const writeDiv = document.createElement('div');
   writeDiv.classList.add('write');
 
-  const div1 = document.createElement('div');
   const textarea = document.createElement('textarea');
-  textarea.setAttribute('name','message');
-  textarea.setAttribute('rows',6);
-  div1.appendChild(textarea);
+  textarea.setAttribute('name', 'message');
+  textarea.setAttribute('rows', 4);
+  textarea.classList.add('message-input');  // Added class for styling
+  writeDiv.appendChild(textarea);
 
-  const div2 = document.createElement('div');
   const button = document.createElement('button');
-  button.setAttribute('type','button');
-  button.setAttribute('id','send');
-  button.textContent='ENVIAR';
+  button.setAttribute('type', 'button');
+  button.setAttribute('id', 'send');
+  button.textContent = 'ENVIAR';
+  button.classList.add('send-button');  // Added class for styling
+  writeDiv.appendChild(button);
 
-  button.addEventListener('click',function(){
+  button.addEventListener('click', function(){
     const messageBox = document.querySelector('textarea[name="message"]');
-    let names = "";
-    if (allCharacters){
-      names = data.map(data => data.name).join(', ');
-    } else {
-      names = data['name'];
-    }
-    const assistant_context = getContext(names, allCharacters)
+    let names = allCharacters ? data.map(data => data.name).join(', ') : data['name'];
+
+    const me_ask = document.createElement('li');
+    me_ask.classList.add('me');
+    me_ask.appendChild(document.createTextNode(messageBox.value));
+    chatBox.appendChild(me_ask);
+
+    const assistant_context = getContext(names, allCharacters);
     callOpenAIApi(assistant_context, messageBox.value);
     messageBox.value = "";
     messageBox.focus();
-  
   });
-  writeDiv.appendChild(div1);
-  writeDiv.appendChild(div2);
 
-  right.appendChild(messagesDiv);
   right.appendChild(writeDiv);
+  view.appendChild(right);
 
-  view.append(right);
-  
-  div2.appendChild(button);
-  return view
-  }
-
-  
+  return view;
+}

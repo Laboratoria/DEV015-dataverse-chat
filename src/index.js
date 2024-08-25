@@ -29,8 +29,12 @@ window.addEventListener("DOMContentLoaded", () => {
 
   // Escucha los cambios de URL (navegación)
   window.onpopstate = () => onURLChange(window.location);
+  
+  const getBackHome = document.getElementsByTagName("header")[0];
+  getBackHome.addEventListener('click',function(){
+    document.location.href="/";
+  });
 
-  const facts = document.querySelector("#curious_fact");
-  facts.textContent = renderStats(computeStats(data));
+
 
 });

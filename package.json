@@ -9,7 +9,6 @@
     "pretest": "npm run eslint && npm run htmlhint",
     "test": "jest --verbose --coverage test/",
     "open-coverage-report": "opener ./coverage/lcov-report/index.html",
-    "build-config": "node src/generate-config.js",
     "start": "serve src/ -s"
   },
   "devDependencies": {

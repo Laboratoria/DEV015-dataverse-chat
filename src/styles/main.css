@@ -1,79 +1,77 @@
-
 /* css generales tienen que estar en este archivo */
 
 * {
-    padding: 0px; 
-    margin: 0px; 
-    box-sizing: border-box;
-    
-  } 
+  padding: 0px; 
+  margin: 0px; 
+  box-sizing: border-box;
   
-  body {
-    font-family: Arial, sans-serif; /* Define la fuente */
-    background-color: rgb(252, 252, 252); /* Color de fondo suave */
-    padding: 20px; 
-    border: 0px;
-    margin: 0px;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-  }
-    
-    header {
-    max-width: 100%;
-    text-align: center; /* Centra el contenido del header */
-    background-image: linear-gradient(rgba(56, 169, 148, 0.184), rgba(87, 172, 182, 0.794));
-    margin: 10px;
-    padding: 20px;
+  
+} 
 
-    
+body {
+  font-family: Arial, sans-serif; /* Define la fuente */
+  padding: 20px; 
+  border: 0px;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: rgb(204, 198, 191);
+  
+ 
+  
+}
 
-  }
-      
-  body header h1 {
-    margin: 30px; /* Espacio superior */
-    font-size: 3em; /* Tamaño de fuente */
-    color: rgb(7, 14, 64);
-    text-shadow: 2px 2px 5px rgb(68, 75, 87);
-  }
+header {
+  margin-bottom: 20px;
+  text-align: center; /* Centra el contenido del header */
+  background-image: linear-gradient(rgba(43, 3, 47, 0.35), rgba(144, 109, 137, 0.244)),url("/imagenes/imagen2.png");
+
+}
+    
+body header h1 {
+  margin: 30px; /* Espacio superior */
+  font-size: 3em; /* Tamaño de fuente */
+  color: rgb(255, 255, 255);
+  text-shadow: 2px 2px 5px rgb(136, 56, 92);
+ 
+}
 
 footer {
-    max-width: 100%;
-    padding: 20px;
-    bottom: 0%;
-    text-align: center;
-    color: rgb(7, 14, 64);
-    font-size: 2em;
-    background-image:linear-gradient(rgba(56, 169, 148, 0.304), rgba(87, 172, 182, 0.794));
+  max-width: 100%;
+  background-image: linear-gradient(rgba(163, 146, 165, 0.35), rgba(144, 109, 137, 0.244)),url("/imagenes/imagen4.png");  padding: 20px;
+  bottom: 0%;
+  text-align: center;
+  color: rgb(255, 255, 255);
+  text-shadow: 2px 2px 5px rgb(237, 215, 215);
+  font-size: 2em
+}
+#curious_fact{
+  max-width: 100%;
+  background-image: linear-gradient(rgba(163, 146, 165, 0.35), rgba(144, 109, 137, 0.244)),url("/imagenes/imagen1.png");
+  padding: 10px;
+  bottom: 0%;
+  text-align: center;
+  margin: 10px;
+  color: rgb(36, 35, 35);
+  text-shadow: 2px 2px 5px rgb(136, 56, 92);
+  font-size: 2em;
+}
+h3{
+  color: rgb(3, 2, 3);
+  text-shadow: 2px 2px 5px rgb(246, 242, 242);
+}
+#curious_fact div{
+  margin: 30px;
+}
 
-  }
-  #curious_fact{
-    max-width: 100%;
-    padding: 10px;
-    bottom: 0%;
-    text-align: center;
-    background-image: linear-gradient(rgba(147, 179, 188, 0.883), rgba(75, 119, 124, 0.96));
-    margin: 10px;
-    color: rgb(4, 17, 31);
-    text-shadow: 2px 2px 5px rgb(255, 248, 248);
-    font-size: 2,5em;
-  }
-  h3{
-    color: rgb(3, 2, 3);
-    text-shadow: 2px 2px 5px rgb(246, 242, 242);
-  }
-  #curious_fact div{
-    margin: 30px;
-  }
+.hidden{
+  display: none;
+}
 
-  .hidden{
-    display: none;
-  }
-
-  .apikey{
-    font-size: 12px;
-    color: #000;
-    position: absolute;
-    top: 30px;
-    right: 30px;
-  }
+.apikey{
+  font-size: 12px;
+  color: #000;
+  position: absolute;
+  top: 30px;
+  right: 30px;
+}
