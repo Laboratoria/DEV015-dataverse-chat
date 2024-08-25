@@ -7,7 +7,18 @@ export default function Home(props) {
 
   const contentEl = document.createElement('div');
   contentEl.classList.add('content-container');
-  
+
+  const wingEl = document.createElement('img');
+  wingEl.src = './images/wing.png'; 
+  wingEl.alt = 'wing sailor';
+  wingEl.classList.add('wing'); 
+  viewEl.appendChild(wingEl);  
+
+  const wingsEl = document.createElement('img');
+  wingsEl.src = './images/wing.png'; 
+  wingsEl.alt = 'wing sailor';
+  wingsEl.classList.add('wing-heart'); 
+  viewEl.appendChild(wingsEl); 
  
   const logoEl = document.createElement('img');
   logoEl.src = './images/logosailor1.png'; 
@@ -19,8 +30,7 @@ export default function Home(props) {
   viewEl.innerHTML += `
   <p class="home-welcome">✨ ¡Bienvenidos a "Mundo Sailor"! ✨ 
   Sumérgete en el mágico universo de Sailor Moon, la emblemática serie creada por Naoko Takeuchi. 
-  Explora nuestras secciones para conocer a tus personajes favoritos y disfruta de la magia. 
-  ¡Descubre todo lo que el mundo de Sailor Moon tiene para ofrecerte!</p>
+  Explora nuestras secciones para conocer a tus personajes favoritos y ¡Descubre todo lo que el mundo de Sailor Moon tiene para ofrecerte!</p>
   `;
 
   // Crea un botón para navegar a la página "Cards"
