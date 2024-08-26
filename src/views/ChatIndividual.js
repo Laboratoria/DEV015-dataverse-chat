@@ -137,18 +137,6 @@ export function ChatIndividual(props) {
 
   // integramos la IA 
 
-  // chatFooter.querySelector('#send-button').addEventListener('click', () => {
-  //   const inputMessage = chatFooter.querySelector('#input-message').value.trim();
-  //   if (inputMessage !== '') {
-  //     const messageElement = document.createElement('div');
-  //     messageElement.className = 'user-message';
-  //     messageElement.textContent = inputMessage;
-  //     chatBody.appendChild(messageElement);
-  //     chatFooter.querySelector('#input-message').value = ''; // Limpiar el input
-  //   }
-  // });
-
-
 
   containerChatIndividual.appendChild(chatHeader);
   containerChatIndividual.appendChild(chatBody);
