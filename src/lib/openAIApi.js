@@ -3,6 +3,7 @@ import { getApiKey } from './apiKey.js';
 export const communicateWithOpenAI = async (messages) => {
   try {
     const apiKey = getApiKey();  // Obtén la API Key desde Local Storage
+    console.log('API Key:', apiKey);
     
     if (!apiKey) {
       throw new Error('API Key no está configurada');
@@ -17,7 +18,7 @@ export const communicateWithOpenAI = async (messages) => {
       body: JSON.stringify({
         model: "gpt-4", // Especifica el modelo de OpenAI
         messages: messages, // Pasa los mensajes al cuerpo de la solicitud
-        temperature: 0.7, // Opcional: ajusta la creatividad de las respuestas
+        temperature: 0.9, // Opcional: ajusta la creatividad de las respuestas
         max_tokens: 150 // Opcional: ajusta el número máximo de tokens en la respuesta
       })
     });

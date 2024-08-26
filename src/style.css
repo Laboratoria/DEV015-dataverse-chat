@@ -469,6 +469,18 @@ select {
     cursor: pointer;
 }
 
+.user-message {
+    display: flex;
+    align-items: center;
+    background-color: #515151;
+    border-radius: 10px;
+    height: 2rem;
+    width:max-content;
+    margin-left: auto;
+    margin-bottom: 10px;
+    text-align: right;
+    padding: 3px;
+}
 
 
 /* 
