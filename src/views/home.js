@@ -1,4 +1,4 @@
-//import { getCharacters } from '../src/lib/dataFunction.js';
+import { CharacterList } from "../components/CharacterList.js";
 import ordenado from "../components/ordenado.js";
 import filtrado from "../components/filtrado.js";
 import boton from "../components/boton.js";
@@ -23,6 +23,10 @@ function home() {
   const divBoton = document.createElement('div');
   divBoton.appendChild(boton());
   divHome.appendChild(divBoton);
+
+  const divCharacterList = document.createElement('div');
+  divCharacterList.appendChild(CharacterList());
+  divHome.appendChild(divCharacterList);
 
   return divHome;
 }

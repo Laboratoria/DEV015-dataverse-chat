@@ -1,9 +1,9 @@
-import { filterCharactersByFamily, sortCharactersByName } from '../dataFunctions.js';
+import { filterData, sortData } from "../lib/dataFunction.js";
 
-export function CharacterList({ familyFilter, sortFilter }) {
+export function CharacterList( familyFilter, sortFilter ) {
   const viewEl = document.createElement('div');
-  const filteredCharacters = filterCharactersByFamily(familyFilter);
-  const sortedCharacters = sortCharactersByName(filteredCharacters, 'name', sortFilter);
+  const filteredCharacters = filterData(familyFilter);
+  const sortedCharacters = sortData(filteredCharacters, 'name', sortFilter);
 
   const ul = document.createElement('ul');
   sortedCharacters.forEach(character => {
@@ -16,8 +16,11 @@ export function CharacterList({ familyFilter, sortFilter }) {
       <p>${character.shortDescription}</p>
     `;
     ul.appendChild(li);
+
+    return viewEl;
+
   });
 
   viewEl.appendChild(ul);
-  return viewEl;
 }
+export default CharacterList;

@@ -1,4 +1,4 @@
-import dataset from "../data/dataset";
+import dataset from "../data/dataset.js";
 
 export const filterData = (data, filterBy, value) => {
   return data.filter(character => 
