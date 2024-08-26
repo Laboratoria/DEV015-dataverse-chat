@@ -29,8 +29,8 @@ export default function Home(props) {
   // Luego añade el texto de bienvenida
   viewEl.innerHTML += `
   <p class="home-welcome">✨ ¡Bienvenidos a "Mundo Sailor"! ✨ 
-  Sumérgete en el mágico universo de Sailor Moon, la emblemática serie creada por Naoko Takeuchi. 
-  Explora nuestras secciones para conocer a tus personajes favoritos y ¡Descubre todo lo que el mundo de Sailor Moon tiene para ofrecerte!</p>
+  Sumérgete en el mágico universo de Sailor Moon, la emblemática serie creada por  <span class="highlight">Naoko Takeuchi</span>. 
+  Explora nuestras secciones para conocer a tus personajes favoritos y descubre  <span class="highlight1">¡ por el poder de la luna !</span>.  todo lo que el mundo de Sailor Moon tiene para ofrecerte!</p>
   `;
 
   // Crea un botón para navegar a la página "Cards"

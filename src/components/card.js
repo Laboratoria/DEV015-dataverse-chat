@@ -15,7 +15,7 @@ export default function renderCard(item) {
         </div>
         <div class="description">
          <p class="type"><strong>Tipo de Guardiana:</strong> <span itemprop="guardianType">${item.facts.tipoDeGuardiana}</span></p>
-         <h3 itemprop="nombre">${item.name} ${item.description}</h3>
+         <h3 itemprop="description"> ${item.description}</h3>
         </div>
     </div>
 `;
