@@ -1,5 +1,6 @@
 import { createHeader } from '../components/componentsHeader.js';
 import { createFooter } from '../components/componentsFooter.js';
+import { navigateTo } from '../router.js';
 // import { queryStringToObject } from '../router.js';
 // import { renderItems } from '../components/componentsCards.js';
 
@@ -20,8 +21,7 @@ export function ChatIndividual(props) {
   const containerCIOnly = document.createElement('div');
   containerCIOnly.className = 'containerCIOnly'
 
-
-
+/*
   const barraLateralCI = document.createElement('div');
   barraLateralCI.className = 'barraLateralCI';
 
@@ -49,16 +49,12 @@ export function ChatIndividual(props) {
   barraLateralCI.appendChild(selectCategoria);
 
   containerBody.appendChild(barraLateralCI);
-
+*/
 
 
   const gameId = props.data;
-
   const game = data.find(item => item.id === gameId);
-
-
   if (game) {
-
     const gameCard = document.createElement('div');
     gameCard.className = 'gameCard';
 
@@ -72,8 +68,6 @@ export function ChatIndividual(props) {
     const buttonMore = document.createElement('button');
     buttonMore.textContent = 'ver más';
     buttonMore.className = 'buttonMore';
-
-    // Añadir funcionalidad al botón para expandir/contraer el texto
     buttonMore.addEventListener('click', function () {
       if (longDescriptionElement.classList.contains('expanded')) {
         longDescriptionElement.classList.remove('expanded');
@@ -89,36 +83,7 @@ export function ChatIndividual(props) {
     gameCard.appendChild(buttonMore);
 
     containerCIOnly.appendChild(gameCard);
-
-
-    const containerChatIndividual = document.createElement('div');
-    containerChatIndividual.className = 'containerChatIndividual';
-
-    const chatContainer = document.createElement('div');
-    chatContainer.className = 'chatContainer';
-    const chatHeader = document.createElement('div');
-    chatHeader.className = 'chatHeader';
-    const nameElement = document.createElement('p');
-    nameElement.textContent = game.name;
-    chatHeader.appendChild(nameElement);
-    const chatBody = document.createElement('div');
-    chatBody.className = 'chatBody';
-
-    const chatFooter = document.createElement('div');
-    chatFooter.className = 'chatFooter';
-    chatFooter.innerHTML = `
-      <input type="text" placeholder="Tu Mensaje" />
-      <button class="sendMessage">Enviar</button>
-    `;
-
-    containerChatIndividual.appendChild(chatHeader);
-    containerChatIndividual.appendChild(chatBody);
-    containerChatIndividual.appendChild(chatFooter);
-
-    containerCIOnly.appendChild(containerChatIndividual);
-    containerBody.appendChild(containerCIOnly)
   }
-
 
   const containerChatIndividual = document.createElement('div');
   containerChatIndividual.className = 'containerChatIndividual';
@@ -127,16 +92,28 @@ export function ChatIndividual(props) {
   chatContainer.className = 'chatContainer';
   const chatHeader = document.createElement('div');
   chatHeader.className = 'chatHeader';
-  chatHeader.innerHTML = 'Chat';
+  const nameElement = document.createElement('p');
+  nameElement.textContent = game.name;
+  nameElement.classList = 'nameElementCI'
+  const exitIcon = document.createElement('p');
+  exitIcon.textContent = 'X';
+  exitIcon.className = 'exitIcon';
+
+  exitIcon.addEventListener('click', () => {
+    navigateTo('/');
+  });
+
+  chatHeader.appendChild(nameElement);
+  chatHeader.appendChild(exitIcon);
   const chatBody = document.createElement('div');
   chatBody.className = 'chatBody';
 
   const chatFooter = document.createElement('div');
   chatFooter.className = 'chatFooter';
   chatFooter.innerHTML = `
-    <input id="input-message" type="text" placeholder="Tu Mensaje" />
-    <button id="send-button" class="sendMessage">Enviar</button>
-  `;
+      <input id="input-message" type="text" placeholder="Tu Mensaje" />
+      <button id="send-button" class="sendMessage">Enviar</button>
+    `;
 
   chatFooter.querySelector('#send-button').addEventListener('click', () => {
     const inputMessage = chatFooter.querySelector('#input-message').value.trim();
@@ -148,11 +125,13 @@ export function ChatIndividual(props) {
       chatFooter.querySelector('#input-message').value = ''; // Limpiar el input
     }
   });
-
   containerChatIndividual.appendChild(chatHeader);
   containerChatIndividual.appendChild(chatBody);
   containerChatIndividual.appendChild(chatFooter);
-    
+
+  containerCIOnly.appendChild(containerChatIndividual);
+  containerBody.appendChild(containerCIOnly)
+
 
   const containerFooter = document.createElement('div');
   containerFooter.className = 'containerFooterCI';

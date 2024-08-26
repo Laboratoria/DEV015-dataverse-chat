@@ -59,7 +59,7 @@ h1 {
     display: flex;
     align-items: center;
     justify-content: left;
-    gap: 15%;
+    gap: 18%;
     padding-left: 3.5rem;
 }
 
@@ -151,6 +151,9 @@ li p {
 
 .sidebar {
     padding: 2rem;
+    display: flex;
+    gap: 2rem;
+    flex-direction: column;
 }
 
 .filtros {
@@ -162,7 +165,6 @@ li p {
     gap: 0.4rem;
     font-size: 1rem;
     padding: 2rem;
-    margin-top: 3rem;
     border: 0.12rem solid;
     border-radius: 0.3rem;
     position: relative;
@@ -333,6 +335,8 @@ select {
     display: flex;
     align-items: flex-start;
     padding: 2rem;
+    gap: 8rem;
+    justify-content: center;
 }
 
 .barraLateralCI {
@@ -344,7 +348,6 @@ select {
     padding: 2rem;
     border: 0.12rem solid;
     border-radius: 0.3rem;
-    margin-right: 7rem;
 }
 
 .containerChatIndividual {
@@ -358,8 +361,8 @@ select {
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    gap: 20px;
-    padding: 20px;
+    gap: 1.5rem;
+    padding: 1.5rem;
     background-color: rgba(0, 0, 0, 0.7);
     color: #D1D1D3;
 }
@@ -371,8 +374,35 @@ select {
 
 .chatHeader {
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
+    align-items: center;
     border-bottom: 1px solid #444;
+    gap: 11rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+}
+
+.nameElementCI {
+    margin: 0.1rem;
+    margin-bottom: 0.4rem;
+}
+
+.exitIcon {
+    padding-top: 0.2rem;
+    padding-bottom: 0.4rem;
+    padding-left: 0.7rem;
+    padding-right: 0.7rem;
+    border: dashed;
+    border-width: 0.05rem;
+    border-color: #F328F4;
+    border-radius: 1rem;
+    margin: 0.1rem;
+    margin-bottom: 0.4rem;
+}
+.exitIcon:hover {
+    background-color: #DFDEE0;
+    color: #333;
+    cursor: pointer;
 }
 
 .chatBody {
@@ -383,7 +413,6 @@ select {
     flex-direction: column;
     gap: 10px;
 }
-
 
 .chatFooter {
     display: flex;
