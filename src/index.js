@@ -1,12 +1,12 @@
-import Home from './views/home.js';
-import {Films} from './views/pelicula.js';
+import {Home} from './views/Home.js';
+import {Films} from './views/Peliculas.js';
 import { setRootEl, setRoutes, onURLChange } from './router.js';
 
 
 // Define your routes and their associated views
 const routes = {
   '/': Home,
- '/pelicula': Films,
+ '/peliculas': Films,
 
   
 };

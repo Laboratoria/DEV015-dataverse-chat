@@ -1,12 +1,16 @@
-import data from "../data/dataset.js";
+import  data  from "../data/dataset.js";
 import { card } from "../Components/Card.js";
+import { createHeader } from "../components/header.js"; 
 
 export const Home = () => {
   const div = document.createElement("div");
-  const el = document.createElement("h1");
 
-  el.innerHTML = "Dreamland";
-  div.appendChild(el);
+  const header = createHeader();
+  div.appendChild(header);
+
+  const subtitle = document.createElement ("h2")
+  subtitle.innerHTML = "bienvenido a dreamland, una página para fanaticos de Disney y Pixar donde puedes chatear con tus películas favoritas";
+  div.appendChild(subtitle);
 
   
   const showCard = (data) => {
@@ -20,8 +24,8 @@ export const Home = () => {
   };
 
 
-  div.appendChild(showCard(data));
+  div.appendChild(showCard(data)); 
   return div;
 };
 
-export default Home;
+

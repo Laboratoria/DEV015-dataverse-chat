@@ -13,7 +13,7 @@ export const card = (item) => {
       <div class="contenedorContenido">
       <div class="contenedorImagen"><img class="imagenPeli" src="${item.imageUrl}" alt="${item.id}"></div>
       <div class="contenedorTextos">
-      <div class="descripcion"> <span itemprop="descripcion">${item.shortDescription}</span> </div>
+      <div class="descripcion"> <span itemprop="descripción">${item.shortDescription}</span> </div>
       <div class="hechos"> 
         <p itemprop="añoEstreno"><b>Año:</b> ${item.facts.estreno}</p>
         <p itemprop="genero"><b>Género:</b> ${item.facts.generoPelicula}</p>
@@ -25,8 +25,9 @@ export const card = (item) => {
     </div>
     `;
     
-  ( liElement.addEventListener('click', () => {
-        navigateTo('/pelicula', {id: item.id});
+  ( liElement.addEventListener('click', () => { 
+    console.log(item.id)
+        navigateTo('/peliculas', {id: item.id});
     }));
     return liElement;
 };
