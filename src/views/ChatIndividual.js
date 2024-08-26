@@ -1,5 +1,6 @@
 import { createHeader } from '../components/componentsHeader.js';
 import { createFooter } from '../components/componentsFooter.js';
+import { navigateTo } from '../router.js';
 // import { queryStringToObject } from '../router.js';
 // import { renderItems } from '../components/componentsCards.js';
 
@@ -19,6 +20,7 @@ export function ChatIndividual(props) {
   const containerCIOnly = document.createElement('div');
   containerCIOnly.className = 'containerCIOnly'
 
+/*
   const barraLateralCI = document.createElement('div');
   barraLateralCI.className = 'barraLateralCI';
 
@@ -45,6 +47,8 @@ export function ChatIndividual(props) {
   barraLateralCI.appendChild(buscar);
   barraLateralCI.appendChild(selectCategoria);
   containerBody.appendChild(barraLateralCI);
+*/
+
 
   const gameId = props.data;
   const game = data.find(item => item.id === gameId);
@@ -63,8 +67,6 @@ export function ChatIndividual(props) {
     const buttonMore = document.createElement('button');
     buttonMore.textContent = 'ver más';
     buttonMore.className = 'buttonMore';
-
-    // Añadir funcionalidad al botón para expandir/contraer el texto
     buttonMore.addEventListener('click', function () {
       if (longDescriptionElement.classList.contains('expanded')) {
         longDescriptionElement.classList.remove('expanded');
@@ -92,7 +94,18 @@ export function ChatIndividual(props) {
   chatHeader.className = 'chatHeader';
   const nameElement = document.createElement('p');
   nameElement.textContent = game.name;
+
+  nameElement.classList = 'nameElementCI'
+  const exitIcon = document.createElement('p');
+  exitIcon.textContent = 'X';
+  exitIcon.className = 'exitIcon';
+
+  exitIcon.addEventListener('click', () => {
+    navigateTo('/');
+  });
+
   chatHeader.appendChild(nameElement);
+  chatHeader.appendChild(exitIcon);
 
   const chatBody = document.createElement('div');
   chatBody.className = 'chatBody';
@@ -135,27 +148,14 @@ export function ChatIndividual(props) {
     }
   })
 
-  // integramos la IA 
-
-  // chatFooter.querySelector('#send-button').addEventListener('click', () => {
-  //   const inputMessage = chatFooter.querySelector('#input-message').value.trim();
-  //   if (inputMessage !== '') {
-  //     const messageElement = document.createElement('div');
-  //     messageElement.className = 'user-message';
-  //     messageElement.textContent = inputMessage;
-  //     chatBody.appendChild(messageElement);
-  //     chatFooter.querySelector('#input-message').value = ''; // Limpiar el input
-  //   }
-  // });
-
-
-
   containerChatIndividual.appendChild(chatHeader);
   containerChatIndividual.appendChild(chatBody);
   containerChatIndividual.appendChild(chatFooter);
 
   containerCIOnly.appendChild(containerChatIndividual);
+
   containerBody.appendChild(containerCIOnly);
+
 
   const containerFooter = document.createElement('div');
   containerFooter.className = 'containerFooterCI';
