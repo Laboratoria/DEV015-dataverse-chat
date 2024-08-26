@@ -1,8 +1,9 @@
-import { CharacterList } from "../components/CharacterList.js";
+//import { CharacterList } from "../components/CharacterList.js";
 import ordenado from "../components/ordenado.js";
 import filtrado from "../components/filtrado.js";
 import boton from "../components/boton.js";
 import renderHeader  from "../components/Renderheader.js"
+import personajes from "../components/personajes.js";
 
 function home() {
 
@@ -24,9 +25,13 @@ function home() {
   divBoton.appendChild(boton());
   divHome.appendChild(divBoton);
 
-  const divCharacterList = document.createElement('div');
-  divCharacterList.appendChild(CharacterList());
-  divHome.appendChild(divCharacterList);
+  const divpersonajes = document.createElement('div');
+  divBoton.appendChild(personajes());
+  divHome.appendChild(divpersonajes);
+
+  //const divCharacterList = document.createElement('div');
+  //divCharacterList.appendChild(CharacterList());
+  //divHome.appendChild(divCharacterList);
 
   return divHome;
 }
