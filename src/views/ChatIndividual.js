@@ -8,7 +8,6 @@ import data from '../data/dataset.js';
 // import { communicateWithOpenAI } from '../lib/openAIApi.js';
 
 export function ChatIndividual(props) {
-
   const container = document.createElement('div');
   container.className = 'containerCI';
 
@@ -47,13 +46,13 @@ export function ChatIndividual(props) {
 
   barraLateralCI.appendChild(buscar);
   barraLateralCI.appendChild(selectCategoria);
-
   containerBody.appendChild(barraLateralCI);
 */
 
 
   const gameId = props.data;
   const game = data.find(item => item.id === gameId);
+
   if (game) {
     const gameCard = document.createElement('div');
     gameCard.className = 'gameCard';
@@ -90,10 +89,12 @@ export function ChatIndividual(props) {
 
   const chatContainer = document.createElement('div');
   chatContainer.className = 'chatContainer';
+
   const chatHeader = document.createElement('div');
   chatHeader.className = 'chatHeader';
   const nameElement = document.createElement('p');
   nameElement.textContent = game.name;
+
   nameElement.classList = 'nameElementCI'
   const exitIcon = document.createElement('p');
   exitIcon.textContent = 'X';
@@ -105,6 +106,7 @@ export function ChatIndividual(props) {
 
   chatHeader.appendChild(nameElement);
   chatHeader.appendChild(exitIcon);
+
   const chatBody = document.createElement('div');
   chatBody.className = 'chatBody';
 
@@ -130,7 +132,8 @@ export function ChatIndividual(props) {
   containerChatIndividual.appendChild(chatFooter);
 
   containerCIOnly.appendChild(containerChatIndividual);
-  containerBody.appendChild(containerCIOnly)
+
+  containerBody.appendChild(containerCIOnly);
 
 
   const containerFooter = document.createElement('div');
@@ -138,15 +141,16 @@ export function ChatIndividual(props) {
 
   const header = createHeader();
   const footer = createFooter();
-
+  
   containerHeader.appendChild(header);
   containerFooter.appendChild(footer);
-
+  
   container.appendChild(containerHeader);
   container.appendChild(containerBody);
   container.appendChild(containerFooter);
-
+  
   return container;
-}
 
+  
+}
 

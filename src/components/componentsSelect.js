@@ -2,8 +2,8 @@ import { generoMejorRankeado, calcularRankingPromedio } from "../lib/dataFunctio
 import { navigateTo } from "../router.js";
 import data from '../data/dataset.js';
 
-export function createSelectElements(applyFiltersCallback) {
 
+export function createSelectElements(applyFiltersCallback) {
 
   const container = document.createElement('div');
   container.classList.add('contenedor');
