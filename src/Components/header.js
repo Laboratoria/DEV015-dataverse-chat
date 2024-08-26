@@ -1,4 +1,4 @@
-function createHeader() {
+export const createHeader = ()=> {
     const header = document.createElement('header');
     header.innerHTML = `
     <div= title>

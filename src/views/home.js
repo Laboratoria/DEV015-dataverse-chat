@@ -1,6 +1,6 @@
-import { data } from "../Data/dataset.js";
+import  data  from "../data/dataset.js";
 import { card } from "../Components/Card.js";
-import { createHeader } from "../Components/header.js"; 
+import { createHeader } from "../components/header.js"; 
 
 export const Home = () => {
   const div = document.createElement("div");
@@ -28,4 +28,4 @@ export const Home = () => {
   return div;
 };
 
-export default Home;
+
