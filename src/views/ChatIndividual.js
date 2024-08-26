@@ -4,7 +4,7 @@ import { createFooter } from '../components/componentsFooter.js';
 // import { renderItems } from '../components/componentsCards.js';
 
 import data from '../data/dataset.js';
-// import { communicateWithOpenAI } from '../lib/openAIApi.js';
+import { communicateWithOpenAI } from '../lib/openAIApi.js';
 
 export function ChatIndividual(props) {
   const container = document.createElement('div');
@@ -104,16 +104,51 @@ export function ChatIndividual(props) {
       <button id="send-button" class="sendMessage">Enviar</button>
     `;
 
-  chatFooter.querySelector('#send-button').addEventListener('click', () => {
+  //integramos la IA 
+
+  const messages = [];
+
+  chatFooter.querySelector('#send-button').addEventListener('click', async() => {
     const inputMessage = chatFooter.querySelector('#input-message').value.trim();
-    if (inputMessage !== '') {
-      const messageElement = document.createElement('div');
-      messageElement.className = 'user-message';
-      messageElement.textContent = inputMessage;
-      chatBody.appendChild(messageElement);
-      chatFooter.querySelector('#input-message').value = ''; // Limpiar el input
+    if(inputMessage !== '') {
+      const userMessageElement = document.createElement('div');
+      userMessageElement.className = 'user-message';
+      userMessageElement.textContent = inputMessage;
+      chatBody.appendChild(userMessageElement);
+
+      messages.push({ role: 'user', content: inputMessage });
+      
+      chatFooter.querySelector('#input-message').value = '';
+
+      try {
+        const response = await communicateWithOpenAI(messages);
+
+        const aiMessageElement = document.createElement('div');
+        aiMessageElement.className = 'ai-message';
+        aiMessageElement.textContent = response;
+        chatBody.appendChild(aiMessageElement);
+
+        messages.push({ role: 'assitant', content: response });
+      } catch (error) {
+        console.error('Error al obtener respuesta de OpenAI:', error);
+      }
     }
-  });
+  })
+
+  // integramos la IA 
+
+  // chatFooter.querySelector('#send-button').addEventListener('click', () => {
+  //   const inputMessage = chatFooter.querySelector('#input-message').value.trim();
+  //   if (inputMessage !== '') {
+  //     const messageElement = document.createElement('div');
+  //     messageElement.className = 'user-message';
+  //     messageElement.textContent = inputMessage;
+  //     chatBody.appendChild(messageElement);
+  //     chatFooter.querySelector('#input-message').value = ''; // Limpiar el input
+  //   }
+  // });
+
+
 
   containerChatIndividual.appendChild(chatHeader);
   containerChatIndividual.appendChild(chatBody);
