@@ -2,7 +2,16 @@ import { getApiKey, setApiKey } from '../lib/apiKey.js';
 
 export default function renderviewApi() {
     const container = document.createElement('div');
+    container.classList.add('apiKeyContainer');
     
+    const catsEl = document.createElement('img');
+    catsEl.src = './images/cats.png'; 
+    catsEl.alt = 'cats sailor';
+    catsEl.classList.add('cats'); 
+    container.appendChild(catsEl); 
+   
+
+
     const apiKeyInput = document.createElement('input');    
     apiKeyInput.type = 'text';
     apiKeyInput.id = 'apiKeyInput';
@@ -12,7 +21,7 @@ export default function renderviewApi() {
     
     const saveButton = document.createElement('button');
     saveButton.id = 'saveApiKeyButton';
-    saveButton.textContent = 'Guardar API Key';
+    saveButton.textContent = 'Guardar Api Key';
     
     saveButton.addEventListener('click', () => { //valor ingresado, sin espacios
       const apiKey = apiKeyInput.value.trim();

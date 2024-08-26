@@ -1,6 +1,7 @@
 export default [
   {
     "id": "1",
+    "prompt": "Hola, como estas", 
     "name": "Usagi Tsukino",
     "shortDescription": "Sailor Moon",
     "description": "La protagonista principal de la serie, una chica adolescente que se transforma en la guerrera Sailor Moon. Ella fue la primera Sailor Guardian en ser despertada por Luna pero, a diferencia de sus compañeras, en un principio ella solo adquirió esta forma para distraer al Reino Oscuro de que ella era en realidad la reencarnación de la Princesa Serenity hasta encontrar el Cristal de Plata. Su traje está inspirado en los uniformes escolares de marinero, tanto en sus colores como diseño.",
