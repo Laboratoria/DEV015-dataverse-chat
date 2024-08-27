@@ -20,7 +20,7 @@ export function ChatIndividual(props) {
   const containerCIOnly = document.createElement('div');
   containerCIOnly.className = 'containerCIOnly'
 
-/*
+  /*
   const barraLateralCI = document.createElement('div');
   barraLateralCI.className = 'barraLateralCI';
 
@@ -47,7 +47,7 @@ export function ChatIndividual(props) {
   barraLateralCI.appendChild(buscar);
   barraLateralCI.appendChild(selectCategoria);
   containerBody.appendChild(barraLateralCI);
-*/
+  */
 
 
   const gameId = props.data;
@@ -141,7 +141,7 @@ export function ChatIndividual(props) {
         aiMessageElement.textContent = response;
         chatBody.appendChild(aiMessageElement);
 
-        messages.push({ role: 'assitant', content: response });
+        messages.push({ role: 'assistant', content: response });
       } catch (error) {
         console.error('Error al obtener respuesta de OpenAI:', error);
       }
