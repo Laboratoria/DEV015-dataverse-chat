@@ -47,7 +47,7 @@ export function ChatIndividual(props) {
   barraLateralCI.appendChild(buscar);
   barraLateralCI.appendChild(selectCategoria);
   containerBody.appendChild(barraLateralCI);
-*/
+  */
 
 
   const gameId = props.data;
