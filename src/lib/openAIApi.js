@@ -19,12 +19,15 @@ export const communicateWithOpenAI = async (messages) => {
         model: "gpt-4", // Especifica el modelo de OpenAI
         messages: messages, // Pasa los mensajes al cuerpo de la solicitud
         temperature: 0.9, // Opcional: ajusta la creatividad de las respuestas
-        max_tokens: 150 // Opcional: ajusta el número máximo de tokens en la respuesta
+        max_tokens: 250 // Opcional: ajusta el número máximo de tokens en la respuesta
       })
     });
 
     if (!response.ok) {
+      const errorDetails = await response.json();
+      console.error('Error al comunicarse con OpenAI:', errorDetails);
       throw new Error(`Error al comunicarse con OpenAI: ${response.statusText}`);
+    //throw new Error(`Error al comunicarse con OpenAI: ${response.statusText}`);
     }
 
     const data = await response.json();
