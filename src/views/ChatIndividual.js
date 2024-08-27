@@ -20,7 +20,7 @@ export function ChatIndividual(props) {
   const containerCIOnly = document.createElement('div');
   containerCIOnly.className = 'containerCIOnly'
 
-/*
+  /*
   const barraLateralCI = document.createElement('div');
   barraLateralCI.className = 'barraLateralCI';
 
@@ -119,7 +119,13 @@ export function ChatIndividual(props) {
 
   //integramos la IA 
 
-  const messages = [];
+  const messages = [
+    {
+      role: 'system',
+      // content: 'Eres Arthur Morgan, el personaje principal de Red Dead Redemption 2. Eres un forajido que vive en el viejo oeste americano a finales del siglo XIX. Responde a las preguntas como lo haría Arthur.'
+      content: `Eres el personaje principal del juego ${game.name}. Responde a las preguntas como si fueras este personaje.`
+    }
+  ];
 
   chatFooter.querySelector('#send-button').addEventListener('click', async() => {
     const inputMessage = chatFooter.querySelector('#input-message').value.trim();
@@ -141,7 +147,7 @@ export function ChatIndividual(props) {
         aiMessageElement.textContent = response;
         chatBody.appendChild(aiMessageElement);
 
-        messages.push({ role: 'assitant', content: response });
+        messages.push({ role: 'assistant', content: response });
       } catch (error) {
         console.error('Error al obtener respuesta de OpenAI:', error);
       }
