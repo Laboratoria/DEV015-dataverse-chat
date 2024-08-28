@@ -1,15 +1,24 @@
 import { getApiKey, setApiKey } from '../src/lib/apiKey.js';
 
-describe('getApiKey', () => {
+import { getApiKey, setApiKey } from '../src/lib/apiKey.js';
 
-  it('debería devolver el valor de la API Key', () => {
-    // Desarrolla el test correspondiente aquí
-  });
-});
+import { communicateWithOpenAI } from './utils/openAIApi.js';
 
-describe('setApiKey', () => {
+const dataList = ['element1', 'element2', 'element3'];  // Lista de elementos
 
-  it('debería establecer correctamente la API Key', () => {
-   // Desarrolla el test correspondiente aquí
-  });
-});
+async function processDataWithOpenAI() {
+  try {
+    // Usamos Promise.all() para ejecutar todas las llamadas a la API simultáneamente
+    const responses = await Promise.all(
+      dataList.map(item => communicateWithOpenAI(item))  // Enviar un mensaje para cada elemento
+    );
+
+    // Mostrar todas las respuestas
+    responses.forEach(response => console.log('Respuesta:', response));
+  } catch (error) {
+    console.error('Error:', error);
+  }
+}
+
+// Llamar a la función
+processDataWithOpenAI();

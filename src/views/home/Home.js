@@ -1,6 +1,6 @@
 import data from '../../data/dataset.js'; //importa data
 import { renderItems, renderStats } from '../../view.js'; //importa view
-import { filterData,sortData,computeStats } from '../../lib/dataFunctions.js';
+import { filterData, sortData, computeStats } from '../../lib/dataFunctions.js';
 import { renderCategories } from '../../categories.js'; //importa categories
 import { navigateTo } from '../../router.js';
 
@@ -15,48 +15,50 @@ const Home = (params) => {
   filterControls.classList.add('filter-controls');
 
   const catLabel = document.createElement('label');
-  catLabel.setAttribute('for','mainField');
-  catLabel.textContent='Categoría';
+  catLabel.setAttribute('for', 'mainField');
+  catLabel.textContent = 'Categoría';
   filterControls.appendChild(catLabel);
 
   filterControls.appendChild(categorySelect);
 
   const sortLabel = document.createElement('label');
-  sortLabel.setAttribute('for','orderDir');
-  sortLabel.textContent='Ordenar';
+  sortLabel.setAttribute('for', 'orderDir');
+  sortLabel.textContent = 'Ordenar';
   filterControls.appendChild(sortLabel);
 
   const orderSelect = document.createElement('select');
-  orderSelect.setAttribute('id','orderDir');
-  orderSelect.setAttribute('name','orderDir');
-  orderSelect.setAttribute('data-testid','select-sort');
-  
-  const availableOptions = [{value:'asc',text:'Ascendente'},{value:'desc',text:'Descendente'}];
+  orderSelect.setAttribute('id', 'orderDir');
+  orderSelect.setAttribute('name', 'orderDir');
+  orderSelect.setAttribute('data-testid', 'select-sort');
 
-  for(const a of availableOptions){
+  const availableOptions = [{ value: 'asc', text: 'Ascendente' }, { value: 'desc', text: 'Descendente' }];
+
+  for (const a of availableOptions) {
     const option = document.createElement("option");
     option.value = a.value;
     option.text = a.text;
-    if( params.order===a.value ){
-      option.setAttribute('selected',true);
+    if (params.order === a.value) {
+      option.setAttribute('selected', true);
     }
 
     orderSelect.add(option);
   }
 
-  orderSelect.addEventListener('change',function(event){
+// Añadir event listeners para la navegación
+
+  orderSelect.addEventListener('change', function (event) {
     const selectBoxCategory = document.querySelector('select#mainField');
-    navigateTo('/',{category:selectBoxCategory.value,order:event.target.value});
+    navigateTo('/', { category: selectBoxCategory.value, order: event.target.value });
   });
 
   filterControls.appendChild(orderSelect);
 
   const cleanButton = document.createElement('button');
-  cleanButton.setAttribute('type','button');
-  cleanButton.setAttribute('id','clean');
+  cleanButton.setAttribute('type', 'button');
+  cleanButton.setAttribute('id', 'clean');
   cleanButton.textContent = 'Limpiar';
 
-  cleanButton.addEventListener('click',function(){
+  cleanButton.addEventListener('click', function () {
     navigateTo('/');
   });
 
@@ -64,13 +66,13 @@ const Home = (params) => {
   controls.appendChild(filterControls);
 
   let items;
-   
-  if( params.category !== '' ){
-    const filtered = filterData(data,params.category);
-    items = renderItems(sortData(filtered,params.order));
+
+  if (params.category !== '') {
+    const filtered = filterData(data, params.category);
+    items = renderItems(sortData(filtered, params.order));
   }
-  else{
-    items = renderItems(sortData(data,params.order));
+  else {
+    items = renderItems(sortData(data, params.order));
   }
 
   const view = document.createElement('div');
@@ -85,9 +87,9 @@ const Home = (params) => {
   view.appendChild(controls);
 
   const cardsRoot = document.createElement('div');
-  cardsRoot.setAttribute('id','cards_root');
+  cardsRoot.setAttribute('id', 'cards_root');
 
-  for(const card of items){
+  for (const card of items) {
     cardsRoot.appendChild(card);
   }
 
@@ -98,5 +100,5 @@ const Home = (params) => {
 
   return view;
 };
-  
+
 export default Home;

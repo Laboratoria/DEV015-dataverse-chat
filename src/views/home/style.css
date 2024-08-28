@@ -1,103 +1,121 @@
- #root, #root>div, #cards_root {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 40px;
-    justify-content: center;
-  }
-  #cards_root {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    justify-content: center;
-  }
-  #root>.detail-card {
-    justify-content: left;
-  }
-  .card {
-     margin: 10px;
-     border: 2px solid #ddd; /* Borde de la tarjeta */
-     border-radius: 30px 30px 30px 30px; /* Bordes redondeados */
-     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra */
-     background:rgba(233, 220, 233, 0.769); /* Color de fondo de las tarjetas */
-     padding: 20px;
-     text-align: left;
-     flex: 1 0 calc(25% - 40px); /* Cada tarjeta ocupará un 40% del ancho del contenedor, menos el espacio del gap */
-     box-sizing: border-box;
-     max-width: calc(20% - 60px); /* Limitar el ancho máximo de cada tarjeta */
-     display: flex;
-     flex-wrap: wrap;
-     list-style-type: none; /* Elimina los puntos de la lista */
-     padding: 0; /* Elimina el padding */
-     font-size: 1.1em;
-     justify-content: space-between;
-     overflow: hidden;
-  }
- 
-  .card li.item {
-    margin-bottom: 10px; /* Espaciado inferior entre ítems */
-    display: flex;
-    color: rgb(45, 39, 45);
-    padding-left: 10px;
-  }
+ #root,
+ #root>div,
+ #cards_root {
+   display: flex;
+   flex-wrap: wrap;
+   gap: 40px;
+   justify-content: center;
+ }
 
-  .card li.item:first-of-type{
-    width: 100%;
-    align-self: center;
-    padding-top: 10px;
-    color: rgb(45, 39, 45);
-  }
-  .card li.item img {
-    margin-top: -15px;
-    margin-left: -10px;
-    height: 200px;
-    width: 290px;
-    object-fit: cover;
-  }
-  ul{
-    background-color: #fffeff6c;
+ #cards_root {
+   display: flex;
+   flex-wrap: wrap;
+   gap: 10px;
+   justify-content: center;
+ }
+
+ #root>.detail-card {
+   justify-content: left;
+ }
+
+ .card {
+   margin: 10px;
+   border: 2px solid #ddd;
+   /* Borde de la tarjeta */
+   border-radius: 30px 30px 30px 30px;
+   /* Bordes redondeados */
+   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+   /* Sombra */
+   background: rgba(233, 220, 233, 0.769);
+   /* Color de fondo de las tarjetas */
+   padding: 20px;
+   text-align: left;
+   flex: 1 0 calc(25% - 40px);
+   /* Cada tarjeta ocupará un 40% del ancho del contenedor, menos el espacio del gap */
+   box-sizing: border-box;
+   max-width: calc(20% - 60px);
+   /* Limitar el ancho máximo de cada tarjeta */
+   display: flex;
+   flex-wrap: wrap;
+   list-style-type: none;
+   /* Elimina los puntos de la lista */
+   padding: 0;
+   /* Elimina el padding */
+   font-size: 1.1em;
+   justify-content: space-between;
+   overflow: hidden;
+ }
+
+ .card li.item {
+   margin-bottom: 10px;
+   /* Espaciado inferior entre ítems */
+   display: flex;
+   color: rgb(45, 39, 45);
+   padding-left: 10px;
+ }
+
+ .card li.item:first-of-type {
+   width: 100%;
+   align-self: center;
+   padding-top: 10px;
+   color: rgb(45, 39, 45);
+ }
+
+ .card li.item img {
+   margin-top: -15px;
+   margin-left: -10px;
+   height: 200px;
+   width: 290px;
+   object-fit: cover;
+ }
+
+ select {
+   background-color: #3735356c;
+   color: rgb(14, 12, 14);
+   text-shadow: 2px 2px 5px rgb(225, 208, 208);
+   font-size: 1.1em;
+   margin: 30px;
+   /* Añade separación al botón que está al lado */
 
 
-  }
-  select{
-    background-color: #3735356c;
-    color: rgb(14, 12, 14);
-    text-shadow: 2px 2px 5px rgb(225, 208, 208);
-    font-size: 1.1em;
-    margin: 30px; /* Añade separación al botón que está al lado */
 
-    
+ }
 
-  } 
-  label{
-    color: rgb(7, 6, 7);
-    text-shadow: 2px 2px 5px rgb(234, 220, 220);
-    font-size: 1.3em;
-    margin-left: 20px;
+ label {
+   color: rgb(7, 6, 7);
+   text-shadow: 2px 2px 5px rgb(234, 220, 220);
+   font-size: 1.3em;
+   margin-left: 20px;
 
-  }
-  button{
-    color: rgb(95, 104, 109);
-    text-shadow: #4c2f53;
-    color: rgb(14, 12, 14);
-    text-shadow: 2px 2px 5px rgb(250, 236, 236);
-    font-size: 15px;
-    margin: 40px;
-    
-    
-  }           
-  @media (max-width: 900px) {
-    .card {
-        flex: 1 1 calc(50% - 40px); /* 50% del ancho menos el espacio del gap */
-        max-width: calc(50% - 40px);
-    }
-  }
-  
-  @media (max-width: 600px) {
-    .card {
-        flex: 1 1 calc(100% - 40px); /* 100% del ancho menos el espacio del gap */
-        max-width: calc(100% - 40px);
-    }}
- 
-.detail-card {
-  justify-content: center;
-}
+ }
+
+ button {
+   color: rgb(95, 104, 109);
+   text-shadow: #4c2f53;
+   color: rgb(14, 12, 14);
+   text-shadow: 2px 2px 5px rgb(250, 236, 236);
+   font-size: 15px;
+   margin: 40px;
+
+
+ }
+
+ @media (max-width: 900px) {
+   .card {
+     flex: 1 1 calc(50% - 40px);
+     /* 50% del ancho menos el espacio del gap */
+     max-width: calc(50% - 40px);
+   }
+ }
+
+ @media (max-width: 600px) {
+   .card {
+     flex: 1 1 calc(100% - 40px);
+     /* 100% del ancho menos el espacio del gap */
+     max-width: calc(100% - 40px);
+   }
+ }
+
+ .detail-card {
+   justify-content: center;
+ }

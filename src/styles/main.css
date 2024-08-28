@@ -1,53 +1,59 @@
 /* css generales tienen que estar en este archivo */
 
 * {
-  padding: 0px; 
-  margin: 0px; 
+  padding: 0px;
+  margin: 0px;
   box-sizing: border-box;
-  
-  
-} 
+
+
+}
 
 body {
-  font-family: Arial, sans-serif; /* Define la fuente */
-  padding: 20px; 
+  font-family: Arial, sans-serif;
+  /* Define la fuente */
+  padding: 20px;
   border: 0px;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
   background-color: rgb(204, 198, 191);
-  
- 
-  
+
+
+
 }
 
 header {
   margin-bottom: 20px;
-  text-align: center; /* Centra el contenido del header */
-  background-image: linear-gradient(rgba(43, 3, 47, 0.35), rgba(144, 109, 137, 0.244)),url("/imagenes/imagen2.png");
+  text-align: center;
+  /* Centra el contenido del header */
+  background-image: linear-gradient(rgba(43, 3, 47, 0.35), rgba(144, 109, 137, 0.244)), url("/imagenes/imagen2.png");
 
 }
-    
+
 body header h1 {
-  margin: 30px; /* Espacio superior */
-  font-size: 3em; /* Tamaño de fuente */
+  margin: 30px;
+  /* Espacio superior */
+  font-size: 3em;
+  /* Tamaño de fuente */
   color: rgb(255, 255, 255);
   text-shadow: 2px 2px 5px rgb(136, 56, 92);
- 
+
 }
 
 footer {
   max-width: 100%;
-  background-image: linear-gradient(rgba(163, 146, 165, 0.35), rgba(144, 109, 137, 0.244)),url("/imagenes/imagen4.png");  padding: 20px;
+  background-image: linear-gradient(rgba(163, 146, 165, 0.35), rgba(144, 109, 137, 0.244)), url("/imagenes/imagen4.png");
+  padding: 20px;
   bottom: 0%;
   text-align: center;
   color: rgb(255, 255, 255);
-  text-shadow: 2px 2px 5px rgb(237, 215, 215);
+  text-shadow: 2px 2px 5px rgb(136, 56, 92);
   font-size: 2em
 }
-#curious_fact{
+
+#curious_fact {
   max-width: 100%;
-  background-image: linear-gradient(rgba(163, 146, 165, 0.35), rgba(144, 109, 137, 0.244)),url("/imagenes/imagen1.png");
+  background-image: linear-gradient(rgba(163, 146, 165, 0.35), rgba(144, 109, 137, 0.244)), url("/imagenes/imagen1.png");
   padding: 10px;
   bottom: 0%;
   text-align: center;
@@ -56,19 +62,21 @@ footer {
   text-shadow: 2px 2px 5px rgb(136, 56, 92);
   font-size: 2em;
 }
-h3{
+
+h3 {
   color: rgb(3, 2, 3);
   text-shadow: 2px 2px 5px rgb(246, 242, 242);
 }
-#curious_fact div{
+
+#curious_fact div {
   margin: 30px;
 }
 
-.hidden{
+.hidden {
   display: none;
 }
 
-.apikey{
+.apikey {
   font-size: 12px;
   color: #000;
   position: absolute;

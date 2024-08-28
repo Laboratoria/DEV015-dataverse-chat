@@ -1,10 +1,9 @@
-
-.detail-card{
+.detail-card {
     display: flex;
     width: 100%;
 }
 
-.card{
+.card {
     flex: 0 0 calc(30% - 20x);
     background-color: lightblue;
     padding: 10px;
@@ -12,21 +11,21 @@
     list-style-type: none;
 }
 
-.card img{
+.card img {
     width: 100%;
-    flex:auto;
+    flex: auto;
     padding: flex;
 }
 
-.chat{
+.chat {
     display: flex;
     flex: 0 0 calc(90% - 50px);
     background-color: lightblue;
     padding: 20px 30px 20px 20px;
 }
 
-.write textarea, .write button{
+.write textarea,
+.write button {
     width: 90%;
     margin: 20px;
 }
-

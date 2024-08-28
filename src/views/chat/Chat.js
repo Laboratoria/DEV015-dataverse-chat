@@ -2,8 +2,8 @@ import * as OpenAI from 'https://esm.run/openai';
 import { getApiKey } from '/lib/apiKey.js';
 
 
-function getContext(names, allCharacters){
-  if (!allCharacters){
+function getContext(names, allCharacters) {
+  if (!allCharacters) {
     return "Eres " + names + " y sin mencionar tu nombre responde solo en español";
   } else {
     return "Eres una conferencia de mujeres historicamente importante donde estarian " + names + " responde personificando a las mujeres como una voz en conjuto y solo en español";
@@ -13,11 +13,12 @@ function getContext(names, allCharacters){
 async function callOpenAIApi(context, text) {
   const openai = new OpenAI.OpenAI({
     apiKey: getApiKey(),
-    dangerouslyAllowBrowser: true}
+    dangerouslyAllowBrowser: true
+  }
   );
   const chatCompletion = await openai.chat.completions.create({
     messages: [
-      { role: "system", content: context},
+      { role: "system", content: context },
       { role: 'user', content: text }],
     model: 'gpt-4o',
   });
@@ -29,7 +30,7 @@ async function callOpenAIApi(context, text) {
 };
 
 
-export const renderChat = (data, allCharacters=false) => {
+export const renderChat = (data, allCharacters = false) => {
   getApiKey();
   const view = document.createElement('div');
   view.classList.add('chat-container');  // Add container class
@@ -61,7 +62,7 @@ export const renderChat = (data, allCharacters=false) => {
   button.classList.add('send-button');  // Added class for styling
   writeDiv.appendChild(button);
 
-  button.addEventListener('click', function(){
+  button.addEventListener('click', function () {
     const messageBox = document.querySelector('textarea[name="message"]');
     let names = allCharacters ? data.map(data => data.name).join(', ') : data['name'];
 

@@ -1,10 +1,9 @@
-
-.detail-card{
+.detail-card {
     display: flex;
     width: 100%;
 }
 
-.card{
+.card {
     flex: 0 0 calc(50% - 50x);
     background-color: rgb(247, 231, 244);
     padding: 20px;
@@ -12,20 +11,22 @@
     width: 500px;
     margin: auto;
 }
+
 .card li.item img {
     height: 300px;
     width: 450px;
     object-fit: cover;
-  }
+}
 
-.chat{
+.chat {
     display: flex;
-    flex: 0 0 calc(90% - 50px);
+    flex: 0 0 calc(60% - 50px);
     background-color: lightblue;
     padding: 20px 30px 20px 20px;
 }
 
-.write textarea, .write button{
+.write textarea,
+.write button {
     width: 90%;
     margin: 20px;
 }
@@ -39,57 +40,61 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: 80vh;  /* Gives the chat container a fixed height */
+    height: 55vh;
+    /* Gives the chat container a fixed height */
     border: 1px solid #ddd;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-  }
-  
-  .chat-box {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.chat-box {
     flex-grow: 1;
     display: flex;
     flex-direction: column;
     padding: 10px;
     background-color: #ffffff;
 
-  }
-  
-  .messages {
-    background-image: linear-gradient(rgba(163, 146, 165, 0.35), rgba(173, 173, 173, 0.732)),url("/imagenes/imagen1.png");  padding: 20px;
+}
+
+.messages {
+    background-image: linear-gradient(rgba(163, 146, 165, 0.35), rgba(173, 173, 173, 0.732)), url("/imagenes/imagen1.png");
+    padding: 20px;
     list-style: none;
     padding: 0;
     margin: 0;
     flex-grow: 1;
-    overflow-y: auto; /* Allows scrolling for long chats */
-    max-height: 60vh; /* Restrict chatbox height */
-  }
-  
-  .me {
+    overflow-y: auto;
+    /* Allows scrolling for long chats */
+    max-height: 60vh;
+    /* Restrict chatbox height */
+}
+
+.me {
     text-align: right;
     margin-bottom: 5px;
-  }
-  
-  .her {
+}
+
+.her {
     text-align: left;
     margin-bottom: 5px;
-  }
-  
-  
-  .write {
+}
+
+
+.write {
     display: flex;
     padding: 10px;
     border-top: 1px solid #ddd;
     background-color: white;
-  }
-  
-  .message-input {
+}
+
+.message-input {
     width: 80%;
     padding: 10px;
     border: 1px solid #ddd;
     border-radius: 5px;
     font-size: 16px;
-  }
-  
-  .send-button {
+}
+
+.send-button {
     width: 20%;
     margin-left: 10px;
     padding: 10px;
@@ -99,9 +104,8 @@
     border-radius: 5px;
     font-size: 16px;
     cursor: pointer;
-  }
-  
-  .send-button:hover {
+}
+
+.send-button:hover {
     background-color: #f6d8f1;
-  }
-  
+}
