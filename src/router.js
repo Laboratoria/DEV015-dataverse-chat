@@ -61,3 +61,7 @@ export const onURLChange = (location) => {
   const searchParamsObject = queryStringToObject(searchParams);
   renderView(pathname,searchParamsObject);
 }
+
+window.addEventListener('popstate', () => {
+  onURLChange(window.location);
+});

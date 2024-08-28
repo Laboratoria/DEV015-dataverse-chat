@@ -13,7 +13,8 @@ export const card = (item) => {
       <div class="contenedorContenido">
       <div class="contenedorImagen"><img class="imagenPeli" src="${item.imageUrl}" alt="${item.id}"></div>
       <div class="contenedorTextos">
-      <div class="descripcion"> <span itemprop="descripción">${item.shortDescription}</span> </div>
+      <div class="descripcionCorta"> <span itemprop="descripciónCorta">${item.shortDescription}</span> </div>
+  
       <div class="hechos"> 
         <p itemprop="añoEstreno"><b>Año:</b> ${item.facts.estreno}</p>
         <p itemprop="genero"><b>Género:</b> ${item.facts.generoPelicula}</p>

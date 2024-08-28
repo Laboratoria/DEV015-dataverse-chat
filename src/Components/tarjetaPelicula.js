@@ -15,7 +15,7 @@ export const cardMovie = (item) => {
          <span><b>Género:</b> ${item.facts.generoPelicula}</span> 
          <span><b>Clasificación en IMDb:</b> ${item.facts.clasificPublico}</span> 
          <span><b>Duración:</b> ${item.facts.tiempoDuracion}</span> 
-         <span> <b>Resumen:</b> ${item.descrption}</span>
+         <span> <b>Resumen:</b> ${item.description}</span>
         <span> <b>¿Sabías qué?: </b> ${item.extraInfo.curiosidades}</span>
       </div>
     </div>
