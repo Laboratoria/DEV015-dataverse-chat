@@ -1,24 +1,44 @@
-import { getApiKey, setApiKey } from '../src/lib/apiKey.js';
+import { getApiKey, setApiKey } from '/lib/apiKey.js'; 
 
-import { getApiKey, setApiKey } from '../src/lib/apiKey.js';
+describe('setApiKey', () => {
+  it('debería establecer correctamente la API Key en localStorage', () => {
+    // Simular el almacenamiento en localStorage
+    const key = 'test-api-key';
+    setApiKey(key);
+    expect(localStorage.getItem('apiKey')).toBe(key);
+  });
+});
 
-import { communicateWithOpenAI } from './utils/openAIApi.js';
+describe('getApiKey', () => {
+  beforeEach(() => {
+    localStorage.clear(); // Limpiar localStorage antes de cada test
+  });
 
-const dataList = ['element1', 'element2', 'element3'];  // Lista de elementos
+  it('debería devolver el valor de la API Key desde localStorage', () => {
+    // Configurar una clave de API en localStorage
+    const key = 'test-api-key';
+    localStorage.setItem('apiKey', key);
+    
+    const apiKey = getApiKey();
+    expect(apiKey).toBe(key);
+  });
 
-async function processDataWithOpenAI() {
-  try {
-    // Usamos Promise.all() para ejecutar todas las llamadas a la API simultáneamente
-    const responses = await Promise.all(
-      dataList.map(item => communicateWithOpenAI(item))  // Enviar un mensaje para cada elemento
-    );
+  it('debería lanzar un error si la API Key no está definida en localStorage', () => {
+    jest.spyOn(window, 'prompt').mockReturnValue('invalid-key');
+    jest.spyOn(window, 'alert').mockImplementation(() => {});
 
-    // Mostrar todas las respuestas
-    responses.forEach(response => console.log('Respuesta:', response));
-  } catch (error) {
-    console.error('Error:', error);
-  }
-}
+    const apiKey = getApiKey();
+    expect(apiKey).toBeNull();
+    expect(window.alert).toHaveBeenCalledWith('Api Key invalida, por favor ingresa una Open AI api key');
+  });
 
-// Llamar a la función
-processDataWithOpenAI();
+  it('debería solicitar una nueva clave de API si no hay clave en localStorage', () => {
+    const validKey = 'valid-api-key';
+    jest.spyOn(window, 'prompt').mockReturnValue(validKey);
+    jest.spyOn(window, 'alert').mockImplementation(() => {});
+
+    const apiKey = getApiKey();
+    expect(apiKey).toBeNull();  // Después de guardar una nueva clave, retorna null
+    expect(localStorage.getItem('apiKey')).toBe(validKey);
+  });
+});

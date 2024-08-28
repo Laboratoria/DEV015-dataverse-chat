@@ -4,7 +4,7 @@ import { renderChat } from '/views/chat/Chat.js';
 
 
 const ExtractDataDetailById = (id) => {
-  return data.filter((el) => { return el.id == id; })[0] || [];
+  return data.filter((el) => { return el.id === id; })[0] || [];
 };
 
 const Detail = (params) => {
@@ -12,7 +12,7 @@ const Detail = (params) => {
   const cardData = ExtractDataDetailById(params['id']);
   const view = document.createElement('div');
 
-  var head = document.getElementsByTagName('head')[0];
+  const head = document.getElementsByTagName('head')[0];
   const link = document.createElement('link');
   // Set the necessary attributes
   link.rel = 'stylesheet';
@@ -21,7 +21,7 @@ const Detail = (params) => {
   head.appendChild(link);
 
 
-  if (cardData.length == 0) {
+  if (cardData.length === 0) {
     // si se escribe mal el id, se devolvera un error y no se renderizara la pagina
     view.innerHTML = `
         <h1>Disculpa! no logre encontrar a la persona que buscas</h1>

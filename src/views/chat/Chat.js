@@ -27,7 +27,7 @@ async function callOpenAIApi(context, text) {
   respond.classList.add('her');
   respond.appendChild(document.createTextNode(chatCompletion.choices[0].message.content));
   getChatBox.appendChild(respond);
-};
+}
 
 
 export const renderChat = (data, allCharacters = false) => {
@@ -64,7 +64,7 @@ export const renderChat = (data, allCharacters = false) => {
 
   button.addEventListener('click', function () {
     const messageBox = document.querySelector('textarea[name="message"]');
-    let names = allCharacters ? data.map(data => data.name).join(', ') : data['name'];
+    const names = allCharacters ? data.map(data => data.name).join(', ') : data['name'];
 
     const me_ask = document.createElement('li');
     me_ask.classList.add('me');

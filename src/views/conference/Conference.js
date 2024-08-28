@@ -2,10 +2,10 @@ import data from '/data/dataset.js'; //importa data
 import { renderChat } from '/views/chat/Chat.js';
 
 
-const Conference = (params) => {
+const Conference = () => {
   const view = document.createElement('div');
 
-  var head = document.getElementsByTagName('head')[0];
+  const head = document.getElementsByTagName('head')[0];
   const link = document.createElement('link');
   // Set the necessary attributes
   link.rel = 'stylesheet';

@@ -43,9 +43,7 @@ const Home = (params) => {
 
     orderSelect.add(option);
   }
-
-// Añadir event listeners para la navegación
-
+  // Añadir event listeners para la navegación
   orderSelect.addEventListener('change', function (event) {
     const selectBoxCategory = document.querySelector('select#mainField');
     navigateTo('/', { category: selectBoxCategory.value, order: event.target.value });
