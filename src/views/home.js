@@ -1,4 +1,3 @@
-//import { CharacterList } from "../components/CharacterList.js";
 import ordenado from "../components/ordenado.js";
 import filtrado from "../components/filtrado.js";
 import boton from "../components/boton.js";
@@ -7,27 +6,27 @@ import personajes from "../components/personajes.js";
 
 function home() {
 
-  const divHome = document.createElement('div');  
-  divHome.appendChild (renderHeader());
+  const divHome = document.createElement('div');
 
-  const viewElHome = document.createElement('div');
-  divHome.appendChild (viewElHome);
+  // Añadir el header a la página
+  const header = renderHeader();
+  divHome.appendChild(header);
 
-  const divOrdenado = document.createElement('div');  
-  divOrdenado.appendChild (ordenado());
-  divHome.appendChild(divOrdenado);
+  const navOrdenFiltroBoton = document.createElement('nav');  
+  navOrdenFiltroBoton.appendChild (ordenado());
+  divHome.appendChild(navOrdenFiltroBoton);
 
-  const divFiltrado = document.createElement('div');
-  divFiltrado.appendChild(filtrado());
-  divHome.appendChild(divFiltrado);
+  
+  navOrdenFiltroBoton.appendChild(filtrado());
+  divHome.appendChild(navOrdenFiltroBoton);
 
-  const divBoton = document.createElement('div');
-  divBoton.appendChild(boton());
-  divHome.appendChild(divBoton);
+ 
+  navOrdenFiltroBoton.appendChild(boton());
+  divHome.appendChild(navOrdenFiltroBoton);
 
-  const divpersonajes = document.createElement('div');
-  divBoton.appendChild(personajes());
-  divHome.appendChild(divpersonajes);
+  const mainPersonajes = document.createElement('main');
+  mainPersonajes.appendChild(personajes());// tenismos un divBoton por lo que nos metia los personajes en el div del boton
+  divHome.appendChild(mainPersonajes);
 
   //const divCharacterList = document.createElement('div');
   //divCharacterList.appendChild(CharacterList());

@@ -1,6 +1,6 @@
 const renderHeader =  () => { 
 
-  const botonEl = document.createElement('boton');
+  const botonEl = document.createElement('div');
   botonEl.innerHTML = `
       <button type="button" data-testid="button-clear">Despejar</button>
     `;
