@@ -18,7 +18,7 @@ export const communicateWithOpenAI = async (messages) => {
       body: JSON.stringify({
         model: "gpt-4", // Especifica el modelo de OpenAI
         messages: messages, // Pasa los mensajes al cuerpo de la solicitud
-        temperature: 0.9, // Opcional: ajusta la creatividad de las respuestas
+        temperature: 1, // Opcional: ajusta la creatividad de las respuestas
         max_tokens: 250 // Opcional: ajusta el número máximo de tokens en la respuesta
       })
     });

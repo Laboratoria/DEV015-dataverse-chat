@@ -1,22 +1,23 @@
 import { setRoutes, ROUTES } from '../src/router.js';
 
 describe('Router', () => {
+  beforeAll(() => {
+    setRoutes({
+      '/': () => 'Home',
+      '/chat-individual': () => 'Chat Individual',
+      '/error': () => 'Error',
+    });
+  });
 
-  // Test para establecer rutas correctamente
-  test('debería establecer rutas correctamente', () => {
-    const routes = { 
-      '/': () => 'Home', 
-      '/chat-individual': () => 'ChatIndividual',
-      '/error': () => 'ErrorView'
-    };
-    
-    setRoutes(routes);
-
-    // Verifica que las rutas se hayan asignado correctamente
+  it('Debería establecer rutas correctamente', () => {
     expect(ROUTES['/']).toBeDefined();
     expect(ROUTES['/chat-individual']).toBeDefined();
     expect(ROUTES['/error']).toBeDefined();
-    expect(ROUTES['/']()).toBe('Home View');
-    expect(ROUTES['/chat-individual']()).toBe('chatIndividual View');
+
+    expect(ROUTES['/']()).toBe('Home');
+    expect(ROUTES['/chat-individual']()).toBe('Chat Individual');
+    expect(ROUTES['/error']()).toBe('Error');
   });
+
 });
+

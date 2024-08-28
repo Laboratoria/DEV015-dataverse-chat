@@ -1,4 +1,4 @@
-import { filterData, ordenarABC } from '../lib/dataFunctions.js';
+import { filterData, ordenarABC } from '../src/lib/dataFunctions.js';
 import { data as fakeData } from '../src/data.js';
 
 describe('filter', () => {
