@@ -6,7 +6,7 @@ export const renderItems = (data) => {
 }
 
 export const renderStats = (fieldPercentages) => {
-  
+
   return `
     Ciencias de la Computación: ${fieldPercentages['Ciencias de la Computación'] || '0%'} ,
     Matemáticas: ${fieldPercentages['Matemáticas'] || '0%'} ,

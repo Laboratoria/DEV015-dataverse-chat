@@ -44,7 +44,7 @@ const renderView = (pathname, props = {}) => {
 
 export const navigateTo = (pathname, props = {}) => {
   // Update window history with pushState
-  window.history.pushState({}, pathname, window.location.origin + pathname+objectToQueryString(props));
+  window.history.pushState({}, pathname, window.location.origin + pathname + objectToQueryString(props));
   // Render the view with the pathname and props
   renderView(pathname, props);
 };
@@ -57,11 +57,11 @@ export const onURLChange = (location) => {
   renderView(pathname, queryObject);
 };
 
-export const objectToQueryString = (props)=>{
-  if( Object.keys(props).length !== 0 ){
+export const objectToQueryString = (props) => {
+  if (Object.keys(props).length !== 0) {
     let str = '?';
-    for(const i in props){
-      str += i+'='+props[i]+'&';
+    for (const i in props) {
+      str += i + '=' + props[i] + '&';
     }
 
     if (str.endsWith("&")) {
@@ -70,7 +70,7 @@ export const objectToQueryString = (props)=>{
 
     return str;
   }
-  else{
+  else {
     return '';
   }
 }

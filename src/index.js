@@ -23,16 +23,18 @@ window.addEventListener("DOMContentLoaded", () => {
   // Supongamos que tu elemento raíz en el HTML es un div con id 'root'
   const rootElement = document.getElementById('root');
   setRootEl(rootElement);
+  
+
 
   // Maneja la carga de la página inicial
   onURLChange(window.location);
 
   // Escucha los cambios de URL (navegación)
   window.onpopstate = () => onURLChange(window.location);
-  
+
   const getBackHome = document.getElementsByTagName("header")[0];
-  getBackHome.addEventListener('click',function(){
-    document.location.href="/";
+  getBackHome.addEventListener('click', function () {
+    document.location.href = "/";
   });
 
 
