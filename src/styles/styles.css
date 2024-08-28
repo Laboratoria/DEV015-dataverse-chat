@@ -86,6 +86,13 @@ nav a:hover {
     max-width: 50%;
     margin-right: 18em;
 }
+
+
+
+.highlight1 {
+    color: yellow;
+    font-weight: bold; /* Opcional: para resaltar aún más */
+}
 .highlight {
     color: yellow;
     font-weight: bold; /* Opcional: para resaltar aún más */
@@ -128,11 +135,13 @@ nav a:hover {
     cursor: pointer;
     border: none;
     margin-top: 0.1em;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; 
 }
 
 .button-link:hover {
     background-color: #AB63FC;
     color: #e9de4b;
+    transform: scale(1.05);
 }
 
 .container-max {
@@ -265,10 +274,15 @@ nav a:hover {
     border-radius: 1.2em;
     list-style: none;
     box-sizing: border-box;
-    transition: background-color 1s, box-shadow 1s;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; 
     position: relative;
     margin-bottom: 0;
     padding-bottom: 0;
+}
+
+.card-list:hover {
+    transform: scale(1.08);
+    box-shadow: 0 8px 16px rgba(255, 254, 254, 0.6);
 }
 
 .card-list:hover {
@@ -277,20 +291,22 @@ nav a:hover {
 
 .card-container h2 {
     font-family: 'Fresca', sans-serif;
+    background-color:  #e676f0;
     text-shadow: 2px 2px 4px rgba(129, 34, 133, 0.5);
     font-size: 1.2em;
     letter-spacing: 0.05em;
-    background-color: #FFE4FE;
     text-align: center;
-    color: #9043E4;
+    color: yellow;
     padding: 0.4em;
-    border-radius: 0.8em;
+    border-radius: 0.4em;
     width: 50%;
     max-width: 90%;
     margin-top: 0.2em;
     font-weight: 650;
-    box-shadow: 0 2px 6px rgba(247, 247, 244, 0.3);
+    box-shadow: 0px 0px 10px 5px rgb(248, 245, 248); 
 }
+
+
 
 .div-item {
     display: flex;
@@ -305,8 +321,10 @@ img[itemprop="image"] {
     object-fit: cover;
     display: block;
     margin-left: 0.7em;
-    border: 2px solid rgb(251, 252, 246);
+    border: 2px solid rgb(251, 252, 246);  
 }
+
+
 
 .card-decorative-image {
     width: 10%;
@@ -323,19 +341,22 @@ img[itemprop="image"] {
 }
 
 .sign {
-    background-color: #B7B3FF;
-    font-family: "Handjet";
+
+    font-family: 'Fresca', sans-serif;
+    letter-spacing: 0.01em;
+    background-color: #fbf8fd;
     font-size: 1.2em;
-    color: #FFFFFC;
+    color: #9043E4;
     text-align: center;
     padding: 0.4em;
     border-radius: 0.3em;
-    margin: 0;
+    margin-bottom: 0.2em;
 }
 
 .date {
-    background-color: #F3E0FF;
-    font-family: "Handjet";
+    font-family: 'Fresca', sans-serif;
+    letter-spacing: 0.01em;
+    background-color: #f9f6fc;
     font-size: 1.2em;
     color: #9043E4;
     text-align: center;
@@ -346,17 +367,18 @@ img[itemprop="image"] {
 
 .type {
     color: #9043E4;
-    font-family: "handjet", sans-serif;
-    font-size: 1.3em;
+    font-family: 'Fresca', sans-serif;
+    text-shadow: 1px 1px 2px rgba(129, 34, 133, 0.2);
+    font-size: 1.2em;
+    letter-spacing: 0.05em;
     background-color: #FFD8FE;
-    width: 9em;
+    width: 10%;
     margin-top: 0.7em;
-    padding-left: 2em;
+    text-align: center;
     padding-top: 0.4em;
     padding-bottom: 0.4em;
     border-radius: 0.2em;
-    margin-left: 1em;
-    border: 2px solid rgb(251, 252, 246);
+    
 }
 
 h3 {
@@ -394,61 +416,65 @@ h3 {
    background-color: #e676f0;
 }
 
+/*#chat-view {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1em;
+    overflow: hidden;
+    box-sizing: border-box;
+    position: relative;
+    margin-top: 1em;
+    background-color: #E19EFF;
+    min-height: 40%;
+    width: 70%;
+    border-radius: 1.4em;
+    overflow: visible;
+    margin-left: 35%;
+}
+*/
+
+
 #chat-view {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 0 1em;
+    max-width: 100%;
+    background-color: #E19EFF;
+    border-radius: 1em;
+    box-shadow: 0px 0px 15px 5px rgb(248, 245, 248); 
     overflow: hidden;
-    box-sizing: border-box;
-    position: relative;
-    margin-top: 7em;
-    background-color: rgba(254, 106, 208, 0.90);
-    min-height: 40vh;
-    width: 70%;
-    top: 5%;
-    left: 5%;
-    border-radius: 1.4em;
-    overflow: visible;
-}
-
-#chat-view {
-    display: flex;
-    flex-direction: column;
-    height: 90vh;
-    max-width: 600px;
-    background-color: #FE6AD4;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(226, 211, 235, 0.4);
-    overflow: hidden;
+    margin-top: 3em;
 }
 
 .chat-title {
-    background-color: #CAADFF;
-    color: #fff;
-    padding: 0.5em;
+    color:white;
+    font-family: 'Fresca', sans-serif;
+    font-size: 1.2em;
+    letter-spacing: 0.04em;
+    background-color:  #e676f0;
+    width: 25%;
     text-align: center;
-    font-family: 'Arial', sans-serif;
-    font-size: medium;
-    border-bottom: 2px solid #FFC0CB;
-    border-radius: 0.5em;
+    padding: 0.2em;
+    border-radius: 0.2em;
 }
 
 #send-message-area {
     flex: 1;
     padding: 1em;
-    background-color: #fff;
-    width: 25em;
-    height: 20em;
-    border-radius: 0.2em;
+    background-color: #f4def7;
+    width: 85%;
+    height: 60%;
+    border-radius: 0.6em;
 }
 
 #chat-form {
     display: flex;
     align-items: center;
     gap: 0.5em;
-    margin-top: 1em;
+    margin-top: 0.2em;
 }
 
 #messageInput {
@@ -467,8 +493,9 @@ h3 {
     background-color: #FF69B4;
     color: #fff;
     cursor: pointer;
-    font-size: 1em;
+    font-size: 0.8em;
     height: 3em;
+    width: 100%;
 }
 
 .button-send:hover {
@@ -501,7 +528,6 @@ h3 {
 #apiKeyInput {
     padding: 0.6em;
     margin-bottom: 1em;
-
     width: 100%;
     max-width: 400px;
     border: 2px solid #FFB6C1;
@@ -569,7 +595,8 @@ h3 {
 
     .type {
         font-size: 1.2em;
-        width: 70%;  
+        width: 60%;  
+        margin-left: 5.1em;
     }
 
     h3 {
@@ -589,5 +616,58 @@ h3 {
        
     }
     
+    #chat-view {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 40%;
+        height: 80vh;
+        background-color: #E19EFF;
+        border-radius: 1em;
+        box-shadow: 0 4px 8px rgba(244, 242, 245, 0.5);
+        overflow: hidden;
+        margin-top: 3em;
+        gap: 1.8em;
+        margin-left: 35%;
+    }
+    
+    .chat-title {
+        color:white;
+        font-family: 'Fresca', sans-serif;
+        font-size: 1.2em;
+        letter-spacing: 0.04em;
+        background-color:  #e676f0;
+        width: 25%;
+        text-align: center;
+        padding: 0.2em;
+        border-radius: 0.2em;
+    }
+    
+    #send-message-area {
+     
+    }
+    
+    #chat-form {
+        gap: 0.5em;
+        margin-top: 0.2em;
+    }
+    
+    #messageInput {
+        margin-bottom: 1.5em;
+    }
+    
+    .button-send {
+        height: 3em;
+        width: 90%;
+        margin-bottom: 1.5em;
+    }
+    
+
+    
+    #send-message-area p {
+        padding: 0.5em;
+        margin-bottom: 0.5em;
+    }
     
 }

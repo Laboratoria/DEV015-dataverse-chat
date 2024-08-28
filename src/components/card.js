@@ -9,8 +9,9 @@ export default function renderCard(item) {
             <img itemprop="image" src="${item.imageUrl}" alt="${item.name}">     
 
            <div class="item-facts">
-              <p class="sign"><strong>Signo Zodiacal:</strong> <span itemprop="zodiacSign">${item.facts.signoZodiacal}</span></p>
               <p class="date"><strong>Fecha de nacimiento:</strong> <span itemprop="birthDate">${item.facts.fechaDeNacimiento}</span></p>
+              <p class="sign"><strong>Signo Zodiacal:</strong> <span itemprop="zodiacSign">${item.facts.signoZodiacal}</span></p>
+              
             </div>
         </div>
         <div class="description">
@@ -19,12 +20,12 @@ export default function renderCard(item) {
         </div>
     </div>
 `;
-const imgEl = document.createElement('img');
-imgEl.src = './images/moonstick.png'; 
-imgEl.alt = 'Decorative Image';
-imgEl.classList.add('card-decorative-image');
+//const imgEl = document.createElement('img');
+//imgEl.src = './images/moonstick.png'; 
+//imgEl.alt = 'Decorative Image';
+//imgEl.classList.add('card-decorative-image');
 
-li.appendChild(imgEl);
+//li.appendChild(imgEl);
 
 
 

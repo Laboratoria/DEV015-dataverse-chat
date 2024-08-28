@@ -1,4 +1,4 @@
-import data from '../Data/dataset.js';
+import data from '../data/dataset.js';
 import renderCard from '../components/card.js';
 import { navigateTo } from '../router.js';
 import filterComponent from '../components/filters.js';
@@ -9,23 +9,23 @@ export default function Character() {
     const viewEl = document.createElement('div');
     viewEl.classList.add('container-max');
 
-    // Crear contenedor para filtros y orden
+    // Contenedor para filtros y orden
     const filtersContainer = document.createElement('div');
     filtersContainer.classList.add('filters-container');
     viewEl.appendChild(filtersContainer);
-   
+
     const wingEl = document.createElement('img');
-    wingEl.src = './images/cat.png'; 
+    wingEl.src = './images/cat.png';
     wingEl.alt = 'wing sailor filters';
-    wingEl.classList.add('cat'); 
-    viewEl.appendChild(wingEl); 
+    wingEl.classList.add('cat');
+    viewEl.appendChild(wingEl);
 
     const searchEl = document.createElement('p');
-    searchEl.textContent = '¡Busca tu Sailor!'; 
+    searchEl.textContent = '¡Busca tu Sailor!';
     searchEl.classList.add('search');
     filtersContainer.appendChild(searchEl);
 
-    // Crear y agregar elementos de filtro, orden y limpiar
+    //Filtro, orden y limpiar
     const filterEl = filterComponent();
     filterEl.classList.add('filter-select');
     filtersContainer.appendChild(filterEl);
@@ -51,7 +51,7 @@ export default function Character() {
 
     // Función para cargar las tarjetas
     function load(data) {
-        listEl.innerHTML = ''; // Limpiar la lista actual
+        listEl.innerHTML = ''; 
         data.forEach(item => {
             const cardEl = renderCard(item);
             const chatButton = document.createElement('button');
@@ -69,10 +69,7 @@ export default function Character() {
         });
     }
 
-
     load(data);
-
-    // filtros y orden 
     function updateView() {
         const valorSeleccionadoFilterBy = filterEl.value;
         const sortOrder = orderEl.value;
@@ -82,11 +79,9 @@ export default function Character() {
         if (valorSeleccionadoFilterBy !== '') {
             dataFiltrada = filterData(copiaData, 'tipoGuardian', valorSeleccionadoFilterBy);
         }
-
         const dataOrdenada = sortData(dataFiltrada, 'name', sortOrder);
         load(dataOrdenada);
     }
-
 
     filterEl.addEventListener('change', updateView);
     orderEl.addEventListener('change', updateView);
@@ -95,7 +90,7 @@ export default function Character() {
     clearButton.addEventListener('click', function () {
         filterEl.value = ''; // Limpiar selección del filtro
         orderEl.value = 'asc'; // Establecer orden por defecto
-        updateView(); // Volver a cargar los datos originales
+        updateView(); 
     });
 
     return viewEl;
