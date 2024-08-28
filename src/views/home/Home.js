@@ -1,18 +1,15 @@
 import data from '../../data/dataset.js'; //importa data
-import { renderItems } from '../../view.js'; //importa view
-import { filterData,sortData } from '../../lib/dataFunctions.js';
+import { renderItems, renderStats } from '../../view.js'; //importa view
+import { filterData,sortData,computeStats } from '../../lib/dataFunctions.js';
 import { renderCategories } from '../../categories.js'; //importa categories
 import { navigateTo } from '../../router.js';
 
 // aqui van las tarjetas
 const Home = (params) => {
+
   const categorySelect = renderCategories(params);
 
   const controls = document.createElement('div');
-
-  const title = document.createElement('h1');
-  title.textContent='MUJERES QUE INSPIRAN';
-  controls.appendChild(title);
 
   const filterControls = document.createElement('div');
   filterControls.classList.add('filter-controls');
@@ -66,29 +63,40 @@ const Home = (params) => {
   filterControls.appendChild(cleanButton);
   controls.appendChild(filterControls);
 
-    let items;
+  let items;
    
-    if( params.category !== '' ){
-      const filtered = filterData(data,'mainField',params.category);
-      items = renderItems(sortData(filtered,params.order));
-    }
-    else{
-      items = renderItems(sortData(data,params.order));
-    }
+  if( params.category !== '' ){
+    const filtered = filterData(data,params.category);
+    items = renderItems(sortData(filtered,params.order));
+  }
+  else{
+    items = renderItems(sortData(data,params.order));
+  }
 
-    const view = document.createElement('div');
-    view.appendChild(controls);
+  const view = document.createElement('div');
 
-    const cardsRoot = document.createElement('div');
-    cardsRoot.setAttribute('id','cards_root');
+  const link = document.createElement('link');
+  // Set the necessary attributes
+  link.rel = 'stylesheet';
+  link.type = 'text/css';
+  link.href = './views/home/style.css'; // Replace with the path to your CSS file
+  view.appendChild(link);
 
-    for(const card of items){
-      cardsRoot.appendChild(card);
-    }
+  view.appendChild(controls);
 
-    view.appendChild(cardsRoot);
+  const cardsRoot = document.createElement('div');
+  cardsRoot.setAttribute('id','cards_root');
 
-    return view;
-  };
+  for(const card of items){
+    cardsRoot.appendChild(card);
+  }
+
+  view.appendChild(cardsRoot);
+
+  const facts = document.querySelector("#curious_fact");
+  facts.textContent = renderStats(computeStats(data));
+
+  return view;
+};
   
 export default Home;

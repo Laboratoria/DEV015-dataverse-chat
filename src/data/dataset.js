@@ -18,7 +18,7 @@ export default[
       "name": "Emmy Noether",
       "shortDescription": "Matemática destacada, teorema fundamental en álgebra abstracta.",
       "descripción": "Una brillante matemática alemana, revolucionó la física teórica con sus contribuciones al teorema de conservación de la energía y el teorema de Noether, fundamentales en la teoría de la relatividad y la mecánica cuántica. A pesar de los obstáculos que enfrentó como mujer en la academia, sus investigaciones en álgebra abstracta y teoría de grupos son fundamentales en la física moderna. Su capacidad para unificar conceptos matemáticos y físicos marcó un hito en la historia de la ciencia, allanando el camino para futuras generaciones de científicas.",
-      "imageUrl": "https://ciencias.uautonoma.cl/wp-content/uploads/2020/04/emmy.png",
+      "imageUrl": "https://tse2.mm.bing.net/th?id=OIP.mXRahKFY0wPhgAE2t897xAHaD9&pid=Api&P=0&h=180",
       "facts": {
         "yearOfBirth": "1882",
         "yearOfDeath": "1935",
@@ -132,7 +132,7 @@ export default[
       "name": "Grace Hopper",
       "shortDescription": "Científica de la computación, creadora del primer compilador.",
       "descripción": "Una de las pioneras de la informática, es famosa por su contribución al desarrollo del primer compilador y al lenguaje de programación COBOL. Además, desafió los estereotipos de género en la década de 1940 al unirse a la Marina de los Estados Unidos y convertirse en la primera programadora de la computadora Harvard Mark I. Su legado abarca la creación de conceptos cruciales como la \"depuración de software\" y su influencia en el desarrollo de la informática moderna, estableciendo estándares para la programación de alto nivel y la innovación tecnológica.",
-      "imageUrl": "https://cyberwarmag.com/wp-content/uploads/2023/05/Grace-Hopper2.jpg",
+      "imageUrl": "https://tse2.mm.bing.net/th?id=OIP.-CiV1TmDu6RPY-qGYXRmeAHaEK&pid=Api&P=0&h=180",
       "facts": {
         "yearOfBirth": "1906",
         "yearOfDeath": "1992",
@@ -181,7 +181,7 @@ export default[
       "name": "Chien-Shiung Wu",
       "shortDescription": "Física experimental, contribuyó a la física nuclear.",
       "descripción": "Física experimental de origen chino, desafiando los prejuicios de género y nacionalidad, realizó experimentos fundamentales en física de partículas y contribuyó significativamente a la comprensión de la desintegración beta. Su famoso experimento \"Wu\" refutó la paridad en la física de partículas, lo que cambió la forma en que los científicos comprenden las fuerzas fundamentales de la naturaleza. Wu demostró que el talento y la perseverancia pueden superar cualquier barrera, y su legado sigue siendo un faro de inspiración para científicas en todo el mundo.",
-      "imageUrl": "https://todayinsci.com/W/Wu_ChienShiung/WuChienShiung300px.jpg",
+      "imageUrl": "https://i.ytimg.com/vi/7PWUsiqn0bI/maxresdefault.jpg",
       "facts": {
         "yearOfBirth": "1912",
         "yearOfDeath": "1997",
@@ -283,7 +283,7 @@ export default[
       "name": "Marjory Stephenson",
       "shortDescription": "Microbióloga y bioquímica, investigó en enzimología.",
       "descripción": "Bioquímica británica, brilló como científica en una época en la que las mujeres enfrentaban obstáculos muy significativos en la investigación científica. Su trabajo pionero en microbiología, enzimología y bioquímica contribuyó al entendimiento de procesos fundamentales en la vida. Fue una de las primeras mujeres en ser elegida miembro de la Royal Society, un reconocimiento a su destacada contribución a la ciencia. Además, fue una mentora y defensora de las mujeres en la ciencia, inspirando y allanando el camino para futuras generaciones.",
-      "imageUrl": "https://tse3.mm.bing.net/th?id=OIP.1-8SQEIu-zIL5G1PdGWYXQAAAA&pid=Api&P=0&h=180",
+      "imageUrl": "https://bloximages.chicago2.vip.townnews.com/theworldlink.com/content/tncms/assets/v3/editorial/4/b2/4b205063-dde3-5e6c-87d2-032d43ec47af/5e4ce7440185e.image.jpg",
       "facts": {
         "yearOfBirth": "1885",
         "yearOfDeath": "1948",
