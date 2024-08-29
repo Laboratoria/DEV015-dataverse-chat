@@ -4,7 +4,7 @@ import { getApiKey } from '/lib/apiKey.js';
 
 function getContext(names, allCharacters) {
   if (!allCharacters) {
-    return "Eres " + names + " y sin mencionar tu nombre responde solo en español";
+    return "Eres " + names + " y responderas segun su historia y como si fueras ella";
   } else {
     return "Eres una conferencia de mujeres historicamente importante donde estarian " + names + " responde personificando a las mujeres como una voz en conjuto y solo en español";
   }

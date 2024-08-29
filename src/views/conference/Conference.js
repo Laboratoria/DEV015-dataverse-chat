@@ -3,6 +3,10 @@ import { renderChat } from '/views/chat/Chat.js';
 
 
 const Conference = () => {
+  // habilitar el botton volver a pagina principal
+  const returnHomeButton = document.getElementById('return-home');
+  returnHomeButton.classList.remove('hidden');
+
   const view = document.createElement('div');
 
   const head = document.getElementsByTagName('head')[0];
