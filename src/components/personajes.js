@@ -1,10 +1,10 @@
 import dataset from "../data/dataset.js"; // Asegúrate de importar tu archivo de datos correctamente
 
 const personajes = () => {
-  const personajesContainer = document.createElement('div'); // Usamos 'div' para contener los personajes
+  const personajesContainer = document.createElement('main'); // Usamos 'div' para contener los personajes
 
   dataset.forEach((personaje) => {
-    const personajeEl = document.createElement('div');
+    const personajeEl = document.createElement('main');
     personajeEl.innerHTML = `
       <h3>${personaje.name}</h3>
       <img src="${personaje.imageUrl}" alt="${personaje.name}" />
