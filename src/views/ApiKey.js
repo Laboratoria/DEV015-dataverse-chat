@@ -1,4 +1,5 @@
 import renderHeader  from "../components/Renderheader.js"
+import renderFooter from "../components/renderFooter.js";
 
 function ApiKey() {
 
@@ -14,6 +15,7 @@ function ApiKey() {
   `;
   
   divHome.appendChild(viewEl)
+  divHome.appendChild (renderFooter())
 
   return divHome;
 
