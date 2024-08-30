@@ -11,15 +11,21 @@ main {
   background-image: url(imagenes/fondo_abejas.png);
 }
 
-/*logo y texto*/
 header {
-  text-align: center; /*centra el texto dentro del encabezado*/
-  border: 1px solid #cccccc0c; /*borde sutil dentro del encabezado*/
-  margin: auto; /*centrar horizontalmente en su contenedor*/
-  padding: 0.5rem; /* espacio interno alrededor del contenido */
+  text-align: center; /* Centra el texto e imágenes dentro del encabezado */
+  padding: auto; /* Espacio interno alrededor del contenido */
   font-family: 'Niconne', cursive;
-  font-size: 5vw; /*relativo al tamaño del viewport*/
-  background-image: url('imagenes/fondo_canva.png'); /*imagen de fondo del encabezado*/ 
+  font-size: 5vw; /* Relativo al tamaño del viewport */
+  background-image: url('imagenes/fondo_canva.png'); /* Imagen de fondo del encabezado */ 
+  background-size: cover; /* Asegura que la imagen de fondo cubra todo el header */
+  background-position: center; /* Centra la imagen de fondo */
+}
+
+header img {
+  display: block; /* Elimina el espacio extra en imágenes inline */
+  margin: 0 auto; /* Centra la imagen dentro del header */
+  max-width: 100%; /* Asegura que la imagen no exceda el ancho del contenedor */
+  height: auto; /* Mantiene la proporción de la imagen */
 }
 
 /*el filtro y el ordenar juntos*/
@@ -64,21 +70,40 @@ h2 {
   font-size: 1rem; /*tamaño fuente fijo rem*/
 }
 
-button {
-  margin-top: 0.625rem; /* espacio superior del boton */
+.filtro-ordenado-boton-container {
+  font-family: 'Niconne', cursive;
+  font-size: 1.5rem;
+  color: rgb(58, 7, 105);
+}
+
+
+button, #calcularEstadisticas {
   background-color: rgba(204, 129, 223, 0.623); /* Color lila semi-transparente */
   color: rgb(58, 7, 105); /* Color del texto */
   font-family: 'Niconne', cursive;
   border: none; /* Sin borde */
-  border-radius: 0.625rem; /* bordes redondeados justado para rem */
-  cursor: pointer; /* cursor al pasar por encima */
-  font-size: 1.50rem; /* Tamaño de la fuente */
-  text-align: center; /* Alineación del texto centrado*/
-  width: 12.5rem; /* ancho fijo del boton ajustado para rem */
-  padding: 0.3125rem 0.3125rem; /* espacio interno ajustado para rem */
-  margin-left: auto; /*centrado de la derecha*/
-  margin-right: auto; /*centrado de la izquierda*/
+  border-radius: 0.625rem; /* Bordes redondeados */
+  cursor: pointer; /* Cursor al pasar por encima */
+  text-align: center; /* Alineación del texto centrado */
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  margin: 0.625rem auto 0; /* Centrado y espacio superior */
+  display: block; /* Asegura que el botón se comporte como un bloque */
+  width: 12.5rem; /* Ancho del botón */
+  box-sizing: border-box; /* Incluye padding y borde en el tamaño total del botón */
 }
+
+button {
+  width: 12.5rem; /* Ancho específico para botones generales */
+}
+
+.resultado-estadisticas {
+  font-weight: bold; /* Grosor de fuente en negrita */
+  width: 200px; /* Ancho específico para este botón */
+  line-height: 1.2; /* Altura de línea para centrar el texto verticalmente */
+  padding: 10px 20px; /* Espacio interno adicional */
+}
+
 
 label {
   margin-bottom: 0.625rem; /* espacio inferior */
@@ -91,8 +116,27 @@ label {
   justify-content: center; /* Centra el contenido horizontalmente */
 }
 
+.nav-container {
+  display: flex;
+  justify-content: center; /* Centra todo el contenido dentro del nav */
+  margin-bottom: 1rem; /* Añade espacio debajo del nav */
+}
+
+.filtro-ordenado-boton-container {
+  display: flex;
+  align-items: center; /* Alinea verticalmente todos los elementos en el centro */
+  gap: 1rem; /* Espacio entre el filtrado, ordenado y el botón */
+}
+
+button {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+
 /*disposicion de las tarjetas*/
-#character-list {
+.character-list {
   display: flex; /*usa el modelo de caja flexible*/
   flex-wrap: wrap; /* se ajustan a una nueva línea si no caben en una sola fila */
   justify-content: center; /* Centra las tarjetas horizontalmente */
@@ -149,13 +193,21 @@ p {
 
 
 /* Estilo para las imágenes */
-.personajes img {
-  width: 100%;/*ancho completo del contenedor*/
-  height: auto;/*altura ajustada automáticamente para mantener la proporción*/
-  object-fit: cover;/*ajusta la imagen para cubrir el área del contenedor sin distorsionar */
-  border-radius: 0.3125rem; /*bordes redondeados de la imagen*/
-  margin-bottom: 0.625rem; /* espacio inferior de la imagen */
+.personajes {
+  display: flex; /*usa el modelo de caja flexible*/
+  flex-direction: column; /*alinea los elementos hijos verticalmente*/
+  justify-content: space-between; /* Espacio entre los elementos para asegurar una distribución uniforme */
+  font-family: 'Montserrat', sans-serif;
+  width: 12.5rem; /* Ancho fijo de la tarjeta */
+  padding: 0.625rem; /* Espacio interno de la tarjeta ajustado para rem */
+  box-shadow: 0.125rem 0.125rem 0.5rem rgba(0, 0, 0, 0.1); /* Sombra de la tarjeta */
+  border-radius: 0.3125rem; /* Borde redondeado */
+  background-color: #8a4c99c5;
+  transition: transform 0.3s; /* Transición para el efecto escala */
+  color: #fcf7f7;
+  margin: 0.625rem; /* Ajustado para rem */
 }
+
 
 /*pie de pagina*/
 footer {
@@ -163,13 +215,16 @@ footer {
 }
 
 .piepagina {
-  font-size: 1.25rem; /* tamaño de fuente fijo en rem */
+  font-size: 1.05rem; /* tamaño de fuente fijo en rem */
   text-align: center;/* centra el texto en el pie de página */
-  color: rgba(40, 3, 41, 0.795);
+  color: rgba(251, 246, 252, 0.795);
   font-family: 'Montserrat', sans-serif;
   border: 1px solid #f7f7f704;
   margin-top: 0; /* elimina el margen superior */
   padding: 0.125rem; /* espacio interno alrededor del contenido */
+  background-color: #3a076949;
+  width: 100%; /* asegura que el pie de página ocupe todo el ancho */
+  box-sizing: border-box; /* asegura que el padding y border se incluyan en el ancho total */
 }
 
 #calcularEstadisticas {
@@ -192,7 +247,7 @@ footer {
 
 /*continuar el cuadro de resultados de estadisticas*/
 #resultado-estadisticas {
-  display: none; /* ocultar por defecto */
+  display: block; /* Asegúrate de que esté visible por defecto */
   margin-top: 1.25rem; /* espacio superior del contenedor */
   padding: 0.9375rem; /* espacio interno del contenedor */
   border: 1px solid #ddd; /*borde alrededor del contenedor*/
@@ -203,10 +258,12 @@ footer {
   overflow-x: auto; /* agregar una barra de desplazamiento horizontal si es necesario */
 }
 
+
 /* Estilo para los párrafos dentro del contenedor */
 #resultado-estadisticas p {
   /*adapta el tamaño de la letra segun el tamaño de la pantalla*/
-  font-size: 5vw;/*tamaño de fuente relativo al ancho del viewport*/
+  font-size: 3.05vw;/*tamaño de fuente relativo al ancho del viewport*/
+  text-align: center;
   margin: 0; /* elimina el margen para evitar espacio adicional */
   color: #f5f0f0;
   font-family: 'Niconne', cursive;
@@ -229,14 +286,12 @@ footer {
 
   #filter-form {
     font-size: 1.25rem; /* Tamaño de fuente reducido en pantallas pequeñas */
-    max-width: 100%;/*Ancho máximo del formulario de filtro se ajusta al 100% del contenedor*/
+    max-width: 100%; /* Ancho máximo del formulario de filtro ajustado al 100% del contenedor */
     padding: 0.625rem; /* Espacio interno ajustado en pantallas pequeñas */
   }
 
   button {
-    width: 6.25rem; /*Ancho reducido del botón en pantallas pequeñas*/
+    width: 6.25rem; /* Ancho reducido del botón en pantallas pequeñas */
     font-size: 1rem;
-             
+  }
 }
-
- }

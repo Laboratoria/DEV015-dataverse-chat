@@ -1,4 +1,5 @@
 import renderHeader  from "../components/Renderheader.js"
+import renderFooter from "../components/renderFooter.js";
 
 export function chatIndividual() {
   const divHome = document.createElement('div');  
@@ -13,7 +14,8 @@ export function chatIndividual() {
     </div>
   `;
   divHome.appendChild(viewEl)
-
+  divHome.appendChild (renderFooter());
+  
   return divHome;
 }
 export default chatIndividual;
