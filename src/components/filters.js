@@ -1,6 +1,6 @@
 export default function filterComponent() {
-  const filterEl = document.createElement('select');
-  filterEl.setAttribute('id', 'filterBy');
+  const filterEl = document.createElement("select");
+  filterEl.setAttribute("id", "filterBy");
   filterEl.innerHTML = `
       <option value="">Tipo Guardián</option>
       <option value="">Selecciona una opción</option>
@@ -13,4 +13,3 @@ export default function filterComponent() {
   `;
   return filterEl;
 }
-
