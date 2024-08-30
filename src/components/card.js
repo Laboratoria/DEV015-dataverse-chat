@@ -1,7 +1,7 @@
 export default function renderCard(item) {
-    const li = document.createElement('li');
-    li.classList.add('card-list');
-    li.innerHTML = `
+  const li = document.createElement("li");
+  li.classList.add("card-list");
+  li.innerHTML = `
     <div>
           <h2 itemprop="nombre">${item.name} (${item.shortDescription})</h2>
 
@@ -20,16 +20,12 @@ export default function renderCard(item) {
         </div>
     </div>
 `;
-//const imgEl = document.createElement('img');
-//imgEl.src = './images/moonstick.png'; 
-//imgEl.alt = 'Decorative Image';
-//imgEl.classList.add('card-decorative-image');
+  //const imgEl = document.createElement('img');
+  //imgEl.src = './images/moonstick.png';
+  //imgEl.alt = 'Decorative Image';
+  //imgEl.classList.add('card-decorative-image');
 
-//li.appendChild(imgEl);
+  //li.appendChild(imgEl);
 
-
-
-
-    return li;
+  return li;
 }
-

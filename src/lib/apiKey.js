@@ -1,8 +1,8 @@
 export const getApiKey = () => {
-  const apiKey = localStorage.getItem('apiKey');
+  const apiKey = localStorage.getItem("apiKey");
   return apiKey;
 };
 
 export const setApiKey = (key) => {
-  localStorage.setItem('apiKey', key);
+  localStorage.setItem("apiKey", key);
 };
