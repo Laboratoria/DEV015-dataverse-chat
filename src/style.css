@@ -97,7 +97,7 @@ button {
   width: 12.5rem; /* Ancho específico para botones generales */
 }
 
-#calcularEstadisticas {
+.resultado-estadisticas {
   font-weight: bold; /* Grosor de fuente en negrita */
   width: 200px; /* Ancho específico para este botón */
   line-height: 1.2; /* Altura de línea para centrar el texto verticalmente */
@@ -247,7 +247,7 @@ footer {
 
 /*continuar el cuadro de resultados de estadisticas*/
 #resultado-estadisticas {
-  display: none; /* ocultar por defecto */
+  display: block; /* Asegúrate de que esté visible por defecto */
   margin-top: 1.25rem; /* espacio superior del contenedor */
   padding: 0.9375rem; /* espacio interno del contenedor */
   border: 1px solid #ddd; /*borde alrededor del contenedor*/
@@ -258,10 +258,12 @@ footer {
   overflow-x: auto; /* agregar una barra de desplazamiento horizontal si es necesario */
 }
 
+
 /* Estilo para los párrafos dentro del contenedor */
 #resultado-estadisticas p {
   /*adapta el tamaño de la letra segun el tamaño de la pantalla*/
-  font-size: 5vw;/*tamaño de fuente relativo al ancho del viewport*/
+  font-size: 3.05vw;/*tamaño de fuente relativo al ancho del viewport*/
+  text-align: center;
   margin: 0; /* elimina el margen para evitar espacio adicional */
   color: #f5f0f0;
   font-family: 'Niconne', cursive;

@@ -1,8 +1,8 @@
 import renderHeader from "../components/Renderheader.js";
 import personajes from "../components/personajes.js"; 
 import dataset from "../data/dataset.js"; 
-import renderFooter from "../components/renderFooter.js"; // Importa correctamente el footer
-import { calcularEstadisticas, getCharacters } from "../lib/dataFunction.js"; // Asegúrate de importar esto
+import renderFooter from "../components/renderFooter.js";
+import { calcularEstadisticas, getCharacters } from "../lib/dataFunction.js";
 
 function home() {
   const divHome = document.createElement('div');
@@ -11,10 +11,10 @@ function home() {
   divHome.appendChild(header);
 
   const navOrdenFiltroBoton = document.createElement('nav');
-  navOrdenFiltroBoton.classList.add('nav-container'); // Añadir clase al nav
+  navOrdenFiltroBoton.classList.add('nav-container');
 
   const filtroOrdenBotonContainer = document.createElement('div');
-  filtroOrdenBotonContainer.classList.add('filtro-ordenado-boton-container'); // Añadir clase al contenedor
+  filtroOrdenBotonContainer.classList.add('filtro-ordenado-boton-container');
 
   filtroOrdenBotonContainer.appendChild(filtrado());
   filtroOrdenBotonContainer.appendChild(ordenado());
@@ -26,6 +26,22 @@ function home() {
   const personajesContainer = personajes(dataset); 
   personajesContainer.id = 'personajes-container'; 
   divHome.appendChild(personajesContainer);
+
+  // Contenedor para mostrar las estadísticas
+  const resultadoEstadisticas = document.createElement('div');
+  resultadoEstadisticas.id = 'resultado-estadisticas';
+  resultadoEstadisticas.style.marginTop = '20px'; 
+  resultadoEstadisticas.style.display = 'block'; // Asegúrate de que esté visible
+  divHome.appendChild(resultadoEstadisticas);
+
+  // Calcular y mostrar las estadísticas al cargar la página
+  const stats = calcularEstadisticas(getCharacters());
+  resultadoEstadisticas.innerHTML = `
+    <p>Casados: ${stats.casados}</p>
+    <p>Solteros: ${stats.solteros}</p>
+    <p>Viudos: ${stats.viudos}</p>
+    <p>Amantes: ${stats.amantes}</p>
+  `;
 
   // Agregar el footer
   const footer = renderFooter();
@@ -73,6 +89,17 @@ const filtrado = () => {
 
     const personajesContent = personajes(filteredCharacters);
     personajesContainer.appendChild(personajesContent);
+
+    // Recalcular y mostrar las estadísticas después de filtrar
+    const stats = calcularEstadisticas(filteredCharacters);
+    const resultadoEstadisticas = document.getElementById('resultado-estadisticas');
+    resultadoEstadisticas.style.display = 'block'; // Asegúrate de que esté visible
+    resultadoEstadisticas.innerHTML = `
+      <p>Casados: ${stats.casados}</p>
+      <p>Solteros: ${stats.solteros}</p>
+      <p>Viudos: ${stats.viudos}</p>
+      <p>Amantes: ${stats.amantes}</p>
+    `;
   });
 
   return filtradoEl;
@@ -110,14 +137,10 @@ const ordenado = () => {
     personajesContainer.innerHTML = ''; 
     personajesContainer.appendChild(personajes(sortedCharacters));
 
-    // Contenedor para mostrar las estadísticas
+    // Recalcular y mostrar las estadísticas después de ordenar
+    const stats = calcularEstadisticas(sortedCharacters);
     const resultadoEstadisticas = document.getElementById('resultado-estadisticas');
-    resultadoEstadisticas.id = 'resultado-estadisticas';
-    resultadoEstadisticas.style.marginTop = '20px'; // Añade un margen superior
-    document.body.appendChild(resultadoEstadisticas);
-
-    // Calcular y mostrar las estadísticas al cargar la página
-    const stats = calcularEstadisticas(getCharacters());
+    resultadoEstadisticas.style.display = 'block'; // Asegúrate de que esté visible
     resultadoEstadisticas.innerHTML = `
       <p>Casados: ${stats.casados}</p>
       <p>Solteros: ${stats.solteros}</p>
@@ -140,7 +163,18 @@ const boton = () => {
     personajesContainer.appendChild(personajes(dataset)); 
 
     document.querySelector('#filter-form').reset(); 
-    document.querySelector('#alfabetico').value = ''; // Cambié `reset()` a `value = ''` para restablecer el select
+    document.querySelector('#alfabetico').value = ''; 
+
+    // Recalcular y mostrar las estadísticas después de despejar
+    const stats = calcularEstadisticas(getCharacters());
+    const resultadoEstadisticas = document.getElementById('resultado-estadisticas');
+    resultadoEstadisticas.style.display = 'block'; // Asegúrate de que esté visible
+    resultadoEstadisticas.innerHTML = `
+      <p>Casados: ${stats.casados}</p>
+      <p>Solteros: ${stats.solteros}</p>
+      <p>Viudos: ${stats.viudos}</p>
+      <p>Amantes: ${stats.amantes}</p>
+    `;
   });
 
   return botonEl;
