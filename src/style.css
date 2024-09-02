@@ -376,7 +376,7 @@ select {
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    border-bottom: 1px solid #444;
+    border-bottom: 0.06rem solid #444;
     gap: 11rem;
     padding-left: 0.5rem;
     padding-right: 0.5rem;
@@ -408,38 +408,38 @@ select {
 .chatBody {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 0.6rem;
     flex-grow: 1;
-    margin: 20px 0;
+    margin: 1.2rem 0;
     overflow-y: auto;
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 0.6rem;
 }
 
 .chatFooter {
     display: flex;
     align-items: center;
-    gap: 10px;
-    border-top: 1px solid #444;
-    padding-top: 10px;
+    gap: 0.6rem;
+    border-top: 0.06rem solid #444;
+    padding-top: 0.6rem;
 }
 
 .chatFooter input {
     width: 30rem;
     flex-grow: 1;
-    padding: 10px;
-    border-radius: 8px;
-    border: 1px solid #444;
+    padding: 0.6rem;
+    border-radius: 0.5rem;
+    border: 0.06rem solid #444;
     background-color: #333;
     color: white;
 }
 
 .chatFooter button {
-    padding: 10px 20px;
+    padding: 0.6rem 1.2rem;
     background-color: #333;
     border: none;
-    border-radius: 8px;
+    border-radius: 0.5rem;
     cursor: pointer;
     color: white;
 }
@@ -507,15 +507,15 @@ select {
     background-color: #515151;
     color: white;
     max-width: 60%;
-    padding: 10px 15px;
-    border-radius: 20px;
-    font-size: 14px;
+    padding: 0.6rem 0.9rem;
+    border-radius: 1.2rem;
+    font-size: 0.9rem;
     line-height: 1.4;
     position: relative;
     word-wrap: break-word;
-    margin-bottom: 10px;
-    margin-right: 20px;
-    border-top-right-radius: 3px;
+    margin-bottom: 0.6rem;
+    margin-right: 1.2rem;
+    border-top-right-radius: 0.2rem;
 }
 
 .ai-message {
@@ -523,14 +523,18 @@ select {
     background-color: #D1D1D3;
     color: black;
     max-width: 60%;
-    padding: 10px 15px;
-    border-radius: 20px;
-    font-size: 14px;
+    padding: 0.6rem 0.9rem;
+    border-radius: 1.2rem;
+    font-size: 0.9rem;
     line-height: 1.4;
     position: relative;
     word-wrap: break-word;
-    margin-left: 10px;
-    border-top-left-radius: 3px;
+    margin-left: 0.6rem;
+    border-top-left-radius: 0.2rem;
+}
+
+.headerResponsive {
+    display: none;
 }
 
 /* .user-message::after {
@@ -561,47 +565,110 @@ select {
 
 
 
+@media (max-width:800px) {
 
-
-
-/* 
-@media (max-width:1000px) {
-    .barra-lateral {
+    .header {
         display: none;
     }
 
-    .menu-hamburguesa {
-        cursor: pointer;
+    .sidebar {
+        display: none;
+    }
+
+    .headerResponsive {
         display: flex;
-        border-color: #F428F3;
-        border-style: dashed;
-        border-width: 0.15rem;
-        border-radius: 0.3rem;
-        padding: 0.2rem;
+        background-color: #F428F3;
+        width: 100%;
+        align-items: center;
+        justify-content: space-between;
+        overflow: hidden;
+        gap: 5%;
+        padding: 0.5rem;
         padding-left: 1rem;
         padding-right: 1rem;
-        margin: 0.8rem;
+        box-sizing: border-box; 
+    }
+    .menuResponsive {
+        height: 0.9rem;
+        width: auto;
     }
 
-    .header-left {
-        display: flex;
+    .titleHeaderResponsive {
+        font-size: 1.3rem;
+        margin: 0rem;
+        color: #D1D1D3;
+    }
+
+    .imageHeaderResponsive {
+        width: 3rem;
+        height: auto;
+        cursor: pointer;
+        margin-left: auto;
+    }
+    ul {
         flex-direction: column;
-        align-items: center;
+    }
+    .cardsContainer {
+        width: 100%;
+        display: flex;
         justify-content: center;
-        margin-right: 3%;
     }
 
-    .header-logo {
-        width: 5rem;
+    .gameCard {
+        display: none;
     }
 
-    .barra-lateral-desplegada {
-        display: block;
+    .containerChatIndividual {
+        width: 22rem;
     }
-    #ranking-por-año {
-        display: none;
-    }    
-    #mejor-categoria {
-        display: none;
+
+    .chatHeader {
+        gap: 3rem;
     }
-} */
+
+
+
+    .overlayMenu {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.8);
+        display: none;
+        justify-content: center;
+        align-items: center;
+        z-index: 1000;
+    }
+    
+    .filterContainer {
+        width: 80%;
+        max-width: 400px;
+        text-align: center;
+    }
+    
+    .closeOverlay {
+        position: absolute;
+        top: 2rem;
+        right: 2rem;
+        padding: 0.5rem;
+        border: none;
+        background-color: transparent;
+        color: #FFF;
+        font-size: 1.5rem;
+        cursor: pointer;
+    }
+    
+    .closeOverlay:hover {
+        background-color: #DFDEE0;
+        color: #333;
+        cursor: pointer;
+    }
+
+    .overlayMenu .sidebar {
+        display: flex;
+    }
+
+    #mejorCategoria, #rankingPorAño, #apiBox {
+    display: none;
+}

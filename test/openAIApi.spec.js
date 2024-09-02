@@ -5,6 +5,10 @@ jest.mock('../src/lib/apiKey.js', () => ({
   getApiKey: jest.fn()
 }));
 
+
+import data from '../src/data/dataset.js';
+
+const game = data.item;
 describe('communicateWithOpenAI', () => {
   beforeEach(() => {
     window.fetch = jest.fn();
