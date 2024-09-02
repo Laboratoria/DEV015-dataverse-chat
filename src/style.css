@@ -405,7 +405,9 @@
   
   
   /* Tarjetas contenido */
-  
+  #pets-container{
+    margin-top: 40px;
+  }
   
   
   .ul-tarjeta{
@@ -466,6 +468,23 @@
   div .description {
     text-align: center;
   }
+
+
+.tarjeta-button{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+  margin-inline: auto;
+  width: 8rem;
+  border: none;
+  background: var(--clr-neutro-light);
+  cursor: pointer;
+}
+
+.tarjeta-button-icon{
+  width: 50%;
+}
   
   /* Footer */
   
@@ -1011,7 +1030,6 @@
   }
   
   .estadisticas-section {
-    width: 70%;
     height: 150px;
     display: none;
     margin: 2em 10em 0 10em;
@@ -1049,6 +1067,5 @@
     padding-top: 1em;
     padding-right: 10px;
   }
-  
   }
   
