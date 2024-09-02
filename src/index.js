@@ -10,8 +10,8 @@ document.addEventListener('DOMContentLoaded', () => {
   setRootEl(root);
 
   setRoutes({
-    '/': Home,
-    '/chat-individual': ChatIndividual,
+    '/': (props) => Home(props),
+    '/chat-individual':  (props) => ChatIndividual(props),
     // '/chat-grupal': chatGrupal,
     '/error': ErrorView,
     '/api' : api,

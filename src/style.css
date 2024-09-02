@@ -563,7 +563,9 @@ select {
     transform: translateY(-50%); */
 /* } */
 
-
+.overlayMenu {
+    display: none;
+}
 
 @media (max-width:800px) {
 
