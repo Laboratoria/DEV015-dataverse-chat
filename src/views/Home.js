@@ -1,6 +1,6 @@
 import { renderItems } from '../components/componentsCards.js';
 import { createSelectElements } from '../components/componentsSelect.js';
-import { createHeader } from '../components/componentsHeader.js';
+import { createHeader, createHeaderResponsive } from '../components/componentsHeader.js';
 import { createFooter } from '../components/componentsFooter.js';
 import { filterData, ordenarABC } from '../lib/dataFunctions.js';
 import data from '../data/dataset.js';
@@ -12,6 +12,9 @@ export const Home = () => {
   const containerHeader = document.createElement('div');
   containerHeader.className = 'containerHeaderHome';
 
+  const HeaderResponsive = document.createElement('div');
+  HeaderResponsive.className = 'containerHeaderResponsive';
+
   const containerBody = document.createElement('div');
   containerBody.className = 'containerBodyHome';
   containerBody.id = 'containerBodyHome';
@@ -20,6 +23,7 @@ export const Home = () => {
   containerFooter.className = 'containerFooterHome';
 
   const header = createHeader();
+  
 
   
   const cardsContainer = document.createElement('div');
@@ -65,9 +69,12 @@ export const Home = () => {
   cardsContainer.appendChild(datadetarjetas);
   containerBody.appendChild(cardsContainer);
 
+  const headerResponsive = createHeaderResponsive(applyFilters);
+
   const footer = createFooter();
 
   containerHeader.appendChild(header);
+  containerHeader.appendChild(headerResponsive);
   containerFooter.appendChild(footer);
 
   container.appendChild(containerHeader);

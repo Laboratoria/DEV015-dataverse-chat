@@ -1,9 +1,12 @@
-import { communicateWithOpenAI } from '../src/utils/openAIApi.js';
+import { communicateWithOpenAI } from '../src/lib/openAIApi.js';
 
+import data from '../src/data/dataset.js';
+
+const game = data.item;
 describe('communicateWithOpenAI', () => {
-  test('communicateWithOpenAI', () => {
+  test('deberia devolver el gameId', () => {
     return communicateWithOpenAI().then(data => {
-      expect(data).toBe('example');
+      expect(data).toBe(game.Id);
     });
   });
 });

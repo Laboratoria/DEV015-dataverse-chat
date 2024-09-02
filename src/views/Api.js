@@ -1,4 +1,5 @@
 import { createHeader } from '../components/componentsHeader.js';
+import { createHeaderResponsive } from '../components/componentsHeader.js';
 import { createFooter } from '../components/componentsFooter.js';
 import { createApiKey } from '../components/componentsApiKey.js';
 
@@ -18,11 +19,13 @@ export function api() {
 
 
   const header = createHeader();
+  const headerResponsive = createHeaderResponsive();
   const body = createApiKey();
   const footer = createFooter();
 
 
   containerHeader.appendChild(header);
+  containerHeader.appendChild(headerResponsive);
   containerBody.appendChild(body);
   containerFooter.appendChild(footer);
   

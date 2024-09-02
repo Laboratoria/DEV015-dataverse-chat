@@ -1,4 +1,5 @@
 import { createHeader } from '../components/componentsHeader.js';
+import { createHeaderResponsive } from '../components/componentsHeader.js';
 import { createFooter } from '../components/componentsFooter.js';
 import { navigateTo } from '../router.js';
 // import { queryStringToObject } from '../router.js';
@@ -165,14 +166,18 @@ export function ChatIndividual(props) {
 
   containerBody.appendChild(containerCIOnly);
 
+  const HeaderResponsive = document.createElement('div');
+  HeaderResponsive.className = 'containerHeaderResponsive';
 
   const containerFooter = document.createElement('div');
   containerFooter.className = 'containerFooterCI';
 
   const header = createHeader();
+  const headerResponsive = createHeaderResponsive();
   const footer = createFooter();
   
   containerHeader.appendChild(header);
+  containerHeader.appendChild(headerResponsive);
   containerFooter.appendChild(footer);
   
   container.appendChild(containerHeader);
