@@ -16,15 +16,13 @@ export const home = () => {
   homeView.appendChild(Nav());
   
   //Crear el main
-  const main = document.createElement('main');
+  const main = document.createElement("main");
   main.innerHTML = Banner() + Cards();
   // Añadir el main al body
   homeView.appendChild(main);
 
   // Añadir el footer
-  const footer = document.createElement('footer');
-  footer.innerHTML = Footer();
-  homeView.appendChild(footer);
+  homeView.appendChild(Footer());
 
   window.onload= function(){
     initializePage();

@@ -1,28 +1,23 @@
-import Footer from "../components/Footer";
-import Nav from "../components/Nav";
+import Footer from "../components/Footer.js";
+import Nav from "../components/Nav.js";
 
 const individualChat = () => {
-  const viewIndividualChat = document.createElement("body");
-  viewIndividualChat.setAttribute("class", "body");
-  
-  // Agregar el header con el componente Nav
-  const header = Nav();
+  const individualChatView = document.createElement("div");
+  individualChatView.className = 'body';
 
-  // Crear el main con la sección de la API Key
+  // Añadir la barra de navegación
+  individualChatView.appendChild(Nav());
+
+
   const main = document.createElement("main");
-  
-  //main.innerHTML = ChatIndividual();
+  main.innerHTML = '<h1>Funciona</h1>'
+  individualChatView.appendChild(main);
 
-  // Crear el footer
-  const footer = document.createElement("footer");
-  footer.innerHTML = Footer(); // Footer.js para el pie de página
+  // Añadir el footer
+  individualChatView.appendChild(Footer());
   
-  // Agregar los elementos al body
-  viewIndividualChat.appendChild(header);
-  viewIndividualChat.appendChild(main);
-  viewIndividualChat.appendChild(footer);
 
-  return viewIndividualChat;  
+  return individualChatView; 
 };
 
 export default individualChat;

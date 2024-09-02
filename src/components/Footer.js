@@ -1,5 +1,7 @@
 export const Footer = () => {
-  return `
+
+  const footer = document.createElement('footer');
+  footer.innerHTML = `
 
     <div class="column">
       <a href="#">Adoptions</a>
@@ -23,6 +25,8 @@ export const Footer = () => {
     </div>
 
     `;
+
+  return footer;
 }
   
 export default Footer;
