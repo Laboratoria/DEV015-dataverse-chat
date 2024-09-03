@@ -92,7 +92,7 @@ export default [
     description:
       "Sailor Chibi Moon, conocida como Chibiusa o Rini en algunas versiones, es un personaje importante en Sailor Moon. Es la hija de Sailor Moon y Tuxedo Mask, que viaja desde el futuro para entrenar y ayudar a sus padres en su lucha contra el mal. Chibiusa es dulce, traviesa y algo caprichosa, pero también muestra una gran valentía y determinación cuando se enfrenta a los desafíos. Como Sailor Chibi Moon, tiene poderes relacionados con la protección y la energía positiva, y se convierte en una valiosa miembro de las Sailor Guardians, aportando un sentido de familia y unión al grupo.",
     imageUrl:
-      "https://live.staticflickr.com/65535/53809922330_a8e16c4e48_m.jpg",
+      "https://i.pinimg.com/564x/3d/d2/e0/3dd2e0a274133aaa4bc6212de671d73e.jpg",
     facts: {
       fechaDeNacimiento: "30 de junio",
       signoZodiacal: "Cáncer",

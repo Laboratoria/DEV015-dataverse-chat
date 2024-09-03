@@ -26,9 +26,9 @@ export default function renderviewApi() {
     const apiKey = apiKeyInput.value.trim();
     if (apiKey) {
       setApiKey(apiKey);
-      console.log("API Key guardada correctamente:", apiKey); //alert
+      alert("API Key guardada correctamente:", apiKey); 
     } else {
-      console.log("Por favor, ingrese una API Key válida");
+      alert("Por favor, ingrese una API Key válida");
     }
   });
 

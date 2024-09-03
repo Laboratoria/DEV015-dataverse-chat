@@ -98,6 +98,8 @@ export default function Character() {
     resultadoDiv.innerHTML = `
             <p>Porcentaje: ${estadisticas.porcentajeTipoGuardian.toFixed(2)}%, de tipo: ${valorSeleccionadoFilterBy}</p>
             <p>Nombres: ${estadisticas.tipoGuardian.join(", ")}</p>
+            <p class="go-sailor">¡Ve a las cards y chatea con ellas!</p>
+ 
         `;
   }
 

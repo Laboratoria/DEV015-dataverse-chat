@@ -2,31 +2,35 @@ html,
 body {
   margin: 0;
   padding: 0;
-  height: 100%;
+  min-height: 100vh;
+  max-width: 100%;
   box-sizing: border-box;
   background-image: url("../images/banner.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: center;
+  overflow-x: hidden;
+
 }
 
 nav {
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
   align-items: center;
   background-color: rgba(254, 106, 208, 0.5);
-  padding: 0.9em;
+  padding: 0.4em;
+  width: 100%;
 }
 
 nav a {
   color: #fff;
   font-family: "Fresca", sans-serif;
-  font-size: 1.3em;
-  letter-spacing: 0.05em;
+  font-size: 1em;
+  letter-spacing: 0.04em;
   font-weight: 600;
   text-decoration: none;
-  margin-right: 3em;
+  margin-right: 1em;
   transition: color 0.3s ease;
 }
 
@@ -39,35 +43,19 @@ nav a:hover {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 0 1em;
+  padding: 1em;
   overflow: hidden;
   box-sizing: border-box;
   position: relative;
-  margin-top: 5em;
+  margin-top: 2em;
+  margin-bottom: 2em;
+  margin-left: 15.2%;
   background-color: rgba(254, 106, 208, 0.3);
   box-shadow: 0px 0px 12px 3px rgb(249, 248, 250);
   min-height: 60vh;
-  width: 90%;
-  top: 5%;
-  left: 5%;
+  width: 70%;
   border-radius: 1.4em;
   overflow: visible;
-}
-
-.wing {
-  width: 5%;
-  position: absolute;
-  top: 10%;
-  left: 18%;
-  transform: rotate(-7deg);
-}
-
-.wing-heart {
-  width: 5%;
-  position: absolute;
-  top: 11%;
-  right: 40%;
-  transform: rotate(7deg);
 }
 
 .home-welcome {
@@ -80,49 +68,49 @@ nav a:hover {
   color: #f0ecf3;
   text-align: center;
   white-space: pre-line;
-  padding: 1em;
-  display: inline-block;
+  padding: 0.4em;
   border-radius: 0.5em;
-  max-width: 50%;
-  margin-right: 18em;
+  max-width: 85%;
 }
 
 .highlight1 {
   color: yellow;
-  font-weight: bold; /* Opcional: para resaltar aún más */
+  font-weight: bold;
 }
+
 .highlight {
   color: yellow;
-  font-weight: bold; /* Opcional: para resaltar aún más */
+  font-weight: bold;
 }
+
 .highlight1 {
   color: yellow;
-  font-weight: bold; /* Opcional: para resaltar aún más */
+  font-weight: bold;
 }
 
 .logo-sailor {
-  width: 27%;
-  margin-right: 18em;
+  width: 50%;
+  margin-right: 7em;
+  margin-top: 1em;
 }
 
 .img-banner {
-  max-width: 20%;
+  max-width: 40%;
   position: absolute;
-  top: 4em;
-  right: 0;
+  top: 0.4em;
+  left: 11em;
   height: auto;
   z-index: 2;
-  margin-right: 12em;
-  margin-top: 0;
 }
 
 .button-link {
   background-color: #fe6ad0;
-  width: 13%;
+  width: 100%;
   height: 2.4em;
   padding: 0.45em;
   border-radius: 0.4em;
   margin-top: 0;
+  margin-bottom: 1em;
   font-size: 1.2em;
   letter-spacing: 0.1em;
   font-family: "Fresca", sans-serif;
@@ -132,7 +120,6 @@ nav a:hover {
   text-decoration: none;
   cursor: pointer;
   border: none;
-  margin-top: 0.1em;
   transition:
     transform 0.3s ease,
     box-shadow 0.3s ease;
@@ -147,7 +134,7 @@ nav a:hover {
 .container-max {
   display: flex;
   justify-content: space-between;
-  gap: 9em;
+  gap: 0.4em;
 }
 
 .filters-container {
@@ -155,24 +142,24 @@ nav a:hover {
   flex-direction: column;
   gap: 2.5em;
   align-items: flex-start;
-  width: 17.5%;
+  width: 80%;
   height: 20%;
+  margin-left: 8%;
+  margin-top: 5em;
   background-color: rgba(250, 246, 255, 0.37);
   box-shadow: 0px 0px 10px 5px rgb(248, 245, 248);
   border-radius: 0.5em;
-  margin-left: 2em;
-  margin-top: 12em;
-  padding-left: 2em;
-  padding-right: 2em;
-  padding-bottom: 2em;
+  padding-left: 1em;
+  padding-right: 1em;
+  padding-bottom: 1em;
   position: relative;
 }
 
 .cat {
-  width: 7%;
+  max-width: 33%;
   position: absolute;
-  top: 24%;
-  left: 15%;
+  top: 5%;
+  left: 50%;
   transform: rotate(3deg);
   filter: contrast(150%) brightness(500%);
 }
@@ -259,14 +246,21 @@ nav a:hover {
   color: white;
 }
 
+.go-sailor {
+  color: rgb(95, 8, 117);
+  font-weight: 600;
+}
+
 .card-container {
   display: grid;
-  grid-template-columns: repeat(4, 25%);
+  grid-template-columns: repeat(1, 95%);
   gap: 3em;
-  margin-top: 9em;
+  margin-top: 48em;
+  margin-left: -22em;
 }
 
 .card-list {
+  width: 95%;
   box-shadow: 0px 0px 10px 5px rgb(248, 248, 244);
   background-color: #e19eff;
   border: 4px solid #f5f5f0;
@@ -300,9 +294,10 @@ nav a:hover {
   color: yellow;
   padding: 0.4em;
   border-radius: 0.4em;
-  width: 50%;
+  width: 95%;
   max-width: 90%;
-  margin-top: 0.2em;
+  margin-top: 0.4em;
+  margin-left: 0.45em;
   font-weight: 650;
   box-shadow: 0px 0px 10px 5px rgb(248, 245, 248);
 }
@@ -313,8 +308,8 @@ nav a:hover {
 }
 
 img[itemprop="image"] {
-  height: 18em;
-  width: 14em;
+  height: 14em;
+  max-width: 47%;
   border-radius: 0.86em;
   box-shadow: 0 4px 8px rgba(255, 254, 254, 0.4);
   object-fit: cover;
@@ -323,25 +318,18 @@ img[itemprop="image"] {
   border: 2px solid rgb(251, 252, 246);
 }
 
-.card-decorative-image {
-  width: 10%;
-  position: absolute;
-  top: 48%;
-  left: 3%;
-}
-
 .item-facts {
   display: flex;
   flex-direction: column;
   width: 40%;
-  margin-left: 0.9em;
+  margin-left: 0.5em;
 }
 
 .sign {
   font-family: "Fresca", sans-serif;
   letter-spacing: 0.01em;
   background-color: #fbf8fd;
-  font-size: 1.2em;
+  font-size: 1em;
   color: #9043e4;
   text-align: center;
   padding: 0.4em;
@@ -353,7 +341,7 @@ img[itemprop="image"] {
   font-family: "Fresca", sans-serif;
   letter-spacing: 0.01em;
   background-color: #f9f6fc;
-  font-size: 1.2em;
+  font-size: 1em;
   color: #9043e4;
   text-align: center;
   padding: 0.4em;
@@ -365,23 +353,24 @@ img[itemprop="image"] {
   color: #9043e4;
   font-family: "Fresca", sans-serif;
   text-shadow: 1px 1px 2px rgba(129, 34, 133, 0.2);
-  font-size: 1.2em;
+  font-size: 1em;
   letter-spacing: 0.05em;
   background-color: #ffd8fe;
-  width: 10%;
+  width: 80%;
   margin-top: 0.7em;
+  margin-left: 1.8em;
   text-align: center;
   padding-top: 0.4em;
-  padding-bottom: 0.4em;
+  padding-bottom: 0.2em;
   border-radius: 0.2em;
 }
 
 h3 {
   font-family: "Fresca", sans-serif;
-  font-size: 0.6em;
+  font-size: 1em;
   letter-spacing: 0.03em;
   color: #50178f;
-  padding: 0.4em;
+  padding: 0.3em;
   font-weight: 300;
   text-align: center;
   width: 100%;
@@ -392,7 +381,7 @@ h3 {
 .chat-button {
   background-color: #ab63fc;
   text-align: center;
-  width: 50%;
+  width: 80%;
   padding: 0.45em;
   border-radius: 0.4em;
   font-size: 1em;
@@ -404,6 +393,8 @@ h3 {
   cursor: pointer;
   border: none;
   box-shadow: 0px 0px 10px 5px rgb(245, 243, 245);
+  margin-left: 1.9em;
+  margin-bottom: 1em;
 }
 
 .chat-button:hover {
@@ -416,12 +407,14 @@ h3 {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  max-width: 100%;
+  max-width: 90%;
+  max-height: 90%;
   background-color: #e19eff;
   border-radius: 1em;
   box-shadow: 0px 0px 15px 5px rgb(248, 245, 248);
   overflow: hidden;
-  margin-top: 3em;
+  margin-top: 10em;
+  margin-left: 1.2em;
 }
 
 .chat-title {
@@ -430,10 +423,11 @@ h3 {
   font-size: 1.2em;
   letter-spacing: 0.04em;
   background-color: #e676f0;
-  width: 25%;
+  width: 70%;
   text-align: center;
   padding: 0.2em;
   border-radius: 0.2em;
+  margin-bottom: 2em;
 }
 
 #send-message-area {
@@ -441,7 +435,7 @@ h3 {
   padding: 1em;
   background-color: #f4def7;
   width: 85%;
-  height: 60%;
+  height: 85%;
   border-radius: 0.6em;
 }
 
@@ -449,7 +443,7 @@ h3 {
   display: flex;
   align-items: center;
   gap: 0.5em;
-  margin-top: 0.2em;
+  margin-top: 2em;
 }
 
 #messageInput {
@@ -459,6 +453,14 @@ h3 {
   padding: 0.6em;
   height: 3em;
   box-sizing: border-box;
+  margin-top: 2em;
+  margin-bottom: 2em;
+}
+
+#send-message-area p {
+  background-color: #e0e0e0;
+  border-radius: 0.4em;
+  padding: 0.5em;
 }
 
 .button-send {
@@ -477,13 +479,6 @@ h3 {
   background-color: #ff1493;
 }
 
-#send-message-area p {
-  background-color: #e0e0e0;
-  border-radius: 0.4em;
-  padding: 0.5em;
-  margin-bottom: 0.5em;
-}
-
 .apiKeyContainer {
   display: flex;
   flex-direction: column;
@@ -492,19 +487,17 @@ h3 {
   height: 80vh;
   box-sizing: border-box;
   padding: 1em;
-
   overflow: hidden;
 }
 
 .cats {
-  width: 14%;
+  width: 45%;
 }
 
 #apiKeyInput {
   padding: 0.6em;
   margin-bottom: 1em;
-  width: 100%;
-  max-width: 400px;
+  width: 90%;
   border: 2px solid #ffb6c1;
   border-radius: 0.4em;
   box-sizing: border-box;
@@ -519,64 +512,292 @@ h3 {
   cursor: pointer;
   font-size: 1em;
   box-sizing: border-box;
+  width: 90%;
+}
+
+.container-error {
   width: 100%;
-  max-width: 400px;
+  height: 100%;
+  margin-bottom: 30em;
+  margin-top: 5em;
+}
+
+.error-h {
+  text-align: center;
+  font-family: "Fresca", sans-serif;
+  font-weight: 600;
+}
+
+.error-p {
+  text-align: center;
+  font-family: "Fresca", sans-serif;
+  font-weight: 500;
+}
+
+footer {
+  text-align: center;
+  bottom: 0;
+  position: relative;
+  font-family: "Fresca", sans-serif;
+  font-weight: 500;
+  margin-top: 5em;
 }
 
 @media (min-width: 768px) {
+  body {
+    overflow-x: hidden;
+    min-height: 100vh;
+  }
+
+  nav {
+    display: flex;
+    justify-content: flex-end;
+    padding: 0.9em;
+  }
+
+  nav a {
+    font-size: 1.3em;
+    letter-spacing: 0.05em;
+    font-weight: 700;
+    margin-right: 3em;
+    transition: color 0.3s ease;
+  }
+
+  .home-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 1em;
+    overflow: hidden;
+    box-sizing: border-box;
+    position: relative;
+    margin-top: 6em;
+    margin-left: 4.5em;
+    min-height: 60vh;
+    width: 90%;
+    top: 3%;
+    border-radius: 1.4em;
+    overflow: visible;
+  }
+
+  .home-welcome {
+    background-color: rgba(247, 245, 246, 0);
+    font-family: "Fresca", sans-serif;
+    font-size: 1.3em;
+    letter-spacing: 0.05em;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    font-weight: 550;
+    color: #f0ecf3;
+    text-align: center;
+    white-space: pre-line;
+    padding: 1em;
+    display: inline-block;
+    border-radius: 0.5em;
+    max-width: 50%;
+    margin-right: 18em;
+  }
+
+  .logo-sailor {
+    width: 27%;
+    margin-right: 18em;
+  }
+
+  .img-banner {
+    max-width: 20%;
+    position: absolute;
+    top: 4em;
+    margin-left: 50em;
+    height: auto;
+    z-index: 2;
+  }
+
+  .button-link {
+    background-color: #fe6ad0;
+    width: 20%;
+    height: 2.4em;
+    padding: 0.45em;
+    border-radius: 0.4em;
+    margin-top: 0;
+    font-size: 1.2em;
+    letter-spacing: 0.1em;
+    font-family: "Fresca", sans-serif;
+    font-weight: 500;
+    color: #fbfcf9;
+    box-shadow: 0px 0px 13px 3px rgb(249, 248, 250);
+    text-decoration: none;
+    cursor: pointer;
+    border: none;
+    margin-top: 0.1em;
+    transition:
+      transform 0.3s ease,
+      box-shadow 0.3s ease;
+  }
+
+  .container-max {
+    display: flex;
+    justify-content: space-between;
+    gap: 5em;
+  }
+
+  .filters-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5em;
+    align-items: flex-start;
+    position: relative;
+    width: 17.5%;
+    height: 20%;
+    margin-left: 5em;
+    margin-top: 12em;
+    padding-left: 2em;
+    padding-right: 2em;
+    padding-bottom: 2em;
+  }
+
+  .cat {
+    width: 10%;
+    position: absolute;
+    top: 20%;
+    left: 15%;
+  }
+
+  .search {
+    padding: 1em;
+    letter-spacing: 0.2em;
+    font-size: 1.1em;
+    width: 100%;
+    height: 3.5em;
+    text-align: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  #filterBy {
+    font-size: 1em;
+    border: none;
+    border-radius: 0.4em;
+    cursor: pointer;
+    box-sizing: border-box;
+    width: 17em;
+    height: 2.4em;
+    text-align: center;
+    outline: none;
+    margin-top: 7em;
+  }
+
+  #sortBy {
+    padding: 0.6em;
+    font-size: 1em;
+    box-sizing: border-box;
+    width: 17em;
+    height: 2.4em;
+  }
+
+  .clear-filters {
+    height: 2.4em;
+    width: 17em;
+    font-size: 1em;
+  }
+
+  .resultado-div {
+    padding: 0.6em;
+    border-radius: 0.2em;
+    width: 100%;
+    font-size: 1em;
+  }
+
   .card-container {
     display: grid;
     grid-template-columns: repeat(2, 45%);
+    gap: 2.5em;
+    margin-top: 9em;
     width: 75%;
     height: 70%;
-    margin-left: 4em;
+    margin-left: 2.5em;
   }
 
   .card-list {
-    width: 100%;
+    border-radius: 1.2em;
     margin-bottom: 2em;
-  }
-
-  .wing-filters {
-    top: 14%;
+    padding-bottom: 0;
   }
 
   .card-container h2 {
     font-size: 1.2em;
-    width: 100%;
-    margin-left: 0.8em;
+    letter-spacing: 0.05em;
+    padding: 0.4em;
+    width: 90%;
+    max-width: 100%;
+    margin-top: 0.4em;
+    margin-left: 0.85em;
+    font-weight: 650;
   }
 
-  .img[itemprop="image"] {
+  .div-item {
+    display: flex;
+    align-items: center;
+  }
+
+  img[itemprop="image"] {
     height: 18em;
-    width: 17em;
+    width: 14em;
+    margin-left: 0.7em;
   }
 
-  .card-decorative-image {
-    width: 8.5%;
-    top: 51%;
-    left: 3%;
+  .item-facts {
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    margin-left: 0.9em;
   }
 
-  .filters-container {
-    margin-left: 6em;
+  .sign {
+    letter-spacing: 0.01em;
+    font-size: 1.2em;
+    padding: 0.4em;
+    border-radius: 0.3em;
+    margin-bottom: 0.2em;
+  }
+
+  .date {
+    letter-spacing: 0.01em;
+    font-size: 1.2em;
+    color: #9043e4;
+    padding: 0.4em;
+    border-radius: 0.3em;
+    margin: 0;
   }
 
   .type {
     font-size: 1.2em;
+    letter-spacing: 0.05em;
     width: 60%;
+    margin-top: 0.7em;
     margin-left: 5.1em;
+    padding-top: 0.4em;
+    padding-bottom: 0.4em;
+    border-radius: 0.2em;
   }
 
   h3 {
     font-size: 1em;
+    letter-spacing: 0.03em;
+    padding: 0.4em;
+    font-weight: 300;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
   }
 
   .chat-button {
-    margin-left: 6.2em;
-    margin-bottom: 1em;
-    margin-top: 0.7em;
+    width: 50%;
+    padding: 0.45em;
     font-size: 1.2em;
+    font-weight: 550;
+    letter-spacing: 0.03em;
+    margin-left: 6em;
   }
 
   .container-max {
@@ -590,47 +811,99 @@ h3 {
     align-items: center;
     width: 40%;
     height: 80vh;
-    background-color: #e19eff;
     border-radius: 1em;
-    box-shadow: 0 4px 8px rgba(244, 242, 245, 0.5);
     overflow: hidden;
     margin-top: 3em;
     gap: 1.8em;
-    margin-left: 35%;
+    margin-left: 31%;
   }
 
   .chat-title {
-    color: white;
-    font-family: "Fresca", sans-serif;
     font-size: 1.2em;
     letter-spacing: 0.04em;
-    background-color: #e676f0;
-    width: 25%;
+    width: 40%;
     text-align: center;
     padding: 0.2em;
     border-radius: 0.2em;
-  }
-
-  #send-message-area {
+    margin-top: 2em;
   }
 
   #chat-form {
     gap: 0.5em;
-    margin-top: 0.2em;
-  }
-
-  #messageInput {
-    margin-bottom: 1.5em;
+    margin-top: 1.5em;
   }
 
   .button-send {
     height: 3em;
     width: 90%;
-    margin-bottom: 1.5em;
   }
 
   #send-message-area p {
     padding: 0.5em;
-    margin-bottom: 0.5em;
+  }
+
+  .apiKeyContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+    box-sizing: border-box;
+    padding: 1em;
+    overflow: hidden;
+  }
+
+  .cats {
+    width: 14%;
+    position: absolute;
+    margin-top: -15em;
+  }
+
+  #apiKeyInput {
+    padding: 0.6em;
+    margin-bottom: 1em;
+    width: 50%;
+    border-radius: 0.4em;
+    box-sizing: border-box;
+  }
+
+  #saveApiKeyButton {
+    padding: 0.6em 1.2em;
+    background-color: #ff69b4;
+    color: #fff;
+    border: none;
+    border-radius: 0.4em;
+    cursor: pointer;
+    font-size: 1em;
+    box-sizing: border-box;
+    width: 50%;
+  }
+
+  .container-error {
+    width: 100%;
+    margin-bottom: 30em;
+  }
+
+  .error-h {
+    margin-left: 2em;
+    margin-top: 2em;
+    font-family: "Fresca", sans-serif;
+    font-weight: 700;
+  }
+
+  .error-p {
+    margin-left: 4.2em;
+    max-height: 100%;
+    font-family: "Fresca", sans-serif;
+    font-weight: 700;
+  }
+
+  footer {
+    margin-left: 80%;
+    bottom: 0;
+    position: relative;
+    font-family: "Fresca", sans-serif;
+    font-weight: 600;
+    color: #c03bc0;
   }
 }
