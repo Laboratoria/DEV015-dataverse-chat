@@ -1,20 +1,17 @@
-import  data  from "../data/dataset.js";
+import data from "../data/dataset.js";
 import { card } from "../Components/Card.js";
-import { createHeader } from "../components/header.js"; 
+import { createHeader } from "../components/header.js";
 import { createFooter } from "../Components/footer.js";
-import {filtroyorden} from "../Components/filtroyorden.js";
+import { filtroyorden } from "../Components/filtroyorden.js";
+import { api } from "../views/api.js";
 
-export const Home = () => {
+export const Home = (props) => {
+
   const div = document.createElement("div");
+  div.appendChild(createHeader());
+  div.appendChild(api());
 
-  const header = createHeader();
-  div.appendChild(header);
-
-  const subtitle = document.createElement ("h2")
-  subtitle.innerHTML = "¡Bienvenidos fans de Disney y Pixar! Explora nuestro mágico contenido y descubre las novedades de este fantástico mundo donde puedes chatear con tus películas favoritas";
-  div.appendChild(subtitle);
-
-div.appendChild(filtroyorden());
+  
 
   const showCard = (data) => {
     const ulElement = document.createElement("ul");
@@ -25,13 +22,15 @@ div.appendChild(filtroyorden());
     });
     return ulElement;
   };
+  const element = showCard(data);
 
-  div.appendChild(showCard(data)); 
-  
+  div.appendChild(filtroyorden(element));
+
+  div.appendChild(element);
+
+ 
 
   const footer = createFooter();
   div.appendChild(footer);
   return div;
 };
-
-

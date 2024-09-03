@@ -1,4 +1,4 @@
-import {Home} from './views/Home.js';
+import {Home} from '../views/Home.js';
 import {Films} from './views/Peliculas.js';
 import { setRootEl, setRoutes, onURLChange } from './router.js';
 

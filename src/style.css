@@ -152,10 +152,10 @@ select {
   font-family: "Montserrat Alternates", sans-serif;
   font-size: 100%;
   color: black;
-  background-color: #fcf0c6;
+  background-color: #cfeeff;
   padding: 10px;
   border: solid;
-  border-color: #ffd034;
+  border-color: #9480fb;
   font-weight: bold;
   cursor: pointer;
   cursor: pointer;
@@ -165,10 +165,10 @@ select {
 option {
   font-size: 100%;
   color: black;
-  background-color: #fcf0c6;
+  background-color: #cfeeff;
   font-family: "Montserrat Alternates", sans-serif;
   padding: 10px;
-  border-color: #ffd034;
+  border-color: #9480fb;
   border-width: 3px;
   border-style: solid;
   cursor: pointer;
@@ -179,11 +179,11 @@ button {
   font-family: "Montserrat Alternates", sans-serif;
   font-weight: bold;
   font-size: 100%;
-  background-color: #fcf0c6;
+  background-color: #cfeeff;
   color: black;
   padding: 10px;
   border: solid;
-  border-color: #ffd034;
+  border-color: #9480fb;
   border-width: 3px;
   border-radius: 20px;
   cursor: pointer;
@@ -211,6 +211,9 @@ button {
   justify-content: center;
   max-width: 100%;
   max-height: 100%;
+}
+.contenedorImagen img {
+  width: 100%;
 }
 
 .contenedorTextos {

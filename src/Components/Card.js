@@ -26,10 +26,10 @@ export const card = (item) => {
     </div>
     `;
     
-  ( liElement.addEventListener('click', () => { 
+   liElement.addEventListener('click', () => { 
     console.log(item.id)
         navigateTo('/peliculas', {id: item.id});
-    }));
+    });
     return liElement;
 };
 

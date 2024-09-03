@@ -4,7 +4,7 @@ export const cardMovie = (item) => {
 
     divElement.innerHTML = `
     <div>
-    <h1> ${item.name} </h1>
+    <h2> ${item.name} </h2>
     <div class="contenedorImagen">
         <img src="${item.imageUrl}" alt="${item.id}">
       </div>
