@@ -20,12 +20,5 @@ export default function renderCard(item) {
         </div>
     </div>
 `;
-  //const imgEl = document.createElement('img');
-  //imgEl.src = './images/moonstick.png';
-  //imgEl.alt = 'Decorative Image';
-  //imgEl.classList.add('card-decorative-image');
-
-  //li.appendChild(imgEl);
-
   return li;
 }

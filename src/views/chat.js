@@ -1,6 +1,11 @@
 import { communicateWithApi } from "../lib/comunicateApiKey.js";
+import data from "../data/dataset.js";
 
-export default function renderChat({ id, name }) {
+
+export default function renderChat({ id }) {
+  const character = data.find(char => char.id === id);
+  const name = character.name; // Obtener el nombre usando el id
+
   const container = document.createElement("div");
   container.id = "chat-view";
 
@@ -47,7 +52,6 @@ export default function renderChat({ id, name }) {
         messageArea.appendChild(responseMessageElement);
         messageArea.scrollTop = messageArea.scrollHeight;
       } catch (error) {
-        console.error("Error al comunicar con la API:", error);
         const errorMessageElement = document.createElement("p");
         errorMessageElement.textContent = "Hubo un error al enviar el mensaje.";
         messageArea.appendChild(errorMessageElement);
