@@ -1,14 +1,14 @@
-import renderChat from "./views/chat.js"; // Asegúrate de que la ruta sea correcta
+import renderChat from "./views/chat.js"; 
 
 let routes = {};
 let rootEl = null;
 
-export function setRoutes(newRoutes) {
-  routes = newRoutes;
+export function setRoutes(ROUTES) {
+  routes = ROUTES;
 }
 
-export function setRootEl(el) {
-  rootEl = el;
+export function setRootEl(rootElement) {
+  rootEl = rootElement;
 }
 
 // Convierte la cadena de consulta en un objeto
@@ -72,7 +72,6 @@ export function initRouter() {
     }
   });
 }
-
 // Controla lo cambios en la URL
 export function onURLChange(location) {
   const path = location.pathname;

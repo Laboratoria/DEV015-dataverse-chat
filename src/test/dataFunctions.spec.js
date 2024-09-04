@@ -3,7 +3,6 @@ import { filterData, sortData, computeStats } from "../lib/dataFunction.js";
 import { data as fakeData } from "../test/data.js";
 import { data as fakeDataOrder } from "../test/dataOrdenada.js";
 
-//console.log(fakeData);
 
 describe('pruebas para funcion "filterData"', () => {
   it('retorna data filtrada por option "guardian sistema solar interno"', () => {
