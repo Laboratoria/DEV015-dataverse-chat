@@ -40,7 +40,7 @@ h3 {
   margin-top: 0;
 }
 
-.botonDatos {
+/*.botonDatos {
   cursor: pointer;
   position: relative;
   padding: 10px 20px;
@@ -96,7 +96,7 @@ h3 {
   max-width: 37.5rem;
   margin: 0 auto;
   padding: 1.25rem;
-}
+}*/
 
 .datosdisney {
   list-style-type: none;
@@ -246,11 +246,18 @@ button {
   color: black;
 }
 
+.divContenedor {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  margin-left: 0.5rem;
+  align-items:center;
+}
 .infoMovie {
   font-family: "Montserrat Alternates", sans-serif;
   color: #000;
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   flex-direction: column;
   background-color: rgba(255, 255, 255, 0.9);
   gap: 1rem;
@@ -261,6 +268,44 @@ button {
   border-radius: 1.25rem;
   color: black;
   image-rendering: 1rem;
+  align-items: ;
+}
+
+.imagenDiv {
+  height: 40rem;
+  width: auto;
+}
+
+.chatMovie {
+  border: 1px solid #ccc;
+  padding: 10px;
+  width: 300px;
+}
+
+.chatContenedor {
+  display: flex;
+  flex-direction: column;
+  height: 400px;
+}
+
+.chatHistorial {
+  flex: 1;
+  border: 1px solid #ddd;
+  padding: 10px;
+  overflow-y: auto;
+}
+
+.chatInput {
+  display: flex;
+}
+
+#chatMessage {
+  flex: 1;
+  padding: 5px;
+}
+
+#chatSend {
+  padding: 5px 10px;
 }
 
 footer {

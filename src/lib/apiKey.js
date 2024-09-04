@@ -1,4 +1,4 @@
-// src/lib/apiKey.js
+
 
 export const getApiKey = () => {
     return localStorage.getItem('apiKey');
