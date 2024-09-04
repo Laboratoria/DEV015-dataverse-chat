@@ -116,7 +116,6 @@
   .banner {
     width: 100%;
     height: 100vh; /* Ajusta la altura al 100% de la vista */
-  
     height: 1000px;
     background-image: url(assets/dogi.jpg);
     background-size: cover; /* Hace que la imagen cubra todo el área */

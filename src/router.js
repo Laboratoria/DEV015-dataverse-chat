@@ -18,6 +18,8 @@ export const renderView = (pathname, props = {}) => {
   const view = ROUTES[pathname] || ROUTES['/'];
   if (view) {
     rootEl.appendChild(view(props)); 
+  } else {
+    navigateTo('/404');
   }
 };
 

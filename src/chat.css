@@ -1,0 +1,370 @@
+
+/* Estilos para pantallas móviles primero */
+
+.section-p2 {
+    display: flex;
+    flex-direction: column; /* Coloca los divs en columna por defecto */
+    gap: 45px;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    margin-top: 2em;
+    margin-bottom: 3em;
+}
+
+.item {
+    width: 100%; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 600px;
+}
+
+.pri{
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    
+}
+
+.sec{
+    display: grid;
+    grid-template-rows: repeat(3, min-content);
+    height: calc(100vh - 70px);
+    
+}
+
+.item h1, .item h3, .item p {
+    margin: 0;
+}
+
+.item h1 {
+    font-size: 2em; 
+}
+
+.item h3 {
+    font-size: 1.2em;
+    color: #555;
+    margin-top: 10px;
+}
+
+.item p {
+    width: 90%; 
+    color: #555;
+    margin-top: 10px;
+    font-size: 1em;
+    line-height: 1.5;
+}
+
+.photo-dog, .chat-message-photo{
+    width: 50px;
+    border-radius: 3em;
+}
+
+.chat-title {
+    width: 100%; /* Ajusta el ancho al 100% del contenedor */
+}
+
+.chat-title-text{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 1rem 2rem;    
+    justify-content: flex-start;
+    gap: 1em;
+}
+
+.title-details>h1{
+    color: #F7882F;
+}
+
+.title-details-online{
+    display: flex;
+    align-items: center;
+}
+
+.title-details>span>i{
+    color: #28A745;
+    font-size: 0.6em;
+    margin-right: 3px;
+}
+
+.chat-message {
+    height: 450px;  
+    padding: 0.5rem 0.5rem;
+    height: calc(100vh - 210px);
+    overflow-y: auto; /* Para hacer scroll si los mensajes son muchos */
+    animation: fadeIn 0.5s ease; /* Añade una pequeña animación de fadeIn */
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.chat-message-date{
+    text-align: center;
+    padding: 1em;
+}
+
+.chat-message-container {
+    display: flex;
+    gap: 1em;
+    padding: 1rem 3rem;
+    flex: 1; /* Permite que el contenedor de mensajes se expanda */
+    overflow-y: auto; /* Permite el desplazamiento vertical si el contenido excede el alto */
+    align-items: center;
+    animation: slideIn 0.4s ease; /* Animación para que el mensaje "aparezca" */
+}
+
+@keyframes slideIn {
+    from { transform: translateY(100%); }
+    to { transform: translateX(0); }
+}
+
+.chat-text{
+    background-color: #E8F0F7;
+    padding: 10px; /* Espaciado interno */
+    border-radius: 10px;
+    border-color: #E8F0F7;
+    line-height: 1.3;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Añadido shadow */
+   
+}
+
+.chat-input{
+    padding: 1rem 1.6rem;  
+    display: flex; 
+    align-items: center;
+    gap: 0.7em;
+
+}
+
+.chat-input-button{
+    width: 2rem;
+    height: 2rem;
+    cursor: pointer;
+    background-color: #f4f6f9;
+    border: none;
+    color: #F7882F;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+}
+
+.chat-input-button:hover {
+    transform: scale(1.1);
+}
+
+.chat-input-button i {
+    margin-right: 5px; /* Espacio entre el icono y el texto del botón */
+}
+
+.chat-input-text{
+    flex: 1;
+    width: 90%;
+    border-radius: 1rem;
+    padding-top:15px;
+    padding-left: 20px;
+    font-size: 0.9em;
+    border: transparent;
+    background-color: #f6ece4;
+    transition: border-color 0.3s ease;
+}
+
+/* Efecto de enfoque para el input */
+.chat-input-text:focus {
+    border-color: #F7882F;
+    outline: none; /* Quita el borde por defecto */
+    box-shadow: 0 0 5px rgba(247, 136, 47, 0.5); /* Sombra cuando está en foco */
+}
+
+.item-sec-text{
+    line-height: 24px
+}
+
+.item-sec-img{
+    width: 100%;
+    text-align: center;
+}
+
+.item-sec-text-name>span>i{
+    font-size: 1.3em;
+    margin-right: 10px;
+    color: #ffa053;
+}
+
+.item-sec-text-name>span>a{
+    font-size: 2em;
+}
+
+.item-sec-text-name>span{
+    color: #ffa053;
+    display: flex;
+    align-items: center;
+}
+
+
+
+.item-sec-text-description span {
+    color: #555;
+    display: block; /* Para que el texto largo respete los márgenes */
+}
+
+.item-sec-img-background{
+    width: 100%;
+    height: auto;
+    max-width: 300px;
+    max-height: 400px;
+    object-fit: cover;
+}
+
+.item-sec-text{
+    text-align: start;
+    padding: 20px;
+}
+
+.item-sec-text-name{
+    margin-bottom: 1em;
+   
+}
+
+.item-sec-text-description{
+    margin-bottom: 0.7em;
+}
+
+.item-sec-text-curiosity{
+    margin-bottom: 1.5em;
+    
+}
+
+.item-sec-text-adoption {
+    text-align: center;
+
+}
+
+.item-sec-text-extra-info{
+    gap: 10px;
+    display: inline-flex;
+    margin-bottom: 1em;
+}
+
+.item-sec-text-extra-info>span{
+    padding: 0.3em;
+    border-radius: 0.5em;
+    box-shadow: 0 4px 6px rgba(165, 165, 165, 0.1); /* Sombra inicial */
+}
+.item-sec-text-extra-info>span>i{
+    color: #ffa053;
+}
+
+.gender, .age, .size, .behaviour {
+    background-color: #f8f8f8;
+    color: #848485;
+}
+
+.item-sec-text-curiosity{
+ color: #555;
+}
+
+.item-sec-text-adoption-descripcion{
+    color: #F7882F;
+}
+
+.item-sec-text-adoption {
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    display: flex;
+    justify-content: space-around;
+    gap: 15px; /* Espacio entre los botones */
+}
+
+.adopt-btn, .donate-btn {
+    padding: 10px 55px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.adopt-btn {
+    background-color: #f8d65d; /* Verde para Adoptar */
+    color: white;
+    border-radius: 3em;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra inicial */
+}
+
+.adopt-btn:hover {
+    background-color: #ecc331; /* Efecto hover para Donate */
+    transform: scale(1.05); /* Aumenta ligeramente el tamaño */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Sombra más intensa en hover */
+}
+
+/* Estilo para el botón de "Donate" */
+.donate-btn {
+    background-color: #F7882F; /* Naranja para Donar */
+    color: white;
+    border-radius: 3em;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra inicial */
+}
+
+.donate-btn:hover {
+    background-color: #e35b32; /* Efecto hover para Donate */
+    transform: scale(1.05); /* Aumenta ligeramente el tamaño */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Sombra más intensa en hover */
+}
+
+/* Media queries para pantallas más grandes */
+@media (min-width: 992px) {
+   
+    .section-p2 {
+        flex-direction: row;
+        gap: 20px; 
+    }
+
+    .item h1 {
+        font-size: 2.6em; 
+    }
+
+    .item p {
+        font-size: 1.1em;
+    }
+
+    .chat-message {
+        height: 450px;  
+        padding: 0.5rem 0.5rem;
+        height: calc(100vh - 30px);
+        overflow-y: auto; /* Para hacer scroll si los mensajes son muchos */
+        animation: fadeIn 0.5s ease; /* Añade una pequeña animación de fadeIn */
+    }
+}
+
+@media (min-width: 992px) {
+    
+    .pri{
+        width: 60%; 
+    }
+
+    .sec{
+        width: 40%;
+    }
+
+    .item h1 {
+        font-size: 3em;
+    }
+}
+
+@media (min-width: 1100px) {
+
+    .item h1 {
+        font-size: 3.3em;
+    }
+
+    .item h3 {
+        font-size: 1.4em;
+    }
+
+    .item p {
+        font-size: 1.2em;
+    }
+}

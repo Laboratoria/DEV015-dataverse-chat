@@ -1,17 +1,8 @@
+
 const notFound = () => {
-  //Creamos la vista
-  const notFoundView = document.createElement("body");
-  notFoundView.classList.add("container-not-found");
-
-  notFoundView.innerHTML = `
-        <div class="copy-container center-xy">
-            <p>
-        404, page not found.
-        </p>
-        <span class="handle"></span>
-
-        </div>
-  `;
+  const element = document.createElement('div');
+  element.innerHTML = `<h1>404 - Not Found</h1>`;
+  return element;
 };
 
 export default notFound;
