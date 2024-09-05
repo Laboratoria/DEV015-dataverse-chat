@@ -63,7 +63,8 @@ export default function Character() {
       // Manejador de eventos para el botón de chat
       chatButton.addEventListener("click", (event) => {
         event.stopPropagation(); // Evita que el clic en el botón propague al elemento cardEl
-        navigateTo(`/chat/${item.id}`);
+        navigateTo(`/chat/${item.id}`, { name: item.name });
+
       });
 
       cardEl.appendChild(chatButton);
