@@ -74,5 +74,12 @@ export const filtroyorden = (element) => {
     element.innerHTML = "";
     element.appendChild(listaOrdenada);
   });
+
+  // button.addEventListener("click", () => {
+  //   selectoresEpoca.value = "0";
+  //   selectoresOrden.value = "orden";
+  //   // updateList(data); // Muestra todos los datos sin filtros ni orden
+  // });
+
   return div;
 };

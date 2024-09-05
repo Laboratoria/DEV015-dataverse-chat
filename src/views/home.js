@@ -6,12 +6,9 @@ import { filtroyorden } from "../Components/filtroyorden.js";
 import { api } from "../views/api.js";
 
 export const Home = (props) => {
-
   const div = document.createElement("div");
   div.appendChild(createHeader());
   div.appendChild(api());
-
-  
 
   const showCard = (data) => {
     const ulElement = document.createElement("ul");
@@ -27,8 +24,6 @@ export const Home = (props) => {
   div.appendChild(filtroyorden(element));
 
   div.appendChild(element);
-
- 
 
   const footer = createFooter();
   div.appendChild(footer);

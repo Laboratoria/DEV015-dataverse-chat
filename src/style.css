@@ -278,20 +278,21 @@ button {
 
 .chatMovie {
   border: 1px solid #ccc;
-  padding: 10px;
-  width: 300px;
+  padding: 0.9rem;
+  width: 25rem;
 }
 
 .chatContenedor {
   display: flex;
   flex-direction: column;
-  height: 400px;
+  height: 31.25rem;
 }
 
 .chatHistorial {
-  flex: 1;
-  border: 1px solid #ddd;
-  padding: 10px;
+    flex: 1;
+  border: 0.3rem solid #7d5ca6;
+  background-color: rgba(63, 62, 105, 0.9);
+  padding: 1rem;
   overflow-y: auto;
 }
 
@@ -302,6 +303,7 @@ button {
 #chatMessage {
   flex: 1;
   padding: 5px;
+  color:#000
 }
 
 #chatSend {
