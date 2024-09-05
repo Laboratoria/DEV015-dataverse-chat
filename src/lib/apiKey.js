@@ -1,4 +1,3 @@
-// src/lib/apiKey.js
 
 export const getApiKey = () => {
 // Implementa el código para obtener la API KEY desde Local Storage

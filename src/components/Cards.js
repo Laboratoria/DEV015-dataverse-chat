@@ -25,9 +25,11 @@ export const Cards = () => {
         <div itemprop="breed"><strong>Raza:</strong> ${pet.facts.breed}</div>
         <div itemprop="size"><strong>Tamaño:</strong> ${pet.facts.size}</div>
         <div itemprop="temperament"><strong>Comportamiento:</strong> ${pet.facts.temperament}</div>
+        <div class="content-tarjeta-button">
         <button class="tarjeta-button">
           <img class="tarjeta-button-icon" src="./assets/icon-chat.png" alt="chat icon" itemprop="image"/>
         </button>
+        </div>
       </li>
     `;
   };
@@ -66,7 +68,7 @@ export const Cards = () => {
       <section class="mascotas-tarjetas">
         <h2 class="nuestras-mascotas">
           <span>Our pets</span>
-          <p>Simply dummy text of the printing and typesetting industry.</p>
+          <p>All our pets come with a gift kit that includes: bath, bed, cookies, Wuf collar, ID tag, clothing, spa session, identification microchip, flea prevention, and much more!</p>
           <p class="numeroAdoptados"></p>
         </h2>
         <div class="mascotas-barra">

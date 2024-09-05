@@ -45,6 +45,9 @@ export const navigateTo = (pathname = {}, props = {}) => {
 
   // Render the corresponding view
   renderView(pathname, props);
+
+  // Ensure the page scrolls to the top after rendering the view
+  window.scrollTo(0, 0);
 };
 
 export const onURLChange = () => {

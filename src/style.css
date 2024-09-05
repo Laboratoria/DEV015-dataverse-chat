@@ -355,6 +355,9 @@
     line-height: 1em;
     margin-top: 10px;
     color: #292929;
+    max-width: 80%;
+    line-height: 1.5em;
+
   }
   
   .titulo-secundario {
@@ -472,19 +475,21 @@
 .tarjeta-button{
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: right;
   padding: 5px;
-  margin-inline: auto;
-  width: 8rem;
   border: none;
   background: var(--clr-neutro-light);
   cursor: pointer;
 }
 
 .tarjeta-button-icon{
-  width: 50%;
+  width: 25%;
 }
-  
+
+.content-tarjeta-button{
+  width: 100%;
+}
+
   /* Footer */
   
   footer{

@@ -294,10 +294,14 @@ function renderItems(pets) {
     // Añadir el evento al botón
     const buttonElement = petItem.querySelector('.tarjeta-button');
     buttonElement.addEventListener('click', () => {
-      const petId = event.target.closest('.tarjeta').querySelector('img').alt; // Suponiendo que el alt es el ID
+      const petId = event.target.closest('.tarjeta').querySelector('img').alt; 
       console.log('Button Cards:' + petId);
 
-      navigateTo('/individualChat', { id: pet.id });
+      if (petId) {
+        navigateTo('/individualChat', { id: petId });
+      } else {
+        console.error('No se encontró el ID de la mascota.');
+      }
 
     });
 

@@ -2,7 +2,13 @@ export const Banner = () => {
   return `
   <!-- Desktop Banner -->
     <section class="banner">
-      <div class="izquierda"></div>
+      <div class="izquierda">
+        <div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+      </div>
       <div class="derecha">
           <div class="texto">
               <h1>Get your family a new member</h1>
