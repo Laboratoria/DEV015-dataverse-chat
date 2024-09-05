@@ -54,7 +54,7 @@ Historial de Cambios: Los cambios realizados en el conjunto de datos se guardan 
 
 ![Prototipo de alta fidelidad](images/prototipo.jpg)
 
-
+Test de usabilidad:
 Para llevar a cabo los test de usabilidad en mi proyecto Dataverse Chat, seguí un enfoque iterativo, recopilando retroalimentación directa de las usuarias objetivo en varias etapas del desarrollo. A continuación, detallo los problemas de usabilidad que detecté durante los test y las mejoras que implementé en la propuesta final:
 
 1. Problema: Dificultad para navegar entre conjuntos de datos

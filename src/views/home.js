@@ -1,6 +1,6 @@
 import { navigateTo } from "../router.js";
 
-export default function Home( ) {
+export default function Home() {
   const viewEl = document.createElement("div");
   viewEl.classList.add("home-container");
 
@@ -28,7 +28,7 @@ export default function Home( ) {
   // Agrega un manejador de eventos al botón
   linkEl.addEventListener("click", (event) => {
     event.preventDefault(); // Previene el comportamiento por defecto del enlace
-    navigateTo("/character", { name: "cards", id: "100" }); // Navega a la página "character" con propiedades
+    navigateTo("/character"); // Navega a la página "character" con propiedades
   });
 
   // Añade el botón al elemento de vista
