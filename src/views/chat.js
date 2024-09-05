@@ -10,7 +10,7 @@ export default function renderChat({ id }) {
   container.id = "chat-view";
 
   const title = document.createElement("h1");
-  title.textContent = `Chat Sailor ${name}`;
+  title.textContent = `Chat Sailor: ${name}`;
   title.classList.add("chat-title");
   container.appendChild(title);
 

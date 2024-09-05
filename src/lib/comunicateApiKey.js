@@ -22,7 +22,7 @@ export const communicateWithApi = (messages, characterId, name) => {
       max_tokens: 150,
     }),
   })
-    .then((response) => response.json())
+    .then((response) => response.json()) // La solicitud se completó sin errores. then maneja el resultado de una promesa.
     .then((data) => {
 
       if (data && data.choices && data.choices.length > 0) {

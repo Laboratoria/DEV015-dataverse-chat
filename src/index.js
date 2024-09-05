@@ -3,7 +3,7 @@ import Character from "./views/characterOld.js";
 import ErrorView from "./views/errorView.js";
 import viewApi from "./views/viewApi.js";
 import renderChat from "./views/chat.js";
-import { setRootEl, setRoutes, onURLChange, initRouter } from "./router.js";
+import { setRootEl, setRoutes, onURLChange } from "./router.js";
 
 //CONFIGURAR EL ROUTER
 
@@ -21,16 +21,9 @@ setRoutes(routes);
 
 // Configura el elemento raíz
 window.addEventListener("DOMContentLoaded", () => {
-  const rootElement = document.getElementById("root"); //
+  const rootElement = document.getElementById("root"); 
   if (rootElement) {
     setRootEl(rootElement);
     onURLChange(window.location);
   } 
-});
-// Inicia el router
-initRouter();
-
-// Maneja la navegacion de ir ahacia delante o atrás
-window.addEventListener("popstate", () => {
-  onURLChange(window.location);
 });
