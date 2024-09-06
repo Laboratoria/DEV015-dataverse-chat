@@ -16,7 +16,7 @@ export default function Character() {
 
   const wingEl = document.createElement("img");
   wingEl.src = "./images/cat.png";
-  wingEl.alt = "wing sailor filters";
+  wingEl.alt = "cat sailor filters";
   wingEl.classList.add("cat");
   viewEl.appendChild(wingEl);
 
@@ -63,7 +63,7 @@ export default function Character() {
       // Manejador de eventos para el botón de chat
       chatButton.addEventListener("click", (event) => {
         event.stopPropagation(); // Evita que el clic en el botón propague al elemento cardEl
-        navigateTo(`/chat/${item.id}`, { name: item.name });
+        navigateTo(`/chat/${item.id}`, { name: (item.name) });
 
       });
 
@@ -83,11 +83,7 @@ export default function Character() {
 
     let dataFiltrada = copiaData;
     if (valorSeleccionadoFilterBy !== "") {
-      dataFiltrada = filterData(
-        copiaData,
-        "tipoGuardian",
-        valorSeleccionadoFilterBy,
-      );
+      dataFiltrada = filterData(copiaData, "tipoGuardian", valorSeleccionadoFilterBy,);
     }
     const dataOrdenada = sortData(dataFiltrada, "name", sortOrder);
     load(dataOrdenada);

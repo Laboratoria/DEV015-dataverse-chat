@@ -23,22 +23,22 @@ export function queryStringToObject(queryString) {
 
 // Actualiza el historial del navegador y renderiza la vista
 export function navigateTo(pathname, props = {}) {
-  // Construir la nueva URL usando pathname, id y name solo si están definidos
-  const newPath = `${pathname}${props.id ? `/${props.id}` : ''}${props.name ? `/${props.name}` : ''}`;
-
+  
+  const queryParams = new URLSearchParams(props).toString();
+  const newPath = `${window.location.origin}${pathname}${queryParams ? `?${queryParams}` : ''}`;
   // Actualizar la URL sin recargar la página
   history.pushState(props, '', newPath);
 
-  // Crea una nueva URL para obtener pathname y los parámetros de consulta
-  const location = new URL(pathname, window.location.origin);
-  const newPathname = location.pathname; // Cambia el nombre de la variable
-  const newProps = queryStringToObject(location.search); // Cambia el nombre de la variable
+  // Obtener la nueva ruta y propiedades desde la URL
+  const newPathname = location.pathname; // Nuevo pathname
+  const newProps = queryStringToObject(location.search); // Convertir la query string a objeto
 
-  // Renderiza la vista correspondiente
+  // Renderizar la vista correspondiente
   renderView(newPathname, newProps);
 }
 
-export function renderView(pathname, queryParams) {
+
+function renderView(pathname, queryParams) {
   // Verifica si la ruta es exactamente igual a una ruta en el objeto routes
   if (routes[pathname]) {
     const view = routes[pathname];
@@ -66,7 +66,7 @@ export function renderView(pathname, queryParams) {
 // Controla lo cambios en la URL
 export function onURLChange(location) {
   const path = location.pathname;
-  const queryParams = queryStringToObject(location.search);
+  const queryParams = queryStringToObject(location.search); // Convierte la cadena de consulta (query string) de la URL en un objeto
   renderView(path, queryParams);
 }
 

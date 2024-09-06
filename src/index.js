@@ -24,6 +24,6 @@ window.addEventListener("DOMContentLoaded", () => {
   const rootElement = document.getElementById("root"); 
   if (rootElement) {
     setRootEl(rootElement);
-    onURLChange(window.location);
+    onURLChange(window.location); // Entrega la ubicacion actual
   } 
 });
