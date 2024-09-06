@@ -7,11 +7,8 @@ import { data as fakeDataOrder } from "../test/dataOrdenada.js";
 describe('pruebas para funcion "filterData"', () => {
   it('retorna data filtrada por option "guardian sistema solar interno"', () => {
     const optionValueSeleccionado = "guardian sistema solar interno";
-    const resultadoFiltrado = filterData(
-      fakeData,
-      "tipoGuardian",
-      optionValueSeleccionado,
-    );
+    const resultadoFiltrado = filterData(fakeData,"tipoGuardian",optionValueSeleccionado,);
+    
     expect(resultadoFiltrado.length).toBe(5);
     expect(resultadoFiltrado[0].extraInfo.tipoGuardian.toLowerCase()).toBe(
       optionValueSeleccionado,

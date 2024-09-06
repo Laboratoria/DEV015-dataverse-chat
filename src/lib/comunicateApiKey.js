@@ -12,7 +12,7 @@ export const communicateWithApi = (messages, characterId, name) => {
       messages: [
         {
           role: "system",
-          content: `Eres una sailor ${name}. Responde como si fueras ${name}.`,
+          content: `Eres una sailor ${name}. Responde como si fueras ${name}`,
         },
         {
           role: "user",

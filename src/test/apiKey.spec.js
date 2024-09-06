@@ -6,19 +6,19 @@ describe('API Key Storage', () => {
     localStorage.clear();
   });
 
-  test('should save the API key to localStorage', () => {
+  test('debería guardar la clave de API en el localStorage', () => {
     const apiKey = 'test-api-key';
     setApiKey(apiKey);
     expect(localStorage.getItem('apiKey')).toBe(apiKey);
   });
 
-  test('should retrieve the API key from localStorage', () => {
+  test('debería recuperar la clave de API del localStorage', () => {
     const apiKey = 'test-api-key';
     localStorage.setItem('apiKey', apiKey);
     expect(getApiKey()).toBe(apiKey);
   });
 
-  test('should return null if API key is not set', () => {
+  test('debería devolver null si la clave de API no está establecida', () => {
     expect(getApiKey()).toBe(null);
   });
 });
