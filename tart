@@ -1,0 +1,49 @@
+[33mfe35281[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mfeature/hito3api[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m Merge pull request #23 from estefanymoramellado/feature/hito3api
+[33m05c1e91[m[33m ([m[1;31morigin/feature/hito3api[m[33m)[m 3 intento
+[33m1b01728[m Merge pull request #22 from estefanymoramellado/feature/hito3api
+[33m9bf6f70[m 2 intento deploy
+[33md5debac[m Merge pull request #21 from estefanymoramellado/feature/hito3api
+[33mda13017[m DESPLIEGUE
+[33m00f346d[m Merge pull request #20 from estefanymoramellado/feature/hito3api
+[33m14dcea1[m ultimos ajustes
+[33m3b81558[m Merge pull request #19 from estefanymoramellado/feature/hito3api
+[33m5feb7fe[m ajustes en el historial de enrutamiento
+[33mac5d379[m Merge pull request #18 from estefanymoramellado/feature/hito3api
+[33me3113cc[m pequeños ajustes
+[33m152b09c[m Merge pull request #17 from estefanymoramellado/feature/hito3api
+[33m1592350[m cosas pendientes: cambiar id undefined por name de personaje en chat, arreglos en css, diseño responsivo
+[33mf18a957[m Merge pull request #16 from estefanymoramellado/feature/hito3api
+[33mc17a997[m cree test de api y de filtros, integré estadisticas.
+[33m3f4bfee[m Merge pull request #15 from estefanymoramellado/feature/hito3api
+[33mf45175d[m conexion de ia con api, con id
+[33m274ba31[m Merge pull request #14 from estefanymoramellado/feature/hito3api
+[33m04485e0[m diseño completo de home cards, vista notebook
+[33mc870dc6[m diseño home, chat y cards
+[33mbf421d8[m Merge pull request #13 from estefanymoramellado/feature/hito3api
+[33m9d3c06e[m diseño css home
+[33m2b5730f[m Merge pull request #12 from estefanymoramellado/feature/hito3api
+[33m3d5ce2c[m cree id para chat
+[33me8d637b[m Merge pull request #11 from estefanymoramellado/feature/hito3api
+[33m0fed13b[m creación de view chat y view api
+[33m3f6f96b[m Merge pull request #10 from estefanymoramellado/feature/hito2visualizacion
+[33m6538088[m[33m ([m[1;31morigin/feature/hito2visualizacion[m[33m, [m[1;32mfeature/hito2visualizacion[m[33m)[m Filtros de la data
+[33mee64b53[m Merge pull request #9 from estefanymoramellado/feature/hito2visualizacion
+[33md069b0c[m se visualizan las cards
+[33md8a14d5[m[33m ([m[1;32mmain[m[33m)[m Merge pull request #8 from Johana-Gonzalez-Gamboa/feature/hito2-migracion-datos
+[33m1f56d95[m migracion de datos, dataOrdenada, data y corregir rutas
+[33m2fcb917[m Merge pull request #7 from estefanymoramellado/feature/hito2visualizacion
+[33m4996ec6[m se agrego codigo de data, data function
+[33m0feda00[m[33m ([m[1;31morigin/hito1ruta[m[33m, [m[1;32mhito1ruta[m[33m)[m Término de hito 1
+[33m717cc15[m Merge pull request #5 from Johana-Gonzalez-Gamboa/feature/hito1-rutas
+[33m769055e[m Merge remote-tracking branch 'origin' into feature/hito1-rutas
+[33m1647988[m cambios en ruta hasta paso 6
+[33m7ff2abd[m Merge pull request #4 from estefanymoramellado/hito1ruta
+[33m880d1e7[m SPA, pasos completados
+[33m7bbe5f9[m Merge pull request #3 from estefanymoramellado/hito1ruta
+[33mdd0f7d6[m .
+[33m96b8090[m cambios en ruta
+[33mdec5c3a[m Merge pull request #2 from estefanymoramellado/hito1ruta
+[33m0fd29b2[m prueba
+[33md5eb142[m Merge pull request #1 from estefanymoramellado/hito1ruta
+[33m5f443a0[m hito1, ruta
+[33m192af63[m chore(init): Adds project files from curriculum
