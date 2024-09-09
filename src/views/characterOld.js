@@ -73,7 +73,7 @@ export default function Character() {
   }
 
   // Cargar los datos iniciales
-  load(data);
+  load(data); //loaddata
 
   // Función para actualizar la vista según los filtros y el orden
   function updateView() {
