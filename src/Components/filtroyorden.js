@@ -2,10 +2,11 @@ import data from "../data/dataset.js";
 import { filterData, sortData } from "../lib/dataFunctions.js";
 import { card } from "./Card.js";
 export const filtroyorden = (element) => {
-  const updateList = (data, containerElement) => {
+ 
+  const updateList = (data) => {
     const lista = showCard(data);
-    containerElement.innerHTML = ""; // Limpia el contenido previo
-    containerElement.appendChild(lista); // Añade la nueva lista de datos
+    element.innerHTML = ""; // Limpia el contenido previo
+    element.appendChild(lista); // Añade la nueva lista de datos
   };
 
   const div = document.createElement("selectores");
@@ -49,7 +50,7 @@ export const filtroyorden = (element) => {
     const valor = event.target.value;
     let dataFiltrada;
     if (valor === "0") {
-      dataFiltrada = data;
+      dataFiltrada = {...data}
     } else {
       dataFiltrada = filterData(data, "estreno", valor);
     }
@@ -84,9 +85,10 @@ export const filtroyorden = (element) => {
   });
 
   buttonBorrar.addEventListener("click", () => {
-    selectoresEpoca.value = "0";
     selectoresOrden.value = "orden";
-    updateList(data); // Muestra todos los datos sin filtros ni orden
+    selectoresEpoca.value = "0";
+    updateList(data, element); // Muestra todos los datos sin filtros ni orden
+   
   });
 
   return div;

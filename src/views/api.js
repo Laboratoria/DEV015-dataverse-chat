@@ -17,14 +17,16 @@ export const api = () => {
   saveButton.classList.add("saveButton");
   saveButton.addEventListener("click", () => {
     const apiKey = apiKeyInput.value;
-    localStorage.setItem("apiKey", apiKey);
-    alert("ApiKey guardada exitosamente.");
+    if (!apiKey || apiKey.length < 5) {
+      alert("La clave es inválida. Por favor, ingrese una clave válida.");
+    } else {
+      localStorage.setItem("apiKey", apiKey);
+      alert("ApiKey guardada exitosamente.");
+    }
   });
 
   divApi.appendChild(elementLabel);
   divApi.appendChild(apiKeyInput);
   divApi.appendChild(saveButton);
   return divApi;
-
-  
 };

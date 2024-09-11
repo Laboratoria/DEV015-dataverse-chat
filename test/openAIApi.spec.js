@@ -1,19 +1,19 @@
-import { communicateWithOpenAI } from "./openAIApi.js";
-window.fetch = jest.fn(); // Mock de la función fetch
+import { communicateWithOpenAI } from "../src/lib/openAIApi.js";
+window.window.fetch = jest.fn(); // Mock de la función window.fetch
 describe("communicateWithOpenAI", () => {
   beforeEach(() => {
-    fetch.mockClear(); // Reinicia el mock antes de cada test
+    window.fetch.mockClear(); // Reinicia el mock antes de cada test
   }); //it es una función que define un caso de prueba. Es equivalente a test
   it("debe entregar la respuesta de OpenAI cuando la petición sería exitosa", async () => {
     const mockResponse = { choices: [{ text: "respuesta" }] };
-    fetch.mockResolvedValueOnce({
-      // Simula la respuesta de fetch con éxito
+    window.fetch.mockResolvedValueOnce({
+      // Simula la respuesta de window.fetch con éxito
       ok: true, //indica que la respuesta HTTP tuvo exito (200-299).
       json: jest.fn().mockResolvedValueOnce(mockResponse), //mockResolvedValueOnce(mockResponse): Simula que la llamada al método
     }); // json: jest.fn(): convierte la respuesta en un json
     const content = [{ role: "user", content: "Hola, IA" }];
     const result = await communicateWithOpenAI(content);
-    expect(fetch).toHaveBeenCalledTimes(1); // Asegúrate de que fetch fue llamado una vez
+    expect(window.fetch).toHaveBeenCalledTimes(1); // Asegúrate de que window.fetch fue llamado una vez
     expect(result).toEqual(mockResponse); // Verifica que la respuesta sea la esperada
   }); // Verifica que la respuesta sea la esperada
   it("debe manejar errores cuando la API key no está presente", async () => {
@@ -32,9 +32,10 @@ describe("communicateWithOpenAI", () => {
   });
   it("debe manejar errores cuando la respuesta de la API falla", async () => {
     // Simula una respuesta fallida de la API
-    fetch.mockResolvedValueOnce({
+    window.fetch.mockResolvedValueOnce({
       ok: false,
       statusText: "Error de servidor",
+      json: jest.fn().mockResolvedValueOnce({ choices: [{ text: 'respuesta' }] })
     });
     const consoleSpy = jest
       .spyOn(console, "error")

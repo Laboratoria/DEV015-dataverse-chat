@@ -6,7 +6,7 @@
 h1 {
   font-family: fuenteDisney, sans-serif;
   font-style: normal;
-  font-size: 8.75rem;
+  font-size: 3.80rem;
   text-align: center;
   color: #ffffff;
   text-shadow: 3px 3px 0 #c6ebfc;
@@ -229,9 +229,95 @@ footer {
   margin-right: auto;
 }
 @media (min-width: 768px) {
+  
+  body {
+    overflow-x: hidden;
+    width: 100%;
+  }
+
+  h1 {
+    font-family: fuenteDisney, sans-serif;
+    font-style: normal;
+    font-size: 8rem;
+    text-align: center;
+    color: #ffffff;
+    text-shadow: 3px 3px 0 #c6ebfc;
+    margin-top: 4.688rem;
+    margin-bottom: 4.688rem;
+  }
+  
+  .tituloSelectores {
+    font-size: 120%;
+    margin-left: 4em;
+  }
+  .selectores {
+    display: flex;
+   width: 100%;
+    align-items: center;
+    gap: 1em;
+    margin-left: 4em;
+  }
+  
+  select {
+    font-family: "Montserrat Alternates", sans-serif;
+    font-size: 100%;
+    color: black;
+    background-color: #cfeeff;
+    padding: 10px;
+    border: solid;
+    border-color: #9480fb;
+    font-weight: bold;
+    cursor: pointer;
+    cursor: pointer;
+    border-radius: 20px;
+  }
+  
+  option {
+    font-size: 100%;
+    color: black;
+    background-color: #cfeeff;
+    font-family: "Montserrat Alternates", sans-serif;
+    padding: 10px;
+    border-color: #9480fb;
+    border-width: 3px;
+    border-style: solid;
+    cursor: pointer;
+    border-radius: 20px;
+  }
+  
+  button {
+    font-family: "Montserrat Alternates", sans-serif;
+    font-weight: bold;
+    font-size: 100%;
+    background-color: #cfeeff;
+    color: black;
+    padding: 10px;
+    border: solid;
+    border-color: #9480fb;
+    border-width: 3px;
+    border-radius: 20px;
+    cursor: pointer;
+  }
+
   .ulPelis {
     display: grid;
-    grid-template-columns: repeat(2, 45%);
+    grid-template-columns: repeat(2, 37.5rem);
     margin-left: 9em;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .tarjeta {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background-color: rgba(255, 255, 255, 0.9);
+    gap: 1rem;
+    text-align: justify;  
+    padding: 1rem;
+    border-radius: 1.25rem;
+    position: relative;
+    box-sizing: border-box;
+    margin: 0;
   }
 }

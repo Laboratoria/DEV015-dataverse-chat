@@ -2,32 +2,22 @@
 
 import { getApiKey, setApiKey } from "../src/lib/apiKey.js";
 
-describe("getApiKey", () => {
-  it("debería devolver el valor de la API Key", () => {
-    // Establecemos un valor para la API Key
-    const mockApiKey = "12345-ABCDE";
-    setApiKey(mockApiKey);
-
-    // Comprobamos que getApiKey devuelva el valor correcto
-    const result = getApiKey();
-    expect(result).toBe(mockApiKey);
+describe('API Key Storage', () => {
+  beforeEach(() => {
+    // Limpia el localStorage antes de cada prueba
+    localStorage.clear();
   });
-
-  it("debería devolver undefined si la API Key no ha sido establecida", () => {
-    // Comprobamos que getApiKey devuelva undefined cuando no se ha establecido ninguna API Key
-    const result = getApiKey();
-    expect(result).toBeUndefined();
+  test('debería guardar la clave de API en el localStorage', () => {
+    const apiKey = 'test-api-key';
+    setApiKey(apiKey);
+    expect(localStorage.getItem('apiKey')).toBe(apiKey);
   });
-});
-
-describe("setApiKey", () => {
-  it("debería establecer correctamente la API Key", () => {
-    const mockApiKey = "67890-FGHIJ";
-    // Establecemos un valor para la API Key
-    setApiKey(mockApiKey);
-
-    // Comprobamos que getApiKey devuelva el valor establecido
-    const result = getApiKey();
-    expect(result).toBe(mockApiKey);
+  test('debería recuperar la clave de API del localStorage', () => {
+    const apiKey = 'test-api-key';
+    localStorage.setItem('apiKey', apiKey);
+    expect(getApiKey()).toBe(apiKey);
+  });
+  test('debería devolver null si la clave de API no está establecida', () => {
+    expect(getApiKey()).toBe(null);
   });
 });
