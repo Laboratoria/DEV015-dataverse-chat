@@ -2,6 +2,12 @@ import data from "../data/dataset.js";
 import { filterData, sortData } from "../lib/dataFunctions.js";
 import { card } from "./Card.js";
 export const filtroyorden = (element) => {
+  const updateList = (data, containerElement) => {
+    const lista = showCard(data);
+    containerElement.innerHTML = ""; // Limpia el contenido previo
+    containerElement.appendChild(lista); // Añade la nueva lista de datos
+  };
+
   const div = document.createElement("selectores");
   div.innerHTML = `
   <label for="epoca">
@@ -26,6 +32,8 @@ export const filtroyorden = (element) => {
   const selectoresEpoca = div.querySelector("#epoca");
 
   const selectoresOrden = div.querySelector("#nombre");
+
+  const buttonBorrar = div.querySelector("#borrar");
 
   const showCard = (data) => {
     const ulElement = document.createElement("ul");
@@ -75,11 +83,11 @@ export const filtroyorden = (element) => {
     element.appendChild(listaOrdenada);
   });
 
-  // button.addEventListener("click", () => {
-  //   selectoresEpoca.value = "0";
-  //   selectoresOrden.value = "orden";
-  //   // updateList(data); // Muestra todos los datos sin filtros ni orden
-  // });
+  buttonBorrar.addEventListener("click", () => {
+    selectoresEpoca.value = "0";
+    selectoresOrden.value = "orden";
+    updateList(data); // Muestra todos los datos sin filtros ni orden
+  });
 
   return div;
 };

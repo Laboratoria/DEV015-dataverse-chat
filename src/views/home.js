@@ -5,7 +5,7 @@ import { createFooter } from "../Components/footer.js";
 import { filtroyorden } from "../Components/filtroyorden.js";
 import { api } from "../views/api.js";
 
-export const Home = (props) => {
+export const Home = () => {
   const div = document.createElement("div");
   div.appendChild(createHeader());
   div.appendChild(api());

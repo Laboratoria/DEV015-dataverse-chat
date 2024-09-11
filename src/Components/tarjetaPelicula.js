@@ -1,12 +1,11 @@
-import {getContext} from "../views/chatUnico.js"
+import { getContext } from "../views/chatUnico.js";
 export const cardMovie = (item) => {
-
   const divContenedor = document.createElement("div");
-  divContenedor.classList.add("divContenedor"); 
-    const divElement = document.createElement('div');
-    divElement.innerHTML = ""
-    divElement.classList.add("infoMovie");
-    divElement.innerHTML = `
+  divContenedor.classList.add("divContenedor");
+  const divElement = document.createElement("div");
+  divElement.innerHTML = "";
+  divElement.classList.add("infoMovie");
+  divElement.innerHTML = `
     <div>
     <h2> ${item.name} </h2>
     <div class="contenedorImagen">
@@ -25,10 +24,10 @@ export const cardMovie = (item) => {
     </div>
     `;
 
-    const divChat = document.createElement("div");
-    divChat.classList.add("chatMovie");
+  const divChat = document.createElement("div");
+  divChat.classList.add("chatMovie");
 
-    divChat.innerHTML = `
+  divChat.innerHTML = `
     <div class= "chatContenedor">
     <div class="chatHistorial" id="chatHistorial"></div>
     <div class="chatInput">
@@ -37,8 +36,8 @@ export const cardMovie = (item) => {
     </div>
   </div>
 `;
-const button = divChat.querySelector("#chatSend");
-  button.addEventListener('click', async function () {
+  const button = divChat.querySelector("#chatSend");
+  button.addEventListener("click", async function () {
     const chatHistorial = divChat.querySelector("#chatHistorial");
     const chatMessage = divChat.querySelector("#chatMessage");
 
@@ -52,23 +51,23 @@ const button = divChat.querySelector("#chatSend");
 
       // Aquí puedes implementar la lógica para enviar el mensaje y recibir una respuesta
       // Ejemplo (ficticio) de respuesta:
-      const response = await getContext(item.name, message); 
-      
+      const response = await getContext(item.name, message);
+
       const responseMessageDiv = document.createElement("div");
       responseMessageDiv.classList.add("responseMessage");
       responseMessageDiv.textContent = `Bot: ${response}`;
       chatHistorial.appendChild(responseMessageDiv);
 
       // Limpiar el campo de entrada
-      chatMessage.value = '';
+      chatMessage.value = "";
 
       // Desplazar el historial hacia abajo
       chatHistorial.scrollTop = chatHistorial.scrollHeight;
     }
   });
 
-divContenedor.appendChild(divElement);
-divContenedor.appendChild(divChat);
+  divContenedor.appendChild(divElement);
+  divContenedor.appendChild(divChat);
 
-return divContenedor;
-}
+  return divContenedor;
+};

@@ -12,10 +12,8 @@ export const communicateWithOpenAI = async (messages) => {
     body: JSON.stringify({
       model: "gpt-3.5-turbo",
       messages: messages,
-      max_tokens: 150,
     }),
   });
   const data = await response.json();
-  console.log(data);
   return data.choices[0].message.content;
 };
