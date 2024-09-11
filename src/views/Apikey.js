@@ -11,12 +11,16 @@ const viewApi = () => {
 
   // Crear el main con la sección de la API Key
   const main = document.createElement("main");
-  main.innerHTML = Apikey(); // ApiKeySection.js para la sección de la API key
+  const apiKeySection = Apikey(); 
+
+  if (apiKeySection instanceof HTMLElement) {
+    main.appendChild(apiKeySection); // Si es un elemento HTML, lo añadimos
+  } 
 
   // Crear el footer
-  const footer = document.createElement("footer");
-  footer.innerHTML = Footer(); // Footer.js para el pie de página
-  
+  const footer = Footer();
+  viewApiKey.appendChild(footer);
+
   // Agregar los elementos al body
   viewApiKey.appendChild(header);
   viewApiKey.appendChild(main);

@@ -3,10 +3,19 @@ export const Banner = () => {
   <!-- Desktop Banner -->
     <section class="banner">
       <div class="izquierda">
-        <div>
-          <div></div>
-          <div></div>
-          <div></div>
+        <div class="izquierda-container">
+          <div>
+            <h1>546</h1>
+            <span>Waiting for home</span>
+          </div>
+          <div>
+            <h1>147</h1>
+            <span>Adopted last year</span>
+          </div>
+         <div>
+            <h1>20</h1>
+            <span>Rescued</span>
+          </div>
         </div>
       </div>
       <div class="derecha">

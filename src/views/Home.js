@@ -287,20 +287,23 @@ function renderItems(pets) {
       <div itemprop="size"><strong>Tamaño:</strong> ${pet.facts.size}</div>
       <div itemprop="temperament"><strong>Comportamiento:</strong> ${pet.facts.temperament}</div>
     </li>
+    <div class="content-tarjeta-button">
      <button class="tarjeta-button">
         <img class="tarjeta-button-icon" src="./assets/icon-chat.png" alt="chat icon" itemprop="image"/>
       </button>
+    </div>
     `;    
     // Añadir el evento al botón
     const buttonElement = petItem.querySelector('.tarjeta-button');
     buttonElement.addEventListener('click', () => {
       const petId = event.target.closest('.tarjeta').querySelector('img').alt; 
-      console.log('Button Cards:' + petId);
+      console.log('HOME.JS: Button Cards:' + petId);
 
       if (petId) {
         navigateTo('/individualChat', { id: petId });
+        console.error('HOME.JS: Se encontró.');
       } else {
-        console.error('No se encontró el ID de la mascota.');
+        console.error('HOME: No se encontró el ID de la mascota.');
       }
 
     });

@@ -34,13 +34,13 @@ document.addEventListener('DOMContentLoaded', initializePage);
 
 function initializePage() {
   setRootEl(rootElement);
-  onURLChange(window.location); 
+  onURLChange(window.location.pathname); 
 }
 
 // Manejar la navegación hacia atrás o hacia adelante en el historial
 window.addEventListener('popstate', () => {
   setRootEl(rootElement);
-  onURLChange(new URL(window.location.href)); 
+  onURLChange(window.location.pathname); 
 });
 
 

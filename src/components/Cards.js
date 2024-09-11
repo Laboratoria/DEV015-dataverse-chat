@@ -54,8 +54,13 @@ export const Cards = () => {
       document.querySelectorAll('.tarjeta-button').forEach(button => {
         button.addEventListener('click', (event) => {
           const petId = event.target.closest('.tarjeta').querySelector('img').alt; // Suponiendo que el alt es el ID
-          console.log('Button Cards:' + petId);
-          navigateTo('/individualChat', { id: petId });
+          console.log('CARDS.JS: Button Cards:' + petId);
+          if (petId) {
+            navigateTo('/individualChat', { id: petId });
+            console.error('CARDS.JS: Se encontró.');
+          } else {
+            console.error('CARDS.JS: No se encontró el ID de la mascota.');
+          }
         });
       });
     }

@@ -60,6 +60,11 @@
     border-radius: 3em;
 }
 
+.chat-message-photo-user{
+    width: 50px;
+    border-radius: 3em;
+}
+
 .chat-title {
     width: 100%; /* Ajusta el ancho al 100% del contenedor */
 }
@@ -91,7 +96,7 @@
 .chat-message {
     height: 450px;  
     padding: 0.5rem 0.5rem;
-    height: calc(100vh - 210px);
+    height: calc(100vh - 280px);
     overflow-y: auto; /* Para hacer scroll si los mensajes son muchos */
     animation: fadeIn 0.5s ease; /* Añade una pequeña animación de fadeIn */
 }
@@ -116,6 +121,17 @@
     animation: slideIn 0.4s ease; /* Animación para que el mensaje "aparezca" */
 }
 
+.chat-message-container-user{
+    display: flex;
+    gap: 1em;
+    padding: 1rem 3rem;
+    flex: 1; /* Permite que el contenedor de mensajes se expanda */
+    overflow-y: auto; /* Permite el desplazamiento vertical si el contenido excede el alto */
+    align-items: center;
+    justify-content: flex-end;
+    animation: slideIn 0.4s ease; /* Animación para que el mensaje "aparezca" */
+}
+
 @keyframes slideIn {
     from { transform: translateY(100%); }
     to { transform: translateX(0); }
@@ -127,8 +143,16 @@
     border-radius: 10px;
     border-color: #E8F0F7;
     line-height: 1.3;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Añadido shadow */
-   
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Añadido shadow */ 
+}
+
+.chat-text-user{
+    background-color: #ffa0533b;
+    padding: 10px; /* Espaciado interno */
+    border-radius: 10px;
+    border-color: #E8F0F7;
+    line-height: 1.3;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Añadido shadow */ 
 }
 
 .chat-input{
@@ -322,7 +346,7 @@
 @media (min-width: 992px) {
    
     .section-p2 {
-        flex-direction: row;
+        flex-direction: row-reverse;
         gap: 20px; 
     }
 

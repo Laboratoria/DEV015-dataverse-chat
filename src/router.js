@@ -6,21 +6,28 @@ export const setRootEl = (el) => {
 };
 
 export const setRoutes = (routes) => {
-  if (typeof routes !== 'object' || !routes['/']) {
+  if (typeof routes !== 'object') {
     throw new Error('Invalid routes configuration');
   }
+
+  if (!routes["/404"]) {
+    throw new Error("la vista de error no existe");
+  }
+
   ROUTES = routes;
 };
 
 export const renderView = (pathname, props = {}) => {
   rootEl.innerHTML = ''; 
   
-  const view = ROUTES[pathname] || ROUTES['/'];
-  if (view) {
-    rootEl.appendChild(view(props)); 
-  } else {
-    navigateTo('/404');
-  }
+  const view = ROUTES[pathname];
+  if (!view) {
+    navigateTo("/404");
+    return;
+  } 
+  
+  const component = view(props);
+  rootEl.append(component);
 };
 
 export const navigateTo = (pathname = {}, props = {}) => {
@@ -50,8 +57,8 @@ export const navigateTo = (pathname = {}, props = {}) => {
   window.scrollTo(0, 0);
 };
 
-export const onURLChange = () => {
-  const { pathname, search } = window.location;
+export const onURLChange = (pathname) => {
+  const { search } = window.location;
   //console.log("cambio de url", pathname, search);
   const props = queryStringToObject(search);
   renderView(pathname, props);

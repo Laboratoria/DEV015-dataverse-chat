@@ -1,4 +1,4 @@
-import petsData from "../data/dataset.js";
+/*import petsData from "../data/dataset.js";
 
 export function ChatIndividual(props) {
 
@@ -8,7 +8,6 @@ export function ChatIndividual(props) {
   sectionChat.classList.add("section-p2");
   sectionChat.id = "banner";
 
-  console.log(petData.imageUrl);
   sectionChat.innerHTML = `
       <div class="item pri">
           <div class="chat-title">
@@ -65,4 +64,4 @@ export function ChatIndividual(props) {
   return sectionChat; 
 }
 
-export default ChatIndividual;
+export default ChatIndividual;*/

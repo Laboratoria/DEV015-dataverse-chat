@@ -17,7 +17,7 @@ export const Nav = () => {
                   <li><i class="fa-solid fa-xmark"></i></li>
               </div>
               <li>Adoptions</li>
-              <li>About us</li>
+              <li>Apikey</li>
               <li>FAQ</li>
               <li>Blog</li>
               <li>Contact</li>
@@ -40,7 +40,7 @@ export const Nav = () => {
           </ul>
           <ul class="navbar-options">
               <li>Adoptions</li>
-              <li class="about-us">About us</li>
+              <li class="about-us">Apikey</li>
               <li class="individual-chat">FAQ</li>
               <li>Blog</li>
               <li>Contact</li>

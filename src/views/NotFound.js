@@ -1,18 +1,20 @@
 
 const notFound = () => {
-  const viewApiKey = document.createElement("body");
-  viewApiKey.setAttribute("class", "body");
-
-
+  // Crear un contenedor raíz en lugar de 'body'
+  const viewContainer = document.createElement("div");
+  viewContainer.setAttribute("class", "body");
+ 
   // Crear el main con la sección de la API Key
   const main = document.createElement("main");
   main.innerHTML = `
-    <section class="banner">
-              <h1>Get your family a new member</h1>
-    </section>
-  `
-
-  return viewApiKey;
+       <h1>pagina de error</h1>
+   `;
+ 
+  // Agregar el 'main' al contenedor principal
+  viewContainer.appendChild(main);
+ 
+  // Retornar el contenedor con todos los elementos
+  return viewContainer;
 };
 
 export default notFound;

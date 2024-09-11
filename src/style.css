@@ -122,9 +122,10 @@
     background-position: center; /* Centra la imagen */
     background-repeat: no-repeat; /* Evita que la imagen se repita */
     display: flex;
-    flex-direction: column; /*ponerlo en columna*/
+    flex-direction: column-reverse; /*ponerlo en columna*/
     justify-content: center;
     align-items: center;
+    gap: 3em;
   }
 
   .banner .texto {
@@ -143,15 +144,35 @@
   }
   
   .izquierda {
-    width: 70%;
+    height: 13%;
     /*height: 500px;*/
     display: flex;
     justify-content: center;
     /*margin-top: 8rem;*/
-    margin-left: 6.5em;
+    /*margin-left: 6.5em;*/
     text-align: center;
     z-index: 19;
+    color: #292929;
+    align-items: center;
+    margin: 10px;
+    background-color: rgba(217, 217, 217, 0.44);
+    border-radius: 1em;
+    animation: fadeIn 2s ease-in-out;
+    padding: 10px 20px;
   }
+
+  .izquierda-container{
+    display: flex;
+    gap:1.5em;
+  }
+
+  .izquierda-container>div>h1{
+    font-size: 3em;
+  }
+  .izquierda-container>div>span{
+    font-size: 0.8em;
+  }
+
   
   .vector {
     position: absolute;
@@ -172,10 +193,12 @@
   
   .derecha {
     width: 50%;
-    height: 500px;
+    /*height: 500px;*/
     text-align: center;
     z-index: 19;
     margin-top: -180px;
+    display: flex;
+    align-items: center;
   }
   
   .texto {
@@ -332,6 +355,7 @@
   
   .mascotas-tarjetas {
     width: auto;
+    background-color: #fdfdfd;
   }
   
   .nuestras-mascotas {
@@ -479,11 +503,11 @@
   padding: 5px;
   border: none;
   background: var(--clr-neutro-light);
-  cursor: pointer;
 }
 
 .tarjeta-button-icon{
   width: 25%;
+  cursor: pointer;
 }
 
 .content-tarjeta-button{
@@ -603,7 +627,7 @@
     margin-inline-start: 40px;
   }
   
-  @media (min-width: 992px) {
+  @media (min-width: 1200px) {
   
     *{
       margin: 0;
@@ -730,30 +754,30 @@
   }
   
   .izquierda {
-      width: 50%;
-      height: 400px;
+      height: 25%;
       display: flex;
-      justify-content: space-around;
       margin-left: 17%;
+      animation: fadeIn 2s ease-in-out;
   }
   
   .izquierda {
-    width: 70%;
-    height: 500px;
+    width: 60%;
     display: flex;
-    justify-content: center;
-    margin-top: 8rem;
-    margin-left: 6.5em;
+    margin-left: 7em;
     text-align: center;
     z-index: 19;
   }
-  
+
+  .izquierda-container>div>h1{
+    font-size: 4em;
+  }
+
   .derecha {
       width: 70%;
       height: 400px;
       text-align: right;
       margin-right: 8%;
-      margin-top: 20px;
+      margin-top: 50px;
       z-index: 20;
   }
   
