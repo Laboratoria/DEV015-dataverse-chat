@@ -301,7 +301,7 @@ footer {
 
   .ulPelis {
     display: grid;
-    grid-template-columns: repeat(2, 37.5rem);
+    grid-template-columns: repeat(2, 37rem);
     margin-left: 9em;
     width: 100%;
     justify-content: center;
