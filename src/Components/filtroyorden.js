@@ -2,15 +2,15 @@ import data from "../data/dataset.js";
 import { filterData, sortData } from "../lib/dataFunctions.js";
 import { card } from "./Card.js";
 export const filtroyorden = (element) => {
- 
   const updateList = (data) => {
     const lista = showCard(data);
     element.innerHTML = ""; // Limpia el contenido previo
     element.appendChild(lista); // Añade la nueva lista de datos
   };
 
-  const div = document.createElement("selectores");
-  div.innerHTML = `
+  const selectores = document.createElement("div");
+  selectores.classList.add("selectores");
+  selectores.innerHTML = `
   <label for="epoca">
     <span class="tituloSelectores"><b> Selecciona por épocas</b></span></label>
     <select id="epoca" data-testid="select-filter" name="epocas">
@@ -30,15 +30,15 @@ export const filtroyorden = (element) => {
 
     <button id="borrar" data-testid="button-clear">Limpiar Filtros</button>`;
 
-  const selectoresEpoca = div.querySelector("#epoca");
+  const selectoresEpoca = selectores.querySelector("#epoca");
 
-  const selectoresOrden = div.querySelector("#nombre");
+  const selectoresOrden = selectores.querySelector("#nombre");
 
-  const buttonBorrar = div.querySelector("#borrar");
+  const buttonBorrar = selectores.querySelector("#borrar");
 
   const showCard = (data) => {
     const ulElement = document.createElement("ul");
-    ulElement.classList.add("ulPelis");
+    ulElement.classList.add("tarjetita");
 
     data.forEach((item) => {
       ulElement.appendChild(card(item));
@@ -50,7 +50,7 @@ export const filtroyorden = (element) => {
     const valor = event.target.value;
     let dataFiltrada;
     if (valor === "0") {
-      dataFiltrada = {...data}
+      dataFiltrada = { ...data };
     } else {
       dataFiltrada = filterData(data, "estreno", valor);
     }
@@ -88,8 +88,7 @@ export const filtroyorden = (element) => {
     selectoresOrden.value = "orden";
     selectoresEpoca.value = "0";
     updateList(data, element); // Muestra todos los datos sin filtros ni orden
-   
   });
 
-  return div;
+  return selectores;
 };

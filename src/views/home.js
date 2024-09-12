@@ -13,12 +13,12 @@ export const Home = () => {
   const showCard = (data) => {
     const ulElement = document.createElement("ul");
     ulElement.classList.add("ulPelis");
-
+    ulElement.setAttribute("id", "lista");
     data.forEach((item) => {
       ulElement.appendChild(card(item));
     });
     return ulElement;
- };
+  };
   const element = showCard(data);
 
   div.appendChild(filtroyorden(element));

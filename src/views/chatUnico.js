@@ -8,7 +8,7 @@ export async function getContext(name, pregunta, allCharacters) {
       name +
       " y responderás según su historia y como si fueras el protagonista, la siguiente pregunta: " +
       pregunta;
-  } 
+  }
   return await communicateWithOpenAI([
     {
       role: "user",

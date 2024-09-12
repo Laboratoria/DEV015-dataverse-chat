@@ -45,7 +45,7 @@ h3 {
 }
 .selectores {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
   gap: 10px;
 }
@@ -248,14 +248,13 @@ footer {
   
   .tituloSelectores {
     font-size: 120%;
-    margin-left: 4em;
   }
   .selectores {
     display: flex;
-   width: 100%;
+   width: 70%;
     align-items: center;
     gap: 1em;
-    margin-left: 4em;
+    margin: auto;
   }
   
   select {
@@ -319,5 +318,14 @@ footer {
     position: relative;
     box-sizing: border-box;
     margin: 0;
+  }
+
+  .tarjetita{
+    display: grid;
+    grid-template-columns: repeat(2, 37rem);
+    margin-left: 11em;
+    width: 100%;
+    gap: 3em;
+    justify-content: center;
   }
 }
