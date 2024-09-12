@@ -18,7 +18,7 @@ export const Home = () => {
       ulElement.appendChild(card(item));
     });
     return ulElement;
-  };
+ };
   const element = showCard(data);
 
   div.appendChild(filtroyorden(element));
