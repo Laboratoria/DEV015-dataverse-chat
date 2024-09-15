@@ -57,7 +57,7 @@ export const Cards = () => {
           console.log('CARDS.JS: Button Cards:' + petId);
           if (petId) {
             navigateTo('/individualChat', { id: petId });
-            console.error('CARDS.JS: Se encontró.');
+            //console.error('CARDS.JS: Se encontró.');
           } else {
             console.error('CARDS.JS: No se encontró el ID de la mascota.');
           }

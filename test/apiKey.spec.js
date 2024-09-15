@@ -9,7 +9,7 @@ describe('getApiKey', () => {
   });
 
   it('debería devolver el valor de la API Key', () => {
-    const key = "abcd";
+    const key = "key";
     localStorage.setItem("APIKEY", key);
     const apiKey = getApiKey();
     expect(apiKey).toBe(key);
@@ -22,8 +22,8 @@ describe('setApiKey', () => {
   });
 
   it('debería establecer correctamente la API Key', () => {
-  const key = "abcd";
+  const key = "key";
    setApiKey(key);
-   expect(localStorage.getItem('apiKey')).toBe(key);
+   expect(localStorage.getItem('APIKEY')).toBe(key);
   });
 });

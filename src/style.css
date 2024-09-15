@@ -22,11 +22,11 @@
   
   }
   
-  @media (min-width: 992px) {
+  /*@media (min-width: 992px) {
     .sidebar {
       display: none;
     }
-  }
+  }*/
   
   @media (max-width: 992px) {
     .navbar-options {
@@ -70,7 +70,7 @@
   .sidebar {
     width: 300px; /* Definido un ancho fijo para la sidebar */
     height: 100%;
-    position: absolute;
+    position: fixed;
     background: #ffffff;
     left: -300px;
     transition: left 0.4s ease-in-out;
@@ -84,7 +84,8 @@
     left: 0;
     width: 40%;
     height: 100%;
-    transition: .4s
+    transition: .4s;
+    z-index: 4000;
   }
   
   .sidebar ul li {
@@ -499,14 +500,15 @@
 .tarjeta-button{
   display: flex;
   align-items: center;
-  justify-content: right;
+  justify-content: flex-end;
   padding: 5px;
+  width: 100%;
   border: none;
   background: var(--clr-neutro-light);
 }
 
 .tarjeta-button-icon{
-  width: 25%;
+  width: 20%;
   cursor: pointer;
 }
 
@@ -686,21 +688,21 @@
   #sidebar {
     width: 300px; /* Definido un ancho fijo para la sidebar */
     height: 100%;
-    position: absolute;
+    position: fixed;
     background: #ffffff;
     left: -300px;
     transition: left 0.4s ease;
-    z-index: 100;
+    z-index: 1000;
   }
   
   /* Activar Sidebar */
   
   #sidebar.active {
     position: fixed;
-    left: 0;
+    left: 0 !important;
     width: 40%;
     height: 100%;
-    transition: .4s
+    transition: .4s;
   }
   
   #sidebar ul li {

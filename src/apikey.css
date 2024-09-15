@@ -20,6 +20,29 @@ body {
     margin-bottom: 0.6em;
 }
 
+.div-apikey-container{
+    padding: 20px;
+    min-height: 60vh ;
+    display: grid;
+}
+
+input{
+    margin-top: 20px;
+    line-height: 2.5;
+    padding: 0 30px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.delete-apiKey, .save-apiKey, .return-beginning{
+    width: 100px;
+    line-height: 2.5;
+    border-radius: 10px;
+    padding: 0 10px;
+    border: none;
+    margin-top: 20px;
+}
+
 .description-input{
     padding: 1em;
     margin-top: 2em;
@@ -36,11 +59,21 @@ body {
     box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1); 
 }
 
+.description-api-key{
+    text-align: center;
+}
+
 .section-api-key{
-    margin-top: 4em;
-    margin-bottom: 4em;
-    margin-left: 5em;
-    margin-right: 5em;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    max-width: 400px;
+    place-self: center;
+
+}
+
+.container-button{
+    flex-direction: row;
 }
 
 main{

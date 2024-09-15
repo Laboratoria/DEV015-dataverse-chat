@@ -14,7 +14,8 @@ export const home = () => {
 
   // Añadir la barra de navegación
   homeView.appendChild(Nav());
-  
+
+
   //Crear el main
   const main = document.createElement("main");
   main.innerHTML = Banner() + Cards();
@@ -61,6 +62,8 @@ function configureMenu() {
   if (btnCloseIcon && dropDownMenu) {
     btnCloseIcon.onclick = () => dropDownMenu.classList.remove('active');
   }
+
+  
 }
 
 function configureFiltersAndButtons() {

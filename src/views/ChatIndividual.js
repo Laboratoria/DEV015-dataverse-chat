@@ -1,5 +1,5 @@
 import Footer from "../components/Footer.js";
-import Nav from "../components/Nav.js";
+import { Nav } from "../components/Nav.js";
 import petsData from "../data/dataset.js";
 import { communicateWithOpenAI } from "../lib/openAIApi.js";
 
@@ -157,7 +157,7 @@ export function individualChat(props) {
     //Crear y agregar imagen
     const image = document.createElement('img');
     image.classList.add('chat-message-photo-user');
-    image.src = 'src/assets/user.png';
+    image.src = 'https://raw.githubusercontent.com/avsoto/DEV015-dataverse-chat/hito3/src/assets/user.png';
 
     // Crear y agregar contenedor de texto
     const textContainer = document.createElement('div');
@@ -179,7 +179,6 @@ export function individualChat(props) {
 
   // Añadir el footer
   individualChatView.appendChild(Footer());
-  
 
   return individualChatView; 
 }

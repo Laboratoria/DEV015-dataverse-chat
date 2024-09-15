@@ -1,6 +1,6 @@
 import Apikey from "../components/Apikey.js";
 import Footer from "../components/Footer.js";
-import Nav from "../components/Nav.js";
+import {Nav} from "../components/Nav.js";
 
 const viewApi = () => {
   const viewApiKey = document.createElement("body");

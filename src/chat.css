@@ -9,6 +9,7 @@
     align-items: center;
     justify-content: center;
     background-color: white;
+    /*margin-top: 3em;*/
     margin-bottom: 3em;
 }
 
@@ -29,7 +30,7 @@
 .sec{
     display: grid;
     align-content: center;
-    height: calc(100vh - 70px);
+    /*height: calc(100vh - 70px);*/
     
 }
 
@@ -303,7 +304,7 @@
 }
 
 .adopt-btn, .donate-btn {
-    padding: 10px 55px;
+    padding: 10px 30px;
     border: none;
     border-radius: 5px;
     font-size: 1.1em;

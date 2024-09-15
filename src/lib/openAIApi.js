@@ -1,6 +1,8 @@
 // Importa la función para obtener la API KEY desde apiKey.js
 
-const API_KEY = '';
+import { getApiKey } from "./apiKey.js";
+
+const API_KEY = getApiKey();
 const SentMessage = [];
 
 export async function communicateWithOpenAI(petsData, message){
@@ -17,7 +19,7 @@ export async function communicateWithOpenAI(petsData, message){
       body: JSON.stringify({
         model: 'gpt-4o',
         messages: [
-          { role: "system", content: `Eres ${petsData.name}, tu personalidad se basa en ${petsData.description}; vas a responder a los mensajes y preguntas del usuario y tus respuestas no van a tener más de 20 palabras`},
+          { role: "system", content: `Eres ${petsData.name}. Tu personalidad es ${petsData.description}. Responderás a los mensajes del usuario con un máximo de 30 palabras. Que la conversación sea fluida. Siempre ten en cuenta tu nombre y reflejar tu personalidad al responder.`},
           ...SentMessage 
         ]  
       })
