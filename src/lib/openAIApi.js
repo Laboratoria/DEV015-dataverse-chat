@@ -17,7 +17,7 @@ export async function communicateWithOpenAI(petsData, message){
         'Authorization': 'Bearer ' + API_KEY
       },
       body: JSON.stringify({
-        model: 'gpt-4o',
+        model: 'gpt-4',
         messages: [
           { role: "system", content: `Eres ${petsData.name}. Tu personalidad es ${petsData.description}. Responderás a los mensajes del usuario con un máximo de 30 palabras. Que la conversación sea fluida. Siempre ten en cuenta tu nombre y reflejar tu personalidad al responder.`},
           ...SentMessage 

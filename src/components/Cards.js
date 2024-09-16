@@ -138,7 +138,9 @@ export const Cards = () => {
     renderPets();
   });
 
+
   return staticHTML;
 };
+
 
 export default Cards;

@@ -249,19 +249,17 @@ function configureFiltersAndButtons() {
   });
 
   // Manejo de eventos para el botón de filtros
-  const botonFiltros = document.querySelector('.boton-filtros');
-  if (botonFiltros) {
-    botonFiltros.addEventListener('click', () => {
+  document.addEventListener('click', (event) => {
+    if (event.target.matches('.boton-filtros')) {
+      console.log("funciona el boton de filtros");
       const filtros = document.querySelector('.mascotas-filtros');
       if (filtros) {
         filtros.classList.toggle('abierto');
       } else {
         console.error('El elemento con clase "mascotas-filtros" no se encuentra en el DOM.');
       }
-    });
-  } else {
-    console.error('El elemento con clase "boton-filtros" no se encuentra en el DOM.');
-  }
+    }
+  });
 
 }
 
