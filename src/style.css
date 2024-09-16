@@ -347,9 +347,16 @@
     width: auto;
     margin: 40px 0px;
     text-align: center;
-    display: none;
     justify-content: center;
+    max-height: 0; /* Inicialmente cerrado */
+    overflow: hidden;
+    transition: max-height 0.5s ease;
   }
+
+  .mascotas-filtros.abierto {
+    max-height: 500px; /* Asegúrate de que este valor sea mayor que el scrollHeight del contenido */
+  }
+  
   
   /* Tarjetas */
   
@@ -504,16 +511,15 @@
   padding: 5px;
   width: 100%;
   border: none;
-  background: var(--clr-neutro-light);
+  
 }
-
-.tarjeta-button-icon{
-  width: 20%;
+.fa-solid,.fas {
+  color: #f5873d;
   cursor: pointer;
 }
 
-.content-tarjeta-button{
-  width: 100%;
+button{
+  background-color: white;
 }
 
   /* Footer */
@@ -939,7 +945,10 @@
     text-align: center;
     display: none;
     justify-content: center;
-  }
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease; /* Transición suave */
+ }
   
   
   .adoptados{

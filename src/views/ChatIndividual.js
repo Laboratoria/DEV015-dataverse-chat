@@ -21,7 +21,6 @@ export function individualChat(props) {
   sectionChat.classList.add("section-p2");
   sectionChat.id = "banner";
 
-  console.log(petData.imageUrl);
   sectionChat.innerHTML = `
       <div class="item pri">
           <div class="chat-title">

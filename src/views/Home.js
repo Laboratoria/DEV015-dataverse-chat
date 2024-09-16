@@ -63,6 +63,15 @@ function configureMenu() {
     btnCloseIcon.onclick = () => dropDownMenu.classList.remove('active');
   }
 
+  // Manejo del clic en el botón para desplazar hacia la sección de cards
+  document.getElementById('conocelos-btn').addEventListener('click', () => {
+    const seccionCards = document.getElementById('tarjetas-section');
+    if (seccionCards) {
+      seccionCards.scrollIntoView({ behavior: 'smooth' });
+    } else {
+      console.error('El elemento con id "seccion-cards" no se encuentra en el DOM.');
+    }
+  });
   
 }
 
@@ -243,9 +252,9 @@ function configureFiltersAndButtons() {
   const botonFiltros = document.querySelector('.boton-filtros');
   if (botonFiltros) {
     botonFiltros.addEventListener('click', () => {
-      const botones = document.querySelector('.mascotas-filtros');
-      if (botones) {
-        botones.style.display = botones.style.display === 'none' ? 'block' : 'none';
+      const filtros = document.querySelector('.mascotas-filtros');
+      if (filtros) {
+        filtros.classList.toggle('abierto');
       } else {
         console.error('El elemento con clase "mascotas-filtros" no se encuentra en el DOM.');
       }
@@ -291,24 +300,17 @@ function renderItems(pets) {
       <div itemprop="temperament"><strong>Comportamiento:</strong> ${pet.facts.temperament}</div>
     </li>
     <div class="content-tarjeta-button">
-     <button class="tarjeta-button">
-        <img class="tarjeta-button-icon" src="./assets/icon-chat.png" alt="chat icon" itemprop="image"/>
-      </button>
+        <button class="tarjeta-button" data-id="${pet.id}">
+          <i class="fa-sharp-duotone fa-solid fa-comment fa-beat-fade fa-3x""></i>
+        </button>
     </div>
     `;    
     // Añadir el evento al botón
     const buttonElement = petItem.querySelector('.tarjeta-button');
-    buttonElement.addEventListener('click', () => {
-      const petId = event.target.closest('.tarjeta').querySelector('img').alt; 
-      console.log('HOME.JS: Button Cards:' + petId);
-
-      if (petId) {
-        navigateTo('/individualChat', { id: petId });
-        console.error('HOME.JS: Se encontró.');
-      } else {
-        console.error('HOME: No se encontró el ID de la mascota.');
-      }
-
+    buttonElement.addEventListener('click', (event) => {
+    // Encontrar el contenedor de la tarjeta
+      const petId = event.currentTarget.getAttribute('data-id');
+      navigateTo('/individualChat', { id: petId });
     });
 
     ul.appendChild(petItem);
@@ -316,6 +318,8 @@ function renderItems(pets) {
 
   return ul;
 }
+
+
 
 
 export default home;

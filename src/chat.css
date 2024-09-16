@@ -22,7 +22,17 @@
 }
 
 .pri{
+    /*Esto establece que el elemento con la clase pri se va a comportar como un contenedor de cuadrícula (grid container).*/
     display: grid;
+    /*grid-template-rows: auto 1fr auto;
+    Esta propiedad define cómo se distribuyen las filas dentro del contenedor de cuadrícula.
+    
+    auto: La primera fila se ajustará automáticamente al contenido que tenga dentro, es decir, su altura será suficiente para acomodar el contenido sin dejar espacio extra.
+    
+    1fr: La segunda fila ocupará todo el espacio restante disponible en el contenedor, después de que las filas con auto hayan tomado su espacio. La unidad fr (fracción) se usa para distribuir el espacio 
+    restante en la cuadrícula.
+    
+    auto: La tercera fila, al igual que la primera, se ajustará automáticamente al contenido que tenga dentro.*/
     grid-template-rows: auto 1fr auto;
     
 }

@@ -27,7 +27,7 @@ export const Cards = () => {
         <div itemprop="temperament"><strong>Comportamiento:</strong> ${pet.facts.temperament}</div>
         <div class="content-tarjeta-button">
         <button class="tarjeta-button">
-          <img class="tarjeta-button-icon" src="./assets/icon-chat.png" alt="chat icon" itemprop="image"/>
+          <i class="fa-sharp-duotone fa-solid fa-comment fa-beat-fade fa-3x""></i>
         </button>
         </div>
       </li>
