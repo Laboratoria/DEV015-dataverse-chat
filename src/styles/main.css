@@ -83,3 +83,20 @@ h3 {
   top: 30px;
   right: 30px;
 }
+
+button {
+  text-decoration: none;
+  display: inline-block;
+  padding: 8px 16px;
+  border-radius: 5%;
+}
+
+button:hover {
+  background-color: rgb(255, 255, 255);
+  color: rgb(198, 136, 191);
+}
+
+#return-home {
+  background-color: #f1f1f1;
+  color: black;
+}

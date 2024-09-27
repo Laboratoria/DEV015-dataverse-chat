@@ -1,26 +1,29 @@
 export const getApiKey = () => {
-// obtener la API KEY desde Local Storage
+  // Obtener la API KEY desde Local Storage
   try {
     const api_key = localStorage.getItem('apiKey');
     if (!api_key) {
       throw new Error('Api Key not defined!');
     }
-    return localStorage.getItem('apiKey');
+    return api_key;
   } catch (error) {
     const api_key = prompt("Por favor ingresa una Open AI Key");
-    if (api_key.length <= 160) {
+    
+    // Validar que la clave tiene la longitud correcta
+    if (!api_key || api_key.length <= 160) {
       alert("Api Key invalida, por favor ingresa una Open AI api key");
-      return getApiKey();
+      return null; // Detener la recursión si la clave no es válida
     }
+
     setApiKey(api_key);
-    return null;
+    return api_key; // Retornar la clave válida
   }
 };
 
 export const setApiKey = (key) => {
-  //guardar la API KEY en Local Storage
+  // Guardar la API KEY en Local Storage
   try {
-    localStorage.setItem('apiKey', key);
+    sessionStorage.setItem('apiKey', key);//permite almacenar datos de forma persistente en el navegador.
   } catch (error) {
     alert('Error al guardar la API KEY:', error);
   }

@@ -8,6 +8,9 @@ const ExtractDataDetailById = (id) => {
 };
 
 const Detail = (params) => {
+  // habilitar el botton volver a pagina principal
+  const returnHomeButton = document.getElementById('return-home');
+  returnHomeButton.classList.remove('hidden');
 
   const cardData = ExtractDataDetailById(params['id']);
   const view = document.createElement('div');

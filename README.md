@@ -2,7 +2,7 @@
 
 Este proyecto convierte una aplicación desarrollada en Dataverse en una Single Page Application (SPA), añadiendo funcionalidades como una vista detallada para cada personaje y un sistema de chat interactivo utilizando la API de OpenAI.
 
-![Preview app](imagenes/Captura de Pantalla 2024-08-25 a la(s) 18.51.19.png)
+![Preview app](src/imagenes/Captura de Pantalla 2024-08-25 a la(s) 18.51.19.png)
 
 ## Objetivos del Proyecto
 Desarrollar una SPA con navegación fluida.
@@ -24,7 +24,7 @@ Manejar la asincronía en JavaScript y crear pruebas unitarias para código así
 * Definición del Producto: Documenta el proceso de diseño y cómo el producto resuelve los problemas de las usuarias en el README.md.
 * Historias de Usuaria: Crea Historias de Usuaria que representen las necesidades de las usuarias, incluyendo definición de terminado y Criterios de Aceptación para cada historia.
 ## Diseño de la Interfaz de Usuaria:
-![Preview app](imagenes/Captura de Pantalla 2024-08-25 a la(s) 19.03.12.png)
+![Preview app](imagenes/src/imagenes/Captura de Pantalla 2024-08-25 a la(s) 19.03.12.png)
 
 * * Prototipo de Baja Fidelidad: Bocetos iniciales, subidos al repositorio y mencionados en el README.md.
 * * Prototipo de Alta Fidelidad: Diseño visual en herramientas como Figma, representando el ideal de la solución.
@@ -43,3 +43,5 @@ Manejar la asincronía en JavaScript y crear pruebas unitarias para código así
 * Control de Versiones (Git y GitHub): Instalación, configuración, control de versiones, integración de cambios, despliegue con GitHub Pages.
 * Centrado en el Usuario: Diseño centrado en el usuario y prototipos de alta fidelidad.
 * Investigación: Testeos de usabilidad de prototipos en distintos niveles de fidelidad.
+
+Despliegue del proyecto por netlify : https://main--dataverse-chat.netlify.app/ 

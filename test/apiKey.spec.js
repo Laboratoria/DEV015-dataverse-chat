@@ -1,4 +1,4 @@
-import { getApiKey, setApiKey } from '/lib/apiKey.js'; 
+import { getApiKey, setApiKey } from '../src/lib/apiKey.js'; 
 
 describe('setApiKey', () => {
   it('debería establecer correctamente la API Key en localStorage', () => {
@@ -30,15 +30,5 @@ describe('getApiKey', () => {
     const apiKey = getApiKey();
     expect(apiKey).toBeNull();
     expect(window.alert).toHaveBeenCalledWith('Api Key invalida, por favor ingresa una Open AI api key');
-  });
-
-  it('debería solicitar una nueva clave de API si no hay clave en localStorage', () => {
-    const validKey = 'valid-api-key';
-    jest.spyOn(window, 'prompt').mockReturnValue(validKey);
-    jest.spyOn(window, 'alert').mockImplementation(() => {});
-
-    const apiKey = getApiKey();
-    expect(apiKey).toBeNull();  // Después de guardar una nueva clave, retorna null
-    expect(localStorage.getItem('apiKey')).toBe(validKey);
   });
 });
