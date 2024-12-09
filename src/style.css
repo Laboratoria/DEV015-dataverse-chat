@@ -1,0 +1,331 @@
+@font-face {
+  font-family: fuenteDisney;
+  src: url(./assets/DisneyFont.ttf);
+}
+
+h1 {
+  font-family: fuenteDisney, sans-serif;
+  font-style: normal;
+  font-size: 3.80rem;
+  text-align: center;
+  color: #ffffff;
+  text-shadow: 3px 3px 0 #c6ebfc;
+  margin-top: 4.688rem;
+  margin-bottom: 4.688rem;
+}
+
+body {
+  background-image: url("https://i.pinimg.com/564x/5c/9f/71/5c9f71e8f59463a53ce0d1cd3b8a07d8.jpg");
+  image-rendering: center;
+  font-family: "Montserrat Alternates", sans-serif;
+  color: #ddf8f8;
+}
+
+h2 {
+  font-family: "Montserrat Alternates", sans-serif;
+  font-weight: bold;
+  font-style: normal;
+  font-size: 20px;
+  text-align: center;
+  color: black;
+  background-color: #ac95ffd3;
+  padding: 25px;
+}
+
+h3 {
+  font-family: "Montserrat Alternates", sans-serif;
+  text-align: center;
+  font-weight: bold;
+  font-size: 25px;
+  margin-top: 0;
+}
+
+.tituloSelectores {
+  font-size: 120%;
+}
+.selectores {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+select {
+  font-family: "Montserrat Alternates", sans-serif;
+  font-size: 100%;
+  color: black;
+  background-color: #cfeeff;
+  padding: 10px;
+  border: solid;
+  border-color: #9480fb;
+  font-weight: bold;
+  cursor: pointer;
+  cursor: pointer;
+  border-radius: 20px;
+  margin-left: 2em;
+}
+
+option {
+  font-size: 100%;
+  color: black;
+  background-color: #cfeeff;
+  font-family: "Montserrat Alternates", sans-serif;
+  padding: 10px;
+  border-color: #9480fb;
+  border-width: 3px;
+  border-style: solid;
+  cursor: pointer;
+  border-radius: 20px;
+}
+
+button {
+  font-family: "Montserrat Alternates", sans-serif;
+  font-weight: bold;
+  font-size: 100%;
+  background-color: #cfeeff;
+  color: black;
+  padding: 10px;
+  border: solid;
+  border-color: #9480fb;
+  border-width: 3px;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.ulPelis {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  margin-top: 1rem;
+  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(1, 95%);
+  gap: 3em;
+}
+
+.contenedorContenido {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+}
+
+.contenedorImagen {
+  display: flex;
+  justify-content: center;
+  max-width: 100%;
+  max-height: 100%;
+}
+.contenedorImagen img {
+  width: 100%;
+}
+
+.contenedorTextos {
+  display: flex;
+  flex-direction: column;
+  padding: 0 1rem;
+  font-size: 1em;
+  box-sizing: border-box;
+  overflow-x: auto;
+  width: 100%;
+}
+
+.imagenPeli {
+  height: 15rem;
+  width: auto;
+}
+
+.tarjeta {
+  font-family: "Montserrat Alternates", sans-serif;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  background-color: rgba(255, 255, 255, 0.9);
+  gap: 1rem;
+  width: 70%;
+  text-align: justify;
+  margin: 0.063rem;
+  padding: 1rem;
+  border-radius: 1.25rem;
+  color: black;
+}
+
+.divContenedor {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  margin-left: 0.5rem;
+  align-items: center;
+}
+.infoMovie {
+  font-family: "Montserrat Alternates", sans-serif;
+  color: #000;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  background-color: rgba(255, 255, 255, 0.9);
+  gap: 1rem;
+  width: calc(50% - 2rem);
+  text-align: justify;
+  margin: 0.063rem;
+  padding: 1rem;
+  border-radius: 1.25rem;
+  color: black;
+  image-rendering: 1rem;
+}
+
+.imagenDiv {
+  height: 40rem;
+  width: auto;
+}
+
+.chatMovie {
+  border: 1px solid #ccc;
+  padding: 0.9rem;
+  width: 25rem;
+}
+
+.chatContenedor {
+  display: flex;
+  flex-direction: column;
+  height: 31.25rem;
+}
+
+.chatHistorial {
+  flex: 1;
+  border: 0.3rem solid #7d5ca6;
+  background-color: rgba(63, 62, 105, 0.9);
+  padding: 1rem;
+  overflow-y: auto;
+}
+
+.chatInput {
+  display: flex;
+}
+
+#chatMessage {
+  flex: 1;
+  padding: 5px;
+  color: #000;
+}
+
+#chatSend {
+  padding: 5px 10px;
+}
+
+footer {
+  background-color: rgba(255, 255, 255, 0.5);
+  color: #000;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding: 2%;
+  text-align: center;
+}
+
+#root {
+  margin-top: 32px;
+  margin-bottom: 64px;
+  max-width: 1400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+@media (min-width: 768px) {
+  
+  body {
+    overflow-x: hidden;
+    width: 100%;
+  }
+
+  h1 {
+    font-family: fuenteDisney, sans-serif;
+    font-style: normal;
+    font-size: 8rem;
+    text-align: center;
+    color: #ffffff;
+    text-shadow: 3px 3px 0 #c6ebfc;
+    margin-top: 4.688rem;
+    margin-bottom: 4.688rem;
+  }
+  
+  .tituloSelectores {
+    font-size: 120%;
+  }
+  .selectores {
+    display: flex;
+   width: 70%;
+    align-items: center;
+    gap: 1em;
+    margin: auto;
+  }
+  
+  select {
+    font-family: "Montserrat Alternates", sans-serif;
+    font-size: 100%;
+    color: black;
+    background-color: #cfeeff;
+    padding: 10px;
+    border: solid;
+    border-color: #9480fb;
+    font-weight: bold;
+    cursor: pointer;
+    cursor: pointer;
+    border-radius: 20px;
+  }
+  
+  option {
+    font-size: 100%;
+    color: black;
+    background-color: #cfeeff;
+    font-family: "Montserrat Alternates", sans-serif;
+    padding: 10px;
+    border-color: #9480fb;
+    border-width: 3px;
+    border-style: solid;
+    cursor: pointer;
+    border-radius: 20px;
+  }
+  
+  button {
+    font-family: "Montserrat Alternates", sans-serif;
+    font-weight: bold;
+    font-size: 100%;
+    background-color: #cfeeff;
+    color: black;
+    padding: 10px;
+    border: solid;
+    border-color: #9480fb;
+    border-width: 3px;
+    border-radius: 20px;
+    cursor: pointer;
+  }
+
+  .ulPelis {
+    display: grid;
+    grid-template-columns: repeat(2, 37rem);
+    margin-left: 9em;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .tarjeta {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background-color: rgba(255, 255, 255, 0.9);
+    gap: 1rem;
+    text-align: justify;  
+    padding: 1rem;
+    border-radius: 1.25rem;
+    position: relative;
+    box-sizing: border-box;
+    margin: 0;
+  }
+
+  .tarjetita{
+    display: grid;
+    grid-template-columns: repeat(2, 37rem);
+    margin-left: 11em;
+    width: 100%;
+    gap: 3em;
+    justify-content: center;
+  }
+}
